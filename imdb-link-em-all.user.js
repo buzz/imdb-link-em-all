@@ -4,7 +4,7 @@
 // @description    Adds all kinds of links to IMDb, customizable!
 // @author         buzz
 // @require        https://code.jquery.com/jquery-2.2.0.min.js
-// @version        0.122
+// @version        0.123
 // @license        GPLv2
 // @match          *://*.imdb.com/title/tt*/*
 // @grant          GM.getValue
@@ -390,6 +390,30 @@ let sites = [
       'JustWatch',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABpElEQVQ4y6WTy0sCURTG/SuyVj03+Wj0zthkmqlTCpqSqVlpWqlRRBDmIoiIqFVrkdoF1aKICgqCjBYRFYRBbVr32EW0adPqa2Z8RDDEhIsL9x7u+d3znfNdhbK2ubaqTpXj15eyXg05S7gr5Ai5CnEjM1EClFOUXk4O6XCyxiIS0KO6QX4litIhldDj8bAdx1kjEmGCaIiWBSoDAt4W9Hkofq9CtJ/GyxmHiy07HN1/V1QGzIzpkVlgwLBaxEIEDwc2pCdYeFw0bvdcGBlqQ/VfgNlkQcLdrgmjgwSWTkqMO7sJPm58eL8OYDphgsdtkAYITZyfImhSazDcT/B0ymF9xYxgL4PsshUUQ0FDKHzmQ8htuGE0638D4oM6zE0SNKo0fAMJnnMcNlY7MOA3ILNkRQv5AZxv9sBsIdIS8jtmxMM0ujidGHcUJbxdFST0elqlJQhjzC4yYNu0YgX3+zakxll43TTy+y7EI0bJaZQBQS8FX0+hcQLglR/j5bYdTgeRN8Z0UcKRaCQasQEaNXKMVLLyeKRg5bD/n1au+DNV+p2/AWWoo5tG2eI6AAAAAElFTkSuQmCC',
       'https://www.justwatch.com/us/search?q={{IMDB_TITLE}}'
+    ],
+    ofdb: [
+      'OFDb',
+      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAXVBMVEWLrJsAAAAICAgQEBAYGBghISEpKSkxMTE5OTlCQkJKSkpSUlJaWlpjY2Nra2tzc3OEhISMjIyUlJScnJylpaWtra21tbW9vb3GxsbOzs7W1tbe3t7n5+fv7+/39/durR4nAAAAAXRSTlMAQObYZgAAAJdJREFUGNN9zrsSgyAUANG9qEQFFeWlGPj/z0yTmaRJtjvdwu/KYdby5WxNSqV9PLmzk0cDuPxWrtnZKKIKXPNuB7vZrbulWzJ1tNRJm6SG6q8cif0Ou86zPrTrY2brPIT+PnLwsgaY1AFxDIMYP/obBm0hWyMyBX8CDxkzbXeiXDwB1l4thdpCSk8A/KJsBGp9L7d887cXwiQI7Haln38AAAAASUVORK5CYII=',
+      [
+        'https://ssl.ofdb.de/view.php?page=suchergebnis',
+        {
+          SText: '{{IMDB_ID}}',
+          Kat: 'IMDb'
+        }
+      ],
+      function($dom) {
+        return $dom.find('i:contains(Keine Ergebnisse)').length < 2;
+      }
+    ],
+    omdb: [
+      'omdb',
+      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAw1BMVEXQAABMVUBJVzxQWD5KWkNQWkVPXUFQXkJTXUdVXUNWYEtTYkZZYUdbY0hUZU5YZ0paaUxca05gb1Jfb1hicVRkc1ZoclxndllreFVufFlqflpvfmFxfltxgGNzgV1wgWl1hGZxhmF3hWF4hHN4iGp+iHF3jGZ9iXh9jG5+jW+DkGyCkXOFlHaDlXyIlIOMk4mUoI6YooqbqJaZqpGss6izuKi6urG3vrO8w7jR2c7d3dTY4NTu8O3x8/D09vP7/fr8//vLkyKIAAAAAXRSTlMAQObYZgAAAJ5JREFUGNOFj7EKwkAQBd/u3amgpQFBK0EFCYj4/9/gBwiCWNoIYhJzt/sstLFyymGaAf4hAIBDXxgGx6+o2WYpJBjjBYJ1hpHiRnNOT7LtHFVShXt/dkZV+mycgmhMkxUtaGcIEBFCGCzfFXAnCSGEVNUhrPVPYM+c54KFMVVJ4P21KV4L9rdiBtLMzEeNAFhq+zIyhu4B/o5sdvjPGwnlV+zcaSreAAAAAElFTkSuQmCC',
+      [
+        'https://www.omdb.org/search',
+        {
+          'search[text]': '{{IMDB_TITLE}}'
+        }
+      ]
     ]
   },
 

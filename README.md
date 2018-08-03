@@ -1,5 +1,4 @@
-🎥 IMDb: Link 'em all!
-=====================
+# 🎥 IMDb: Link 'em all!
 
 A *customizable* user script adding all kinds of links to the IMDb movie info page.
 
@@ -12,10 +11,12 @@ A *customizable* user script adding all kinds of links to the IMDb movie info pa
 - Supports TamperMonkey, GreaseMonkey, ViolentMonkey, ...
 - IMDb **modern** and **reference layout** supported
 
-On GitHub: https://github.com/buzz/imdb-link-em-all
-On Greasy Fork: https://greasyfork.org/en/scripts/17154-imdb-link-em-all
+### 🔗 Links
 
-🔧 Configuration
+GitHub: https://github.com/buzz/imdb-link-em-all  
+Greasy Fork: https://greasyfork.org/en/scripts/17154-imdb-link-em-all
+
+## 🔧 Configuration
 ----------------
 
 ![Screenshot](https://ipfs.io/ipfs/QmTZxBzfXTcxt7CjG8V8R4ZVoArc1BHRgpRpJj4Mhr1Cze/imdb-linkem-all.png)
