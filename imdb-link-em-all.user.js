@@ -4,7 +4,7 @@
 // @description    Adds all kinds of links to IMDb, customizable!
 // @author         buzz
 // @require        https://code.jquery.com/jquery-2.2.0.min.js
-// @version        0.123
+// @version        0.0.123
 // @license        GPLv2
 // @match          *://*.imdb.com/title/tt*/*
 // @grant          GM.getValue
@@ -33,16 +33,16 @@
  * Constants
  ******************************************************************************/
 
-let LTA_HOMEPAGE = 'https://greasyfork.org/en/scripts/17154-imdb-link-em-all';
-let COGS_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACiElEQVQ4y41TzUpyURQVH8C5j+B7OGkSVJPQJlYQFSZOFJNCq4tEQoNqoIYo5Q+lUIJJUln5U6lXS0yU0kEWFwUdOb13t/eB/BC+oDO53HPOWnuttc+WyX5ZhUJh7uHhIZXJZFK45mR/WS8vL6pSqaRAsBzB3a+vL/j8/IRIJNK9uLiQx2IxRTQaVf0G9iBYzOfzQi6XU97f3wutVguazSYgUDg/P1cikRAKhcSjoyPPCPj5+dn6/v4OvV4P3t7eAMGDm5sbqVarQbVahbOzMwnBA1QGgiBAIpGAnZ0d65AAq66hV4lICNBoNBjRDwH9VyoVIILHx0ewWCyS0WhcG1GRzWY5ulwsFuHp6QmSySQcHh6C3+8nRYC24O7ujlXf3t7mhkBk5LF6+/b2tl+v14Hnebi6uoKNjY2c2WxWr6+vq3d3d3PpdJoR0bnT6ew7HI725uYmL0Ow2Ol0mFyqjEFCIBCAra0t9U8Rt9utxgwA7zJlpIbCXV5eFmXYY/Hj44N5pAOqgInD3t7ekODg4EAdDoeZArKAatl9nU4nyrAlPEps+3y+frlcZiSUg9frzblcLvX+/j6zQP7J2uXlJczPz/enp6fbU1NT/DALlMhhkCwo+uJDgpOTE8C+sz1sK8Tjcba3uLjIjXTg9PR0LRgMSq+vrwxM7cKHxTIhIlJE+9fX1+xsZWVFWlhY+NfG4+NjK8mjl4dEgOkOOI6TKDTyrdfrJQQN6Iy822w2mJyctI6osNvtHoPBIKI/wWQyKZFEoGqkYHZ2VtBoNEr0LYyPj4tjY2Oe/84DEqiWlpYUq6urciTskmScA9BqtV0kkM/MzCiQQPWnyUTZc1gxNTExkUK5v47zN4DwH7fniYcmAAAAAElFTkSuQmCC';
-let TICK_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABoklEQVQ4y9WT2S5DURSG3TnOu6ipVUPFlJCqIdVS6nBKKS2NG6qno5aSEsNxKeahIikaiiASl2qo8AziJVR/WxNTL6R6IbEud/aX9e9vrZ2S8u9KtVbL1y9WOZOCG1dreOOBFvo9FlK+lPsV3LBSzfftd2Dm3g3PpQUanwrFo3nWhGDlsow3BDSYunNh8s6J9q0mlHjyUeAQUh+XDGdsefcx0xUPK5Zk/FvkibAT3rAj1rnILY7k23O+wKesRHfEPHEXRrD+hv73cyKL79ltg/fWjvFbG9jNRkhcuZE8W/YnrD9pq9AdtjyOhThMhYeh9skjRFa/fEE62b3DYOzGBs81h9YNJQqHRRGxNYv6FrErqE7TBpphOu/F7MMoPCELDPsaGINajITMcF+bwawrUOAUvuRa4uD3YrYVNOkM46E29s7xGytcVya4Qiao1+rfZEVFXCb1o2kii5bPS9Hpb4H7agiOywE0r8hBZEVF5gwqoXFJ58royukSElkJ1XIdiKyocEhA/WphyHzpohExiKznHJMgNamVJbLo7MH01D/5XK8FJMUEaMuG0gAAAABJRU5ErkJggg==';
-let CROSS_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACEklEQVQ4y61S/U9SYRhlbW13/Q0V5Woub05zfZkCXhUhpmmb8v3h5ZKoCQjcwVBi1Q+19Zf0d2lWxpeR3AuX93J8qGVjgK2tZ3u3d3t2znmecx6D4R+rsS5dGdiEnDXS4weCQ2Fe9QUSdafH3B+c3UM7k4OeSPWQNIIi3xAjaG5u48fz1Y+1peU7PWAU3qBNT0/KaG3tnJOogXWe1NGKJYB8AZ3/ic2RqMxaL/0iSGe4dlLW23uvgPcfoOfyHQI0RYlX/SGe1KHtxAHqqyERJwtPWUWYv9w1oh5PcuxlnOlyFnj7DiydQSMcAalD244Buf2f/6rVTuA5rq9JregW15Q2WCu2S+u8BvYLBMwD2RxUfxDVeRurzMxyF8cUFDnFG9CRo3V8QcDtA+QMqnMLetkicH/NWfH4O1EBlAacHmDVBeymaG87ipPT/MVgt49XvH5okSiQkgmYBuK0DhmorrlQMVnwdXyiP0nd5eUVjw+atAFQjIrbCzKLlabN+unSChDdRP3ZCor3H+JoeKSbhC6LJ3Vo4RekmoRCo5NZrDRl5oqPJrnjiQesZrUBYQmndgeOR8dweGPoDwldllB3uqGJEpQ1N8gsVnpiOjfsy+g493nkLvtuEaA4FvFt7B4OrhmFrinosoTa4jLK5hmdzOpx++j2MPdp6BbrC/5dZZNFKD6eGhjVofEmd3D1umD4n3UGltFKFJhJvx0AAAAASUVORK5CYII=';
-let ERROR_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACJklEQVQ4y6VTTUiUYRB+vh93dX903bKUYMNlMWHJBC1WW8GjZVCnfpa6Fp1i6dilQwcJglgrDEKiQqhDRYWVCEsSFJ0Ksh8zKjJZ3V0WU3G/73tnpoNrFGkZzmHmMDPPPM8wA6zRtJUSuXSHISSvhLnALJ21Xc9ouTp9JQAhSblqd0VdG7viQnz0v2hlh+PBqaH272TPiF0Ylcl72/MTd1qCq2bAxNcqQgm/puswvUF46hNBIT6zqulTj9ubMw9jJGSJNXVB7Gy/sJ2TLze3qc8DW5v/yUCYb/gakzqrOXwcuoXxR1fBTgaBppMGE/f+FSAzGEuUVbdFvZv3YeFrEiKACFCc6IE/0g13bUf8w5WGxLIAmcGYj5lTnvABsMoDXOoWAbMDLo6hqvEgmPjsu0th3x8ATNzvCe1f564Ow8ndBiAoD3iWhMHKXERFTQiVWw5tUkXn1G+HNHl/R0SY39btTpu08BLO9GUwA3pZOeZzs3B7GYYhMCo7Yfj3YrS31SZLRVtO58f1xaPhAV/DcVN4DjT7HBAGIPg08h7TbyYBCCAMVRiGps+jJpZ0Kcs5DwDat7ut3UZV04MNHSmo2SdwstcXJbFARAME0A2BJjZECLqxHuX1PXjdl8DM2Mgek4n6ApHDAADT1w7T11YSpy3JLzn5uQ9oLtTtPIbCaPqcKcTp7NMTR4QYTIxfIzkEshwoywFZDshSIFuBHAIrAit6sdZvxg9QwSUH1+qgEQAAAABJRU5ErkJggg==';
-let TIMEOUT_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAC4klEQVQ4y62TXUjTURjGjel90U03XdhF1EVQXQRBQVheGpGFGShIAyX1wu/5lVlpZllqTE3TqZu5zeYHmm66+cU0tc21mcvpPpwzvzbnf85N/at7OhNaSRFd9MLDeTmH5/e+5+UcP7//HX38wqDhpgcyZTtr9bM4k1Z2ZNByQcKSpDqhtfVNxsW/mgeF+WWabta2RTeClUUDHA47KMqG+VkNNHI+xG+jNwSv4rL/aO7n55XoFeWwW83Qme1432tCmWgSpcIv4HbpMT69BJNuGJ1VMeDkMVMOmCXcgkuK9mTatmzCoGoBzX0m6C0O2BxOWB0b0M05wO3Wo2XAiClVF3iP77iq8u+f8wGkdWmdM+Tg6+wqhDIjvGGnKEx/W8Qmyb1yeoCKDj3kajN6eEmoyArn+gC99fGLC+YJ8CQz0JLKrh0PnC4X2DUcLBPQ+tYWRJJeDE5TeN6oxsSYAFWZoSYfQFYXt2m3zaOwQY1lNw371h62SdX0h7ngNbchLScX3cOjmKBoJLJHMWcaRU3mLbcPIK6M3rStGJDLUWHOSRPIHizUOp68KNo3D6o0sO4AChuN+OKPMBsGUJ0e+hMgehlpNEx0oVioxsAMhQVyacs6jc7+IRhXHVjaBTRNbPRGnII0KADS0KNojDhN+QC1eZGcfgELw+ppFAh1sJKB2WlgfY+I5DMtZdCkXsbmhyJ4tGK4+In4FHvG033VP34fUP009mz9ozD3lKIeDV1KPBNOQWVag5PMw+miIQ0/ATcxozQESDsC5AfCWngFkmsMo6+Lytwo1ruC29COlKFvTIF8zghSS4eQVCzfb9ujbMavsZZzjOz7ew48KHZWRHYl64azrfwuxmV5MGp5ME7WoufmYWxU3wOIaSvVD3YicwwDkmDG/G9Pmp0ddaEkJbTxdeJ1c3lyiNsrEfM8NcI86VlIC8RKegAMzEOQhfjvioMZGf/8S+Vhx1mkosnbNlktP8zfAS4IMMSANgzlAAAAAElFTkSuQmCC';
-let NOACCESS_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACfUlEQVQ4y21Sz2sTQRh9u9nml02M2hoapaZNtaIg4q0eBMEeRPGg3jyJhyK00EvpsZBr/wqhAfHQs3fBglRa0EYTm5YYFEqKSRvTJDs7s77ZbdpYHfiYmW++7817b8bAiZHL5fqVUnNSygnGWQYYvxgrjuMszs7O/u6tN3o3S0tLN9m8nEqlRuLxOEzTBPdot9uoVqvY5iDQ4/n5+fV/ANjcz8O1TCYzZts2KpUKms2mvh2WZSGZTHp1+Xx+k7kbCwsLLb03uwBMvhwaGhoTQqBYLG41Go0010Edel0oFH5qYLIbo5Tpbp/VXTA5EY1GUSqVwKaHMzMz5R515Ww2e69cLufT6bRX+z+AQa2Zt+n19klzdU6z0zVkO/iXB+V3z92V0jh29iKe5kfXVxFwBVzpwHX8EELi1fotz9RkuIYHF1ZxdWrN8Bm4Lp4+uUs0E0Ygwvk+oIhthfUhDRKQTgPZySbzwmvZfP3+WIK+SRc6u29ghQZgGP0s7AMiCaYVcLAHuf8NdusHlHOAyMg0XLvTA0CKUPomG/WNj9R5Colrt1F5u8j+8xi+M4n61w0C1BBLnyFhCVfYvQDCk+GSamL8CszgAN1RkB2JT7sRDMNGIjOCdjPE2gOPVRfA+wcu3dWoWmvt8zpZfOCJA9VW6LRI1SWzwhfUi999uUp5PccM9EajUkLichqB6DkC2Bh9NoVRwYb9HZzOpBDc7/MZUO4JANtDVY72YIMAMSBMI60g8xqgjlatCtFsIDYcp93Kl90LoCWELr5A5FIARjDkP6HJl1CUZrcQazWosEOi0vdLG38EwCfZWp7zvfA+jjgM52jmD/M/lpT+WgNx/AHLKabZmE0zigAAAABJRU5ErkJggg==';
-let LOADING_ICON = 'data:image/gif;base64,R0lGODlhEAAQAPMPAOjo6LS0tHd3d6KiotbW1oCAgMXFxZGRkfDw8Ly8vJqamomJic3Nzaurq3h4ePj4+CH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQFCgAPACwAAAAAEAAQAAAEW/DJh2gbdWq6ABICQG0SAH4hImrekwhvmpUKjA5Y1nIgsZY7CoJx+JU0CQXOQBKqkkomSaUSEgIzIOulMKp8k8DCMEx4AAwKWM0hMMjm4wSBczHR2RLWrm3qmxEAIfkEBQoADwAsAAAAAA8AEAAABE/wyflCk4hOJRcujNY9i0MKhCgZJctt4GkJQpZJAwlMxK6+qgejYUkFhQOi8YgxiG48RU6DANwSipAhhMFAcQACoxoMOMWrpyGDfviCVlEEACH5BAUKAA8ALAAAAAAQAA8AAARO8Mn5TKJYNr0QOpnkDF83hEglMMrCTADBMWWSHAKQCDl3wgZeD9ZIwVZEGyDjaTIC0JC0MsU0EsaphYAgcJsoTQwADhlk5IdH+lIv1ZQIACH5BAUKAA8ALAAAAAAQABAAAARS8MkpDb0VoaH0INhzBFvXYMhUEBwhnFrVAKVhKAJiCEX6BCPaxBX6XQAvms7GCDUK0A8TgHnyDhTQUekDJCzFoYEbfnQJGl8YbVYXqe0yJYaJAAAh+QQFCgAIACwAAAAAEAAOAAAEPhDJiUKgWA4pBM/c1iEFqHmdQWJDQZCH5VXruWGzSt3sBFQ6VmdkuWRKHx+GIDhkgr7hDzE1DTNVCoEnyYIiACH5BAUKAA4ALAAAAAAQABAAAARX0MnpCKHYIYZ26F+GBFySjAuQaQ1gAkWCWYBnBce2KJKNTJ2BIEdxYRAKQ2dZ+80G0FPTSTHsYsWn4VgrMgRD4HRZEACEBWrmO5AwRJSFeaXWCLYr+CQCACH5BAUKAA8ALAAAAAAQABAAAART8Mn5AKBYEm105g/TGconJYj4KAxmISFhkZLSTHPWFIN7YY0WDgHLMBrICrGIOR4OAdNkwCBKPSsmcFe5HUwFQeIRtXwQ4d/v7BBcHMLz4KCVRAAAIfkEBQoADgAsAQABAA8ADwAABFHQSYAQIZXJPScmDcd9WEN0yEZRTFANSSWLTnAEYiomJ02DgYDGN2kMYEQHwkSbKQELAU4kkCYUi6VAwUlIowZpswotIA4+hgBTMEN7o83AFwEAIfkEBQoADwAsAAAAABAAEAAABFPwyfkQoljabcnNANd9mIgkAGgSjJQYWWk0cIwZqS2/+gQEwJaEsCDcchqFQFCbKBMah+AAmBoYDcVp0XAZXYcDg6nJLBBhtMPmCC0OEoXtA4xFAAAh+QQFCgAOACwAAAEAEAAPAAAET9DJ6ZC1NEvsiM6XpwFXCUiG+E1MQiDgSDVF3XwtQxxCr+AG18VQOFEMqw5sQ0NKFoIGYqHIDRC7AMrYGVQLjMrngPCWD7jF8+eQJtuJTwQAIfkEBQoADwAsAAABABAADwAABE7wyUkfqngiUAHHXiUISSdtHzEKn0a0UkB217Tc2fO+g1MUgczug2AoMAzM4FRJNJKSwyOoGPAaMYOEENMFGgBprnD8To8gdGOJCOaymQgAIfkEBQoADwAsAAABAA8ADwAABFHwSVKAvPjSlbscAuNJ3AMIQgcg5oIa4oWsmOEQ2Twnh6IkqhUg4FoAc0IdYaDCIIiFDiNB2IWegdV0J7K0CIlsw8uSIHpYxLbTkIR3o0kMEwEAOw==';
-let CATEGORY_NAMES = ['General', 'Trackers', 'Subtitles'];
-let DEFAULT_CONFIG = {
+const LTA_HOMEPAGE = 'https://greasyfork.org/en/scripts/17154-imdb-link-em-all';
+const COGS_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACiElEQVQ4y41TzUpyURQVH8C5j+B7OGkSVJPQJlYQFSZOFJNCq4tEQoNqoIYo5Q+lUIJJUln5U6lXS0yU0kEWFwUdOb13t/eB/BC+oDO53HPOWnuttc+WyX5ZhUJh7uHhIZXJZFK45mR/WS8vL6pSqaRAsBzB3a+vL/j8/IRIJNK9uLiQx2IxRTQaVf0G9iBYzOfzQi6XU97f3wutVguazSYgUDg/P1cikRAKhcSjoyPPCPj5+dn6/v4OvV4P3t7eAMGDm5sbqVarQbVahbOzMwnBA1QGgiBAIpGAnZ0d65AAq66hV4lICNBoNBjRDwH9VyoVIILHx0ewWCyS0WhcG1GRzWY5ulwsFuHp6QmSySQcHh6C3+8nRYC24O7ujlXf3t7mhkBk5LF6+/b2tl+v14Hnebi6uoKNjY2c2WxWr6+vq3d3d3PpdJoR0bnT6ew7HI725uYmL0Ow2Ol0mFyqjEFCIBCAra0t9U8Rt9utxgwA7zJlpIbCXV5eFmXYY/Hj44N5pAOqgInD3t7ekODg4EAdDoeZArKAatl9nU4nyrAlPEps+3y+frlcZiSUg9frzblcLvX+/j6zQP7J2uXlJczPz/enp6fbU1NT/DALlMhhkCwo+uJDgpOTE8C+sz1sK8Tjcba3uLjIjXTg9PR0LRgMSq+vrwxM7cKHxTIhIlJE+9fX1+xsZWVFWlhY+NfG4+NjK8mjl4dEgOkOOI6TKDTyrdfrJQQN6Iy822w2mJyctI6osNvtHoPBIKI/wWQyKZFEoGqkYHZ2VtBoNEr0LYyPj4tjY2Oe/84DEqiWlpYUq6urciTskmScA9BqtV0kkM/MzCiQQPWnyUTZc1gxNTExkUK5v47zN4DwH7fniYcmAAAAAElFTkSuQmCC';
+const TICK_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABoklEQVQ4y9WT2S5DURSG3TnOu6ipVUPFlJCqIdVS6nBKKS2NG6qno5aSEsNxKeahIikaiiASl2qo8AziJVR/WxNTL6R6IbEud/aX9e9vrZ2S8u9KtVbL1y9WOZOCG1dreOOBFvo9FlK+lPsV3LBSzfftd2Dm3g3PpQUanwrFo3nWhGDlsow3BDSYunNh8s6J9q0mlHjyUeAQUh+XDGdsefcx0xUPK5Zk/FvkibAT3rAj1rnILY7k23O+wKesRHfEPHEXRrD+hv73cyKL79ltg/fWjvFbG9jNRkhcuZE8W/YnrD9pq9AdtjyOhThMhYeh9skjRFa/fEE62b3DYOzGBs81h9YNJQqHRRGxNYv6FrErqE7TBpphOu/F7MMoPCELDPsaGINajITMcF+bwawrUOAUvuRa4uD3YrYVNOkM46E29s7xGytcVya4Qiao1+rfZEVFXCb1o2kii5bPS9Hpb4H7agiOywE0r8hBZEVF5gwqoXFJ58royukSElkJ1XIdiKyocEhA/WphyHzpohExiKznHJMgNamVJbLo7MH01D/5XK8FJMUEaMuG0gAAAABJRU5ErkJggg==';
+const CROSS_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACEklEQVQ4y61S/U9SYRhlbW13/Q0V5Woub05zfZkCXhUhpmmb8v3h5ZKoCQjcwVBi1Q+19Zf0d2lWxpeR3AuX93J8qGVjgK2tZ3u3d3t2znmecx6D4R+rsS5dGdiEnDXS4weCQ2Fe9QUSdafH3B+c3UM7k4OeSPWQNIIi3xAjaG5u48fz1Y+1peU7PWAU3qBNT0/KaG3tnJOogXWe1NGKJYB8AZ3/ic2RqMxaL/0iSGe4dlLW23uvgPcfoOfyHQI0RYlX/SGe1KHtxAHqqyERJwtPWUWYv9w1oh5PcuxlnOlyFnj7DiydQSMcAalD244Buf2f/6rVTuA5rq9JregW15Q2WCu2S+u8BvYLBMwD2RxUfxDVeRurzMxyF8cUFDnFG9CRo3V8QcDtA+QMqnMLetkicH/NWfH4O1EBlAacHmDVBeymaG87ipPT/MVgt49XvH5okSiQkgmYBuK0DhmorrlQMVnwdXyiP0nd5eUVjw+atAFQjIrbCzKLlabN+unSChDdRP3ZCor3H+JoeKSbhC6LJ3Vo4RekmoRCo5NZrDRl5oqPJrnjiQesZrUBYQmndgeOR8dweGPoDwldllB3uqGJEpQ1N8gsVnpiOjfsy+g493nkLvtuEaA4FvFt7B4OrhmFrinosoTa4jLK5hmdzOpx++j2MPdp6BbrC/5dZZNFKD6eGhjVofEmd3D1umD4n3UGltFKFJhJvx0AAAAASUVORK5CYII=';
+const ERROR_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACJklEQVQ4y6VTTUiUYRB+vh93dX903bKUYMNlMWHJBC1WW8GjZVCnfpa6Fp1i6dilQwcJglgrDEKiQqhDRYWVCEsSFJ0Ksh8zKjJZ3V0WU3G/73tnpoNrFGkZzmHmMDPPPM8wA6zRtJUSuXSHISSvhLnALJ21Xc9ouTp9JQAhSblqd0VdG7viQnz0v2hlh+PBqaH272TPiF0Ylcl72/MTd1qCq2bAxNcqQgm/puswvUF46hNBIT6zqulTj9ubMw9jJGSJNXVB7Gy/sJ2TLze3qc8DW5v/yUCYb/gakzqrOXwcuoXxR1fBTgaBppMGE/f+FSAzGEuUVbdFvZv3YeFrEiKACFCc6IE/0g13bUf8w5WGxLIAmcGYj5lTnvABsMoDXOoWAbMDLo6hqvEgmPjsu0th3x8ATNzvCe1f564Ow8ndBiAoD3iWhMHKXERFTQiVWw5tUkXn1G+HNHl/R0SY39btTpu08BLO9GUwA3pZOeZzs3B7GYYhMCo7Yfj3YrS31SZLRVtO58f1xaPhAV/DcVN4DjT7HBAGIPg08h7TbyYBCCAMVRiGps+jJpZ0Kcs5DwDat7ut3UZV04MNHSmo2SdwstcXJbFARAME0A2BJjZECLqxHuX1PXjdl8DM2Mgek4n6ApHDAADT1w7T11YSpy3JLzn5uQ9oLtTtPIbCaPqcKcTp7NMTR4QYTIxfIzkEshwoywFZDshSIFuBHAIrAit6sdZvxg9QwSUH1+qgEQAAAABJRU5ErkJggg==';
+const TIMEOUT_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAC4klEQVQ4y62TXUjTURjGjel90U03XdhF1EVQXQRBQVheGpGFGShIAyX1wu/5lVlpZllqTE3TqZu5zeYHmm66+cU0tc21mcvpPpwzvzbnf85N/at7OhNaSRFd9MLDeTmH5/e+5+UcP7//HX38wqDhpgcyZTtr9bM4k1Z2ZNByQcKSpDqhtfVNxsW/mgeF+WWabta2RTeClUUDHA47KMqG+VkNNHI+xG+jNwSv4rL/aO7n55XoFeWwW83Qme1432tCmWgSpcIv4HbpMT69BJNuGJ1VMeDkMVMOmCXcgkuK9mTatmzCoGoBzX0m6C0O2BxOWB0b0M05wO3Wo2XAiClVF3iP77iq8u+f8wGkdWmdM+Tg6+wqhDIjvGGnKEx/W8Qmyb1yeoCKDj3kajN6eEmoyArn+gC99fGLC+YJ8CQz0JLKrh0PnC4X2DUcLBPQ+tYWRJJeDE5TeN6oxsSYAFWZoSYfQFYXt2m3zaOwQY1lNw371h62SdX0h7ngNbchLScX3cOjmKBoJLJHMWcaRU3mLbcPIK6M3rStGJDLUWHOSRPIHizUOp68KNo3D6o0sO4AChuN+OKPMBsGUJ0e+hMgehlpNEx0oVioxsAMhQVyacs6jc7+IRhXHVjaBTRNbPRGnII0KADS0KNojDhN+QC1eZGcfgELw+ppFAh1sJKB2WlgfY+I5DMtZdCkXsbmhyJ4tGK4+In4FHvG033VP34fUP009mz9ozD3lKIeDV1KPBNOQWVag5PMw+miIQ0/ATcxozQESDsC5AfCWngFkmsMo6+Lytwo1ruC29COlKFvTIF8zghSS4eQVCzfb9ujbMavsZZzjOz7ew48KHZWRHYl64azrfwuxmV5MGp5ME7WoufmYWxU3wOIaSvVD3YicwwDkmDG/G9Pmp0ddaEkJbTxdeJ1c3lyiNsrEfM8NcI86VlIC8RKegAMzEOQhfjvioMZGf/8S+Vhx1mkosnbNlktP8zfAS4IMMSANgzlAAAAAElFTkSuQmCC';
+const NOACCESS_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACfUlEQVQ4y21Sz2sTQRh9u9nml02M2hoapaZNtaIg4q0eBMEeRPGg3jyJhyK00EvpsZBr/wqhAfHQs3fBglRa0EYTm5YYFEqKSRvTJDs7s77ZbdpYHfiYmW++7817b8bAiZHL5fqVUnNSygnGWQYYvxgrjuMszs7O/u6tN3o3S0tLN9m8nEqlRuLxOEzTBPdot9uoVqvY5iDQ4/n5+fV/ANjcz8O1TCYzZts2KpUKms2mvh2WZSGZTHp1+Xx+k7kbCwsLLb03uwBMvhwaGhoTQqBYLG41Go0010Edel0oFH5qYLIbo5Tpbp/VXTA5EY1GUSqVwKaHMzMz5R515Ww2e69cLufT6bRX+z+AQa2Zt+n19klzdU6z0zVkO/iXB+V3z92V0jh29iKe5kfXVxFwBVzpwHX8EELi1fotz9RkuIYHF1ZxdWrN8Bm4Lp4+uUs0E0Ygwvk+oIhthfUhDRKQTgPZySbzwmvZfP3+WIK+SRc6u29ghQZgGP0s7AMiCaYVcLAHuf8NdusHlHOAyMg0XLvTA0CKUPomG/WNj9R5Colrt1F5u8j+8xi+M4n61w0C1BBLnyFhCVfYvQDCk+GSamL8CszgAN1RkB2JT7sRDMNGIjOCdjPE2gOPVRfA+wcu3dWoWmvt8zpZfOCJA9VW6LRI1SWzwhfUi999uUp5PccM9EajUkLichqB6DkC2Bh9NoVRwYb9HZzOpBDc7/MZUO4JANtDVY72YIMAMSBMI60g8xqgjlatCtFsIDYcp93Kl90LoCWELr5A5FIARjDkP6HJl1CUZrcQazWosEOi0vdLG38EwCfZWp7zvfA+jjgM52jmD/M/lpT+WgNx/AHLKabZmE0zigAAAABJRU5ErkJggg==';
+const LOADING_ICON = 'data:image/gif;base64,R0lGODlhEAAQAPMPAOjo6LS0tHd3d6KiotbW1oCAgMXFxZGRkfDw8Ly8vJqamomJic3Nzaurq3h4ePj4+CH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQFCgAPACwAAAAAEAAQAAAEW/DJh2gbdWq6ABICQG0SAH4hImrekwhvmpUKjA5Y1nIgsZY7CoJx+JU0CQXOQBKqkkomSaUSEgIzIOulMKp8k8DCMEx4AAwKWM0hMMjm4wSBczHR2RLWrm3qmxEAIfkEBQoADwAsAAAAAA8AEAAABE/wyflCk4hOJRcujNY9i0MKhCgZJctt4GkJQpZJAwlMxK6+qgejYUkFhQOi8YgxiG48RU6DANwSipAhhMFAcQACoxoMOMWrpyGDfviCVlEEACH5BAUKAA8ALAAAAAAQAA8AAARO8Mn5TKJYNr0QOpnkDF83hEglMMrCTADBMWWSHAKQCDl3wgZeD9ZIwVZEGyDjaTIC0JC0MsU0EsaphYAgcJsoTQwADhlk5IdH+lIv1ZQIACH5BAUKAA8ALAAAAAAQABAAAARS8MkpDb0VoaH0INhzBFvXYMhUEBwhnFrVAKVhKAJiCEX6BCPaxBX6XQAvms7GCDUK0A8TgHnyDhTQUekDJCzFoYEbfnQJGl8YbVYXqe0yJYaJAAAh+QQFCgAIACwAAAAAEAAOAAAEPhDJiUKgWA4pBM/c1iEFqHmdQWJDQZCH5VXruWGzSt3sBFQ6VmdkuWRKHx+GIDhkgr7hDzE1DTNVCoEnyYIiACH5BAUKAA4ALAAAAAAQABAAAARX0MnpCKHYIYZ26F+GBFySjAuQaQ1gAkWCWYBnBce2KJKNTJ2BIEdxYRAKQ2dZ+80G0FPTSTHsYsWn4VgrMgRD4HRZEACEBWrmO5AwRJSFeaXWCLYr+CQCACH5BAUKAA8ALAAAAAAQABAAAART8Mn5AKBYEm105g/TGconJYj4KAxmISFhkZLSTHPWFIN7YY0WDgHLMBrICrGIOR4OAdNkwCBKPSsmcFe5HUwFQeIRtXwQ4d/v7BBcHMLz4KCVRAAAIfkEBQoADgAsAQABAA8ADwAABFHQSYAQIZXJPScmDcd9WEN0yEZRTFANSSWLTnAEYiomJ02DgYDGN2kMYEQHwkSbKQELAU4kkCYUi6VAwUlIowZpswotIA4+hgBTMEN7o83AFwEAIfkEBQoADwAsAAAAABAAEAAABFPwyfkQoljabcnNANd9mIgkAGgSjJQYWWk0cIwZqS2/+gQEwJaEsCDcchqFQFCbKBMah+AAmBoYDcVp0XAZXYcDg6nJLBBhtMPmCC0OEoXtA4xFAAAh+QQFCgAOACwAAAEAEAAPAAAET9DJ6ZC1NEvsiM6XpwFXCUiG+E1MQiDgSDVF3XwtQxxCr+AG18VQOFEMqw5sQ0NKFoIGYqHIDRC7AMrYGVQLjMrngPCWD7jF8+eQJtuJTwQAIfkEBQoADwAsAAABABAADwAABE7wyUkfqngiUAHHXiUISSdtHzEKn0a0UkB217Tc2fO+g1MUgczug2AoMAzM4FRJNJKSwyOoGPAaMYOEENMFGgBprnD8To8gdGOJCOaymQgAIfkEBQoADwAsAAABAA8ADwAABFHwSVKAvPjSlbscAuNJ3AMIQgcg5oIa4oWsmOEQ2Twnh6IkqhUg4FoAc0IdYaDCIIiFDiNB2IWegdV0J7K0CIlsw8uSIHpYxLbTkIR3o0kMEwEAOw==';
+const CATEGORY_NAMES = ['General', 'Trackers', 'Subtitles'];
+const DEFAULT_CONFIG = {
   enabled_sites: ['google', 'yt'],
   show_category_captions: true,
   open_blank: true,
@@ -120,7 +120,7 @@ let config;
 // blu-bits
 // MyXZ
 
-let sites = [
+const sites = [
   // general
   {
     google: [
@@ -777,7 +777,7 @@ let sites = [
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAwFBMVEUcVXQaUnAbTGgaTmobUG4bWHiHorIcXH4bW30rWnYaRl8aSmQsXntKb4QbVncZQlnD0Nfw8/UcW3wbUGzS3OIZRFylu8elt8MaR2AcWHlYeo0bTGYbS2YcVHIaRFqmvMoaSGEcWXobT2waSGIcV3gZSGMbUm8cWnsbVXXh6OwaSmMbU3IbVHMaTWkZRV0aRFstZIKWrbtpjaIcT2x4lKUcUG0cU3Lv8/a0xc8ZRl1ZfZMZSGF3laZ3l6obVnT///9+zaarAAAA2UlEQVQY0x1O2WKCMBDcHApGCSJFIw1KAIOIgd53u///Vw3u28zOBYG/cNOaZtacoScWgjAIW7PfS/l3LYjlEE7vhyO+b1eE8IpBsDHGHLHr8MPyV0+0Xt8gXov5iqeVc+DjZNPh1tsrxug9eCzhCfFuwZijegkzeYaC/E6M03pZg8d9b/kP4lrrS12ChDc72SPE6PJdCvDryOJxTuka87JUA0zpX4i7HSZKqGEAy9Nn95IgJpEQn0MGtzVa57lSYsiyGNJbe31SXj6O8QEY9fhUKiGy8RDH8T9e2htmWyQ7HAAAAABJRU5ErkJggg==',
       'http://subscene.com/subtitles/title?q={{IMDB_TITLE}}',
       function($dom) {
-       return $dom.find('.search-result .exact').length > 0;
+        return $dom.find('.search-result .exact').length > 0;
       }
     ],
     turkcealtyazi: [
@@ -825,7 +825,7 @@ let sites = [
  * Styles
  ******************************************************************************/
 
-let css = '#lta_external_site_links img { margin-right: 4px; vertical-align: middle; }' +
+const css = '#lta_external_site_links img { margin-right: 4px; vertical-align: middle; }' +
     'img.ext_links_config { opacity: .8 }' +
     'img.ext_links_config:hover { opacity: 1.0 }' +
     '#lta_external_site_links a { white-space: pre-line; }' +
@@ -881,9 +881,9 @@ function clickCog(evt) {
 
 function showConfigure() {
   // un/tick checkboxes
-	let i;
+  let i;
   for (i = 0; i < 3; i++) {
-    let s = sites[i];
+    const s = sites[i];
     for (let key in s) {
       if (s.hasOwnProperty(key)) {
         $('#lta_configure_tooltip input[name=' + key + ']').prop('checked', $.inArray(key, config.enabled_sites) >= 0);
@@ -898,13 +898,13 @@ function showConfigure() {
 }
 
 function saveConfigure() {
-	let i;
+  let i;
   for (i = 0; i < 3; i++) {
-    let s = sites[i];
+    const s = sites[i];
     for (let key in s) {
       if (s.hasOwnProperty(key)) {
-        let value = $('#lta_configure_tooltip input[name=' + key + ']').prop('checked');
-        let idx = config.enabled_sites.indexOf(key);
+        const value = $('#lta_configure_tooltip input[name=' + key + ']').prop('checked');
+        const idx = config.enabled_sites.indexOf(key);
         if (value && idx < 0) {
           config.enabled_sites.push(key);
         }
@@ -918,9 +918,9 @@ function saveConfigure() {
   config.open_blank = $('#lta_configure_tooltip input[name=open_blank]').prop('checked');
   config.fetch_results = $('#lta_configure_tooltip input[name=fetch_results]').prop('checked');
   GM.setValue('config', JSON.stringify(config)).then(function() {
-		updateExternalLinks();
-	  $('#lta_configure_tooltip').addClass('hidden');
-	});
+    updateExternalLinks();
+    $('#lta_configure_tooltip').addClass('hidden');
+  });
 }
 
 function cancelConfigure() {
@@ -928,8 +928,8 @@ function cancelConfigure() {
 }
 
 function toggleAll(cat_idx) {
-  let checked = $('#lta_config_toggle_all_' + cat_idx).prop('checked');
-	let i;
+  const checked = $('#lta_config_toggle_all_' + cat_idx).prop('checked');
+  let i;
   for (i = 0; i < sorted_keys[cat_idx].length; i++) {
     $('#lta_config_' + sorted_keys[cat_idx][i]).prop('checked', checked);
   }
@@ -937,12 +937,12 @@ function toggleAll(cat_idx) {
 
 // monitor all category checkboxes and un/check the toggle all checkbox
 function checkToggleAll() {
-	let i;
+  let i;
   for (i = 0; i < 3; i++) {
     let all = true;
-		let j;
+    let j;
     for (j = 0; j < sorted_keys[i].length; j++) {
-      let key = sorted_keys[i][j];
+      const key = sorted_keys[i][j];
       if (!$('#lta_config_' + key).prop('checked')) {
         all = false;
         break;
@@ -958,26 +958,26 @@ function postLink(e) {
   e.stopPropagation();
   if (e.type === 'mouseup') {
     // get site key
-    let k = $(e.currentTarget).attr('class')
-    .replace('lta-outlink-post', '')
-    .replace('lta-outlink', '').trim();
+    const k = $(e.currentTarget).attr('class')
+      .replace('lta-outlink-post', '')
+      .replace('lta-outlink', '').trim();
     let site;
-	let i;
+    let i;
     // find key in sites
     for (i = 0; i < 3; i++) {
-      let s = sites[i];
+      const s = sites[i];
       if (typeof s[k] === 'object') {
         site = s[k];
         break;
       }
     }
-    let form = document.createElement('form');
-    let data = site[2][1];
+    const form = document.createElement('form');
+    const data = site[2][1];
     form.action = site[2][0];
     form.method = 'POST';
     form.target = config.open_blank ? '_blank' : '_self';
     for (let key in data) {
-      let input = document.createElement('input');
+      const input = document.createElement('input');
       input.type = 'text';
       input.name = key;
       input.value = repl(data[key], false);
@@ -991,7 +991,7 @@ function postLink(e) {
 
 // fetch site results
 function fetchResults(key, site) {
-  let $indicator = $('#lta_external_site_links .lookup-status.' + key);
+  const $indicator = $('#lta_external_site_links .lookup-status.' + key);
   $indicator.html('<img alt="Loading…" title="Loading…" src="' + LOADING_ICON + '">');
 
   function noAccess() {
@@ -1009,10 +1009,10 @@ function fetchResults(key, site) {
       .attr('src', CROSS_ICON)
       .attr('title', 'No results found! :(').attr('alt', 'No results found!');
   }
-  let opts = {
+  const opts = {
     timeout: 12000,
     onload: function(resp) {
-      let check = site[3], logincheck = site[4];
+      const check = site[3], logincheck = site[4];
       // check login state
       if (typeof(logincheck) === 'string') {
         if (resp.responseText.indexOf(logincheck) > -1) {
@@ -1048,7 +1048,7 @@ function fetchResults(key, site) {
       }
     },
     onerror: function(resp) {
-      let status = resp.statusText;
+      const status = resp.statusText;
       $indicator.find('img')
         .attr('src', ERROR_ICON)
         .attr('title', 'Error: ' + status).attr('alt', 'Error');
@@ -1064,9 +1064,9 @@ function fetchResults(key, site) {
     opts.method = 'POST';
     opts.url = site[2][0];
     opts.headers = { 'Content-Type': 'application/x-www-form-urlencoded' };
-    let data = site[2][1];
-    let data_array = [];
-		let data_key;
+    const data = site[2][1];
+    const data_array = [];
+    let data_key;
     for (data_key in data) {
       data_array.push(data_key + '=' + encodeURIComponent(repl(data[data_key])));
     }
@@ -1095,7 +1095,7 @@ function add_style(css) {
 // initialize
 function init() {
   // Add new link section
-  let $container = $(layout === 'new' ? '.title-overview' : '.titlereference-section-overview:first > *:last');
+  const $container = $(layout === 'new' ? '.title-overview' : '.titlereference-section-overview:first > *:last');
   if ($container.length === 0) {
     console.error("IMDb: Link'em all! Failed to find container!");
     return;
@@ -1110,13 +1110,13 @@ function init() {
   let i;
   for (i = 0; i < 3; i++) {
     configure += '<td id="lta_cat_' + i + '">';
-    let s = sites[i];
+    const s = sites[i];
     let j;
     for (j = 0; j < sorted_keys[i].length; j++) {
-      let key = sorted_keys[i][j];
-      let site = s[key];
-      let title = site[0];
-      let icon = site[1];
+      const key = sorted_keys[i][j];
+      const site = s[key];
+      const title = site[0];
+      const icon = site[1];
       let info_icons = '';
       if (site.length > 3) {
         info_icons += ' <img alt="results" title="This site shows if results are available" src="' + TICK_ICON + '" class="site-indicator">';
@@ -1152,7 +1152,7 @@ function init() {
   $('#lta_configure_tooltip input[name=toggle_all_2]').click(function() { toggleAll(2); });
   $('#lta_configure_tooltip input:checkbox').change(function() {
     // ignore toggle all checkbox
-    let id = $(this).attr('id');
+    const id = $(this).attr('id');
     if (id.indexOf('toggle_all') === -1) {
       checkToggleAll();
     }
@@ -1165,19 +1165,19 @@ function init() {
 
 // render links
 function updateExternalLinks() {
-  let links = [[], [], []];
-	let html = '';
-	let result_fetcher = [];
-	let i;
+  const links = [[], [], []];
+  const result_fetcher = [];
+  let html = '';
+  let i;
   for (i = 0; i < 3; i++) {
-    let s = sites[i];
-		let j;
+    const s = sites[i];
+    let j;
     for (j = 0; j < sorted_keys[i].length; j++) {
-      let key = sorted_keys[i][j];
+      const key = sorted_keys[i][j];
       if (config.enabled_sites.indexOf(key) >= 0) {
-        let site = s[key];
-        let title = site[0];
-        let icon = site[1];
+        const site = s[key];
+        const title = site[0];
+        const icon = site[1];
         let cls = 'lta-outlink ' + key;
         let href;
         if(Object.prototype.toString.call(site[2]) === '[object Array]' ) {
@@ -1226,8 +1226,7 @@ function updateExternalLinks() {
 // parse movie info before calling init()
 function parse_info() {
   // parse imdb number/layout
-  let re = /^\/title\/tt([0-9]{7})\/([a-z]*)/;
-  let m = re.exec(window.location.pathname);
+  let m = /^\/title\/tt([0-9]{7})\/([a-z]*)/.exec(window.location.pathname);
   if (m) {
     // detect layout
     let title_selector;
@@ -1242,8 +1241,7 @@ function parse_info() {
     // extract movie infos
     imdb_title = $(title_selector).text().trim();
     imdb_id = m[1];
-    re = /^(.+)\s+\((\d+)\)/;
-    m = re.exec(imdb_title);
+    m = /^(.+)\s+\((\d+)\)/.exec(imdb_title);
     if (m) {
       imdb_title = m[1].trim();
       imdb_year = m[2].trim();
@@ -1260,13 +1258,13 @@ function parse_info() {
   }
 }
 
-function onLoad($) {
-	let i;
+function onLoad() {
+  let i;
   // prepare sorted_keys array
   for (i = 0; i < 3; i++) {
     sorted_keys.push(Object.keys(sites[i]).sort(function(a, b) {
-			return sites[i][a][0].localeCompare(sites[i][b][0]);
-		}));
+      return sites[i][a][0].localeCompare(sites[i][b][0]);
+    }));
   }
   // restore configuration
   GM.getValue('config').then(function(configstring) {

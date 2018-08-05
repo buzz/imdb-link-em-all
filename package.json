@@ -1,0 +1,26 @@
+{
+  "name": "imdb-link-em-all",
+  "version": "0.0.123",
+  "description": "Adds all kinds of links to IMDb, customizable!",
+  "main": "imdb-link-em-all.user.js",
+  "scripts": {
+    "lint": "eslint imdb-link-em-all.user.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buzz/imdb-link-em-all.git"
+  },
+  "keywords": [
+    "userscript"
+  ],
+  "author": "imdb",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/buzz/imdb-link-em-all/issues"
+  },
+  "homepage": "https://github.com/buzz/imdb-link-em-all#readme",
+  "devDependencies": {
+    "eslint": "^5.3.0"
+  }
+}
