@@ -706,7 +706,9 @@ let sites = [
     rutracker: [
       'Rutracker',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB/UlEQVQ4y5WSX2hSYRjGva+LZuxiENFgMGi728W6WS0GwcYSxiDHWETQKMkrLyJIJLySw6CLGaiDoWLCbgQZDSLDCy8StByiYejx+Ac2jgdt4nYgEJ9639jZztraeuDjcD6+9/c97/s9BsM5yufzkGUZhv+Voig4VDweR61WQ6vVujhIFEUcuDfwY+EljqtcLqNer58NqlQqaDabUFUVytgiZOMkL2V4jgEOhwMEP7WYyL1eD8lkEtsPX2jFtH5++Izp6Rl4PJ5/t/EoN84O6ODu4Kx2+74Q4L1YLKYHFAoFvNt9g7e1V3gtPsad1BW2Gg6HsT2+gP33Cf5X/ZuQJAnRaFQPSCT+HKDC48slPed9r3cdExO38WR5GdlslsE0Jw1QrVbR7XZxN31VKw7urHCx1WrF5b4HuDbkxfziJ1htH5HL5RAMBqGbOunZtykEdgStBbp1ZPQeLvWvou/6FxhvVLG5pSCTySAUCkEXmHa7zdYikQi+H2QYYLFY+FYqNA7KvEhmsxnp9NcjAFny+/3w+Xxwu91wOp3odDr8ZJS+gWEZN281sPR0D2sBlUNELjQAPVmpVOLB0Jec0GBdLhcfnrzfhCh1dWn86ylPiuJaLBZ56pRIk8nELdlsNtjt9vMBhyKrgiBwiwQkR5SFRqNxMQC1lUqlzs7+b/0CJa7qHxjMpcoAAAAASUVORK5CYII=',
-      'http://rutracker.org/forum/search_cse.php?cx=014434608714260776013%3Aggcq1kovlga&cof=FORID%3A9&ie=utf-8&q={{IMDB_TITLE}}'
+      'https://rutracker.org/forum/tracker.php?nm={{IMDB_TITLE}}%20{{IMDB_YEAR}}',
+      'Не найдено',
+      'Введите ваше имя и пароль'
     ],
     secretcinema: [
       'Secret Cinema',
