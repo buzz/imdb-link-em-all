@@ -467,12 +467,6 @@ const sites = [
       'Nothing found!',
       'You are logged out.'
     ],
-    extratorrent: [
-      'ExtraTorrent.cc',
-      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAYFBMVEUeOk0WSms/TVY2UWU3YHhlbnJtb2xPd5B3eHVzen56gYeRk5Coqq1zt+B9wOq7vMa8vceKyfG4xcyZ0O+n0OzKy8jI3u7a3Nnf5Ofl5+Tp7Ojv7PHl8vfx8/D3+fX8/vsJ7KWaAAAAhElEQVQY013P0RKCIBCFYSIoQQLRUlwE3v8tXVhqqv9q57s4M8sm56ZPeDO3/+QqmKFnGoRdB2q4hQoA+ji0wuQIQLCu/IUBNIgRYZZSKhNiREhJPym+pUSwLHeB8fAG70XqIeSsvL/W0S3nTGCtlbW5g35QQjYoZbxQTJfS4DvH/t8/AbYRElhtvO2TAAAAAElFTkSuQmCC',
-      'https://extratorrent.cc/advanced_search/?with={{IMDB_TITLE}}+{{IMDB_YEAR}}&exact=&without=&s_cat=&added=&seeds_from=&seeds_to=&leechers_from=&leechers_to=&size_from=&size_type=b&size_to=#results',
-      'total <b>0</b> torrents found'
-    ],
     torrentz: [
       'Torrentz',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAABlBMVEUAAAAzZpk5PgXHAAAAAXRSTlMAQObYZgAAACJJREFUCFtjrK9n/M8AQs12jMx7saE7jMz7GZkPMjIfBbIBQLMNGne6opUAAAAASUVORK5CYII=',
