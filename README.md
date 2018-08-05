@@ -13,14 +13,13 @@ A *customizable* user script adding all kinds of links to the IMDb movie info pa
 
 ### 🔗 Links
 
-GitHub: https://github.com/buzz/imdb-link-em-all  
+GitHub: https://github.com/buzz/imdb-link-em-all
 Greasy Fork: https://greasyfork.org/en/scripts/17154-imdb-link-em-all
 
 ## 🔧 Configuration
 ----------------
 
-![Screenshot](https://ipfs.io/ipfs/QmTZxBzfXTcxt7CjG8V8R4ZVoArc1BHRgpRpJj4Mhr1Cze/imdb-linkem-all.png)
-
+![Screenshot](https://github.com/buzz/imdb-link-em-all/raw/master/screenshot.png)
 
 ✨ Contributions
 ----------------
