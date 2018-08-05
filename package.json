@@ -12,7 +12,14 @@
     "url": "git+https://github.com/buzz/imdb-link-em-all.git"
   },
   "keywords": [
-    "userscript"
+    "userscript",
+    "imdb",
+    "browser",
+    "firefox",
+    "chrome",
+    "greasemonkey",
+    "greasyfork",
+    "tampermonkey"
   ],
   "author": "imdb",
   "license": "GPL-2.0",
