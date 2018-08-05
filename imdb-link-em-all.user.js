@@ -18,11 +18,6 @@
 // @noframes
 // ==/UserScript==
 
-// TODOS
-// - config dialog: subtitles to left col, trackers mid and right col half-half
-// - detect TV show/movie/video game?
-// - hide on video games?
-
 // Test cases for different layouts:
 // http://www.imdb.com/title/tt0163978/
 // http://www.imdb.com/title/tt1166810/
@@ -72,7 +67,7 @@ let config;
  * External sites
  *
  * 3 categories:
- * let sites = [ { GENERAL }, { TRACKERS }, { SUBTITLES } ];
+ * sites = [ { GENERAL }, { TRACKERS }, { SUBTITLES } ];
  *
  * single entry:
  * KEY: [
@@ -115,10 +110,6 @@ let config;
  *                       Note: if this value is not present -> site is publicly accessible
  *
  ******************************************************************************/
-
-// MISSING?!:
-// blu-bits
-// MyXZ
 
 const sites = [
   // general
