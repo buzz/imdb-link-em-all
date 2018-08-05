@@ -1040,7 +1040,8 @@ function fetchResults(key, site) {
         }
       }
       else {
-        throw('4th array element for ' + key + ' must be either String or Function!');
+        // this one has no results checker
+        $indicator.find('img').remove();
       }
     },
     onerror: function(resp) {
