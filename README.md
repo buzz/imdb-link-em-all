@@ -3,7 +3,7 @@
 A *customizable* user script adding all kinds of links to the IMDb movie info page.
 
 * Three categories: General, Trackers, Subtitles
-* Fetches results and shows availability (either ![Cross](http://www.famfamfam.com/lab/icons/silk/icons/cross.png) or ![Tick](http://www.famfamfam.com/lab/icons/silk/icons/tick.png))
+* Fetches results and shows availability (either ![Cross](https://foswiki.org/pub/System/FamFamFamSilkIcons/cross.png) or ![Tick](https://foswiki.org/pub/System/FamFamFamSilkIcons/tick.png))
 
 <!-- -->
 
