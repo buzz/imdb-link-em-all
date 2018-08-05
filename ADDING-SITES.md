@@ -1,6 +1,6 @@
 ## Adding new sites
 
-A definition of new site is very easy to write.
+A definition of a site is very easy to write.
 
 ```
 google: [
@@ -16,7 +16,7 @@ That's all it needs!
 
 Either you edit the user script and create a [pull request](https://help.github.com/articles/about-pull-requests/) (best option) or create an issue with the code snippet.
 
-If you don't manage to code to you can still suggest inclusion of a page in the issue.
+If you don't manage to code you can still suggest inclusion of a site by opening an issue in this repository or leaving a comment at Greasy Fork.
 
 ### Code it!
 
@@ -75,7 +75,7 @@ The key is written lower-case, should not contain spaces or other special charac
 
 ##### `TITLE`
 
-Just the sites title that is displayed in the user interface.
+The name of the site. It's displayed in the user interface.
 
 ##### `ICON_URI`
 
@@ -99,7 +99,7 @@ A [data URL](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Da
 
 ##### `URL`
 
-The sites search URL.
+The search URL.
 
 You can use variables.
 
@@ -160,7 +160,7 @@ There are also cases where it is harder. Some pages don't show a phrase like thi
 
 ###### Function
 
-For more flexibility you can specify a Function that is called on the results page: `function($dom, response)` that returns `true` which means ![Tick](http://www.famfamfam.com/lab/icons/silk/icons/tick.png) (results found) or `false` which means ![Cross](http://www.famfamfam.com/lab/icons/silk/icons/cross.png) (no results found).
+For more flexibility you can specify a Function that is called on the results page: `function($dom, response)` that returns `true` which means ![Tick](http://www.famfamfam.com/lab/icons/silk/icons/tick.png) (results found) or `false` which means ![Cross](http://www.famfamfam.com/lab/iconshttp://www.famfamfam.com/lab/icons/silk/icons/tick.png/silk/icons/cross.png) (no results found).
 
 ```javascript
 function($dom) {
