@@ -3,7 +3,7 @@
 A *customizable* user script adding all kinds of links to the IMDb movie info page.
 
 * Three categories: General, Trackers, Subtitles
-* Fetches results in background shows availability (either ![Cross](https://foswiki.org/pub/System/FamFamFamSilkIcons/cross.png) or ![Tick](https://foswiki.org/pub/System/FamFamFamSilkIcons/tick.png))
+* Fetches results and shows availability (either ![Cross](http://www.famfamfam.com/lab/icons/silk/icons/cross.png) or ![Tick](http://www.famfamfam.com/lab/icons/silk/icons/tick.png))
 
 <!-- -->
 
@@ -13,8 +13,8 @@ A *customizable* user script adding all kinds of links to the IMDb movie info pa
 
 ### 🔗 Links
 
-GitHub: https://github.com/buzz/imdb-link-em-all
-Greasy Fork: https://greasyfork.org/en/scripts/17154-imdb-link-em-all
+- [GitHub](https://github.com/buzz/imdb-link-em-all)
+- [Greasy Fork](https://greasyfork.org/en/scripts/17154-imdb-link-em-all)
 
 ## 🔧 Configuration
 ----------------
@@ -24,12 +24,12 @@ Greasy Fork: https://greasyfork.org/en/scripts/17154-imdb-link-em-all
 ✨ Contributions
 ----------------
 
-* Add support for a particular website?
-* Spot an error? Fix it!
+* Add a new site? *No problem!*
+* Spotted an error? *Fix it!*
 
-Create a Pull Request or add an [Issue](https://github.com/buzz/imdb-link-em-all/issues).
+[Read here how to do it.](https://github.com/buzz/imdb-link-em-all/blob/master/ADDING-SITES.md)
 
-👍 *Thank you for your help!* 👍
+*Thank you for your help!* 👍
 
 👏 Credits
 ----------

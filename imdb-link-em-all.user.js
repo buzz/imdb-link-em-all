@@ -63,54 +63,7 @@ let first_run = false;
 // script configuration
 let config;
 
-/*******************************************************************************
- * External sites
- *
- * 3 categories:
- * sites = [ { GENERAL }, { TRACKERS }, { SUBTITLES } ];
- *
- * single entry:
- * KEY: [
- *   TITLE,
- *   ICON_URI,
- *   URL,
- *   NO_RESULTS_MATCHER,   (optional)
- *   NOT_LOGGED_IN_MATCHER (optional)
- * ]
- *
- * KEY       site id (must be unique among all categories!)
- * ICON_URI  preferably a base64 data URI (format: PNG)
- * URL       either a string (GET request):
- *             search URL (use HTTPS if available), the following patterns are replaced:
- *             {{IMDB_ID}}     e.g. 0163978
- *             {{IMDB_TITLE}}  e.g. The Beach
- *             {{IMDB_YEAR}}   e.g. 2000
- *           or an array (POST request)
- *             [
- *               URL,
- *               POST data (Object), values are strings, with patterns replaced
- *             ]
- *             example:
- *             [
- *               'http://www.surrealmoviez.info/advanced_search.php',
- *               {
- *                 simdb: '{{IMDB_ID}}'
- *               }
- *            ]
- * NO_RESULTS_MATCHER    either a string: if response matches this string -> No results
- *                                        e.g. 'No results found!'
- *                       or: function($dom, response) that must return
- *                         true:  no results
- *                         false: results found
- *                       Note: if this value is not present -> no automatic fetching for this site
- * NOT_LOGGED_IN_MATCHER either a string: if response matches this string -> Not logged it
- *                       or: function($dom, response) that must return
- *                         true: not logged in
- *                         false: logged in
- *                       Note: if this value is not present -> site is publicly accessible
- *
- ******************************************************************************/
-
+// ADDING-SITES.md describes how this works
 const sites = [
   // general
   {
@@ -620,9 +573,9 @@ const sites = [
       'Nothing found!',
       function($dom, resp) {
         if (resp.responseText.indexOf('You need cookies enabled to log in or switch language.') > -1 || resp.responseText.indexOf('你需要启用cookies才能登录或切换语言。') > -1 || resp.responseText.indexOf('你需要啟用cookies才能登錄或切換語言。') > -1) {
-          return true;
+          return false;
         }
-        return false;
+        return true;
       }
     ],
     hdtorrents: [
@@ -660,9 +613,9 @@ const sites = [
       'Nothing here!',
       function($dom, resp) {
         if (resp.responseText.indexOf('The page you tried to view can only be used when you\'re logged in.') > -1 || resp.responseText.indexOf('該頁面必須在登錄後才能訪問') > -1) {
-          return true;
+          return false;
         }
-        return false;
+        return true;
       }
     ],
     myspleen: [
@@ -845,9 +798,9 @@ const css = '#lta_external_site_links img { margin-right: 4px; vertical-align: m
 // helper function that identifies header redirect using refresh
 function detectRefreshRedirect($dom, resp) {
   if (resp.responseHeaders.indexOf('Refresh: 0; url=') > -1) {
-    return true;
+    return false;
   }
-  return false;
+  return true;
 }
 
 // replace imdb fields
