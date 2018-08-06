@@ -432,7 +432,8 @@ const sites = [
       'https://rarbg.to/torrents.php?search={{IMDB_TITLE}}+{{IMDB_YEAR}}',
       function($dom) {
         return $dom.find('.lista2t tr').length > 1;
-      }
+      },
+      'Please wait while we try to verify your browser...'
     ],
     '1337x': [
       '1337x',
