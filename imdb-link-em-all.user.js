@@ -371,8 +371,7 @@ const sites = [
     kat: [
       'Kickass Torrents',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACEUlEQVQ4y2NggIKkSGvx6V3RH7OTHPNgYmXZ7svnT0z4jixWkuW2oLsu5D4DOqgt8j6yc0X+fxCe2R3zZdHkxF8wPggvmJTwc+WstL8wfk6SYzlcc0ywmdCqWSn/ti3N/k8s7q4Lego3ICPOpnzTwvT/6PjRnWP/QeD96/sYcuvmpv6PCjQRgvgrw2nf+rnJ/0F44/z0/4e2dPzfv7Hp/88fX8AGXD295j9MHhknhpvHgA2oyHG+smpm3H8Q3ra89D8ucHzP1P8wdSCcGm3RAjagPMvh2rIpkf9BeN28zP+n9s/+//LpNbjG+zcO/X/76t7/rctK/sPUgXBypGkH2IDsBIt9CyeE/EfGd68fBGv+8un1f3Q5GI4M0Id4ISZIv2Fut/9/ZPzs4UWI7TeP/keXA+HpbT7//d00IIHo76YuO7nR/f+MNi84fvX8NtiAGxd3g/lr5+WhyJekWz5HSUhZsUY3pzS6/ofhm5f3gg349+/v/+/fPv3/9OHlf2T5cB/NBhQDfJyVjDsrbP/11zr8B+EFE2P///r5DWzIu9eP/i+fmfEfJleUYvyOARsI91ad01Np8x+G5/RE/F8zv/h/f40jXKwh3/yvt6OCHQMuEO6jsq6t1Px/R5kFBq7ONv7j7SgfxEAIeDvIJRYl6/1oLTb9D8OJIeq3XW1kZBlIAd6OssXh3or7XK2l9XCpAQB9e+3AkPA7JAAAAABJRU5ErkJggg==',
-      'https://katcr.co/new/torrents-search.php?search={{IMDB_TITLE}}%20{{IMDB_YEAR}}',
-      'No torrents were found based on your search criteria.'
+      'https://katcr.co/katsearch/page/1/{{IMDB_TITLE}}%20{{IMDB_YEAR}}'
     ],
     pb: [
       'The Pirate Bay',
