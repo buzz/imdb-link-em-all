@@ -1193,7 +1193,7 @@ function parse_info() {
     }
     else {
       layout = 'new';
-      title_selector = 'h1[itemprop=name]';
+      title_selector = 'h1';
     }
     // extract movie infos
     imdb_title = $(title_selector).text().trim();
