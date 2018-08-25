@@ -4,7 +4,7 @@
 // @description    Adds all kinds of links to IMDb, customizable!
 // @author         buzz
 // @require        https://code.jquery.com/jquery-2.2.0.min.js
-// @version        0.123
+// @version        1.0.3
 // @license        GPLv2
 // @match          *://*.imdb.com/title/tt*/*
 // @grant          GM.getValue
@@ -18,11 +18,6 @@
 // @noframes
 // ==/UserScript==
 
-// TODOS
-// - config dialog: subtitles to left col, trackers mid and right col half-half
-// - detect TV show/movie/video game?
-// - hide on video games?
-
 // Test cases for different layouts:
 // http://www.imdb.com/title/tt0163978/
 // http://www.imdb.com/title/tt1166810/
@@ -33,16 +28,16 @@
  * Constants
  ******************************************************************************/
 
-let LTA_HOMEPAGE = 'https://greasyfork.org/en/scripts/17154-imdb-link-em-all';
-let COGS_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACiElEQVQ4y41TzUpyURQVH8C5j+B7OGkSVJPQJlYQFSZOFJNCq4tEQoNqoIYo5Q+lUIJJUln5U6lXS0yU0kEWFwUdOb13t/eB/BC+oDO53HPOWnuttc+WyX5ZhUJh7uHhIZXJZFK45mR/WS8vL6pSqaRAsBzB3a+vL/j8/IRIJNK9uLiQx2IxRTQaVf0G9iBYzOfzQi6XU97f3wutVguazSYgUDg/P1cikRAKhcSjoyPPCPj5+dn6/v4OvV4P3t7eAMGDm5sbqVarQbVahbOzMwnBA1QGgiBAIpGAnZ0d65AAq66hV4lICNBoNBjRDwH9VyoVIILHx0ewWCyS0WhcG1GRzWY5ulwsFuHp6QmSySQcHh6C3+8nRYC24O7ujlXf3t7mhkBk5LF6+/b2tl+v14Hnebi6uoKNjY2c2WxWr6+vq3d3d3PpdJoR0bnT6ew7HI725uYmL0Ow2Ol0mFyqjEFCIBCAra0t9U8Rt9utxgwA7zJlpIbCXV5eFmXYY/Hj44N5pAOqgInD3t7ekODg4EAdDoeZArKAatl9nU4nyrAlPEps+3y+frlcZiSUg9frzblcLvX+/j6zQP7J2uXlJczPz/enp6fbU1NT/DALlMhhkCwo+uJDgpOTE8C+sz1sK8Tjcba3uLjIjXTg9PR0LRgMSq+vrwxM7cKHxTIhIlJE+9fX1+xsZWVFWlhY+NfG4+NjK8mjl4dEgOkOOI6TKDTyrdfrJQQN6Iy822w2mJyctI6osNvtHoPBIKI/wWQyKZFEoGqkYHZ2VtBoNEr0LYyPj4tjY2Oe/84DEqiWlpYUq6urciTskmScA9BqtV0kkM/MzCiQQPWnyUTZc1gxNTExkUK5v47zN4DwH7fniYcmAAAAAElFTkSuQmCC';
-let TICK_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABoklEQVQ4y9WT2S5DURSG3TnOu6ipVUPFlJCqIdVS6nBKKS2NG6qno5aSEsNxKeahIikaiiASl2qo8AziJVR/WxNTL6R6IbEud/aX9e9vrZ2S8u9KtVbL1y9WOZOCG1dreOOBFvo9FlK+lPsV3LBSzfftd2Dm3g3PpQUanwrFo3nWhGDlsow3BDSYunNh8s6J9q0mlHjyUeAQUh+XDGdsefcx0xUPK5Zk/FvkibAT3rAj1rnILY7k23O+wKesRHfEPHEXRrD+hv73cyKL79ltg/fWjvFbG9jNRkhcuZE8W/YnrD9pq9AdtjyOhThMhYeh9skjRFa/fEE62b3DYOzGBs81h9YNJQqHRRGxNYv6FrErqE7TBpphOu/F7MMoPCELDPsaGINajITMcF+bwawrUOAUvuRa4uD3YrYVNOkM46E29s7xGytcVya4Qiao1+rfZEVFXCb1o2kii5bPS9Hpb4H7agiOywE0r8hBZEVF5gwqoXFJ58royukSElkJ1XIdiKyocEhA/WphyHzpohExiKznHJMgNamVJbLo7MH01D/5XK8FJMUEaMuG0gAAAABJRU5ErkJggg==';
-let CROSS_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACEklEQVQ4y61S/U9SYRhlbW13/Q0V5Woub05zfZkCXhUhpmmb8v3h5ZKoCQjcwVBi1Q+19Zf0d2lWxpeR3AuX93J8qGVjgK2tZ3u3d3t2znmecx6D4R+rsS5dGdiEnDXS4weCQ2Fe9QUSdafH3B+c3UM7k4OeSPWQNIIi3xAjaG5u48fz1Y+1peU7PWAU3qBNT0/KaG3tnJOogXWe1NGKJYB8AZ3/ic2RqMxaL/0iSGe4dlLW23uvgPcfoOfyHQI0RYlX/SGe1KHtxAHqqyERJwtPWUWYv9w1oh5PcuxlnOlyFnj7DiydQSMcAalD244Buf2f/6rVTuA5rq9JregW15Q2WCu2S+u8BvYLBMwD2RxUfxDVeRurzMxyF8cUFDnFG9CRo3V8QcDtA+QMqnMLetkicH/NWfH4O1EBlAacHmDVBeymaG87ipPT/MVgt49XvH5okSiQkgmYBuK0DhmorrlQMVnwdXyiP0nd5eUVjw+atAFQjIrbCzKLlabN+unSChDdRP3ZCor3H+JoeKSbhC6LJ3Vo4RekmoRCo5NZrDRl5oqPJrnjiQesZrUBYQmndgeOR8dweGPoDwldllB3uqGJEpQ1N8gsVnpiOjfsy+g493nkLvtuEaA4FvFt7B4OrhmFrinosoTa4jLK5hmdzOpx++j2MPdp6BbrC/5dZZNFKD6eGhjVofEmd3D1umD4n3UGltFKFJhJvx0AAAAASUVORK5CYII=';
-let ERROR_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACJklEQVQ4y6VTTUiUYRB+vh93dX903bKUYMNlMWHJBC1WW8GjZVCnfpa6Fp1i6dilQwcJglgrDEKiQqhDRYWVCEsSFJ0Ksh8zKjJZ3V0WU3G/73tnpoNrFGkZzmHmMDPPPM8wA6zRtJUSuXSHISSvhLnALJ21Xc9ouTp9JQAhSblqd0VdG7viQnz0v2hlh+PBqaH272TPiF0Ylcl72/MTd1qCq2bAxNcqQgm/puswvUF46hNBIT6zqulTj9ubMw9jJGSJNXVB7Gy/sJ2TLze3qc8DW5v/yUCYb/gakzqrOXwcuoXxR1fBTgaBppMGE/f+FSAzGEuUVbdFvZv3YeFrEiKACFCc6IE/0g13bUf8w5WGxLIAmcGYj5lTnvABsMoDXOoWAbMDLo6hqvEgmPjsu0th3x8ATNzvCe1f564Ow8ndBiAoD3iWhMHKXERFTQiVWw5tUkXn1G+HNHl/R0SY39btTpu08BLO9GUwA3pZOeZzs3B7GYYhMCo7Yfj3YrS31SZLRVtO58f1xaPhAV/DcVN4DjT7HBAGIPg08h7TbyYBCCAMVRiGps+jJpZ0Kcs5DwDat7ut3UZV04MNHSmo2SdwstcXJbFARAME0A2BJjZECLqxHuX1PXjdl8DM2Mgek4n6ApHDAADT1w7T11YSpy3JLzn5uQ9oLtTtPIbCaPqcKcTp7NMTR4QYTIxfIzkEshwoywFZDshSIFuBHAIrAit6sdZvxg9QwSUH1+qgEQAAAABJRU5ErkJggg==';
-let TIMEOUT_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAC4klEQVQ4y62TXUjTURjGjel90U03XdhF1EVQXQRBQVheGpGFGShIAyX1wu/5lVlpZllqTE3TqZu5zeYHmm66+cU0tc21mcvpPpwzvzbnf85N/at7OhNaSRFd9MLDeTmH5/e+5+UcP7//HX38wqDhpgcyZTtr9bM4k1Z2ZNByQcKSpDqhtfVNxsW/mgeF+WWabta2RTeClUUDHA47KMqG+VkNNHI+xG+jNwSv4rL/aO7n55XoFeWwW83Qme1432tCmWgSpcIv4HbpMT69BJNuGJ1VMeDkMVMOmCXcgkuK9mTatmzCoGoBzX0m6C0O2BxOWB0b0M05wO3Wo2XAiClVF3iP77iq8u+f8wGkdWmdM+Tg6+wqhDIjvGGnKEx/W8Qmyb1yeoCKDj3kajN6eEmoyArn+gC99fGLC+YJ8CQz0JLKrh0PnC4X2DUcLBPQ+tYWRJJeDE5TeN6oxsSYAFWZoSYfQFYXt2m3zaOwQY1lNw371h62SdX0h7ngNbchLScX3cOjmKBoJLJHMWcaRU3mLbcPIK6M3rStGJDLUWHOSRPIHizUOp68KNo3D6o0sO4AChuN+OKPMBsGUJ0e+hMgehlpNEx0oVioxsAMhQVyacs6jc7+IRhXHVjaBTRNbPRGnII0KADS0KNojDhN+QC1eZGcfgELw+ppFAh1sJKB2WlgfY+I5DMtZdCkXsbmhyJ4tGK4+In4FHvG033VP34fUP009mz9ozD3lKIeDV1KPBNOQWVag5PMw+miIQ0/ATcxozQESDsC5AfCWngFkmsMo6+Lytwo1ruC29COlKFvTIF8zghSS4eQVCzfb9ujbMavsZZzjOz7ew48KHZWRHYl64azrfwuxmV5MGp5ME7WoufmYWxU3wOIaSvVD3YicwwDkmDG/G9Pmp0ddaEkJbTxdeJ1c3lyiNsrEfM8NcI86VlIC8RKegAMzEOQhfjvioMZGf/8S+Vhx1mkosnbNlktP8zfAS4IMMSANgzlAAAAAElFTkSuQmCC';
-let NOACCESS_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACfUlEQVQ4y21Sz2sTQRh9u9nml02M2hoapaZNtaIg4q0eBMEeRPGg3jyJhyK00EvpsZBr/wqhAfHQs3fBglRa0EYTm5YYFEqKSRvTJDs7s77ZbdpYHfiYmW++7817b8bAiZHL5fqVUnNSygnGWQYYvxgrjuMszs7O/u6tN3o3S0tLN9m8nEqlRuLxOEzTBPdot9uoVqvY5iDQ4/n5+fV/ANjcz8O1TCYzZts2KpUKms2mvh2WZSGZTHp1+Xx+k7kbCwsLLb03uwBMvhwaGhoTQqBYLG41Go0010Edel0oFH5qYLIbo5Tpbp/VXTA5EY1GUSqVwKaHMzMz5R515Ww2e69cLufT6bRX+z+AQa2Zt+n19klzdU6z0zVkO/iXB+V3z92V0jh29iKe5kfXVxFwBVzpwHX8EELi1fotz9RkuIYHF1ZxdWrN8Bm4Lp4+uUs0E0Ygwvk+oIhthfUhDRKQTgPZySbzwmvZfP3+WIK+SRc6u29ghQZgGP0s7AMiCaYVcLAHuf8NdusHlHOAyMg0XLvTA0CKUPomG/WNj9R5Colrt1F5u8j+8xi+M4n61w0C1BBLnyFhCVfYvQDCk+GSamL8CszgAN1RkB2JT7sRDMNGIjOCdjPE2gOPVRfA+wcu3dWoWmvt8zpZfOCJA9VW6LRI1SWzwhfUi999uUp5PccM9EajUkLichqB6DkC2Bh9NoVRwYb9HZzOpBDc7/MZUO4JANtDVY72YIMAMSBMI60g8xqgjlatCtFsIDYcp93Kl90LoCWELr5A5FIARjDkP6HJl1CUZrcQazWosEOi0vdLG38EwCfZWp7zvfA+jjgM52jmD/M/lpT+WgNx/AHLKabZmE0zigAAAABJRU5ErkJggg==';
-let LOADING_ICON = 'data:image/gif;base64,R0lGODlhEAAQAPMPAOjo6LS0tHd3d6KiotbW1oCAgMXFxZGRkfDw8Ly8vJqamomJic3Nzaurq3h4ePj4+CH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQFCgAPACwAAAAAEAAQAAAEW/DJh2gbdWq6ABICQG0SAH4hImrekwhvmpUKjA5Y1nIgsZY7CoJx+JU0CQXOQBKqkkomSaUSEgIzIOulMKp8k8DCMEx4AAwKWM0hMMjm4wSBczHR2RLWrm3qmxEAIfkEBQoADwAsAAAAAA8AEAAABE/wyflCk4hOJRcujNY9i0MKhCgZJctt4GkJQpZJAwlMxK6+qgejYUkFhQOi8YgxiG48RU6DANwSipAhhMFAcQACoxoMOMWrpyGDfviCVlEEACH5BAUKAA8ALAAAAAAQAA8AAARO8Mn5TKJYNr0QOpnkDF83hEglMMrCTADBMWWSHAKQCDl3wgZeD9ZIwVZEGyDjaTIC0JC0MsU0EsaphYAgcJsoTQwADhlk5IdH+lIv1ZQIACH5BAUKAA8ALAAAAAAQABAAAARS8MkpDb0VoaH0INhzBFvXYMhUEBwhnFrVAKVhKAJiCEX6BCPaxBX6XQAvms7GCDUK0A8TgHnyDhTQUekDJCzFoYEbfnQJGl8YbVYXqe0yJYaJAAAh+QQFCgAIACwAAAAAEAAOAAAEPhDJiUKgWA4pBM/c1iEFqHmdQWJDQZCH5VXruWGzSt3sBFQ6VmdkuWRKHx+GIDhkgr7hDzE1DTNVCoEnyYIiACH5BAUKAA4ALAAAAAAQABAAAARX0MnpCKHYIYZ26F+GBFySjAuQaQ1gAkWCWYBnBce2KJKNTJ2BIEdxYRAKQ2dZ+80G0FPTSTHsYsWn4VgrMgRD4HRZEACEBWrmO5AwRJSFeaXWCLYr+CQCACH5BAUKAA8ALAAAAAAQABAAAART8Mn5AKBYEm105g/TGconJYj4KAxmISFhkZLSTHPWFIN7YY0WDgHLMBrICrGIOR4OAdNkwCBKPSsmcFe5HUwFQeIRtXwQ4d/v7BBcHMLz4KCVRAAAIfkEBQoADgAsAQABAA8ADwAABFHQSYAQIZXJPScmDcd9WEN0yEZRTFANSSWLTnAEYiomJ02DgYDGN2kMYEQHwkSbKQELAU4kkCYUi6VAwUlIowZpswotIA4+hgBTMEN7o83AFwEAIfkEBQoADwAsAAAAABAAEAAABFPwyfkQoljabcnNANd9mIgkAGgSjJQYWWk0cIwZqS2/+gQEwJaEsCDcchqFQFCbKBMah+AAmBoYDcVp0XAZXYcDg6nJLBBhtMPmCC0OEoXtA4xFAAAh+QQFCgAOACwAAAEAEAAPAAAET9DJ6ZC1NEvsiM6XpwFXCUiG+E1MQiDgSDVF3XwtQxxCr+AG18VQOFEMqw5sQ0NKFoIGYqHIDRC7AMrYGVQLjMrngPCWD7jF8+eQJtuJTwQAIfkEBQoADwAsAAABABAADwAABE7wyUkfqngiUAHHXiUISSdtHzEKn0a0UkB217Tc2fO+g1MUgczug2AoMAzM4FRJNJKSwyOoGPAaMYOEENMFGgBprnD8To8gdGOJCOaymQgAIfkEBQoADwAsAAABAA8ADwAABFHwSVKAvPjSlbscAuNJ3AMIQgcg5oIa4oWsmOEQ2Twnh6IkqhUg4FoAc0IdYaDCIIiFDiNB2IWegdV0J7K0CIlsw8uSIHpYxLbTkIR3o0kMEwEAOw==';
-let CATEGORY_NAMES = ['General', 'Trackers', 'Subtitles'];
-let DEFAULT_CONFIG = {
+const LTA_HOMEPAGE = 'https://greasyfork.org/en/scripts/17154-imdb-link-em-all';
+const COGS_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACiElEQVQ4y41TzUpyURQVH8C5j+B7OGkSVJPQJlYQFSZOFJNCq4tEQoNqoIYo5Q+lUIJJUln5U6lXS0yU0kEWFwUdOb13t/eB/BC+oDO53HPOWnuttc+WyX5ZhUJh7uHhIZXJZFK45mR/WS8vL6pSqaRAsBzB3a+vL/j8/IRIJNK9uLiQx2IxRTQaVf0G9iBYzOfzQi6XU97f3wutVguazSYgUDg/P1cikRAKhcSjoyPPCPj5+dn6/v4OvV4P3t7eAMGDm5sbqVarQbVahbOzMwnBA1QGgiBAIpGAnZ0d65AAq66hV4lICNBoNBjRDwH9VyoVIILHx0ewWCyS0WhcG1GRzWY5ulwsFuHp6QmSySQcHh6C3+8nRYC24O7ujlXf3t7mhkBk5LF6+/b2tl+v14Hnebi6uoKNjY2c2WxWr6+vq3d3d3PpdJoR0bnT6ew7HI725uYmL0Ow2Ol0mFyqjEFCIBCAra0t9U8Rt9utxgwA7zJlpIbCXV5eFmXYY/Hj44N5pAOqgInD3t7ekODg4EAdDoeZArKAatl9nU4nyrAlPEps+3y+frlcZiSUg9frzblcLvX+/j6zQP7J2uXlJczPz/enp6fbU1NT/DALlMhhkCwo+uJDgpOTE8C+sz1sK8Tjcba3uLjIjXTg9PR0LRgMSq+vrwxM7cKHxTIhIlJE+9fX1+xsZWVFWlhY+NfG4+NjK8mjl4dEgOkOOI6TKDTyrdfrJQQN6Iy822w2mJyctI6osNvtHoPBIKI/wWQyKZFEoGqkYHZ2VtBoNEr0LYyPj4tjY2Oe/84DEqiWlpYUq6urciTskmScA9BqtV0kkM/MzCiQQPWnyUTZc1gxNTExkUK5v47zN4DwH7fniYcmAAAAAElFTkSuQmCC';
+const TICK_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABoklEQVQ4y9WT2S5DURSG3TnOu6ipVUPFlJCqIdVS6nBKKS2NG6qno5aSEsNxKeahIikaiiASl2qo8AziJVR/WxNTL6R6IbEud/aX9e9vrZ2S8u9KtVbL1y9WOZOCG1dreOOBFvo9FlK+lPsV3LBSzfftd2Dm3g3PpQUanwrFo3nWhGDlsow3BDSYunNh8s6J9q0mlHjyUeAQUh+XDGdsefcx0xUPK5Zk/FvkibAT3rAj1rnILY7k23O+wKesRHfEPHEXRrD+hv73cyKL79ltg/fWjvFbG9jNRkhcuZE8W/YnrD9pq9AdtjyOhThMhYeh9skjRFa/fEE62b3DYOzGBs81h9YNJQqHRRGxNYv6FrErqE7TBpphOu/F7MMoPCELDPsaGINajITMcF+bwawrUOAUvuRa4uD3YrYVNOkM46E29s7xGytcVya4Qiao1+rfZEVFXCb1o2kii5bPS9Hpb4H7agiOywE0r8hBZEVF5gwqoXFJ58royukSElkJ1XIdiKyocEhA/WphyHzpohExiKznHJMgNamVJbLo7MH01D/5XK8FJMUEaMuG0gAAAABJRU5ErkJggg==';
+const CROSS_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACEklEQVQ4y61S/U9SYRhlbW13/Q0V5Woub05zfZkCXhUhpmmb8v3h5ZKoCQjcwVBi1Q+19Zf0d2lWxpeR3AuX93J8qGVjgK2tZ3u3d3t2znmecx6D4R+rsS5dGdiEnDXS4weCQ2Fe9QUSdafH3B+c3UM7k4OeSPWQNIIi3xAjaG5u48fz1Y+1peU7PWAU3qBNT0/KaG3tnJOogXWe1NGKJYB8AZ3/ic2RqMxaL/0iSGe4dlLW23uvgPcfoOfyHQI0RYlX/SGe1KHtxAHqqyERJwtPWUWYv9w1oh5PcuxlnOlyFnj7DiydQSMcAalD244Buf2f/6rVTuA5rq9JregW15Q2WCu2S+u8BvYLBMwD2RxUfxDVeRurzMxyF8cUFDnFG9CRo3V8QcDtA+QMqnMLetkicH/NWfH4O1EBlAacHmDVBeymaG87ipPT/MVgt49XvH5okSiQkgmYBuK0DhmorrlQMVnwdXyiP0nd5eUVjw+atAFQjIrbCzKLlabN+unSChDdRP3ZCor3H+JoeKSbhC6LJ3Vo4RekmoRCo5NZrDRl5oqPJrnjiQesZrUBYQmndgeOR8dweGPoDwldllB3uqGJEpQ1N8gsVnpiOjfsy+g493nkLvtuEaA4FvFt7B4OrhmFrinosoTa4jLK5hmdzOpx++j2MPdp6BbrC/5dZZNFKD6eGhjVofEmd3D1umD4n3UGltFKFJhJvx0AAAAASUVORK5CYII=';
+const ERROR_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACJklEQVQ4y6VTTUiUYRB+vh93dX903bKUYMNlMWHJBC1WW8GjZVCnfpa6Fp1i6dilQwcJglgrDEKiQqhDRYWVCEsSFJ0Ksh8zKjJZ3V0WU3G/73tnpoNrFGkZzmHmMDPPPM8wA6zRtJUSuXSHISSvhLnALJ21Xc9ouTp9JQAhSblqd0VdG7viQnz0v2hlh+PBqaH272TPiF0Ylcl72/MTd1qCq2bAxNcqQgm/puswvUF46hNBIT6zqulTj9ubMw9jJGSJNXVB7Gy/sJ2TLze3qc8DW5v/yUCYb/gakzqrOXwcuoXxR1fBTgaBppMGE/f+FSAzGEuUVbdFvZv3YeFrEiKACFCc6IE/0g13bUf8w5WGxLIAmcGYj5lTnvABsMoDXOoWAbMDLo6hqvEgmPjsu0th3x8ATNzvCe1f564Ow8ndBiAoD3iWhMHKXERFTQiVWw5tUkXn1G+HNHl/R0SY39btTpu08BLO9GUwA3pZOeZzs3B7GYYhMCo7Yfj3YrS31SZLRVtO58f1xaPhAV/DcVN4DjT7HBAGIPg08h7TbyYBCCAMVRiGps+jJpZ0Kcs5DwDat7ut3UZV04MNHSmo2SdwstcXJbFARAME0A2BJjZECLqxHuX1PXjdl8DM2Mgek4n6ApHDAADT1w7T11YSpy3JLzn5uQ9oLtTtPIbCaPqcKcTp7NMTR4QYTIxfIzkEshwoywFZDshSIFuBHAIrAit6sdZvxg9QwSUH1+qgEQAAAABJRU5ErkJggg==';
+const TIMEOUT_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAC4klEQVQ4y62TXUjTURjGjel90U03XdhF1EVQXQRBQVheGpGFGShIAyX1wu/5lVlpZllqTE3TqZu5zeYHmm66+cU0tc21mcvpPpwzvzbnf85N/at7OhNaSRFd9MLDeTmH5/e+5+UcP7//HX38wqDhpgcyZTtr9bM4k1Z2ZNByQcKSpDqhtfVNxsW/mgeF+WWabta2RTeClUUDHA47KMqG+VkNNHI+xG+jNwSv4rL/aO7n55XoFeWwW83Qme1432tCmWgSpcIv4HbpMT69BJNuGJ1VMeDkMVMOmCXcgkuK9mTatmzCoGoBzX0m6C0O2BxOWB0b0M05wO3Wo2XAiClVF3iP77iq8u+f8wGkdWmdM+Tg6+wqhDIjvGGnKEx/W8Qmyb1yeoCKDj3kajN6eEmoyArn+gC99fGLC+YJ8CQz0JLKrh0PnC4X2DUcLBPQ+tYWRJJeDE5TeN6oxsSYAFWZoSYfQFYXt2m3zaOwQY1lNw371h62SdX0h7ngNbchLScX3cOjmKBoJLJHMWcaRU3mLbcPIK6M3rStGJDLUWHOSRPIHizUOp68KNo3D6o0sO4AChuN+OKPMBsGUJ0e+hMgehlpNEx0oVioxsAMhQVyacs6jc7+IRhXHVjaBTRNbPRGnII0KADS0KNojDhN+QC1eZGcfgELw+ppFAh1sJKB2WlgfY+I5DMtZdCkXsbmhyJ4tGK4+In4FHvG033VP34fUP009mz9ozD3lKIeDV1KPBNOQWVag5PMw+miIQ0/ATcxozQESDsC5AfCWngFkmsMo6+Lytwo1ruC29COlKFvTIF8zghSS4eQVCzfb9ujbMavsZZzjOz7ew48KHZWRHYl64azrfwuxmV5MGp5ME7WoufmYWxU3wOIaSvVD3YicwwDkmDG/G9Pmp0ddaEkJbTxdeJ1c3lyiNsrEfM8NcI86VlIC8RKegAMzEOQhfjvioMZGf/8S+Vhx1mkosnbNlktP8zfAS4IMMSANgzlAAAAAElFTkSuQmCC';
+const NOACCESS_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACfUlEQVQ4y21Sz2sTQRh9u9nml02M2hoapaZNtaIg4q0eBMEeRPGg3jyJhyK00EvpsZBr/wqhAfHQs3fBglRa0EYTm5YYFEqKSRvTJDs7s77ZbdpYHfiYmW++7817b8bAiZHL5fqVUnNSygnGWQYYvxgrjuMszs7O/u6tN3o3S0tLN9m8nEqlRuLxOEzTBPdot9uoVqvY5iDQ4/n5+fV/ANjcz8O1TCYzZts2KpUKms2mvh2WZSGZTHp1+Xx+k7kbCwsLLb03uwBMvhwaGhoTQqBYLG41Go0010Edel0oFH5qYLIbo5Tpbp/VXTA5EY1GUSqVwKaHMzMz5R515Ww2e69cLufT6bRX+z+AQa2Zt+n19klzdU6z0zVkO/iXB+V3z92V0jh29iKe5kfXVxFwBVzpwHX8EELi1fotz9RkuIYHF1ZxdWrN8Bm4Lp4+uUs0E0Ygwvk+oIhthfUhDRKQTgPZySbzwmvZfP3+WIK+SRc6u29ghQZgGP0s7AMiCaYVcLAHuf8NdusHlHOAyMg0XLvTA0CKUPomG/WNj9R5Colrt1F5u8j+8xi+M4n61w0C1BBLnyFhCVfYvQDCk+GSamL8CszgAN1RkB2JT7sRDMNGIjOCdjPE2gOPVRfA+wcu3dWoWmvt8zpZfOCJA9VW6LRI1SWzwhfUi999uUp5PccM9EajUkLichqB6DkC2Bh9NoVRwYb9HZzOpBDc7/MZUO4JANtDVY72YIMAMSBMI60g8xqgjlatCtFsIDYcp93Kl90LoCWELr5A5FIARjDkP6HJl1CUZrcQazWosEOi0vdLG38EwCfZWp7zvfA+jjgM52jmD/M/lpT+WgNx/AHLKabZmE0zigAAAABJRU5ErkJggg==';
+const LOADING_ICON = 'data:image/gif;base64,R0lGODlhEAAQAPMPAOjo6LS0tHd3d6KiotbW1oCAgMXFxZGRkfDw8Ly8vJqamomJic3Nzaurq3h4ePj4+CH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQFCgAPACwAAAAAEAAQAAAEW/DJh2gbdWq6ABICQG0SAH4hImrekwhvmpUKjA5Y1nIgsZY7CoJx+JU0CQXOQBKqkkomSaUSEgIzIOulMKp8k8DCMEx4AAwKWM0hMMjm4wSBczHR2RLWrm3qmxEAIfkEBQoADwAsAAAAAA8AEAAABE/wyflCk4hOJRcujNY9i0MKhCgZJctt4GkJQpZJAwlMxK6+qgejYUkFhQOi8YgxiG48RU6DANwSipAhhMFAcQACoxoMOMWrpyGDfviCVlEEACH5BAUKAA8ALAAAAAAQAA8AAARO8Mn5TKJYNr0QOpnkDF83hEglMMrCTADBMWWSHAKQCDl3wgZeD9ZIwVZEGyDjaTIC0JC0MsU0EsaphYAgcJsoTQwADhlk5IdH+lIv1ZQIACH5BAUKAA8ALAAAAAAQABAAAARS8MkpDb0VoaH0INhzBFvXYMhUEBwhnFrVAKVhKAJiCEX6BCPaxBX6XQAvms7GCDUK0A8TgHnyDhTQUekDJCzFoYEbfnQJGl8YbVYXqe0yJYaJAAAh+QQFCgAIACwAAAAAEAAOAAAEPhDJiUKgWA4pBM/c1iEFqHmdQWJDQZCH5VXruWGzSt3sBFQ6VmdkuWRKHx+GIDhkgr7hDzE1DTNVCoEnyYIiACH5BAUKAA4ALAAAAAAQABAAAARX0MnpCKHYIYZ26F+GBFySjAuQaQ1gAkWCWYBnBce2KJKNTJ2BIEdxYRAKQ2dZ+80G0FPTSTHsYsWn4VgrMgRD4HRZEACEBWrmO5AwRJSFeaXWCLYr+CQCACH5BAUKAA8ALAAAAAAQABAAAART8Mn5AKBYEm105g/TGconJYj4KAxmISFhkZLSTHPWFIN7YY0WDgHLMBrICrGIOR4OAdNkwCBKPSsmcFe5HUwFQeIRtXwQ4d/v7BBcHMLz4KCVRAAAIfkEBQoADgAsAQABAA8ADwAABFHQSYAQIZXJPScmDcd9WEN0yEZRTFANSSWLTnAEYiomJ02DgYDGN2kMYEQHwkSbKQELAU4kkCYUi6VAwUlIowZpswotIA4+hgBTMEN7o83AFwEAIfkEBQoADwAsAAAAABAAEAAABFPwyfkQoljabcnNANd9mIgkAGgSjJQYWWk0cIwZqS2/+gQEwJaEsCDcchqFQFCbKBMah+AAmBoYDcVp0XAZXYcDg6nJLBBhtMPmCC0OEoXtA4xFAAAh+QQFCgAOACwAAAEAEAAPAAAET9DJ6ZC1NEvsiM6XpwFXCUiG+E1MQiDgSDVF3XwtQxxCr+AG18VQOFEMqw5sQ0NKFoIGYqHIDRC7AMrYGVQLjMrngPCWD7jF8+eQJtuJTwQAIfkEBQoADwAsAAABABAADwAABE7wyUkfqngiUAHHXiUISSdtHzEKn0a0UkB217Tc2fO+g1MUgczug2AoMAzM4FRJNJKSwyOoGPAaMYOEENMFGgBprnD8To8gdGOJCOaymQgAIfkEBQoADwAsAAABAA8ADwAABFHwSVKAvPjSlbscAuNJ3AMIQgcg5oIa4oWsmOEQ2Twnh6IkqhUg4FoAc0IdYaDCIIiFDiNB2IWegdV0J7K0CIlsw8uSIHpYxLbTkIR3o0kMEwEAOw==';
+const CATEGORY_NAMES = ['General', 'Trackers', 'Subtitles'];
+const DEFAULT_CONFIG = {
   enabled_sites: ['google', 'yt'],
   show_category_captions: true,
   open_blank: true,
@@ -68,59 +63,8 @@ let first_run = false;
 // script configuration
 let config;
 
-/*******************************************************************************
- * External sites
- *
- * 3 categories:
- * let sites = [ { GENERAL }, { TRACKERS }, { SUBTITLES } ];
- *
- * single entry:
- * KEY: [
- *   TITLE,
- *   ICON_URI,
- *   URL,
- *   NO_RESULTS_MATCHER,   (optional)
- *   NOT_LOGGED_IN_MATCHER (optional)
- * ]
- *
- * KEY       site id (must be unique among all categories!)
- * ICON_URI  preferably a base64 data URI (format: PNG)
- * URL       either a string (GET request):
- *             search URL (use HTTPS if available), the following patterns are replaced:
- *             {{IMDB_ID}}     e.g. 0163978
- *             {{IMDB_TITLE}}  e.g. The Beach
- *             {{IMDB_YEAR}}   e.g. 2000
- *           or an array (POST request)
- *             [
- *               URL,
- *               POST data (Object), values are strings, with patterns replaced
- *             ]
- *             example:
- *             [
- *               'http://www.surrealmoviez.info/advanced_search.php',
- *               {
- *                 simdb: '{{IMDB_ID}}'
- *               }
- *            ]
- * NO_RESULTS_MATCHER    either a string: if response matches this string -> No results
- *                                        e.g. 'No results found!'
- *                       or: function($dom, response) that must return
- *                         true:  no results
- *                         false: results found
- *                       Note: if this value is not present -> no automatic fetching for this site
- * NOT_LOGGED_IN_MATCHER either a string: if response matches this string -> Not logged it
- *                       or: function($dom, response) that must return
- *                         true: not logged in
- *                         false: logged in
- *                       Note: if this value is not present -> site is publicly accessible
- *
- ******************************************************************************/
-
-// MISSING?!:
-// blu-bits
-// MyXZ
-
-let sites = [
+// ADDING-SITES.md describes how this works
+const sites = [
   // general
   {
     google: [
@@ -414,6 +358,11 @@ let sites = [
           'search[text]': '{{IMDB_TITLE}}'
         }
       ]
+    ],
+    startpage: [
+      'StartPage',
+      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAwFBMVEXaWEjdW1DYXU/aX1bbaFrabWLgc2fbdWxwlc50mNJ5mc3ignbXiIbdjIXXjorkjIGKptXck47clJWUrNeYsNvmo5vXqa3cqaijuN3prKOpvuPrr6zkub2zxeXWxMy5y+vVzNnjytTD0uzsy8vG1e/pztLi0NjK1urN2u7g1+TY2ero1t/S3vPW4O7f3+nV4vba5PLk4+7w4+Tf6ffs6e7j7fzm7vbe8P346+zr8vvu9f7y9/nv/P34/f///P/9//xWYzz0AAAAtElEQVQYV2XIaxeBMByA8T+KLVGIZuTOXEbrNibV9/9WOjq8yO/Vcx7gNfA3/BrwzxPTnJw53XmOsyyH6LcGQ73HkG07NqICTk33ntwOR0REJAhiEHQ0dx0kHG9kIjnyQF56GuhzvxxSRgYB9VTx3mqsMFNKCexBvI2fry0sMFWpovgKYbs9Hmvdm2GP6Ah5KWTh1LJmj8hgjJBjmkFWkQYv8rwMyD/KcS0+BUUlY2kV3/HzBux7KSPo0YVRAAAAAElFTkSuQmCC',
+      'https://www.startpage.com/do/dsearch?query={{IMDB_TITLE}}'
     ]
   },
 
@@ -422,8 +371,7 @@ let sites = [
     kat: [
       'Kickass Torrents',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACEUlEQVQ4y2NggIKkSGvx6V3RH7OTHPNgYmXZ7svnT0z4jixWkuW2oLsu5D4DOqgt8j6yc0X+fxCe2R3zZdHkxF8wPggvmJTwc+WstL8wfk6SYzlcc0ywmdCqWSn/ti3N/k8s7q4Lego3ICPOpnzTwvT/6PjRnWP/QeD96/sYcuvmpv6PCjQRgvgrw2nf+rnJ/0F44/z0/4e2dPzfv7Hp/88fX8AGXD295j9MHhknhpvHgA2oyHG+smpm3H8Q3ra89D8ucHzP1P8wdSCcGm3RAjagPMvh2rIpkf9BeN28zP+n9s/+//LpNbjG+zcO/X/76t7/rctK/sPUgXBypGkH2IDsBIt9CyeE/EfGd68fBGv+8un1f3Q5GI4M0Id4ISZIv2Fut/9/ZPzs4UWI7TeP/keXA+HpbT7//d00IIHo76YuO7nR/f+MNi84fvX8NtiAGxd3g/lr5+WhyJekWz5HSUhZsUY3pzS6/ofhm5f3gg349+/v/+/fPv3/9OHlf2T5cB/NBhQDfJyVjDsrbP/11zr8B+EFE2P///r5DWzIu9eP/i+fmfEfJleUYvyOARsI91ad01Np8x+G5/RE/F8zv/h/f40jXKwh3/yvt6OCHQMuEO6jsq6t1Px/R5kFBq7ONv7j7SgfxEAIeDvIJRYl6/1oLTb9D8OJIeq3XW1kZBlIAd6OssXh3or7XK2l9XCpAQB9e+3AkPA7JAAAAABJRU5ErkJggg==',
-      'https://katcr.co/new/torrents-search.php?search={{IMDB_TITLE}}%20{{IMDB_YEAR}}',
-      'No torrents were found based on your search criteria.'
+      'https://katcr.co/katsearch/page/1/{{IMDB_TITLE}}%20{{IMDB_YEAR}}'
     ],
     pb: [
       'The Pirate Bay',
@@ -470,12 +418,6 @@ let sites = [
       'http://cinemageddon.net/browse.php?search=tt{{IMDB_ID}}&proj=0',
       'Nothing found!',
       'You are logged out.'
-    ],
-    extratorrent: [
-      'ExtraTorrent.cc',
-      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAYFBMVEUeOk0WSms/TVY2UWU3YHhlbnJtb2xPd5B3eHVzen56gYeRk5Coqq1zt+B9wOq7vMa8vceKyfG4xcyZ0O+n0OzKy8jI3u7a3Nnf5Ofl5+Tp7Ojv7PHl8vfx8/D3+fX8/vsJ7KWaAAAAhElEQVQY013P0RKCIBCFYSIoQQLRUlwE3v8tXVhqqv9q57s4M8sm56ZPeDO3/+QqmKFnGoRdB2q4hQoA+ji0wuQIQLCu/IUBNIgRYZZSKhNiREhJPym+pUSwLHeB8fAG70XqIeSsvL/W0S3nTGCtlbW5g35QQjYoZbxQTJfS4DvH/t8/AbYRElhtvO2TAAAAAElFTkSuQmCC',
-      'https://extratorrent.cc/advanced_search/?with={{IMDB_TITLE}}+{{IMDB_YEAR}}&exact=&without=&s_cat=&added=&seeds_from=&seeds_to=&leechers_from=&leechers_to=&size_from=&size_type=b&size_to=#results',
-      'total <b>0</b> torrents found'
     ],
     torrentz: [
       'Torrentz',
@@ -630,9 +572,9 @@ let sites = [
       'Nothing found!',
       function($dom, resp) {
         if (resp.responseText.indexOf('You need cookies enabled to log in or switch language.') > -1 || resp.responseText.indexOf('你需要启用cookies才能登录或切换语言。') > -1 || resp.responseText.indexOf('你需要啟用cookies才能登錄或切換語言。') > -1) {
-          return true;
+          return false;
         }
-        return false;
+        return true;
       }
     ],
     hdtorrents: [
@@ -670,9 +612,9 @@ let sites = [
       'Nothing here!',
       function($dom, resp) {
         if (resp.responseText.indexOf('The page you tried to view can only be used when you\'re logged in.') > -1 || resp.responseText.indexOf('該頁面必須在登錄後才能訪問') > -1) {
-          return true;
+          return false;
         }
-        return false;
+        return true;
       }
     ],
     myspleen: [
@@ -706,7 +648,9 @@ let sites = [
     rutracker: [
       'Rutracker',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB/UlEQVQ4y5WSX2hSYRjGva+LZuxiENFgMGi728W6WS0GwcYSxiDHWETQKMkrLyJIJLySw6CLGaiDoWLCbgQZDSLDCy8StByiYejx+Ac2jgdt4nYgEJ9639jZztraeuDjcD6+9/c97/s9BsM5yufzkGUZhv+Voig4VDweR61WQ6vVujhIFEUcuDfwY+EljqtcLqNer58NqlQqaDabUFUVytgiZOMkL2V4jgEOhwMEP7WYyL1eD8lkEtsPX2jFtH5++Izp6Rl4PJ5/t/EoN84O6ODu4Kx2+74Q4L1YLKYHFAoFvNt9g7e1V3gtPsad1BW2Gg6HsT2+gP33Cf5X/ZuQJAnRaFQPSCT+HKDC48slPed9r3cdExO38WR5GdlslsE0Jw1QrVbR7XZxN31VKw7urHCx1WrF5b4HuDbkxfziJ1htH5HL5RAMBqGbOunZtykEdgStBbp1ZPQeLvWvou/6FxhvVLG5pSCTySAUCkEXmHa7zdYikQi+H2QYYLFY+FYqNA7KvEhmsxnp9NcjAFny+/3w+Xxwu91wOp3odDr8ZJS+gWEZN281sPR0D2sBlUNELjQAPVmpVOLB0Jec0GBdLhcfnrzfhCh1dWn86ylPiuJaLBZ56pRIk8nELdlsNtjt9vMBhyKrgiBwiwQkR5SFRqNxMQC1lUqlzs7+b/0CJa7qHxjMpcoAAAAASUVORK5CYII=',
-      'http://rutracker.org/forum/search_cse.php?cx=014434608714260776013%3Aggcq1kovlga&cof=FORID%3A9&ie=utf-8&q={{IMDB_TITLE}}'
+      'https://rutracker.org/forum/tracker.php?nm={{IMDB_TITLE}}%20{{IMDB_YEAR}}',
+      'Не найдено',
+      'Введите ваше имя и пароль'
     ],
     secretcinema: [
       'Secret Cinema',
@@ -754,13 +698,25 @@ let sites = [
       'Zooqle',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfiBAUAISt1Jap4AAABXElEQVQoz42RP0sDQRDFVxMhqOAXsBCLKDFcbt/s3iXin4CClWDh1YpIIEIqBcFGEEEQi4CdQUGCCKJi5weIjRaKhQQV0lloE0XBGL2sm0tiGRxY5g3zm8eww9j/ggsxDarpgU4+ggnq/2v2BLCHIm5RpIzjk72UwzPy9IrNxvSyULTEfFiRypzhGVLGcDyAc3zxkAfgASXRp7MBFyd0jzxr1VVCKkp6ABVQigQZM8L0g1M84k61aN85ocyFmsOqZrXkSamQoH3to9flB0LJUQ8wOvgx3ukCL8hSmxWkSzzhCp8ajNbXjPvNuJy1UkN6crwrNkUpPsY3UOExrz3Z7vgYs9ZFkT7sLZGDK24Gw6ajd5AeYIei29YuKSiuSD+zmgvy0Pquf13cL9NCtzXiyh1xXQV1VaFy3aGKROflkczGHK277TVxJtNykbvCanKdCEeZ7GbnC+GtKdCIX+tLeV4Ph10JAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE4LTA0LTA0VDIyOjMzOjQzKzAyOjAwEi9IogAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOC0wNC0wNFQyMjozMzo0MyswMjowMGNy8B4AAAAASUVORK5CYII=',
       'https://zooqle.com/search?q=tt{{IMDB_ID}}',
-      'no torrents match your query'
+      'Sorry, '
     ],
     yggtorrent: [
       'Yggtorrent',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAcFJREFUOI3tkTtrU2EAhp/vO5cmPamJaRIMWKu1JBTEYkHr4CV10UEHBzdRLCIOrhZRcCwVRBcdXFTQCA4OUkWkWhFEW0UUTSVDLmBoiYk5KdLmnvM5lCr9DfpM7/C+7/LAf8RqmGgrqg53aoqIAoQApVYKarUswIT0Oo0T56X4e3BNOT2pkp36dj9uhkdiNGybpUyWqm3jDgYwOy2WCwX0jg6UEPQfOez0hkLRC0KkdPV0mjFqN3+V583i7Bsa+Rz5Dx/JvHzF4Ohx7M9NEvGHbI7tYcPwTmauXCecnZM2XQ+AXZKD+0bHcfnqRmNx6OI53k5cpb5Ypi+2l/XRfrq3RQHwRbYSHBwAwJE1jiGVWqps0YWu376scme1WslneC0szcPQ2Gm8fT3M3bhHc7lC5NAIltfF/NQLADq7xM8KtTxtY5MEUFSfu70a2UdPMPwWof0DpB8/48enJJmpGTRTIxGfZP79V7afPEqrVQ5MUkgLr/X6j4VL6suthUTyjPSYtA2BoRtUvhfRXCbujQGquSJOvYmnN4zfH7w7buw4tUYjwGxJMe1P7pasOGqhkCgkEgcHEBywo++Gu9fM/nl+A1JtoWnxPuYrAAAAAElFTkSuQmCC',
       'https://yggtorrent.is/engine/search?name={{IMDB_TITLE}}&do=search',
       'Aucun résultat'
+    ],
+    partis: [
+      'Partis.si',
+      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAf5JREFUOI2NU0toE1EUPTdJhxEDkcFiHNy4EKHSVVeRiNDGH4gfCAZKK5hC7U5xm5ULCdToSqa4cuFCi4GagYLWJlgJRVyFSLpyZYV0hkk0MJDJZ+a6qI6TdKqe5XnvnHfO417ABzbzuB/vh8A+5KTNPP2/Ji4c5lFmTr5YXn45MzvbXykU7v1LQx7xfDabXazX6xHDMGBZFhzHgSzLpSeKcilE1N23gsMcy2Qyyrft7Yiu6xAE4SsAJKamHi4pytUQUZfXY1d4PTbmG6NSrT66vbDA6bk53WYeq1Sr82vF4h3vHd44J/D7xCYXT094+RAAaJqGdruNG6nUUpBoy2aOBolKA13Pvuvyh8sPwL01fjt+ii583nErnE8kPgUDARyT5RYADIv/FA69ATsm+tbiwB8AWJEk6Uu5XJ7wFf5OEX9to2dWGs3v05wXJdeAiLq5XO5urVa7zsyjw0L+OCNw+drucHW0A/2OGQQQ9yYAEa2m0+nHqqre3/N0p6GgXRe4cDRuGM3JX2wY8MyB+9ruBG4RUYVLZyJw+k8No5E6PKJtGK1O3HYQDIswD4o4QUlrZ4+Ba7R68jjQ39SNVpR7pstLYTRHQrhFSUv1TTBgkhejAJ5pP3DxyCE8B1ACoFLSav5NN2wicF58xXnRd0N9t9ELSlpdADcBCH7nPwH5s9ovTMQ+qQAAAABJRU5ErkJggg==',
+      'https://www.partis.si/torrent/show?keyword={{IMDB_TITLE}}%20{{IMDB_YEAR}}'
+    ],
+    torrenthr: [
+      'TorrentHR',
+      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABfUlEQVQ4EaXBu2oUYRjH4d//nW9mT0nWmFUQYUnAziI3kMrau7CMlWUaWxtbrawt1Ea0zQUIKWwsRFhZJBEPECJxDzPzvX6bDSmETJPn4apEMn7+7On3V68fqd1GJkB4XROu9X+t7+w82Nx9+JZLBJL215+d9YMR6nTBDAReVWQb1+kOf9MkkHgeVBcF1srBDBzchIoCt0ATIxHGpUSjwIIACSSQWBJI4DQKJF6W+GSCS2DGglcVPpmCiSaBxHorq9mNAdbtAAYGlBXZYKPns3lJA5HMv4zuVd8Ot8mymnMKWe1VHU7evLs9+XDQt7XVOdFBgJMpD8fD9y/3AklxZ2sf2CcpR2MjUZF7dfJnUB4evZh9+nzf+msODs6C1CqOgb3Af/KtYeTcj8dPoopCmAkhEGfcwTQlCTRQyIUEJpDAAQMiIDmJ0cAdcMBZMpbEhUCTspTP5hZP/0IewJ0z0VGMgSTQINy6SZxNW+3tu9hKDxwQECNqFR3GH7myf6AifLRWXQhrAAAAAElFTkSuQmCC',
+      'https://www.torrenthr.org/browse.php?search={{IMDB_TITLE}}%20{{IMDB_YEAR}}&blah=0&incldead=1',
+      'Ništa nije pronađeno!',
+      '<div class="glavni_naslov">Login</div>'
     ]
   },
 
@@ -777,7 +733,7 @@ let sites = [
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAwFBMVEUcVXQaUnAbTGgaTmobUG4bWHiHorIcXH4bW30rWnYaRl8aSmQsXntKb4QbVncZQlnD0Nfw8/UcW3wbUGzS3OIZRFylu8elt8MaR2AcWHlYeo0bTGYbS2YcVHIaRFqmvMoaSGEcWXobT2waSGIcV3gZSGMbUm8cWnsbVXXh6OwaSmMbU3IbVHMaTWkZRV0aRFstZIKWrbtpjaIcT2x4lKUcUG0cU3Lv8/a0xc8ZRl1ZfZMZSGF3laZ3l6obVnT///9+zaarAAAA2UlEQVQY0x1O2WKCMBDcHApGCSJFIw1KAIOIgd53u///Vw3u28zOBYG/cNOaZtacoScWgjAIW7PfS/l3LYjlEE7vhyO+b1eE8IpBsDHGHLHr8MPyV0+0Xt8gXov5iqeVc+DjZNPh1tsrxug9eCzhCfFuwZijegkzeYaC/E6M03pZg8d9b/kP4lrrS12ChDc72SPE6PJdCvDryOJxTuka87JUA0zpX4i7HSZKqGEAy9Nn95IgJpEQn0MGtzVa57lSYsiyGNJbe31SXj6O8QEY9fhUKiGy8RDH8T9e2htmWyQ7HAAAAABJRU5ErkJggg==',
       'http://subscene.com/subtitles/title?q={{IMDB_TITLE}}',
       function($dom) {
-       return $dom.find('.search-result .exact').length > 0;
+        return $dom.find('.search-result .exact').length > 0;
       }
     ],
     turkcealtyazi: [
@@ -825,7 +781,7 @@ let sites = [
  * Styles
  ******************************************************************************/
 
-let css = '#lta_external_site_links img { margin-right: 4px; vertical-align: middle; }' +
+const css = '#lta_external_site_links img { margin-right: 4px; vertical-align: middle; }' +
     'img.ext_links_config { opacity: .8 }' +
     'img.ext_links_config:hover { opacity: 1.0 }' +
     '#lta_external_site_links a { white-space: pre-line; }' +
@@ -853,9 +809,9 @@ let css = '#lta_external_site_links img { margin-right: 4px; vertical-align: mid
 // helper function that identifies header redirect using refresh
 function detectRefreshRedirect($dom, resp) {
   if (resp.responseHeaders.indexOf('Refresh: 0; url=') > -1) {
-    return true;
+    return false;
   }
-  return false;
+  return true;
 }
 
 // replace imdb fields
@@ -881,9 +837,9 @@ function clickCog(evt) {
 
 function showConfigure() {
   // un/tick checkboxes
-	let i;
+  let i;
   for (i = 0; i < 3; i++) {
-    let s = sites[i];
+    const s = sites[i];
     for (let key in s) {
       if (s.hasOwnProperty(key)) {
         $('#lta_configure_tooltip input[name=' + key + ']').prop('checked', $.inArray(key, config.enabled_sites) >= 0);
@@ -898,13 +854,13 @@ function showConfigure() {
 }
 
 function saveConfigure() {
-	let i;
+  let i;
   for (i = 0; i < 3; i++) {
-    let s = sites[i];
+    const s = sites[i];
     for (let key in s) {
       if (s.hasOwnProperty(key)) {
-        let value = $('#lta_configure_tooltip input[name=' + key + ']').prop('checked');
-        let idx = config.enabled_sites.indexOf(key);
+        const value = $('#lta_configure_tooltip input[name=' + key + ']').prop('checked');
+        const idx = config.enabled_sites.indexOf(key);
         if (value && idx < 0) {
           config.enabled_sites.push(key);
         }
@@ -918,9 +874,9 @@ function saveConfigure() {
   config.open_blank = $('#lta_configure_tooltip input[name=open_blank]').prop('checked');
   config.fetch_results = $('#lta_configure_tooltip input[name=fetch_results]').prop('checked');
   GM.setValue('config', JSON.stringify(config)).then(function() {
-		updateExternalLinks();
-	  $('#lta_configure_tooltip').addClass('hidden');
-	});
+    updateExternalLinks();
+    $('#lta_configure_tooltip').addClass('hidden');
+  });
 }
 
 function cancelConfigure() {
@@ -928,8 +884,8 @@ function cancelConfigure() {
 }
 
 function toggleAll(cat_idx) {
-  let checked = $('#lta_config_toggle_all_' + cat_idx).prop('checked');
-	let i;
+  const checked = $('#lta_config_toggle_all_' + cat_idx).prop('checked');
+  let i;
   for (i = 0; i < sorted_keys[cat_idx].length; i++) {
     $('#lta_config_' + sorted_keys[cat_idx][i]).prop('checked', checked);
   }
@@ -937,12 +893,12 @@ function toggleAll(cat_idx) {
 
 // monitor all category checkboxes and un/check the toggle all checkbox
 function checkToggleAll() {
-	let i;
+  let i;
   for (i = 0; i < 3; i++) {
     let all = true;
-		let j;
+    let j;
     for (j = 0; j < sorted_keys[i].length; j++) {
-      let key = sorted_keys[i][j];
+      const key = sorted_keys[i][j];
       if (!$('#lta_config_' + key).prop('checked')) {
         all = false;
         break;
@@ -958,26 +914,26 @@ function postLink(e) {
   e.stopPropagation();
   if (e.type === 'mouseup') {
     // get site key
-    let k = $(e.currentTarget).attr('class')
-    .replace('lta-outlink-post', '')
-    .replace('lta-outlink', '').trim();
+    const k = $(e.currentTarget).attr('class')
+      .replace('lta-outlink-post', '')
+      .replace('lta-outlink', '').trim();
     let site;
-	let i;
+    let i;
     // find key in sites
     for (i = 0; i < 3; i++) {
-      let s = sites[i];
+      const s = sites[i];
       if (typeof s[k] === 'object') {
         site = s[k];
         break;
       }
     }
-    let form = document.createElement('form');
-    let data = site[2][1];
+    const form = document.createElement('form');
+    const data = site[2][1];
     form.action = site[2][0];
     form.method = 'POST';
     form.target = config.open_blank ? '_blank' : '_self';
     for (let key in data) {
-      let input = document.createElement('input');
+      const input = document.createElement('input');
       input.type = 'text';
       input.name = key;
       input.value = repl(data[key], false);
@@ -991,7 +947,7 @@ function postLink(e) {
 
 // fetch site results
 function fetchResults(key, site) {
-  let $indicator = $('#lta_external_site_links .lookup-status.' + key);
+  const $indicator = $('#lta_external_site_links .lookup-status.' + key);
   $indicator.html('<img alt="Loading…" title="Loading…" src="' + LOADING_ICON + '">');
 
   function noAccess() {
@@ -1009,10 +965,10 @@ function fetchResults(key, site) {
       .attr('src', CROSS_ICON)
       .attr('title', 'No results found! :(').attr('alt', 'No results found!');
   }
-  let opts = {
+  const opts = {
     timeout: 12000,
     onload: function(resp) {
-      let check = site[3], logincheck = site[4];
+      const check = site[3], logincheck = site[4];
       // check login state
       if (typeof(logincheck) === 'string') {
         if (resp.responseText.indexOf(logincheck) > -1) {
@@ -1044,11 +1000,12 @@ function fetchResults(key, site) {
         }
       }
       else {
-        throw('4th array element for ' + key + ' must be either String or Function!');
+        // this one has no results checker
+        $indicator.find('img').remove();
       }
     },
     onerror: function(resp) {
-      let status = resp.statusText;
+      const status = resp.statusText;
       $indicator.find('img')
         .attr('src', ERROR_ICON)
         .attr('title', 'Error: ' + status).attr('alt', 'Error');
@@ -1064,9 +1021,9 @@ function fetchResults(key, site) {
     opts.method = 'POST';
     opts.url = site[2][0];
     opts.headers = { 'Content-Type': 'application/x-www-form-urlencoded' };
-    let data = site[2][1];
-    let data_array = [];
-		let data_key;
+    const data = site[2][1];
+    const data_array = [];
+    let data_key;
     for (data_key in data) {
       data_array.push(data_key + '=' + encodeURIComponent(repl(data[data_key])));
     }
@@ -1095,7 +1052,7 @@ function add_style(css) {
 // initialize
 function init() {
   // Add new link section
-  let $container = $(layout === 'new' ? '.title-overview' : '.titlereference-section-overview:first > *:last');
+  const $container = $(layout === 'new' ? '.title-overview' : '.titlereference-section-overview:first > *:last');
   if ($container.length === 0) {
     console.error("IMDb: Link'em all! Failed to find container!");
     return;
@@ -1110,13 +1067,13 @@ function init() {
   let i;
   for (i = 0; i < 3; i++) {
     configure += '<td id="lta_cat_' + i + '">';
-    let s = sites[i];
+    const s = sites[i];
     let j;
     for (j = 0; j < sorted_keys[i].length; j++) {
-      let key = sorted_keys[i][j];
-      let site = s[key];
-      let title = site[0];
-      let icon = site[1];
+      const key = sorted_keys[i][j];
+      const site = s[key];
+      const title = site[0];
+      const icon = site[1];
       let info_icons = '';
       if (site.length > 3) {
         info_icons += ' <img alt="results" title="This site shows if results are available" src="' + TICK_ICON + '" class="site-indicator">';
@@ -1152,7 +1109,7 @@ function init() {
   $('#lta_configure_tooltip input[name=toggle_all_2]').click(function() { toggleAll(2); });
   $('#lta_configure_tooltip input:checkbox').change(function() {
     // ignore toggle all checkbox
-    let id = $(this).attr('id');
+    const id = $(this).attr('id');
     if (id.indexOf('toggle_all') === -1) {
       checkToggleAll();
     }
@@ -1165,19 +1122,19 @@ function init() {
 
 // render links
 function updateExternalLinks() {
-  let links = [[], [], []];
-	let html = '';
-	let result_fetcher = [];
-	let i;
+  const links = [[], [], []];
+  const result_fetcher = [];
+  let html = '';
+  let i;
   for (i = 0; i < 3; i++) {
-    let s = sites[i];
-		let j;
+    const s = sites[i];
+    let j;
     for (j = 0; j < sorted_keys[i].length; j++) {
-      let key = sorted_keys[i][j];
+      const key = sorted_keys[i][j];
       if (config.enabled_sites.indexOf(key) >= 0) {
-        let site = s[key];
-        let title = site[0];
-        let icon = site[1];
+        const site = s[key];
+        const title = site[0];
+        const icon = site[1];
         let cls = 'lta-outlink ' + key;
         let href;
         if(Object.prototype.toString.call(site[2]) === '[object Array]' ) {
@@ -1226,8 +1183,7 @@ function updateExternalLinks() {
 // parse movie info before calling init()
 function parse_info() {
   // parse imdb number/layout
-  let re = /^\/title\/tt([0-9]{7})\/([a-z]*)/;
-  let m = re.exec(window.location.pathname);
+  let m = /^\/title\/tt([0-9]{7})\/([a-z]*)/.exec(window.location.pathname);
   if (m) {
     // detect layout
     let title_selector;
@@ -1237,13 +1193,12 @@ function parse_info() {
     }
     else {
       layout = 'new';
-      title_selector = 'h1[itemprop=name]';
+      title_selector = 'h1';
     }
     // extract movie infos
     imdb_title = $(title_selector).text().trim();
     imdb_id = m[1];
-    re = /^(.+)\s+\((\d+)\)/;
-    m = re.exec(imdb_title);
+    m = /^(.+)\s+\((\d+)\)/.exec(imdb_title);
     if (m) {
       imdb_title = m[1].trim();
       imdb_year = m[2].trim();
@@ -1260,13 +1215,13 @@ function parse_info() {
   }
 }
 
-function onLoad($) {
-	let i;
+function onLoad() {
+  let i;
   // prepare sorted_keys array
   for (i = 0; i < 3; i++) {
     sorted_keys.push(Object.keys(sites[i]).sort(function(a, b) {
-			return sites[i][a][0].localeCompare(sites[i][b][0]);
-		}));
+      return sites[i][a][0].localeCompare(sites[i][b][0]);
+    }));
   }
   // restore configuration
   GM.getValue('config').then(function(configstring) {
