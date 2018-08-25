@@ -10,10 +10,12 @@
 // @grant          GM.getValue
 // @grant          GM.setValue
 // @grant          GM.xmlHttpRequest
+// @grant          GM.getResourceUrl
 // @grant          GM_getValue
 // @grant          GM_setValue
 // @grant          GM_xmlhttpRequest
 // @require        https://greasemonkey.github.io/gm4-polyfill/gm4-polyfill.js
+// @resource       style https://raw.githubusercontent.com/buzz/imdb-link-em-all/master/style.css
 // @connect        *
 // @noframes
 // ==/UserScript==
@@ -778,31 +780,6 @@ const sites = [
 ];
 
 /*******************************************************************************
- * Styles
- ******************************************************************************/
-
-const css = '#lta_external_site_links img { margin-right: 4px; vertical-align: middle; }' +
-    'img.ext_links_config { opacity: .8 }' +
-    'img.ext_links_config:hover { opacity: 1.0 }' +
-    '#lta_external_site_links a { white-space: pre-line; }' +
-    '#lta_external_site_links h4 { margin-top: 0.5rem; }' +
-    '#lta_external_site_links .links { line-height: 1.5rem; }' +
-    '#lta_external_site_links .links .link-wrapper { display: inline-block; }' +
-    '#lta_external_site_links .links .link-wrapper .ghost { margin: 0 0.1rem; }' +
-    '#lta_external_site_links .links .link-wrapper:last-child .ghost { display: none !important; }' +
-    '#lta_external_site_links .lookup-status > img { margin-right: 0; }' +
-    '.cogs_wrapper { position: relative; }' +
-    '#lta_configure_tooltip { color: #333; z-index: 100; font-family: Verdana, Arial, sans-serif; font-size: 11px; padding: 8px 10px; display: block; position: absolute; left: 27px; top: -2px; background-color: rgba(193,193,193,0.97); border-radius: 4px; white-space: nowrap; line-height: 1.5rem; }' +
-    '#lta_configure_tooltip.hidden { display: none; }' +
-    '#lta_configure_tooltip td { vertical-align: top; }' +
-    '#lta_configure_tooltip h4 { margin: 0; }' +
-    '#lta_configure_tooltip .controls { margin-top: 10px; }' +
-    '#lta_configure_tooltip .linkemallhomepage { float: right; }' +
-    '#lta_configure_tooltip img { vertical-align: text-bottom; }' +
-    '#lta_configure_tooltip img.site-indicator { width: 12px; height: 12px; vertical-align: baseline; }' +
-    '#lta_configure_tooltip:before { content: ""; display:block; width:0; height:0; position:absolute; border-top: 8px solid transparent; border-bottom: 8px solid transparent; border-right: 8px solid rgba(193,193,193,0.97); left: -8px; top: 7px; }';
-
-/*******************************************************************************
  * Functions
  ******************************************************************************/
 
@@ -1036,16 +1013,16 @@ function fetchResults(key, site) {
   GM.xmlHttpRequest(opts);
 }
 
-// add style tag
-function add_style(css) {
+// add stylesheet link
+async function add_style(resourcename) {
   var h, s;
   h = document.getElementsByTagName('head')[0];
   if (!h) {
     return;
   }
-  s = document.createElement('style');
-  s.type = 'text/css';
-  s.innerHTML = css;
+  s = document.createElement('link');
+  s.rel = 'stylesheet';
+  s.href = await GM.getResourceUrl(resourcename);
   h.appendChild(s);
 }
 
@@ -1057,7 +1034,7 @@ function init() {
     console.error("IMDb: Link'em all! Failed to find container!");
     return;
   }
-  add_style(css);
+  add_style('style');
   // configure dialog
   let configure = '<span class="cogs_wrapper"><a href="#" title="Configure" id="lta_configure_links"><img src="' + COGS_ICON + '" alt="Configure" class="ext_links_config" width="16" height="16"></a>' +
       '<span id="lta_configure_tooltip" class="hidden"><form><table><tr>' +
