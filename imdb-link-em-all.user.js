@@ -272,12 +272,6 @@ const sites = [
       'http://rarelust.com/?s={{IMDB_ID}}',
       'Nothing Found'
     ],
-    avaxhome: [
-      'AvaxHome',
-      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAMFBMVEUAAAAAAABxbm3U1NPDw8MPDQzx8fLi4uL6+vr///8pJSJST007NzUdGReLiIeqqahjJly6AAAAAXRSTlMAQObYZgAAAIVJREFUCNdjYEAARiFjZzBDVCyt2AEkENjmPN0FJBA4bXWnC1AoauG0UxUlDgyMt09lFqcVOzPwHjq6o3NGuQsD776zUZs824CM/XvvhgZ1mjAwrte6dTf0pzEDQ9Dvu5+u7kxgYFj6bld96M4CBgbeIO09F3+A7Fq68Gx0Ath2QRkVBgYA6yIs21PYRWMAAAAASUVORK5CYII=',
-      'http://avxsearch.in/?q={{IMDB_TITLE}}+{{IMDB_YEAR}}&a=&exact=1&c=54&l=any&sort_by=',
-      'Found 0 post'
-    ],
     xrel: [
       'xREL',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAMFBMVEUAAAAUFBQrKys/Pz+Hh4ednZ3/lgD/ogCurq66urr/uQD/wADJycnV1dXo6Oj9/f0GGqvHAAAAdElEQVQI12P4DwUMIOLdu3dgxr+bHXPfAxnvXhowMJ9j+P9mZgvX6g3zGP4dZlIQYNjQx/BvwgZu7l0LQIwFXAwMIEYTVwF7WQJQTUMBGwNI178JCWwsEXPeM/y7zKRgeQ9k8tuTM++B7fr37t17mKX/kRkAn3VZRBtqnu4AAAAASUVORK5CYII=',
