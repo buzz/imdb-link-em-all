@@ -212,13 +212,6 @@ const sites = [
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABTklEQVQ4y6WRoY7CQBCGJympQaAQV4WqICgMqhdqyJE0KCoQCBya1EMQJKg+wb0BEoNCYUifoLY0p2pKgrrkv91Nptnbo4LcJF/6z8w/ne2WgiCYCgoBXkTOTGg8HhcCmCyXy1888whuNBqNoDOfz3E6nXC/35GmKa7XK8qyxOVyQRRFMP3k+z6Y/X6vBmXEcQwiUqzXa3AcDgfoM+R5HiRhGEKP4XBYvUByPp+r3m63A8/RYDAAs91uK9Nms3l6guPxCH2G+v0+dGazGZIkUeYsy9Q9PB4P5HmO1WoF00+9Xg/PkBe0WCwq6nzkui7+A3U6HQSf3wqpzZy1Sdebqj45jlMVpTZz1vof0fvUbrdrt+g9qRm9Rq1W688WzvWe1Ixeo2azWRWkNvO6071131WfbNsuBGqzfDKc69/ONBoN9t3IsqyJ4EuAF5EzHz8jKv73k0dNqwAAAABJRU5ErkJggg==',
       'https://veehd.com/search?q={{IMDB_TITLE}}+{{IMDB_YEAR}}'
     ],
-    surrealmovies: [
-      'Surreal Movies',
-      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAMFBMVEUAAgAaHBkrLSo3OTZBQkBWWFVjZWJzdXKLjYqYmpeqrKnAwr/T1dLg4t/s7uv9//tJZD0wAAAAdElEQVQI12NgEGQAAgsgtm1gYIh6CmToPNP5t/8RSPj/vnfvBYA00/+f/WAGw6XIdhkQzVBgvYwbzNhz/9xtMKP///zfYEb9QblfIJr5//lf/yeAtLt/tWpLAAlJJTAcBKvhXMS1EcwQ//9/IZjB6GIMtAEAHiYl2rp5rQoAAAAASUVORK5CYII=',
-      'https://www.surrealmoviez.info/advanced_search.php?simdb={{IMDB_ID}}',
-      '0 Movies found matching search criteria.',
-      'Forgotten your password?'
-    ],
     kinox: [
       'Kinox.to',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABQ0lEQVQ4y6XMXSuDYRgH8JsRIzYnPoUDh7KkpCS1edtKVmpZLUqkOZGZA452PPYSIQfL6mkemzTk9fBxprC8nMjH+HvuK4+u7ramdvDreul/XaLDt4JaCKc3jFoI58QyaiEc44vgwuksUXfpszt4onGoedE+ugAuVbgl1rxxeILH0idVNSuJNvc8uFThhsg+epCjY1nVnEW0joTAJU+vyfq+BuP1g6qa4UTLcBBcUr+iQ0swtgs1wwn7UABcQr+E8fKOyF4WsUye+u7ZVag507dJE82DM+ASuQscFe+p73SHoD8YNMv+N/Nk8gKok0TTgB/cTq5IrNk1F4Hx/Ia1dEbOxya7dUwPGvunwG1r54TvAltxWfP88O9BQ58PXJd/iSj7L5Oj7AObaxL/MF3umB7U946hipLJVvlBjwdVbFY6ln4AEEYVYRiE14MAAAAASUVORK5CYII=',
