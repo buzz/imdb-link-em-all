@@ -380,6 +380,11 @@ const sites = [
       null,
       'http://club-classic.com/?s={{IMDB_ID}}',
       'Not found'
+    ],
+    tvtropes: [
+      'TV Tropes',
+      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABp0lEQVQ4y43TvS8DYRwHcNKINCIGaQzSiDTlrkVVuUs3RIlJTA2L0G7SQUz+AoOI0SAiFpuhkzRE610HCcJgqGrkSFUjBuFHmsf3kadypeWGT+7yPM/v+7zcc2WMsXI9ijRZ6MjpppSn8mdfMWXfhVvNVtqWpunYGafrDo0y6rihAIrJFbQj++nQcUYXrhxpXYweVY6HDP4fsCs7ad+RxLIZ3XgYZdV8AJdEyBClFVPpgKhkgTiWz+i8TV+cl6KM4v7zDBCw9BVwjFWklYLit4waogfF/GfAW1SaQgh735PZx10n38YzildR3GroK1BMGkNILhV2sVi4O5HVvD7G5Arjn3Hfbjtd6wwNj4ymPQMTWktvcKHdF5hx9wdswJ9TUMXH4umHWbAX3IO2vqDV5Qsk0fEKVxDhg2ATnsAN1RCHFDQWBKDBCrdiAH+vEe18dgYh8MILrICpVMBBfrmiXYZ72IA5IBj6dZXRWA8JuBRhZj6LsCy2loUjqC0WwAvWIQcn4gxk0dcDz2Irk0V/JjGwGeYhDIvQoAufFqdfVzJAF2Qycge4TwCQaMiplLfGAAAAAElFTkSuQmCC',
+      'https://tvtropes.org/pmwiki/search_result.php?q={{IMDB_TITLE}}'
     ]
   },
 
