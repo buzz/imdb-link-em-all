@@ -382,6 +382,11 @@ const sites = [
       null,
       'http://wipfilms.net/?s={{IMDB_ID}}',
       'Not Found'
+    ],
+    cat3plus: [
+      'Cat3Plus',
+      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAPUlEQVQ4y2NgGAiwl3fpf6IEQWLo4jAxFHFcCnEZjqGZkAaczibWRpINIMZAsgORPi4YooGIy1CyNQ8dAADfLl7DzkcjHAAAAABJRU5ErkJggg==',
+      'http://www.cat3plus.com/search?q={{IMDB_TITLE}}'
     ]
   },
 
