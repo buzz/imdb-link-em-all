@@ -376,6 +376,12 @@ const sites = [
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABt0lEQVQ4y3WTXSiDURzGDxrSmiXErQtpKS5dUYiL5Ua5dSGXLiS50FrMsM1MrZlSKERyZZTt9S0f9z5aY+NKQ01qhvbxPs5539K29+zU/+J9z/N/zu+cnj8haQuJ7yIEPHrsDzjhrAlisviH1jdctX74Bh0IejuR/C0kvIWv1woIQ3ZYtR8wEWAuD7geAny9gJl+s38z5e/iicGEn49SZfNS06UkSq+zRmAtH4r/q61H/yYSNjs5W8Tqxg7sqMHZS+HUOE6voyJiwNMl2soiCpGNVmgLuGoF19xe+YaQ0E6w27/IFbjoG4S3ZQrePqM4HLEQzFa9cAUrWiAqyBQ2rgFEt+6ewJSf5BpsNADxgEzBaHgai+Yzt8FONyAmZApGk9Mg1xUuekAdZApGw9O4dXe5HzHYJxswCkbDe8Tj0QmChz09S5hCEJmRDVgxmux9Rv583CIFSRSGrQpByEB740AiDAjNnCCNGZGKF8hpjL2XK6K8XE0pzoFHMz1Nldm83uFVzgMzORixZFxnUwM40hpnq8JShLObM8aZjSwb3fk6vzhVEsO0OoqF+luaumnx6bBNyn/a+gNsGXUWDpJOWQAAAABJRU5ErkJggg==',
       'http://rarefilm.net/?s={{IMDB_ID}}',
       'Sorry, but nothing matched your search criteria'
+    ],
+    wipfilms: [
+      'Women in Prison Films',
+      null,
+      'http://wipfilms.net/?s={{IMDB_ID}}',
+      'Not Found'
     ]
   },
 
