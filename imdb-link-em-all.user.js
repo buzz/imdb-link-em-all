@@ -478,13 +478,6 @@ const sites = [
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACBUlEQVQ4y52ST0uUYRTFf/c+78z4b5DEKNRFQSGVOUNOIMhQtGgVLapVm1pYBhHUogjatPYDxITgN2gV1CoMopVM6srANNoYUjPpKM34PvM+t0XOLgPnbi4c7jmHcznQxiyN0l0uMA0QtSOQZHh2LMPjcoFVPSj560U6zDi1k4BA/sACx9/TIFACEGFW24kQKRkAg85oZGbkSKPe2OzN9PaRpbd8s/yZ5+j46Pjw1retzeVHy99bxLUJhisx3hKC7WGSL+VXgwtVTfRcqjelftNPi8qJdH/6mt/x2zWTGyu3y+/mzzN3OKLoDWqepbSSa8IFDRayTlwBeOtrfi3qiZ6Y2Zn4Z/xaVLLeyZ3aEGODKYrVJh+2PTNiuA4FE0yB7uDDq8V7i1cc7ql2Ki7tbi1MLVwNO+GTBhmqZhnwAZwwOVbmbiRMphTEUEUQhForp3kjTuImAI46iVny92GYYADx3m4VKSVIGiBYiJxziJMIILFERZxmjF8qEBJKCwWWm1Bs+amKbhvW2AN88GHXmUtaDl1x6HY15jcafOyPuHQoxX0HjWpMwwSLLNjZZqpZB1DRN7IrJ+NsvAGgQT3WdAPr/LZ1il8mON1ICFs9rPTVOdpV4YfsV5bcy9xlF7lZhC7xcr08VZ77Z6n2E3DqKgiDIYSmqlbaaSz5F/mHuVLuwf9u/gA7HNa+f9jlaQAAAABJRU5ErkJggg==',
       'https://torrentsmd.com/browse.php?imdb={{IMDB_ID}}'
     ],
-    x264: [
-      'x264',
-      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAYFBMVEUAUX4AYpoBZqUAbrIAcsAAe80CfMYAiNkOh9EAiuMfh8YAkeITjOsAlfMAl+8blt4RnO1AmtJOm8kkpO1Ar/FOreRrr9lgvPR+ut+QzfGi2fiy2vPF5vnZ7frv9/z9//yEcxjFAAAAs0lEQVQYGQXBCW7DMAxFwfdJelGcBUF7/xM2BRKgthNLYmdkCAAyScBNt4k2NSQkpPgeAej1de3UZ6B8cK5h4xcwj+7H0tf9va0nfp+fIo82z6sk7W2/3PPhkRTbDandluPRDVtrMZmYyvGDe2DMwXBQizZkWJ4S9Sl4x4UMxoutJBDvad6w8zVffyytOdq9dF+m6kOJMFfWYahRPx46+jCQ2WWmKxgdzMNkxxZAB+j9A4J/SVNOtjDPVzgAAAAASUVORK5CYII=',
-      'https://x264.me/browse.php?search={{IMDB_TITLE}}+{{IMDB_YEAR}}&incldead=1&xtype=0&stype=0',
-      'Try again with a refined search string.',
-      'Note: Three (3) failed login attempts will result in a temporary security lockout.'
-    ],
     kinozal: [
       'Kinozal',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB+0lEQVQ4T2Owdm/wAeL/UOzDAARoYrjEwWIgwf8nzl/6/+HN/f9TF+767x/R8b+gdvH/Gzdv/P/49tb/q9dv/J+9dM9/r5C2/809K/9/fHEOKHcRbAjcAJDmn28v/v/9DoL/vj+Hhs////H2wv/vby78f/v23v8Pz8+hGOAzY9Hu/7+AGqdyc6BgmAF30vz+r5IV+X/IRvf/t9cX/meWL0R4AeYKkAtur5j4f4WMCFgziA3SfKMg5v98Yb7/02Uk/q/xdAAbALcd5gIH7yawM0EaYAaA2DeX9v0/YKL8/9LUBhQvxab0IVwAcs6kebvgkkskBcEG3Ih1/j+Tj/P/SgdzjDCZMGcX2Btw54NCGt2ATgaG/6fbSzA0g/Chk6iB+P/Vk8twSZgXVkgBaQnR/7frMzAMeHgXyQCQU548vAqXnAcMMJABT9rS/x91NgC75Iin2f9PNxDePHzqHIoXfKpbl2MYAGL/vLfr/0YtebAhR2O8/v95ewYsXtmyDDMaQRKvljWCDQBhEBsk9mJW1f+5AjxgQ457QAIUIxpLG5aCJbAlpF8P9/0/3Zj/f1OIB9iQc/3VqAkJHIiPMUMaH75yFS0WumbsABtSWLfkv41HI5g+AgwokBgoykAuBKkrqFn8/+q1c//XbNqPmhdAHCiGZ1uoM1Gci00tANqbcjckBbSEAAAAAElFTkSuQmCC',
