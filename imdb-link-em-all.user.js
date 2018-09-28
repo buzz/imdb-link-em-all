@@ -194,8 +194,7 @@ const sites = [
     hancinema: [
       'HanCinema',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACaklEQVQ4y3VTS2gTURQdxGWrUBG0LkJrd34oiAvtVosIVsWAVUFwp3RRsG5cFEXBlbUUDEbBgi4qBUVrF21K+lHMNJ0kM0maSWPTaIS000iaz7T5QD7H914m02mwFw4M98099717z+E4LSqVionAShAlKOVyOSjKOuLxv8gXCqA57Yz+Y+KMQRKdBCq0SKczcLklSD4/JK8PgltEPp+vHVMyldYYO+vFGVWFW/SCnxfg8kiESISDfPv8i6C3qiMxUQIrDJHY2IC6uYlkKo1obBV/VtcYaTKVQjqTMf5KSayUIGpMbm1l8WNmDjM9feDPXQLfeRnT9x9CcAookFnUEUQpQamWoO+cHv0EofUExMbDEPcfYZAaDkE4dhrfJqZQLBbhdHlQLpfZYDkjo+T1w3nyDMR9zXox32TCg/Yu9Jy6hrGuWwiFIwj9XIayHmc1OgFltL9+C5F00zsToo7zveBuDoK7MYiWq48xZ7MjmUwhIC9tE4ikcz5fwFT/0x0E3w+0YG/3c1L8oorrAxgeHUc2m8PEpJ3cJFwlcPALyJH3f3zzHkJjs9791dGzWvcqwR6Cz5OzSJEN+f0BOgOwIS5pb+IFD8xX+mBp68Cj4xfQZH623Z2gvdcKWQ5iJRJBjKyXDZGugl6JJ2vKZFS8/DCOhttD7M16cfcADt4ZwsiYjcnaMb/AtlFbIxPSMplumCCRSGDkiw0X+4fReteCtnsWmJ+8w1fbLBMUDVpsFJJJkyUWA0HIwRCTbCwWgxyQGRRFQalUqheRqpvKaKY14kAH72Q+CK9Edpjov2bazc5U0r9+R3X57mbnf8brH/ocK4DKAAAAAElFTkSuQmCC',
-      'http://www.hancinema.net/googlesearch.php?cx=partner-pub-1612871806153672%3A2t41l1-gajp&cof=FORID%3A10&q={{IMDB_TITLE}}',
-      'No Results'
+      'http://www.hancinema.net/googlesearch.php?cx=partner-pub-1612871806153672%3A2t41l1-gajp&cof=FORID%3A10&q={{IMDB_TITLE}}'
     ],
     kinopoisk: [
       'Kinopoisk',
