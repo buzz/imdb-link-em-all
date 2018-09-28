@@ -397,7 +397,7 @@ const sites = [
     demonoid: [
       'Demonoid',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACJ0lEQVQ4y8WT60uTYRjG/Vb/QlH0sUYfjCKyliFviY03rC2Hug4QUhDFIlAsFjppqUVHtSzXac1lbVLu4HknYypt5dZpa01dX6K0/gBR8Nc7o/KlpPrUDdfDfbzgfrjurKz/aYIg8MP5jr8dlPVnnEeBHTj8IvOLC8HWkythg5zAbFfhHdHif6HlnlvFk7iO4dReQkmdhFI6hzRSXsQ1KPLQq6T+erac4HyLgC+mpftpEZWnN/F4QMPAmz30j5RIKMYfK6HJmk+TbT3OQYED+mXIdqptKMAbLaI3oiX4qpTga500qMN4YQs9z4roe66lI7SV9kA+tr61iOqVcoK6a7lzK3iju7H7tnPHmU9rp8iDXjVt3cW0OJRYu3Jo618n1fMQxCXfVsg89n4VPeFCzO0CVXUiLbcuEQwGMJlqSCbf8enjZ8w3zZQd0lJ7pZCLFgW3PSt+Ely+q6TqXAGmMzV0d/mYnPxCxlwuF2Nj40xPz+B2e3A53QwPRdmlKaC6Ybn8E22tDhLxt6Tfp4nH44yOjpJIJAiHw6RSKfx+P7FYDKezA4vFhrBts1w3mSAafcnU1IzU5CQUCjE7O0sgEJiLJyYmiERGpGErjY0Nv4oukzisV+MN3qeiohyHvYP0+Aeam82cMlTj8Xi4esOISsxbWLGZgqFuIydqV2M4q+Bk/SrJV3DcuJT9+sXs3Lfoz3KfL9myo9kcKc/h4LE1/3QrCx/Nb+wr7suzQv3uXZAAAAAASUVORK5CYII=',
-      'http://www.demonoid.pw/files/?category=1&subcategory=0&language=0&quality=0&seeded=0&external=2&query={{IMDB_TITLE}}%20{{IMDB_YEAR}}&uid=0&sort=S'
+      'http://www.demonoid.to/files/?category=1&subcategory=0&language=0&quality=0&seeded=0&external=2&query={{IMDB_TITLE}}%20{{IMDB_YEAR}}&uid=0&sort=S'
     ],
     hdbits: [
       'HDBits',
