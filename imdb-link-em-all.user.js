@@ -387,6 +387,12 @@ const sites = [
       'Cat3Plus',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAPUlEQVQ4y2NgGAiwl3fpf6IEQWLo4jAxFHFcCnEZjqGZkAaczibWRpINIMZAsgORPi4YooGIy1CyNQ8dAADfLl7DzkcjHAAAAABJRU5ErkJggg==',
       'http://www.cat3plus.com/search?q={{IMDB_TITLE}}'
+    ],
+    clubclassic: [
+      'Club Classic',
+      null,
+      'http://club-classic.com/?s={{IMDB_ID}}',
+      'Not found'
     ]
   },
 
