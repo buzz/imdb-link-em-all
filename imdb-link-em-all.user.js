@@ -485,13 +485,6 @@ const sites = [
       'Try again with a refined search string.',
       'Note: Three (3) failed login attempts will result in a temporary security lockout.'
     ],
-    bitmetv: [
-      'BitmeTV',
-      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAYFBMVEUKBAgtBgVNCANsDQeMEQ40LiukFg7DFQjXEQthPztRSkiDPjy1MiOwSkXMSkZlaW/TT0V1a2V/fn+bd3PHdnCIjZGioKPUlo2usLS5vL7OurriubXFyMnU09fl5eb29vg32NlRAAAAm0lEQVQYGQXBQWrDQBAAwe6ZWQkLQ8DEBx/y/8fl4otBKFpNqnwerE3aWOdsapJtQoU96KNmZkKGAHVWrYugAOJIvgBgwOMF/EQOYGx32E/YrO3+u/O9/L3pKSs1RWRIKINKQ4DbviNFzA6luWloUS2BkkHHYtfVCE3JYfRVdNpgoSwXPl0FkKaRHDUThD5nxP7xQbHaZzM8jsx/QZk1XcUYj70AAAAASUVORK5CYII=',
-      'http://www.bitmetv.org/browse.php?search={{IMDB_TITLE}}',
-      'Nothing found!',
-      'Not logged in!'
-    ],
     kinozal: [
       'Kinozal',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB+0lEQVQ4T2Owdm/wAeL/UOzDAARoYrjEwWIgwf8nzl/6/+HN/f9TF+767x/R8b+gdvH/Gzdv/P/49tb/q9dv/J+9dM9/r5C2/809K/9/fHEOKHcRbAjcAJDmn28v/v/9DoL/vj+Hhs////H2wv/vby78f/v23v8Pz8+hGOAzY9Hu/7+AGqdyc6BgmAF30vz+r5IV+X/IRvf/t9cX/meWL0R4AeYKkAtur5j4f4WMCFgziA3SfKMg5v98Yb7/02Uk/q/xdAAbALcd5gIH7yawM0EaYAaA2DeX9v0/YKL8/9LUBhQvxab0IVwAcs6kebvgkkskBcEG3Ih1/j+Tj/P/SgdzjDCZMGcX2Btw54NCGt2ATgaG/6fbSzA0g/Chk6iB+P/Vk8twSZgXVkgBaQnR/7frMzAMeHgXyQCQU548vAqXnAcMMJABT9rS/x91NgC75Iin2f9PNxDePHzqHIoXfKpbl2MYAGL/vLfr/0YtebAhR2O8/v95ewYsXtmyDDMaQRKvljWCDQBhEBsk9mJW1f+5AjxgQ457QAIUIxpLG5aCJbAlpF8P9/0/3Zj/f1OIB9iQc/3VqAkJHIiPMUMaH75yFS0WumbsABtSWLfkv41HI5g+AgwokBgoykAuBKkrqFn8/+q1c//XbNqPmhdAHCiGZ1uoM1Gci00tANqbcjckBbSEAAAAAElFTkSuQmCC',
