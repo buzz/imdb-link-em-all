@@ -319,12 +319,6 @@ const sites = [
       'https://www.uloz.to/hledej?q={{IMDB_TITLE}}&type=videos',
       'nebylo nic nalezeno'
     ],
-    imtdb: [
-      'IMTDb',
-      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfiBAUALjkBBMf/AAAAQElEQVQYV4XOCwoAIAgDUHf/Q1ttFmpEQ6Ke/cxbzK2EIJ0j+wLWacp/EKuY11euf+wgAYAGq6gFtOkBvCMdyRmFQJ95cUJKuQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxOC0wNC0wNFQyMjo0Njo1NyswMjowMOXYsugAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTgtMDQtMDRUMjI6NDY6NTcrMDI6MDCUhQpUAAAAAElFTkSuQmCC',
-      'https://imtdb.net/search/node/tt{{IMDB_ID}}',
-      'Your search yielded no results'
-    ],
     justwatch: [
       'JustWatch',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABpElEQVQ4y6WTy0sCURTG/SuyVj03+Wj0zthkmqlTCpqSqVlpWqlRRBDmIoiIqFVrkdoF1aKICgqCjBYRFYRBbVr32EW0adPqa2Z8RDDEhIsL9x7u+d3znfNdhbK2ubaqTpXj15eyXg05S7gr5Ai5CnEjM1EClFOUXk4O6XCyxiIS0KO6QX4litIhldDj8bAdx1kjEmGCaIiWBSoDAt4W9Hkofq9CtJ/GyxmHiy07HN1/V1QGzIzpkVlgwLBaxEIEDwc2pCdYeFw0bvdcGBlqQ/VfgNlkQcLdrgmjgwSWTkqMO7sJPm58eL8OYDphgsdtkAYITZyfImhSazDcT/B0ymF9xYxgL4PsshUUQ0FDKHzmQ8htuGE0638D4oM6zE0SNKo0fAMJnnMcNlY7MOA3ILNkRQv5AZxv9sBsIdIS8jtmxMM0ujidGHcUJbxdFST0elqlJQhjzC4yYNu0YgX3+zakxll43TTy+y7EI0bJaZQBQS8FX0+hcQLglR/j5bYdTgeRN8Z0UcKRaCQasQEaNXKMVLLyeKRg5bD/n1au+DNV+p2/AWWoo5tG2eI6AAAAAElFTkSuQmCC',
