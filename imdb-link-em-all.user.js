@@ -205,7 +205,7 @@ const sites = [
     cinemaoftheworld: [
       'Cinema of the World',
       null,
-      'http://worldscinema.org/?s={{IMDB_TITLE}}',
+      'http://worldscinema.org/?s={{IMDB_ID}}',
       'No search results for:'
     ],
     veehd: [
