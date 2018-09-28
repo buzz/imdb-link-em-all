@@ -365,6 +365,11 @@ const sites = [
       'StartPage',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAwFBMVEXaWEjdW1DYXU/aX1bbaFrabWLgc2fbdWxwlc50mNJ5mc3ignbXiIbdjIXXjorkjIGKptXck47clJWUrNeYsNvmo5vXqa3cqaijuN3prKOpvuPrr6zkub2zxeXWxMy5y+vVzNnjytTD0uzsy8vG1e/pztLi0NjK1urN2u7g1+TY2ero1t/S3vPW4O7f3+nV4vba5PLk4+7w4+Tf6ffs6e7j7fzm7vbe8P346+zr8vvu9f7y9/nv/P34/f///P/9//xWYzz0AAAAtElEQVQYV2XIaxeBMByA8T+KLVGIZuTOXEbrNibV9/9WOjq8yO/Vcx7gNfA3/BrwzxPTnJw53XmOsyyH6LcGQ73HkG07NqICTk33ntwOR0REJAhiEHQ0dx0kHG9kIjnyQF56GuhzvxxSRgYB9VTx3mqsMFNKCexBvI2fry0sMFWpovgKYbs9Hmvdm2GP6Ah5KWTh1LJmj8hgjJBjmkFWkQYv8rwMyD/KcS0+BUUlY2kV3/HzBux7KSPo0YVRAAAAAElFTkSuQmCC',
       'https://www.startpage.com/do/dsearch?query={{IMDB_TITLE}}'
+    ],
+    moviedbme: [
+      'MovieDB.me',
+      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAYElEQVQ4y2NgGHDgsnpiJhCvJBNnggxYSYHlK2hnAFDcCIjTgJiJXAPCgfg/EB8BYh1KDADhY+Qa8BmIC4GYhRwDxIBYlj6xAHUuOXgFLLrCyMRG2JylDTIZB9ZmGHQAAIx3sXcNkddPAAAAAElFTkSuQmCC',
+      'https://moviedb.me/search-for-movies-tv-shows-or-people?q={{IMDB_TITLE}}'
     ]
   },
 
