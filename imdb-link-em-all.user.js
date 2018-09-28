@@ -727,13 +727,13 @@ const sites = [
     os: [
       'OpenSubtitles',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAKlBMVEUAAAAREREiIiIzMzNERERVVVV3d3eIiIiZmZmqqqrMzMzd3d3u7u7///9SrzZ+AAAARElEQVQI12NggAHeC3fBCMHAAjjuTmA6ewfIyGCYxuUgDWRsYpDmdgBJHWSQYbm7GSzVzs7gDWRw3p3AdfYqNmNw2wUAUH0dtNO4HWIAAAAASUVORK5CYII=',
-      'http://www.opensubtitles.org/en/search/sublanguageid-eng/imdbid-{{IMDB_ID}}',
+      'https://www.opensubtitles.org/en/search/sublanguageid-eng/imdbid-{{IMDB_ID}}',
       '<b>No results</b> found'
     ],
     subscene: [
       'Subscene',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAwFBMVEUcVXQaUnAbTGgaTmobUG4bWHiHorIcXH4bW30rWnYaRl8aSmQsXntKb4QbVncZQlnD0Nfw8/UcW3wbUGzS3OIZRFylu8elt8MaR2AcWHlYeo0bTGYbS2YcVHIaRFqmvMoaSGEcWXobT2waSGIcV3gZSGMbUm8cWnsbVXXh6OwaSmMbU3IbVHMaTWkZRV0aRFstZIKWrbtpjaIcT2x4lKUcUG0cU3Lv8/a0xc8ZRl1ZfZMZSGF3laZ3l6obVnT///9+zaarAAAA2UlEQVQY0x1O2WKCMBDcHApGCSJFIw1KAIOIgd53u///Vw3u28zOBYG/cNOaZtacoScWgjAIW7PfS/l3LYjlEE7vhyO+b1eE8IpBsDHGHLHr8MPyV0+0Xt8gXov5iqeVc+DjZNPh1tsrxug9eCzhCfFuwZijegkzeYaC/E6M03pZg8d9b/kP4lrrS12ChDc72SPE6PJdCvDryOJxTuka87JUA0zpX4i7HSZKqGEAy9Nn95IgJpEQn0MGtzVa57lSYsiyGNJbe31SXj6O8QEY9fhUKiGy8RDH8T9e2htmWyQ7HAAAAABJRU5ErkJggg==',
-      'http://subscene.com/subtitles/title?q={{IMDB_TITLE}}',
+      'https://subscene.com/subtitles/title?q={{IMDB_TITLE}}',
       function($dom) {
         return $dom.find('.search-result .exact').length > 0;
       }
@@ -741,7 +741,7 @@ const sites = [
     turkcealtyazi: [
       'TurkceAltyazi',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABWElEQVQ4y2N48+yBzI0ZEUvv9TvtJgXfmBqy4s2TO4oMt1bX1f2qYfj7u5Y0DNJza2lRF8PdhWnTPjaK/H02zRuMX3Yb/33ToQ7nw/CrZsW/z6d6gtnPp7j9/V7N8Pf+gqRZDCDi+WTXv////wfjlwfm/H25tQ3Oh+E7C3L/fnv/Esz+/vHd33dlTJgGvL918u/7Sva/L7AY8HJp+t8nrTp/f//8/vcb0IC3qAa4gBU9nx8D9htWA5al//0JlHt5bAWmC941iv99tav/7/tafnAA4TIAJPeqx/jv840Nf79VIYUBLFRhIYzPAGS1KAYgY0IGwPBwNAAUOG+ruP++OLYSw4Bnu6b8fV/FiWnAnYUZU2ACoHh+vHPq33f3r2LBV/4+3dCAEltgA26tbapGFvwBTONfK7Hjn9VomWllRRvDhzcvRG4tzuu7BzSNFHxrcc6Edy+fSAAA26Xexh5bDHkAAAAASUVORK5CYII=',
-      'http://www.turkcealtyazi.org/find.php?cat=sub&find={{IMDB_TITLE}}',
+      'https://www.turkcealtyazi.org/find.php?cat=sub&find={{IMDB_TITLE}}',
       'Bunu mu demek istediniz'
     ],
     podnapisi: [
@@ -755,7 +755,7 @@ const sites = [
     yifysubtitles: [
       'YIFY Subtitles',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB00lEQVQ4y2NgoBR47vlfAcVueNSUQdUUYkhab/59zmrTz/8grJo7wwYoxIIsb7Pl9x6YvExwcQBQSBKImZDViJut+XjfdMXb/yAsaOxhAhRjBklYbfrVBxNXSGibABSqAGJldANAijX1Fzx+ozv3/n8Q5lExUrPZ+icaxlctmj8DqGYSEFsCMRs2b7IwsXMZqE+6+EWt/9x/ZKxSMHc+UH4mEDsCMQe+8GRl4RE0l2ve91uuae9/EDZZ9mohUHwuEHswsXFy227/zwTC+Axh16pbnyhWsua/WOnav0D+UqPpl3YBvfPVZtvf/0j4FxCfB1mKYYJB//EAvoy5//ky5/3lkFDqMFv94S1Q2AGIA6E4GIiDzFa//yJk6uWFYYDR0he+HLH9/znjJv4VMvPu1p1z7xNQOBFkNhArALEciGbm4AYFaBBmutj03Uql9/QO5c6jO4DcAu0Jp9cqdhz9B8T/kbFK3+kXUANRAbeSARPUtmRQyOu07oyEOjsCiMOhdKj6hHN71Bu3t+KMESDm0qhYZiuUtxQUBqpALAPE8kCsCMIytdvPKBct7CKUVZhla7buZ43s+o+OxUtWXwHKpxAygBGIZaFeCIPSMBwNxD4U52YAcE7UNoyTon8AAAAASUVORK5CYII=',
-      'http://www.yifysubtitles.com/search?q={{IMDB_TITLE}}',
+      'https://www.yifysubtitles.com/search?q={{IMDB_TITLE}}',
       'no results'
     ],
     divxsubtitles: [
@@ -775,6 +775,12 @@ const sites = [
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACCklEQVQ4y52TuW8TURDG7TjG2Ht442M3XouKygVCqSIKCoSiiAqloKKMqBCFK0rEX5CaghpRIBEpIfEFPjY+Yie2YycmEakokIkogpWssffNx+4KW0IcwRQ/aY73Pr15M+MA4GTHzphx5LwzOJziLH8SHGPn2LFAH5zPBx3X/f8TMKH3bgVHUyl2ON0dHkzfnUiA2jxnNISg7XfcD03ADtyfhu1L1y4U6Nc9V6nFeWjP16QmtzI+0Pa0sO8BtTyF85on9kcBfdu7hIbgYg3+FZqXQQ3uxLTn7Zc1fHHs+YC2D8O6d0uveud+EfhW4Z5QdcbNqtIK7XKgHf4Hwr7dpR2e65e5HOo8LIwal+mX+Jt6UXDZAoOS+JJKAT8rBuNUFUAVEaj5gV2xc66Jdmu/ZIRHVDXjFjURlm1UxHu2gLElNZkWumLk5SWUJWB7hg016ZaV+5yQbuh5qWvGQGWTok2Jyv75cQlGPtijvDyHQmTR0AKro/p6qeA6SmZjTFjB5iNpgcWf/uDrRohj2TDYO3l5FDzdCD9lORnQwiArlw13WS702wFz9N7IUWRncbYpx09W5dvDtKIjp4DeKmAZhZk8/uscnL5WrlM6AiMZAWUiDJkIWMrmGUvPXrgbDn0tskBJFTYJFSyhvjAvK/+8C2dr6gMkomCb0RLbVGMTb2N/XV1GMhqf9OKI707vubLIERo7AAAAAElFTkSuQmCC',
       'https://www.planetdp.org/movie/search/?title=tt{{IMDB_ID}}',
       'Sonuç bulunamadı'
+    ],
+    addicted: [
+      'Addic7ed',
+      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACnElEQVQ4y52SX0iTURjGv+hCcLlFbjqdbCqYi3Bb++dIZM5yJAWOOQnSiZiyRcsgHVqO0quaNHWKtdRqF1pRmRchQbgN1yS7kKBGi2KgSTaJLmbMwfDj6TtG4V3agcOB9z38nvOc96EAUDvdNE1T8Xi8KBaLHfxTo3YD8Pv9Y263G83NzfTCwoLxnwCiODg4ONbV1TXjcrnmOjs7U1arFWazGQ6HI/gX4PP5ag0Gw2etVvvd6XTeTKVSe0k9mUymV1RU0BqNBg0NDbBYLKivr4fJZIJer0+Se1Q4HFYxFzYVCgUUmkocNXTgnO1SwOv1OkKh0KnS0lKoVCqY6urQ1tYGRggEmJ+fj+XlZSHV19c3LJfLIZFI0drrh90TRXXrEHQ6HaRSKWrrTuPJs2mMeEZhtV2EWq2GuLgYWVlZWFxclFPt7e1PS0pKIFWWw3EvCuf0KoxXfTRjhxaLxTheVQXr+QvQlJVvASUSCex2O9hsNmZnZyup7u7u8WKGWHRIhsbhL2jyxKC/FiS+6cLCQvD5fAiFQnC5XOTlCSAQCGA0GiESiRAIBE5Qk5OTloKCAuTk5EBr8+Kk5wfKmJMoyWSyGI/HQ3Z2NlgsFjIyMsDhcEAEyasZCxoSjH1KpXKFKLE5+6GuNuNK7/UHS0tLomg0elhXeYwmPQJgsdKRm5u79Q81NTVfE4lE2tYYI5GImJntDOP7U09PT//Gxkba7xxsUq6BgftKlXo9k8vDgcxMHFGo0NRiWVlbW+PvKIlv34Ubn7946RwZvTtlbrEkas800vH1n7z/ivKtO+NvOi47NplF7RrAxHrP+3B4LhiaT5GI7wrgnXg4daPfnRi6PYqJR4+T23s7Aqx+iwlfzb82+eeCZz9EPlZt7/0CE7Nv5pEjH/QAAAAASUVORK5CYII=',
+      'http://www.addic7ed.com/search.php?search={{IMDB_TITLE}}&Submit=Search',
+      'returned zero results'
     ]
   }
 ];
