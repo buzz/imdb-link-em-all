@@ -443,7 +443,7 @@ const sites = [
     rarbg: [
       'RARBG',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABp0lEQVQ4y4WTP0jDQBTGI1KEOmcODh3M4lTEKZNL9hslYyGbcJtIcChCwC2LUxARIXOcHDLfKNziFByDgwgBEZHn9y6X2tYUD3695r2X7333Jw4RbQEPnIFLMB9gBia2dgUHP0fgkf4f7+AcjNYFTsFbpRsSUpFIVomAzDRx3o6rQYFSNTSNKgriysxDFJUR+QD7fx1AgF8OgUzREc8Md+cY59hN27mYDQqEsjJkhe7tfjdoykvhOM9Nt5KLQQHBRWsCdd2icxeP04WDaLMAipNMGftlVWM52ExZUhCVlJe6P429DQKlIYwL8kXeEXawqB3z4VNANz/MyAtSmoqMwig3/xmO81Js98mgQAF7Y18a4qQwrXjmZ3cq4SrvHTyAnQEBheKYxl5EseyK27alaZj8xq3w8jKWBCpyPEGOKyiSGRd98aVRuibXjyDQ5bK87EX4JEYLgbyAwDgwiDjlglf7gX3yS47b5Rw3xOmYDX0BJyxwDFTTtKQU30CNDTO35cna5LtPSutFXsMVxjMQji06ANfgDtyCG3Boc7v25t3bHNfkNr/9Azy0EznasaqWAAAAAElFTkSuQmCC',
-      'https://rarbg.to/torrents.php?search={{IMDB_TITLE}}+{{IMDB_YEAR}}',
+      'https://rarbg.to/torrents.php?search=tt{{IMDB_ID}}',
       function($dom) {
         return $dom.find('.lista2t tr').length > 1;
       }
