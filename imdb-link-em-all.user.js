@@ -602,7 +602,7 @@ const sites = [
     iptorrents: [
       'IPTorrents',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABTUlEQVQ4y6WTPUvDYBSF8zeKY3EqwZbYOrg0iWnSNfonimBBEJxKi6BgsikmcbO7ne1SB3VRoX5sdSzBrVTXWq7vuZBSNaCJgQP345yH902IJImnXFZXNU3fTiJkkJUsq1qqVKypaVYpiZBRVW1ZEs1e0nAkTVtzANhPC9B143gGcB2XHvp9XnTOO1xD3olHtr3xO6B91qbpZMKLKAxhBiDmr2HIvi8AwzBjAZHx5uqaXgYDhmAPSAQUX+NIkuWlhnijsSfA7H38xoFabZP33Ysu18jkcrIrZTILu9nsIvmez4ZicYXub+8oHA7pstejZrNFmqrzHPvAD6hQUAgZkT1ggBA5hw4bUOPY6FHPC/vTIJifJQM8Pz7ReDSi+lb9J8C212chGNB/B5TENeCJBaQUA3b+AWgAkBf6SBFGJs9/pCgUoZZQ8EfBqyD7CW99z7OYsUYmAAAAAElFTkSuQmCC',
-      'https://www.iptorrents.com/torrents/?q=tt{{IMDB_ID}}',
+      'https://www.iptorrents.com/t?q=tt{{IMDB_ID}}',
       'Nothing found!',
       'Don\'t have an account?'
     ],
