@@ -378,6 +378,11 @@ const sites = [
       'TV Tropes',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABp0lEQVQ4y43TvS8DYRwHcNKINCIGaQzSiDTlrkVVuUs3RIlJTA2L0G7SQUz+AoOI0SAiFpuhkzRE610HCcJgqGrkSFUjBuFHmsf3kadypeWGT+7yPM/v+7zcc2WMsXI9ijRZ6MjpppSn8mdfMWXfhVvNVtqWpunYGafrDo0y6rihAIrJFbQj++nQcUYXrhxpXYweVY6HDP4fsCs7ad+RxLIZ3XgYZdV8AJdEyBClFVPpgKhkgTiWz+i8TV+cl6KM4v7zDBCw9BVwjFWklYLit4waogfF/GfAW1SaQgh735PZx10n38YzildR3GroK1BMGkNILhV2sVi4O5HVvD7G5Arjn3Hfbjtd6wwNj4ymPQMTWktvcKHdF5hx9wdswJ9TUMXH4umHWbAX3IO2vqDV5Qsk0fEKVxDhg2ATnsAN1RCHFDQWBKDBCrdiAH+vEe18dgYh8MILrICpVMBBfrmiXYZ72IA5IBj6dZXRWA8JuBRhZj6LsCy2loUjqC0WwAvWIQcn4gxk0dcDz2Irk0V/JjGwGeYhDIvQoAufFqdfVzJAF2Qycge4TwCQaMiplLfGAAAAAElFTkSuQmCC',
       'https://tvtropes.org/pmwiki/search_result.php?q={{IMDB_TITLE}}'
+    ],
+    toblek: [
+      'Toblek',
+      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAYFBMVEWpbEixbEa5bUO5dE2peVjCdku2f1rDfE6nhWi/gFWyhWGtiWfXh1apk3qdmYGgnXyymXipnnqho4e8pH2krJi/roW4tJ+1t5rIs4qyvKjNuYm2w7DVwpK90b3D2szL38tbipMnAAAAlElEQVQYV03PWQ6EIBBFUSZRpAVHRApk/7vsArXt+0HICQl5JJeSyxmgXkk9jXZu6NIPDvUpDecNaeC8bTnp3QMjoxjr9xdq/0AZPnph67SQWo83JAhhidEvcU8FTmNC3LAQrYECM0Lw3iPYC2zQSkol/VQhz9YLKnrClxtg3SR+ypppPc5rSxobTMGzJZftAHVs/gJ6ZhVgUcMsTAAAAABJRU5ErkJggg==',
+      'https://toblek.com/toblekk/index.php?searchword={{IMDB_TITLE}}&ordering=&searchphrase=all&Itemid=9&option=com_search'
     ]
   },
 
