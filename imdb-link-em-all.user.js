@@ -850,7 +850,7 @@ function showConfigure() {
   for (i = 0; i < 3; i++) {
     const s = sites[i];
     for (let key in s) {
-      if (s.hasOwnProperty(key)) {
+      if (Object.prototype.hasOwnProperty.call(s, key)) {
         $('#lta_configure_tooltip input[name=' + key + ']').prop('checked', $.inArray(key, config.enabled_sites) >= 0);
       }
     }
@@ -867,7 +867,7 @@ function saveConfigure() {
   for (i = 0; i < 3; i++) {
     const s = sites[i];
     for (let key in s) {
-      if (s.hasOwnProperty(key)) {
+      if (Object.prototype.hasOwnProperty.call(s, key)) {
         const value = $('#lta_configure_tooltip input[name=' + key + ']').prop('checked');
         const idx = config.enabled_sites.indexOf(key);
         if (value && idx < 0) {
