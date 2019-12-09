@@ -28,6 +28,6 @@
   },
   "homepage": "https://github.com/buzz/imdb-link-em-all#readme",
   "devDependencies": {
-    "eslint": "^6.1.0"
+    "eslint": "^6.7.2"
   }
 }
