@@ -398,6 +398,12 @@ const sites = [
       'Toblek',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAYFBMVEWpbEixbEa5bUO5dE2peVjCdku2f1rDfE6nhWi/gFWyhWGtiWfXh1apk3qdmYGgnXyymXipnnqho4e8pH2krJi/roW4tJ+1t5rIs4qyvKjNuYm2w7DVwpK90b3D2szL38tbipMnAAAAlElEQVQYV03PWQ6EIBBFUSZRpAVHRApk/7vsArXt+0HICQl5JJeSyxmgXkk9jXZu6NIPDvUpDecNaeC8bTnp3QMjoxjr9xdq/0AZPnph67SQWo83JAhhidEvcU8FTmNC3LAQrYECM0Lw3iPYC2zQSkol/VQhz9YLKnrClxtg3SR+ypppPc5rSxobTMGzJZftAHVs/gJ6ZhVgUcMsTAAAAABJRU5ErkJggg==',
       'https://toblek.com/toblekk/index.php?searchword={{IMDB_TITLE}}&ordering=&searchphrase=all&Itemid=9&option=com_search'
+    ],
+    allocine: [
+      'AlloCiné',
+      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABVElEQVQ4y2NgQAL/zzIwA7EQELMiifkB8VUg/g7ExQy4AFAyC6rwPRDHQcVYgXgdEP+H4iX4DOhEUvgViDcA8TEg/ockfhKIGXEZEIekEIHPofCfAzEPLgMs0Gz7//4g8/+5DRL/Ty7hh4n9BGIVXAZIAfEXmOafJxn/F8XL/VdTVfufHyv3/98ZuMGuuAxgB+K7MANOLOL/r6et+j8hUP7/vS0cyN7IxReQe2H+7i2W/t+WL/3/H2a4TMdnwDSYwpQQ+f+ru8XQAxGE9+MzIBvmgoxw+f/WJir/Ty7mQzfgPsi7uAxwhhmwuFUcHIAzaiTRXQFKI9K4DFCGRhU4CmfWSv4/u5wPmzescBnADcTPcCQiZJyAywBGID6BpPAvEO8D4mVA/BlJvAtfQC5GUrgSiFmg4uFA/BKIzwBxCj4D8oH4AxCfBmIPJHEWIOYFYiZk9QDcNJJsMRjsPQAAAABJRU5ErkJggg==',
+      'http://www.allocine.fr/recherche/?q={{IMDB_TITLE}}',
+      'Oups'
     ]
   },
 
@@ -527,6 +533,13 @@ const sites = [
       'AvistaZ',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACZklEQVQ4EQXBT2iWdRwA8M/v9zzv63Kka75m6qyIoWV/DMQayBoUwQ6KuEqEPNjNSweriwQZgVKXoDp48rDIRLIgOtQ6hDbIMQmhQWC0/ogVLTfm7A/v9jzPt88HAAAAAKBAGwAFQAaA6c1FCwAAsB1jOIX3MYwEGQAWqnrkz03l5MLGMpY2ljF3V9kcWJ2/xXc4i6dwBYPYDAng2vber7c89NhwNXOxauSiXUqX/4m4I2t6y1SM/dK8frnb3F6HTdiDRVwE14ZaF+p993Wrpwdi5XERu4t4494ca1sCsa4lnuvkQDcxj9ewDWX+YiQ/uWWDkWh328WOB/3aV2ju5FgnWxwoTWwr3NNJ3t6ZjG5K7eDNnJzBVVR550B6aWVtUzW9C+bmLmk6yfJ0MnsF1xmfDc8uJReEv2sRR4qbTZgFyGV/DOmPolj7n5nuksFVnPwt7KorgjOyY93sp2lOjKT6eor9AJCjX591RcqPDkuPPKOaq+wuuIWH69o8JI4vN54YklodGwAgW+P3ld46Xj03afXix453k9G6BlcjdKrK3ro2sT/7lyat8SMA5G5vfNXTSSuH9qx34PxWp6ayE3sTyPhQ4Zt2uLGBnv5o3ejx6Q/v5RaAFw+mzvInRcTEjojJ3RETYn2/yEkg3jmcQin++iDVi+dSAADkd8+an1kojuopuG2VvjGWbtEE7RYzf4Sj+zRffi+fnnL/zx+lEgAAXBoffOHmZ6uDXGEFVauw/NZhcfqVFHhgajyVAAAAYmZXCXgZn+/YaroonD846hBsvTuVAAAAAE4ekdACgOdHtQAAAOB/xuPqOv7xO8oAAAAASUVORK5CYII=',
       'https://avistaz.to/movies?search=&imdb=tt{{IMDB_ID}}',
+      'No torrents found!',
+      'Forgot Your Password?'
+    ],
+    avistaztv: [
+      'AvistaZTV',
+      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACZklEQVQ4EQXBT2iWdRwA8M/v9zzv63Kka75m6qyIoWV/DMQayBoUwQ6KuEqEPNjNSweriwQZgVKXoDp48rDIRLIgOtQ6hDbIMQmhQWC0/ogVLTfm7A/v9jzPt88HAAAAAKBAGwAFQAaA6c1FCwAAsB1jOIX3MYwEGQAWqnrkz03l5MLGMpY2ljF3V9kcWJ2/xXc4i6dwBYPYDAng2vber7c89NhwNXOxauSiXUqX/4m4I2t6y1SM/dK8frnb3F6HTdiDRVwE14ZaF+p993Wrpwdi5XERu4t4494ca1sCsa4lnuvkQDcxj9ewDWX+YiQ/uWWDkWh328WOB/3aV2ju5FgnWxwoTWwr3NNJ3t6ZjG5K7eDNnJzBVVR550B6aWVtUzW9C+bmLmk6yfJ0MnsF1xmfDc8uJReEv2sRR4qbTZgFyGV/DOmPolj7n5nuksFVnPwt7KorgjOyY93sp2lOjKT6eor9AJCjX591RcqPDkuPPKOaq+wuuIWH69o8JI4vN54YklodGwAgW+P3ld46Xj03afXix453k9G6BlcjdKrK3ro2sT/7lyat8SMA5G5vfNXTSSuH9qx34PxWp6ayE3sTyPhQ4Zt2uLGBnv5o3ejx6Q/v5RaAFw+mzvInRcTEjojJ3RETYn2/yEkg3jmcQin++iDVi+dSAADkd8+an1kojuopuG2VvjGWbtEE7RYzf4Sj+zRffi+fnnL/zx+lEgAAXBoffOHmZ6uDXGEFVauw/NZhcfqVFHhgajyVAAAAYmZXCXgZn+/YaroonD846hBsvTuVAAAAAE4ekdACgOdHtQAAAOB/xuPqOv7xO8oAAAAASUVORK5CYII=',
+      'https://avistaz.to/tv-shows?search=&imdb=tt{{IMDB_ID}}',
       'No torrents found!',
       'Forgot Your Password?'
     ],
