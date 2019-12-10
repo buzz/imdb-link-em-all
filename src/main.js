@@ -1,52 +1,14 @@
-// ==UserScript==
-// @name           IMDb: Link 'em all!
-// @namespace      https://greasyfork.org/en/users/8981-buzz
-// @description    Adds all kinds of links to IMDb, customizable!
-// @author         buzz
-// @require        https://code.jquery.com/jquery-2.2.0.min.js
-// @version        1.0.14
-// @license        GPLv2
-// @match          *://*.imdb.com/title/tt*/*
-// @grant          GM.getValue
-// @grant          GM.setValue
-// @grant          GM.xmlHttpRequest
-// @grant          GM.getResourceUrl
-// @grant          GM_getValue
-// @grant          GM_setValue
-// @grant          GM_xmlhttpRequest
-// @require        https://greasemonkey.github.io/gm4-polyfill/gm4-polyfill.js
-// @resource       style https://raw.githubusercontent.com/buzz/imdb-link-em-all/master/style.css
-// @connect        *
-// @noframes
-// ==/UserScript==
-
 // Test cases for different layouts:
 // http://www.imdb.com/title/tt0163978/
 // http://www.imdb.com/title/tt1166810/
 // http://www.imdb.com/title/tt4380968/
 // http://www.imdb.com/title/tt3087990/
-// 8-digit IMDb number
-// https://www.imdb.com/title/tt10039344/
 
 /*******************************************************************************
  * Constants
  ******************************************************************************/
 
-const LTA_HOMEPAGE = 'https://greasyfork.org/en/scripts/17154-imdb-link-em-all';
-const COGS_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACiElEQVQ4y41TzUpyURQVH8C5j+B7OGkSVJPQJlYQFSZOFJNCq4tEQoNqoIYo5Q+lUIJJUln5U6lXS0yU0kEWFwUdOb13t/eB/BC+oDO53HPOWnuttc+WyX5ZhUJh7uHhIZXJZFK45mR/WS8vL6pSqaRAsBzB3a+vL/j8/IRIJNK9uLiQx2IxRTQaVf0G9iBYzOfzQi6XU97f3wutVguazSYgUDg/P1cikRAKhcSjoyPPCPj5+dn6/v4OvV4P3t7eAMGDm5sbqVarQbVahbOzMwnBA1QGgiBAIpGAnZ0d65AAq66hV4lICNBoNBjRDwH9VyoVIILHx0ewWCyS0WhcG1GRzWY5ulwsFuHp6QmSySQcHh6C3+8nRYC24O7ujlXf3t7mhkBk5LF6+/b2tl+v14Hnebi6uoKNjY2c2WxWr6+vq3d3d3PpdJoR0bnT6ew7HI725uYmL0Ow2Ol0mFyqjEFCIBCAra0t9U8Rt9utxgwA7zJlpIbCXV5eFmXYY/Hj44N5pAOqgInD3t7ekODg4EAdDoeZArKAatl9nU4nyrAlPEps+3y+frlcZiSUg9frzblcLvX+/j6zQP7J2uXlJczPz/enp6fbU1NT/DALlMhhkCwo+uJDgpOTE8C+sz1sK8Tjcba3uLjIjXTg9PR0LRgMSq+vrwxM7cKHxTIhIlJE+9fX1+xsZWVFWlhY+NfG4+NjK8mjl4dEgOkOOI6TKDTyrdfrJQQN6Iy822w2mJyctI6osNvtHoPBIKI/wWQyKZFEoGqkYHZ2VtBoNEr0LYyPj4tjY2Oe/84DEqiWlpYUq6urciTskmScA9BqtV0kkM/MzCiQQPWnyUTZc1gxNTExkUK5v47zN4DwH7fniYcmAAAAAElFTkSuQmCC';
-const TICK_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABoklEQVQ4y9WT2S5DURSG3TnOu6ipVUPFlJCqIdVS6nBKKS2NG6qno5aSEsNxKeahIikaiiASl2qo8AziJVR/WxNTL6R6IbEud/aX9e9vrZ2S8u9KtVbL1y9WOZOCG1dreOOBFvo9FlK+lPsV3LBSzfftd2Dm3g3PpQUanwrFo3nWhGDlsow3BDSYunNh8s6J9q0mlHjyUeAQUh+XDGdsefcx0xUPK5Zk/FvkibAT3rAj1rnILY7k23O+wKesRHfEPHEXRrD+hv73cyKL79ltg/fWjvFbG9jNRkhcuZE8W/YnrD9pq9AdtjyOhThMhYeh9skjRFa/fEE62b3DYOzGBs81h9YNJQqHRRGxNYv6FrErqE7TBpphOu/F7MMoPCELDPsaGINajITMcF+bwawrUOAUvuRa4uD3YrYVNOkM46E29s7xGytcVya4Qiao1+rfZEVFXCb1o2kii5bPS9Hpb4H7agiOywE0r8hBZEVF5gwqoXFJ58royukSElkJ1XIdiKyocEhA/WphyHzpohExiKznHJMgNamVJbLo7MH01D/5XK8FJMUEaMuG0gAAAABJRU5ErkJggg==';
-const CROSS_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACEklEQVQ4y61S/U9SYRhlbW13/Q0V5Woub05zfZkCXhUhpmmb8v3h5ZKoCQjcwVBi1Q+19Zf0d2lWxpeR3AuX93J8qGVjgK2tZ3u3d3t2znmecx6D4R+rsS5dGdiEnDXS4weCQ2Fe9QUSdafH3B+c3UM7k4OeSPWQNIIi3xAjaG5u48fz1Y+1peU7PWAU3qBNT0/KaG3tnJOogXWe1NGKJYB8AZ3/ic2RqMxaL/0iSGe4dlLW23uvgPcfoOfyHQI0RYlX/SGe1KHtxAHqqyERJwtPWUWYv9w1oh5PcuxlnOlyFnj7DiydQSMcAalD244Buf2f/6rVTuA5rq9JregW15Q2WCu2S+u8BvYLBMwD2RxUfxDVeRurzMxyF8cUFDnFG9CRo3V8QcDtA+QMqnMLetkicH/NWfH4O1EBlAacHmDVBeymaG87ipPT/MVgt49XvH5okSiQkgmYBuK0DhmorrlQMVnwdXyiP0nd5eUVjw+atAFQjIrbCzKLlabN+unSChDdRP3ZCor3H+JoeKSbhC6LJ3Vo4RekmoRCo5NZrDRl5oqPJrnjiQesZrUBYQmndgeOR8dweGPoDwldllB3uqGJEpQ1N8gsVnpiOjfsy+g493nkLvtuEaA4FvFt7B4OrhmFrinosoTa4jLK5hmdzOpx++j2MPdp6BbrC/5dZZNFKD6eGhjVofEmd3D1umD4n3UGltFKFJhJvx0AAAAASUVORK5CYII=';
-const ERROR_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACJklEQVQ4y6VTTUiUYRB+vh93dX903bKUYMNlMWHJBC1WW8GjZVCnfpa6Fp1i6dilQwcJglgrDEKiQqhDRYWVCEsSFJ0Ksh8zKjJZ3V0WU3G/73tnpoNrFGkZzmHmMDPPPM8wA6zRtJUSuXSHISSvhLnALJ21Xc9ouTp9JQAhSblqd0VdG7viQnz0v2hlh+PBqaH272TPiF0Ylcl72/MTd1qCq2bAxNcqQgm/puswvUF46hNBIT6zqulTj9ubMw9jJGSJNXVB7Gy/sJ2TLze3qc8DW5v/yUCYb/gakzqrOXwcuoXxR1fBTgaBppMGE/f+FSAzGEuUVbdFvZv3YeFrEiKACFCc6IE/0g13bUf8w5WGxLIAmcGYj5lTnvABsMoDXOoWAbMDLo6hqvEgmPjsu0th3x8ATNzvCe1f564Ow8ndBiAoD3iWhMHKXERFTQiVWw5tUkXn1G+HNHl/R0SY39btTpu08BLO9GUwA3pZOeZzs3B7GYYhMCo7Yfj3YrS31SZLRVtO58f1xaPhAV/DcVN4DjT7HBAGIPg08h7TbyYBCCAMVRiGps+jJpZ0Kcs5DwDat7ut3UZV04MNHSmo2SdwstcXJbFARAME0A2BJjZECLqxHuX1PXjdl8DM2Mgek4n6ApHDAADT1w7T11YSpy3JLzn5uQ9oLtTtPIbCaPqcKcTp7NMTR4QYTIxfIzkEshwoywFZDshSIFuBHAIrAit6sdZvxg9QwSUH1+qgEQAAAABJRU5ErkJggg==';
-const TIMEOUT_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAC4klEQVQ4y62TXUjTURjGjel90U03XdhF1EVQXQRBQVheGpGFGShIAyX1wu/5lVlpZllqTE3TqZu5zeYHmm66+cU0tc21mcvpPpwzvzbnf85N/at7OhNaSRFd9MLDeTmH5/e+5+UcP7//HX38wqDhpgcyZTtr9bM4k1Z2ZNByQcKSpDqhtfVNxsW/mgeF+WWabta2RTeClUUDHA47KMqG+VkNNHI+xG+jNwSv4rL/aO7n55XoFeWwW83Qme1432tCmWgSpcIv4HbpMT69BJNuGJ1VMeDkMVMOmCXcgkuK9mTatmzCoGoBzX0m6C0O2BxOWB0b0M05wO3Wo2XAiClVF3iP77iq8u+f8wGkdWmdM+Tg6+wqhDIjvGGnKEx/W8Qmyb1yeoCKDj3kajN6eEmoyArn+gC99fGLC+YJ8CQz0JLKrh0PnC4X2DUcLBPQ+tYWRJJeDE5TeN6oxsSYAFWZoSYfQFYXt2m3zaOwQY1lNw371h62SdX0h7ngNbchLScX3cOjmKBoJLJHMWcaRU3mLbcPIK6M3rStGJDLUWHOSRPIHizUOp68KNo3D6o0sO4AChuN+OKPMBsGUJ0e+hMgehlpNEx0oVioxsAMhQVyacs6jc7+IRhXHVjaBTRNbPRGnII0KADS0KNojDhN+QC1eZGcfgELw+ppFAh1sJKB2WlgfY+I5DMtZdCkXsbmhyJ4tGK4+In4FHvG033VP34fUP009mz9ozD3lKIeDV1KPBNOQWVag5PMw+miIQ0/ATcxozQESDsC5AfCWngFkmsMo6+Lytwo1ruC29COlKFvTIF8zghSS4eQVCzfb9ujbMavsZZzjOz7ew48KHZWRHYl64azrfwuxmV5MGp5ME7WoufmYWxU3wOIaSvVD3YicwwDkmDG/G9Pmp0ddaEkJbTxdeJ1c3lyiNsrEfM8NcI86VlIC8RKegAMzEOQhfjvioMZGf/8S+Vhx1mkosnbNlktP8zfAS4IMMSANgzlAAAAAElFTkSuQmCC';
-const NOACCESS_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACfUlEQVQ4y21Sz2sTQRh9u9nml02M2hoapaZNtaIg4q0eBMEeRPGg3jyJhyK00EvpsZBr/wqhAfHQs3fBglRa0EYTm5YYFEqKSRvTJDs7s77ZbdpYHfiYmW++7817b8bAiZHL5fqVUnNSygnGWQYYvxgrjuMszs7O/u6tN3o3S0tLN9m8nEqlRuLxOEzTBPdot9uoVqvY5iDQ4/n5+fV/ANjcz8O1TCYzZts2KpUKms2mvh2WZSGZTHp1+Xx+k7kbCwsLLb03uwBMvhwaGhoTQqBYLG41Go0010Edel0oFH5qYLIbo5Tpbp/VXTA5EY1GUSqVwKaHMzMz5R515Ww2e69cLufT6bRX+z+AQa2Zt+n19klzdU6z0zVkO/iXB+V3z92V0jh29iKe5kfXVxFwBVzpwHX8EELi1fotz9RkuIYHF1ZxdWrN8Bm4Lp4+uUs0E0Ygwvk+oIhthfUhDRKQTgPZySbzwmvZfP3+WIK+SRc6u29ghQZgGP0s7AMiCaYVcLAHuf8NdusHlHOAyMg0XLvTA0CKUPomG/WNj9R5Colrt1F5u8j+8xi+M4n61w0C1BBLnyFhCVfYvQDCk+GSamL8CszgAN1RkB2JT7sRDMNGIjOCdjPE2gOPVRfA+wcu3dWoWmvt8zpZfOCJA9VW6LRI1SWzwhfUi999uUp5PccM9EajUkLichqB6DkC2Bh9NoVRwYb9HZzOpBDc7/MZUO4JANtDVY72YIMAMSBMI60g8xqgjlatCtFsIDYcp93Kl90LoCWELr5A5FIARjDkP6HJl1CUZrcQazWosEOi0vdLG38EwCfZWp7zvfA+jjgM52jmD/M/lpT+WgNx/AHLKabZmE0zigAAAABJRU5ErkJggg==';
-const LOADING_ICON = 'data:image/gif;base64,R0lGODlhEAAQAPMPAOjo6LS0tHd3d6KiotbW1oCAgMXFxZGRkfDw8Ly8vJqamomJic3Nzaurq3h4ePj4+CH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQFCgAPACwAAAAAEAAQAAAEW/DJh2gbdWq6ABICQG0SAH4hImrekwhvmpUKjA5Y1nIgsZY7CoJx+JU0CQXOQBKqkkomSaUSEgIzIOulMKp8k8DCMEx4AAwKWM0hMMjm4wSBczHR2RLWrm3qmxEAIfkEBQoADwAsAAAAAA8AEAAABE/wyflCk4hOJRcujNY9i0MKhCgZJctt4GkJQpZJAwlMxK6+qgejYUkFhQOi8YgxiG48RU6DANwSipAhhMFAcQACoxoMOMWrpyGDfviCVlEEACH5BAUKAA8ALAAAAAAQAA8AAARO8Mn5TKJYNr0QOpnkDF83hEglMMrCTADBMWWSHAKQCDl3wgZeD9ZIwVZEGyDjaTIC0JC0MsU0EsaphYAgcJsoTQwADhlk5IdH+lIv1ZQIACH5BAUKAA8ALAAAAAAQABAAAARS8MkpDb0VoaH0INhzBFvXYMhUEBwhnFrVAKVhKAJiCEX6BCPaxBX6XQAvms7GCDUK0A8TgHnyDhTQUekDJCzFoYEbfnQJGl8YbVYXqe0yJYaJAAAh+QQFCgAIACwAAAAAEAAOAAAEPhDJiUKgWA4pBM/c1iEFqHmdQWJDQZCH5VXruWGzSt3sBFQ6VmdkuWRKHx+GIDhkgr7hDzE1DTNVCoEnyYIiACH5BAUKAA4ALAAAAAAQABAAAARX0MnpCKHYIYZ26F+GBFySjAuQaQ1gAkWCWYBnBce2KJKNTJ2BIEdxYRAKQ2dZ+80G0FPTSTHsYsWn4VgrMgRD4HRZEACEBWrmO5AwRJSFeaXWCLYr+CQCACH5BAUKAA8ALAAAAAAQABAAAART8Mn5AKBYEm105g/TGconJYj4KAxmISFhkZLSTHPWFIN7YY0WDgHLMBrICrGIOR4OAdNkwCBKPSsmcFe5HUwFQeIRtXwQ4d/v7BBcHMLz4KCVRAAAIfkEBQoADgAsAQABAA8ADwAABFHQSYAQIZXJPScmDcd9WEN0yEZRTFANSSWLTnAEYiomJ02DgYDGN2kMYEQHwkSbKQELAU4kkCYUi6VAwUlIowZpswotIA4+hgBTMEN7o83AFwEAIfkEBQoADwAsAAAAABAAEAAABFPwyfkQoljabcnNANd9mIgkAGgSjJQYWWk0cIwZqS2/+gQEwJaEsCDcchqFQFCbKBMah+AAmBoYDcVp0XAZXYcDg6nJLBBhtMPmCC0OEoXtA4xFAAAh+QQFCgAOACwAAAEAEAAPAAAET9DJ6ZC1NEvsiM6XpwFXCUiG+E1MQiDgSDVF3XwtQxxCr+AG18VQOFEMqw5sQ0NKFoIGYqHIDRC7AMrYGVQLjMrngPCWD7jF8+eQJtuJTwQAIfkEBQoADwAsAAABABAADwAABE7wyUkfqngiUAHHXiUISSdtHzEKn0a0UkB217Tc2fO+g1MUgczug2AoMAzM4FRJNJKSwyOoGPAaMYOEENMFGgBprnD8To8gdGOJCOaymQgAIfkEBQoADwAsAAABAA8ADwAABFHwSVKAvPjSlbscAuNJ3AMIQgcg5oIa4oWsmOEQ2Twnh6IkqhUg4FoAc0IdYaDCIIiFDiNB2IWegdV0J7K0CIlsw8uSIHpYxLbTkIR3o0kMEwEAOw==';
-const CATEGORY_NAMES = ['General', 'Trackers', 'Subtitles'];
-const DEFAULT_CONFIG = {
-  enabled_sites: ['google', 'yt'],
-  show_category_captions: true,
-  open_blank: true,
-  fetch_results: true
-};
+import * from './constants'
 
 /*******************************************************************************
  * Variables
@@ -155,8 +117,7 @@ const sites = [
     criticker: [
       'Criticker',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAYFBMVEUCL10JNWIaRG8mU3tBZIlMaYlSbo9ZdZZYfZ1mgJxxiKV1jap3jqV6lauClayInbSPorqQp7iYp7qhssSot8quuce0wM25xdPBzNrK09vT2+Ta4uvk6evr8fPz+fv+//xEFJzNAAAApklEQVQYGQXB0U6EMBRF0X3LgWaUBE3m3f//M9/UOAJTbntcKz4AAOBX3u8aVyzg0a/rb22gzGNqOYwj5rojsvWiWfM07Xt0VLhtBQCi1h8rCgAA5fFMSmQHAJheNllEz2IMPo+rISY+AcC8vaYV9vuCMeRjNESwVADIvo4hQgYA4vTTCrIAAFFXLMJf35NmqcS1nzexaDjPw2Bt3WKmghmZ7bxa/QcJoVoLeA40rAAAAABJRU5ErkJggg==',
-      'https://www.criticker.com/?search=tt{{IMDB_ID}}',
-      '<b>No Results</b>'
+      'http://www.criticker.com/?h={{IMDB_TITLE}}&st=all&g=Go'
     ],
     letterboxd: [
       'Letterboxd',
@@ -166,7 +127,7 @@ const sites = [
     thetvdb: [
       'TheTVDB.com',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAYFBMVEUAHS4GHywOLC8TKjgdOTIjOUcxR1Y8UktEVmBFWzhCXztHYzlRZG5Raztgcn1ngj5tgItxi0B8lEN/jpSDnEmIn0aOnqSiq7OuxU3Cx8rI3FTQ1djR41Tf5Obt8vX+//xpr4P4AAAAiklEQVQY002O0RKCIBRETyJGZUZSIgrs//9lDzbqfdszs3suHPd9ngLtOC7z+D6R25Lz3AI2hX8j5weAUwLgMt9fH8B6rc7hbNPA1cEkSeq1AhSBiyohUGTBat03Jnnw8jvolCDJHpYiY1RO2qhh0HQCvWJUB2A2I7XWsr1cFaOBqK0BQZKBXuqAHySZCuu3bZjlAAAAAElFTkSuQmCC',
-      'https://www.thetvdb.com/search?query={{IMDB_TITLE}}'
+      'https://thetvdb.com/?string={{IMDB_TITLE}}&searchseriesid=&tab=listseries&function=Search'
     ],
     tmdb: [
       'TMDb',
@@ -407,11 +368,6 @@ const sites = [
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABVElEQVQ4y2NgQAL/zzIwA7EQELMiifkB8VUg/g7ExQy4AFAyC6rwPRDHQcVYgXgdEP+H4iX4DOhEUvgViDcA8TEg/ockfhKIGXEZEIekEIHPofCfAzEPLgMs0Gz7//4g8/+5DRL/Ty7hh4n9BGIVXAZIAfEXmOafJxn/F8XL/VdTVfufHyv3/98ZuMGuuAxgB+K7MANOLOL/r6et+j8hUP7/vS0cyN7IxReQe2H+7i2W/t+WL/3/H2a4TMdnwDSYwpQQ+f+ru8XQAxGE9+MzIBvmgoxw+f/WJir/Ty7mQzfgPsi7uAxwhhmwuFUcHIAzaiTRXQFKI9K4DFCGRhU4CmfWSv4/u5wPmzescBnADcTPcCQiZJyAywBGID6BpPAvEO8D4mVA/BlJvAtfQC5GUrgSiFmg4uFA/BKIzwBxCj4D8oH4AxCfBmIPJHEWIOYFYiZk9QDcNJJsMRjsPQAAAABJRU5ErkJggg==',
       'http://www.allocine.fr/recherche/?q={{IMDB_TITLE}}',
       'Oups'
-    ],
-    gdriveplayer: [
-      'Gdrive Player',
-      null,
-      'https://database.gdriveplayer.me/player.php?imdb=tt{{IMDB_ID}}'
     ]
   },
 
@@ -491,8 +447,8 @@ const sites = [
     yts: [
       'YTS',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAMFBMVEUgHiEbICIeIB0dKh8bMxwaQRwWUxgTYBYRbRINdA8Chw4BmgkJpgAAtgAAvwAAygD2IFtIAAAAm0lEQVQI1wGQAG//ACAEMQIiASIiACBlIRAhABACABaAEREAIhEQADoxIqtxi6IiAHkiELy03WEBALcCEG7d2SAQANYQIi3uwgEiANYgEivuQAIQANchACr7IgACAMoiICz3ECEBAJ1AIh/UIgIDAD2wIl+yABA2ABfaEDVBACSkAAGetQEiIntgAAIX38qZrMYgACACKM7ttxASm8omLNhBbCUAAAAASUVORK5CYII=',
-      'https://yts.ag/browse-movies/{{IMDB_TITLE}}',
-      '<b>0</b>'
+      'https://yts.ag/browse-movies/{{IMDB_TITLE}}/all/all/0/latest',
+      '<h2>0 YIFY Movies Found</h2>'
     ],
     torrentdownloads: [
       'Torrent Downloads',
@@ -763,36 +719,9 @@ const sites = [
     filelist: [
       'FileList',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAElBMVEUsLS8pTFsmZHwje54shKUfotVCbnToAAAANElEQVQI12NwgQIGBwYwYMHLYAwNFYUwAhjgDFUwgyk0EMJgDmAwhegKYGANDWAhymSYMwBdTQvkUareoQAAAABJRU5ErkJggg==',
-      'http://filelist.io/browse.php?search=tt{{IMDB_ID}}&cat=0&searchin=0&sort=0',
+      'http://filelist.ro/browse.php?search=tt{{IMDB_ID}}&cat=0&searchin=0&sort=0',
       'Try again with a different search string',
       'FileList :: Login'
-    ],
-    alpharatio: [
-      'AlphaRatio',
-      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAYFBMVEUVKl4IOLICP6oAR+QeR5oASfgZTc0AXP0YYdMdarlCYqULcM0Ac947ZMg8ZboAd/8Df9oAhPRAeKk3frxkfLxkialYksSEiJxil7+WobqjqbKjrMKwu829wcTFyMvHycYBkkjPAAAAgklEQVQY02XP2Q4CIQwFUEadQaTIUhcQaP//LxUzDC73qTlpb1LBPxF9KPQFlJc0IDpQAKCR+sbNC3OZhXcdot+VOk/a0wYHZrNXvm5wZ86T+zipTEnbMkqJYgSZVqBja+NslxWSbG1MIMsbaLH+0QCtoRfUoBDDlSkgnk/jub9ve560zBnJ3AgNNAAAAABJRU5ErkJggg==',
-      'https://alpharatio.cc/torrents.php?searchstr={{IMDB_TITLE}}&filter_cat[1]=1&filter_cat[2]=1&filter_cat[3]=1&filter_cat[4]=1&filter_cat[5]=1&filter_cat[6]=1&filter_cat[7]=1&filter_cat[8]=1&filter_cat[9]=1&filter_cat[10]=1&filter_cat[11]=1&filter_cat[12]=1&filter_cat[13]=1&filter_cat[15]=1&filter_cat[16]=1&filter_cat[17]=1&',
-      'Your search did not match anything',
-      'Recover Password!'
-    ],
-    beyondhd: [
-      'BeyondHD',
-      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAM1BMVEUgAAALPOoMRtIAUt4eTb4eUNEZVc8bWcgcaMwlachwcP9gfvKMkv/h5f/s7f75+f/9//zal4f2AAAAAXRSTlMAQObYZgAAAGRJREFUGNNNT0cCwCAIo9aBHcL/X9uy1FwwEUgAEJz4o0CgoKMZxw3rv5uQZwM90eILmGONtLOCWOZ04jXlxhDwEn7gEqoIVZ0giyPxGEzuK2WokSfbg1r4jXc7JgWv816Vkj4/5zEHVLDKOPkAAAAASUVORK5CYII=',
-      'https://beyond-hd.me/torrents/all?search=&imdb=tt{{IMDB_ID}}',
-      'N/A'
-    ],
-    danishbits: [
-      'DanishBits',
-      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAA/UExURQoSEhISEp0KC8oBAaYAABISEhISEhISEhISEhISEhISEoszM7EqKlQFBakaGi4ODhISEuAAAIwBAbsCAkdwTOrekeoAAAAVdFJOU///////B4nA9Xq9//////+X////AOfooCAAAAB/SURBVBjTZY/ZDoMwDATHzg2Eo+X/v7U2FJWKlUbebPywZjelXGotObnHaPJVO4PBLGcyeLCaGUcMM+tO8p9pwnCXyLbPPCMGSKZ0dSHH6IWqcVliRKLNl1YP/OEIHhQNSDgQohayblzFeGsm9fDT1hN746Z2VZdb9edx/+d/AJJ9BpNvXJ6TAAAAAElFTkSuQmCC',
-      'https://danishbits.org/torrents.php?&pre_type=s_imdb&search=tt{{IMDB_ID}}',
-      'Your search did not match anything',
-      'Glemt din kode?'
-    ],
-    funfile: [
-      'FunFile',
-      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAEpUExURSgeEvHeodO+hhkGAigVD+/coSgIACgeHAgAAP///w0CAHkALT4AQTQAMrYAAG9SAKQIAg0eHBgeFBwRDyEeEV9+kWMAFBQJBR0MBdSlXcWWV49YkO/dqC0dFixjja4AAREeHDGR0ZwGBBYWGiETDBchJ///+kGc2g8SFC0qKJGEVncAJayYW9PDkbm7wfzq12ZJAO/KhuPT0DEANbWKGcRxA/EMAOi8b+EgAP/35jUDQZAABraxqe7X7zGR2nsBNmMALlYADjp3nv//6iua4lal2iVtmjGr90M4NmxOPfjbuh88T9rRsFIAFf/alOXQmE8fX//q13W06/L095RuEa+nnLG1t1VBN62Zj9GebKDW89+1d+He3YlyOltaW7XGztTIxefk45Z7Ofn+mBAAAADnSURBVBhXTc7VkoNQDAbgAIceQRYoXurUvevu7u76/g+xYfZm/6vMN/kzAQBwXcdxKhXbtut5CqAbxsqWaZat2qplziA0CgVfswBq5aWF+TkszC7yPslhSBAtryHo/vpmrlTdKBXT7SZWiNHukWJ152DvENgJgnK0q5F031NOO+n5WZcCk7keHrdaN14n6MYqwqCphd7wYfiiBeM4Qbi8qoPyOP0M3cbz3T0FIY9uSTv6mv70xOtgkt24fsp/cExfeR9lN2T+xgj+AyGL+R/wb18IwcYRzyCQVFWVJokkJThc0Gz3f+gvLXEa5jgc07MAAAAASUVORK5CYII=',
-      'https://www.funfile.org/browse.php?search={{IMDB_TITLE}}',
-      'Try again with a refined search string',
-      'Recover your password!'
     ]
   },
 
@@ -807,12 +736,7 @@ const sites = [
     subscene: [
       'Subscene',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAwFBMVEUcVXQaUnAbTGgaTmobUG4bWHiHorIcXH4bW30rWnYaRl8aSmQsXntKb4QbVncZQlnD0Nfw8/UcW3wbUGzS3OIZRFylu8elt8MaR2AcWHlYeo0bTGYbS2YcVHIaRFqmvMoaSGEcWXobT2waSGIcV3gZSGMbUm8cWnsbVXXh6OwaSmMbU3IbVHMaTWkZRV0aRFstZIKWrbtpjaIcT2x4lKUcUG0cU3Lv8/a0xc8ZRl1ZfZMZSGF3laZ3l6obVnT///9+zaarAAAA2UlEQVQY0x1O2WKCMBDcHApGCSJFIw1KAIOIgd53u///Vw3u28zOBYG/cNOaZtacoScWgjAIW7PfS/l3LYjlEE7vhyO+b1eE8IpBsDHGHLHr8MPyV0+0Xt8gXov5iqeVc+DjZNPh1tsrxug9eCzhCfFuwZijegkzeYaC/E6M03pZg8d9b/kP4lrrS12ChDc72SPE6PJdCvDryOJxTuka87JUA0zpX4i7HSZKqGEAy9Nn95IgJpEQn0MGtzVa57lSYsiyGNJbe31SXj6O8QEY9fhUKiGy8RDH8T9e2htmWyQ7HAAAAABJRU5ErkJggg==',
-      [
-        'https://subscene.com/subtitles/searchbytitle',
-        {
-          query: '{{IMDB_TITLE}}',
-        }
-      ],
+      'https://subscene.com/subtitles/title?q={{IMDB_TITLE}}',
       function($dom) {
         return $dom.find('.search-result .exact').length > 0;
       }
@@ -858,7 +782,7 @@ const sites = [
     addicted: [
       'Addic7ed',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACnElEQVQ4y52SX0iTURjGv+hCcLlFbjqdbCqYi3Bb++dIZM5yJAWOOQnSiZiyRcsgHVqO0quaNHWKtdRqF1pRmRchQbgN1yS7kKBGi2KgSTaJLmbMwfDj6TtG4V3agcOB9z38nvOc96EAUDvdNE1T8Xi8KBaLHfxTo3YD8Pv9Y263G83NzfTCwoLxnwCiODg4ONbV1TXjcrnmOjs7U1arFWazGQ6HI/gX4PP5ag0Gw2etVvvd6XTeTKVSe0k9mUymV1RU0BqNBg0NDbBYLKivr4fJZIJer0+Se1Q4HFYxFzYVCgUUmkocNXTgnO1SwOv1OkKh0KnS0lKoVCqY6urQ1tYGRggEmJ+fj+XlZSHV19c3LJfLIZFI0drrh90TRXXrEHQ6HaRSKWrrTuPJs2mMeEZhtV2EWq2GuLgYWVlZWFxclFPt7e1PS0pKIFWWw3EvCuf0KoxXfTRjhxaLxTheVQXr+QvQlJVvASUSCex2O9hsNmZnZyup7u7u8WKGWHRIhsbhL2jyxKC/FiS+6cLCQvD5fAiFQnC5XOTlCSAQCGA0GiESiRAIBE5Qk5OTloKCAuTk5EBr8+Kk5wfKmJMoyWSyGI/HQ3Z2NlgsFjIyMsDhcEAEyasZCxoSjH1KpXKFKLE5+6GuNuNK7/UHS0tLomg0elhXeYwmPQJgsdKRm5u79Q81NTVfE4lE2tYYI5GImJntDOP7U09PT//Gxkba7xxsUq6BgftKlXo9k8vDgcxMHFGo0NRiWVlbW+PvKIlv34Ubn7946RwZvTtlbrEkas800vH1n7z/ivKtO+NvOi47NplF7RrAxHrP+3B4LhiaT5GI7wrgnXg4daPfnRi6PYqJR4+T23s7Aqx+iwlfzb82+eeCZz9EPlZt7/0CE7Nv5pEjH/QAAAAASUVORK5CYII=',
-      'https://www.addic7ed.com/search.php?search={{IMDB_TITLE}}&Submit=Search',
+      'http://www.addic7ed.com/search.php?search={{IMDB_TITLE}}&Submit=Search',
       'returned zero results'
     ]
   }
@@ -1245,7 +1169,7 @@ function updateExternalLinks() {
 // parse movie info before calling init()
 function parse_info() {
   // parse imdb number/layout
-  let m = /^\/title\/tt([0-9]{7,8})\/([a-z]*)/.exec(window.location.pathname);
+  let m = /^\/title\/tt([0-9]{7})\/([a-z]*)/.exec(window.location.pathname);
   if (m) {
     // detect layout
     let title_selector;
