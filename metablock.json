@@ -1,16 +1,16 @@
 {
-	"name": "IMDb: Link 'em all!",
-	"namespace": "https://greasyfork.org/en/users/8981-buzz",
-	"match": "*://*.imdb.com/title/tt*/*",
+  "name": "IMDb: Link 'em all!",
+  "namespace": "https://greasyfork.org/en/users/8981-buzz",
+  "match": "*://*.imdb.com/title/tt*/*",
   "connect": "*",
-	"require": [
-		"https://code.jquery.com/jquery-2.2.0.min.js",
+  "require": [
+    "https://code.jquery.com/jquery-2.2.0.min.js",
     "https://greasemonkey.github.io/gm4-polyfill/gm4-polyfill.js"
-	],
+  ],
   "resource": {
-    "style": "https://raw.githubusercontent.com/buzz/imdb-link-em-all/master/src/style.css"
+    "style": "https://raw.githubusercontent.com/buzz/imdb-link-em-all/master/style.css"
   },
-	"grant": [
+  "grant": [
     "GM.getValue",
     "GM.setValue",
     "GM.xmlHttpRequest",
@@ -19,6 +19,6 @@
     "GM_setValue",
     "GM_xmlhttpRequest"
   ],
-	"license": "MIT",
+  "license": "MIT",
   "noframes": true
 }

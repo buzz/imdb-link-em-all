@@ -6,16 +6,15 @@ const pkg = require('./package.json')
 const production = !process.env.ROLLUP_WATCH
 
 export default {
-	input: 'src/main.js',
-	output: {
-		file: 'dist/imdb-link-em-all.user.js',
-		format: 'iife',
+  input: 'src/main.js',
+  output: {
+    file: 'dist/imdb-link-em-all.user.js',
+    format: 'iife',
     globals: {
-			jquery: '$',
+      jquery: '$',
     },
-		sourcemap: true,
-	},
-	plugins: [
+  },
+  plugins: [
     metablock({
       override: {
         author: pkg.author,
@@ -24,5 +23,5 @@ export default {
       },
     }),
     production && terser(),
-	],
+  ],
 }

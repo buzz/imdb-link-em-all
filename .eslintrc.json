@@ -1,38 +1,20 @@
 {
-    "env": {
-        "browser": true,
-        "jquery": true
-    },
-    "extends": "eslint:recommended",
-    "globals": {
-      "GM": true
-    },
-    "parserOptions": {
-        "ecmaVersion": 2018,
-        "sourceType": "module"
-    },
-    "rules": {
-        "indent": [
-            "error",
-            2
-        ],
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
-        "quotes": [
-            "error",
-            "single",
-            {
-              "avoidEscape": true
-            }
-        ],
-        "semi": [
-            "error",
-            "always"
-        ],
-        "no-console": [
-          "off"
-        ]
-    }
+  "env": {
+    "browser": true,
+    "jquery": true
+  },
+  "extends": ["airbnb-base", "plugin:prettier/recommended"],
+  "globals": {
+    "GM": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error",
+    "no-console": "off"
+  }
 }
