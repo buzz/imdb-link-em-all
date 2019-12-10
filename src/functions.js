@@ -21,10 +21,7 @@ let firstRun = false
 let config
 
 // replace imdb fields
-export function repl(str, encode) {
-  if (typeof encode === 'undefined') {
-    encode = true
-  }
+export function repl(str, encode = true) {
   return str
     .replace(new RegExp('{{imdbTitle}}', 'g'), encode ? encodeURIComponent(imdbTitle) : imdbTitle)
     .replace(new RegExp('{{imdbId}}', 'g'), imdbId)
@@ -499,18 +496,15 @@ export function parse_info() {
 }
 
 export function onLoad() {
-  let i
   // prepare sortedKeys array
-  for (i = 0; i < 3; i++) {
+  for (let i = 0; i < 3; i += 1) {
     sortedKeys.push(
-      Object.keys(sites[i]).sort(function(a, b) {
-        return sites[i][a][0].localeCompare(sites[i][b][0])
-      })
+      Object.keys(sites[i]).sort((a, b) => sites[i][a][0].localeCompare(sites[i][b][0]))
     )
   }
 
   // restore configuration
-  GM.getValue('config').then(function(configstring) {
+  GM.getValue('config').then((configstring) => {
     if (typeof configstring !== 'undefined') {
       config = JSON.parse(configstring)
       // for scripts that were updated

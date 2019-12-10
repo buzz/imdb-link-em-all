@@ -1,5 +1,7 @@
 import { detectRefreshRedirect } from './sites-helper'
 
+// TODO: support array of strings for NOT_LOGGED_IN_MATCHER
+
 // ADDING-SITES.md describes how this works
 const sites = [
   // general
@@ -166,17 +168,13 @@ const sites = [
       'Kinox.to',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABQ0lEQVQ4y6XMXSuDYRgH8JsRIzYnPoUDh7KkpCS1edtKVmpZLUqkOZGZA452PPYSIQfL6mkemzTk9fBxprC8nMjH+HvuK4+u7ramdvDreul/XaLDt4JaCKc3jFoI58QyaiEc44vgwuksUXfpszt4onGoedE+ugAuVbgl1rxxeILH0idVNSuJNvc8uFThhsg+epCjY1nVnEW0joTAJU+vyfq+BuP1g6qa4UTLcBBcUr+iQ0swtgs1wwn7UABcQr+E8fKOyF4WsUye+u7ZVag507dJE82DM+ASuQscFe+p73SHoD8YNMv+N/Nk8gKok0TTgB/cTq5IrNk1F4Hx/Ia1dEbOxya7dUwPGvunwG1r54TvAltxWfP88O9BQ58PXJd/iSj7L5Oj7AObaxL/MF3umB7U946hipLJVvlBjwdVbFY6ln4AEEYVYRiE14MAAAAASUVORK5CYII=',
       'https://kinox.to/Search.html?q=tt{{imdbId}}',
-      function($dom) {
-        return $dom.find('table.SearchTable tbody tr').length > 0
-      },
+      ($dom) => $dom.find('table.SearchTable tbody tr').length > 0,
     ],
     movie4k: [
       'Movie4k.to',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAJFBMVEUdHBuRkJBcXFtGRkXl5eUuLSx2dXS+vr79/f2oqKdtbWx/f35TRz6aAAAAb0lEQVQI12NggAFm0wAgaWzAwO4iwMDA6FLAwN7hysAQ0gFkdDYxMGjMADK63BkYSlYAGU0lAazuGkBGc0YCW7cFiGEygd0ZzGBvjSgAM7i7d2wAM5jdSwzADNaK9gAwgyGjmwHIYFZlCAIiA7grANJYHWA/QxVTAAAAAElFTkSuQmCC',
       'https://www.movie4k.to/movies.php?list=search&search={{imdbTitle}}',
-      function($dom) {
-        return $dom.find('#tablemoviesindex tbody tr:not(:contains(download now))').length > 0
-      },
+      ($dom) => $dom.find('#tablemoviesindex tbody tr:not(:contains(download now))').length > 0,
     ],
     ixirc: [
       'ixIRC',
@@ -277,9 +275,7 @@ const sites = [
           Kat: 'IMDb',
         },
       ],
-      function($dom) {
-        return $dom.find('i:contains(Keine Ergebnisse)').length < 2
-      },
+      ($dom) => $dom.find('i:contains(Keine Ergebnisse)').length < 2,
     ],
     omdb: [
       'omdb',
@@ -395,9 +391,7 @@ const sites = [
       'RARBG',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABp0lEQVQ4y4WTP0jDQBTGI1KEOmcODh3M4lTEKZNL9hslYyGbcJtIcChCwC2LUxARIXOcHDLfKNziFByDgwgBEZHn9y6X2tYUD3695r2X7333Jw4RbQEPnIFLMB9gBia2dgUHP0fgkf4f7+AcjNYFTsFbpRsSUpFIVomAzDRx3o6rQYFSNTSNKgriysxDFJUR+QD7fx1AgF8OgUzREc8Md+cY59hN27mYDQqEsjJkhe7tfjdoykvhOM9Nt5KLQQHBRWsCdd2icxeP04WDaLMAipNMGftlVWM52ExZUhCVlJe6P429DQKlIYwL8kXeEXawqB3z4VNANz/MyAtSmoqMwig3/xmO81Js98mgQAF7Y18a4qQwrXjmZ3cq4SrvHTyAnQEBheKYxl5EseyK27alaZj8xq3w8jKWBCpyPEGOKyiSGRd98aVRuibXjyDQ5bK87EX4JEYLgbyAwDgwiDjlglf7gX3yS47b5Rw3xOmYDX0BJyxwDFTTtKQU30CNDTO35cna5LtPSutFXsMVxjMQji06ANfgDtyCG3Boc7v25t3bHNfkNr/9Azy0EznasaqWAAAAAElFTkSuQmCC',
       'https://rarbg.to/torrents.php?search=tt{{imdbId}}',
-      function($dom) {
-        return $dom.find('.lista2t tr').length > 1
-      },
+      ($dom) => $dom.find('.lista2t tr').length > 1,
     ],
     '1337x': [
       '1337x',
@@ -529,17 +523,13 @@ const sites = [
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACiklEQVQ4EQXBvYtdVRTG4d+71t7nnDs580HGJBMFRRKUmSBYKKiFWMTGUhsbQRDsBIO1f4VYaWEjgo1NIKUIWlipoBaKoIQoJnDz5Z177zl77+Xz6M3nzz/36vHhZ/uDTnYXWeCIGcIpdSa5E2HUVpjLzKLfiXUp3F9tf/n+r9UH+vzdZ3+1Nh1nJ8Yhy5SAmQgjopGTMc8CVbbTRN8NrDZrgsTDOf6x3cGeRgokBUElSJ6QCUkgw5IBwt2QGe5Oyl3sdHZkSGFmMgkkzAAFSGAiJafWhszAjKCRu54WVZJk5iKAlI0HU4AlULCpwekcrAss14X720oAQWO7PcVMyEWShAz2z3Rc+/R3PnzjMsfnMl/9sGS5ntnrE9d/usvukOg8eO/qERfGjoqwBiYz3I0ADseOkNhW6HJidydxpndeuDzyyTuXOLnYc/3nB6SuJyKQiSQJAWAM2fnoxk2Mxt1V4/UXDylzUAMOeufqyR4ff7MkJEICiSQJJMzF6Vx565XHePKRzI0f77HaVHoTAFODECQXKDAEZhhACExQa3A4OhfHzJiNFkaNRpD5bzPz7W8POXfQYSHchbuT5CK5UcrE2EOXnJQSi95pLobk3PrjHte++BMz4/3XHsccrIlKkISQxHoqvP3yPkd7PSXgpaf2KVHoPHPl0R1McHYUB+OC1ekWWUOIBECA5YFLF5zOnblsOTt2tCq63DHmILux3m6YS8VTIuaZkEiIMBcQ4JmGQKIBDagENUS0ICSIRoSQAYDdvLOZOjeQyGlABCYhCQQESCAAgTzRWmHoBv5drie/ffv0yhPnF88cjH3LKalG0FoBjFILIFpACyhlIqWBqVRu3Vnx5Xd/f/0/VkQNu5/steIAAAAASUVORK5CYII=',
       'https://hdsky.me/torrents.php?incldead=1&search={{imdbId}}&search_area=4&search_mode=0',
       'Nothing found!',
-      function($dom, resp) {
-        if (
+      ($dom, resp) =>
+        !(
           resp.responseText.indexOf('You need cookies enabled to log in or switch language.') >
             -1 ||
           resp.responseText.indexOf('你需要启用cookies才能登录或切换语言。') > -1 ||
           resp.responseText.indexOf('你需要啟用cookies才能登錄或切換語言。') > -1
-        ) {
-          return false
-        }
-        return true
-      },
+        ),
     ],
     hdtorrents: [
       'HD-Torrents',
@@ -574,17 +564,12 @@ const sites = [
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABIklEQVQ4y2Mw1RbZmBmm8YocbKghPJ+hMlnv17dT8f/JwWkh6s/BBnw9GfcPJEAqDTdgcLngy8m4/68ORIEUodgG4qOLYbjg9paQf0aawjv5uFlLEvxVH36Biu+f6/lPW1lgpYIUz+ylHQ6/cbqgMkX/qxAfGycDEHBzsgSeWOILFve0kTnEAAXKMrxzYC7BcMGkcovf4sIcWiCFIgLsFbc2h4DFg10ULgjwsrGAxPVUBdfjdMGn47H/i+N1PgKde3hNr9NfmPi1DcH/HU0lz1vqix06stD7H95YuLYh6H9yoBpGqM9vsv0/u96acCxADcCIc6gBhNPBEHSBqY7I3ookvZ9A/AtEA7PpD2Bieg3jw2g/B7lPPvayH5HEfwLVrQIAgGSE9T4ISYoAAAAASUVORK5CYII=',
       'https://tp.m-team.cc/torrents.php?incldead=0&spstate=0&inclbookmarked=0&search={{imdbId}}&search_area=4&search_mode=2',
       'Nothing here!',
-      function($dom, resp) {
-        if (
+      ($dom, resp) =>
+        !(
           resp.responseText.indexOf(
             "The page you tried to view can only be used when you're logged in."
-          ) > -1 ||
-          resp.responseText.indexOf('該頁面必須在登錄後才能訪問') > -1
-        ) {
-          return false
-        }
-        return true
-      },
+          ) > -1 || resp.responseText.indexOf('該頁面必須在登錄後才能訪問') > -1
+        ),
     ],
     myspleen: [
       'MySpleen',
@@ -708,9 +693,7 @@ const sites = [
       'Subscene',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAwFBMVEUcVXQaUnAbTGgaTmobUG4bWHiHorIcXH4bW30rWnYaRl8aSmQsXntKb4QbVncZQlnD0Nfw8/UcW3wbUGzS3OIZRFylu8elt8MaR2AcWHlYeo0bTGYbS2YcVHIaRFqmvMoaSGEcWXobT2waSGIcV3gZSGMbUm8cWnsbVXXh6OwaSmMbU3IbVHMaTWkZRV0aRFstZIKWrbtpjaIcT2x4lKUcUG0cU3Lv8/a0xc8ZRl1ZfZMZSGF3laZ3l6obVnT///9+zaarAAAA2UlEQVQY0x1O2WKCMBDcHApGCSJFIw1KAIOIgd53u///Vw3u28zOBYG/cNOaZtacoScWgjAIW7PfS/l3LYjlEE7vhyO+b1eE8IpBsDHGHLHr8MPyV0+0Xt8gXov5iqeVc+DjZNPh1tsrxug9eCzhCfFuwZijegkzeYaC/E6M03pZg8d9b/kP4lrrS12ChDc72SPE6PJdCvDryOJxTuka87JUA0zpX4i7HSZKqGEAy9Nn95IgJpEQn0MGtzVa57lSYsiyGNJbe31SXj6O8QEY9fhUKiGy8RDH8T9e2htmWyQ7HAAAAABJRU5ErkJggg==',
       'https://subscene.com/subtitles/title?q={{imdbTitle}}',
-      function($dom) {
-        return $dom.find('.search-result .exact').length > 0
-      },
+      ($dom) => $dom.find('.search-result .exact').length > 0,
     ],
     turkcealtyazi: [
       'TurkceAltyazi',
@@ -722,9 +705,7 @@ const sites = [
       'Podnapisi',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAgMAAABinRfyAAAACVBMVEUAAGcAAADu7u7pQXccAAAAAXRSTlMAQObYZgAAACxJREFUCNdjEA0NYWAQXbWUgUFy1TIHECsAyFo5gUE0NBTGWrUSk4VNFigGAN4uGb2e9Kd3AAAAAElFTkSuQmCC',
       'https://www.podnapisi.net/subtitles/search/advanced?keywords={{imdbTitle}}&year={{imdbYear}}&seasons=&episodes=',
-      function($dom) {
-        return $dom.find('table.table tr.subtitle-entry').length > 0
-      },
+      ($dom) => $dom.find('table.table tr.subtitle-entry').length > 0,
     ],
     yifysubtitles: [
       'YIFY Subtitles',
