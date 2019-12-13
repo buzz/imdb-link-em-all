@@ -1,21 +1,17 @@
 import * as constants from './constants'
-import sites from './sites'
 
 /* Variables */
+let sites
 
 // movie details
 let imdbId
 let imdbTitle
 let imdbYear
 
+let sortedKeys
+
 // new or legacy layout
 let layout
-
-// alphabetically sorted site keys
-const sortedKeys = []
-
-// script runs for the first time?
-let firstRun = false
 
 // script configuration
 let config
@@ -40,7 +36,7 @@ export function clickCog(evt) {
 export function showConfigure() {
   // un/tick checkboxes
   let i
-  for (i = 0; i < 3; i++) {
+  for (i = 0; i < 3; i += 1) {
     const s = sites[i]
     for (let key in s) {
       if (Object.prototype.hasOwnProperty.call(s, key)) {
@@ -240,12 +236,12 @@ export function fetchResults(key, site) {
     opts.url = site[2][0]
     opts.headers = { 'Content-Type': 'application/x-www-form-urlencoded' }
     const data = site[2][1]
-    const data_array = []
-    let data_key
-    for (data_key in data) {
-      data_array.push(data_key + '=' + encodeURIComponent(repl(data[data_key])))
+    const dataArray = []
+    let dataKey
+    for (dataKey in data) {
+      dataArray.push(`${dataKey}=${encodeURIComponent(repl(data[dataKey]))}`)
     }
-    opts.data = data_array.join('&')
+    opts.data = dataArray.join('&')
   } else {
     opts.method = 'GET'
     opts.url = repl(site[2])
@@ -269,7 +265,15 @@ export async function add_style(resourcename) {
 }
 
 // initialize
-export function init() {
+export function init(newSites, newConfig, newSortedKeys, newImdbInfo) {
+  sites = newSites
+  config = newConfig
+  sortedKeys = newSortedKeys
+  imdbTitle = newImdbInfo.title
+  imdbId = newImdbInfo.id
+  imdbYear = newImdbInfo.year
+  layout = newImdbInfo.layout
+
   // Add new link section
   const $container = $(
     layout === 'new' ? '.title-overview' : '.titlereference-section-overview:first > *:last'
@@ -359,21 +363,13 @@ export function init() {
   $container.after(html)
 
   // Setup callbacks
-  $('#lta_configure_tooltip form').submit(function(evt) {
-    evt.preventDefault()
-  })
-  $('#lta_configure_tooltip input[name=toggle_all_0]').click(function() {
-    toggleAll(0)
-  })
-  $('#lta_configure_tooltip input[name=toggle_all_1]').click(function() {
-    toggleAll(1)
-  })
-  $('#lta_configure_tooltip input[name=toggle_all_2]').click(function() {
-    toggleAll(2)
-  })
-  $('#lta_configure_tooltip input:checkbox').change(function() {
+  $('#lta_configure_tooltip form').submit((evt) => evt.preventDefault())
+  $('#lta_configure_tooltip input[name=toggle_all_0]').click(() => toggleAll(0))
+  $('#lta_configure_tooltip input[name=toggle_all_1]').click(() => toggleAll(1))
+  $('#lta_configure_tooltip input[name=toggle_all_2]').click(() => toggleAll(2))
+  $('#lta_configure_tooltip input:checkbox').change((event) => {
     // ignore toggle all checkbox
-    const id = $(this).attr('id')
+    const id = $(event.target).attr('id')
     if (id.indexOf('toggle_all') === -1) {
       checkToggleAll()
     }
@@ -387,19 +383,19 @@ export function init() {
 // render links
 export function updateExternalLinks() {
   const links = [[], [], []]
-  const result_fetcher = []
+  const resultFetcher = []
   let html = ''
   let i
-  for (i = 0; i < 3; i++) {
+  for (i = 0; i < 3; i += 1) {
     const s = sites[i]
     let j
-    for (j = 0; j < sortedKeys[i].length; j++) {
+    for (j = 0; j < sortedKeys[i].length; j += 1) {
       const key = sortedKeys[i][j]
       if (config.enabled_sites.indexOf(key) >= 0) {
         const site = s[key]
         const title = site[0]
         const icon = site[1]
-        let cls = 'lta-outlink ' + key
+        let cls = `lta-outlink ${key}`
         let href
         if (Object.prototype.toString.call(site[2]) === '[object Array]') {
           href = '#'
@@ -407,10 +403,10 @@ export function updateExternalLinks() {
         } else {
           href = repl(site[2])
         }
-        let results_indicator = ''
+        let resultsIndicator = ''
         if (config.fetch_results && site.length > 3) {
-          results_indicator = '&nbsp;<span class="' + key + ' lookup-status"></span>'
-          result_fetcher.push([key, site])
+          resultsIndicator = '&nbsp;<span class="' + key + ' lookup-status"></span>'
+          resultFetcher.push([key, site])
         }
         links[i].push(
           '<span class="link-wrapper"><span class="link"><a class="' +
@@ -423,7 +419,7 @@ export function updateExternalLinks() {
             (icon ? '<img src="' + icon + '" alt="' + title + '" width="16" height="16">' : '') +
             title +
             '</a>' +
-            results_indicator +
+            resultsIndicator +
             '</span>&nbsp;<span class="ghost">|</span></span>'
         )
       }
@@ -455,67 +451,7 @@ export function updateExternalLinks() {
   }
   $('#lta_external_site_links').html(html)
   // result fetching
-  for (i = 0; i < result_fetcher.length; i++) {
-    fetchResults(result_fetcher[i][0], result_fetcher[i][1])
+  for (i = 0; i < resultFetcher.length; i += 1) {
+    fetchResults(resultFetcher[i][0], resultFetcher[i][1])
   }
-}
-
-// parse movie info before calling init()
-export function parse_info() {
-  // parse imdb number/layout
-  let m = /^\/title\/tt([0-9]{7})\/([a-z]*)/.exec(window.location.pathname)
-  if (m) {
-    // detect layout
-    let title_selector
-    if (m[2] === 'reference' || m[2] === 'combined') {
-      layout = 'legacy'
-      title_selector = 'h3[itemprop=name]'
-    } else {
-      layout = 'new'
-      title_selector = 'h1'
-    }
-    // extract movie infos
-    imdbTitle = $(title_selector)
-      .text()
-      .trim()
-    imdbId = m[1]
-    m = /^(.+)\s+\((\d+)\)/.exec(imdbTitle)
-    if (m) {
-      imdbTitle = m[1].trim()
-      imdbYear = m[2].trim()
-    } else {
-      imdbYear = ''
-    }
-    // fire!
-    init()
-    updateExternalLinks()
-    if (firstRun) {
-      showConfigure()
-    }
-  }
-}
-
-export function onLoad() {
-  // prepare sortedKeys array
-  for (let i = 0; i < 3; i += 1) {
-    sortedKeys.push(
-      Object.keys(sites[i]).sort((a, b) => sites[i][a][0].localeCompare(sites[i][b][0]))
-    )
-  }
-
-  // restore configuration
-  GM.getValue('config').then((configstring) => {
-    if (typeof configstring !== 'undefined') {
-      config = JSON.parse(configstring)
-      // for scripts that were updated
-      if (typeof config.fetch_results === 'undefined') {
-        config.fetch_results = constants.DEFAULT_CONFIG.fetch_results
-      }
-      parse_info()
-    } else {
-      config = constants.DEFAULT_CONFIG
-      firstRun = true
-      GM.setValue('config', JSON.stringify(config)).then(parse_info)
-    }
-  })
 }
