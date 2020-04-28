@@ -483,7 +483,7 @@ const sites = [
     yts: [
       'YTS',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAMFBMVEUgHiEbICIeIB0dKh8bMxwaQRwWUxgTYBYRbRINdA8Chw4BmgkJpgAAtgAAvwAAygD2IFtIAAAAm0lEQVQI1wGQAG//ACAEMQIiASIiACBlIRAhABACABaAEREAIhEQADoxIqtxi6IiAHkiELy03WEBALcCEG7d2SAQANYQIi3uwgEiANYgEivuQAIQANchACr7IgACAMoiICz3ECEBAJ1AIh/UIgIDAD2wIl+yABA2ABfaEDVBACSkAAGetQEiIntgAAIX38qZrMYgACACKM7ttxASm8omLNhBbCUAAAAASUVORK5CYII=',
-      'https://yts.ag/browse-movies/{{IMDB_TITLE}}/all/all/0/latest',
+      'https://yts.ag/browse-movies/{{IMDB_TITLE}}',
       '<h2>0 YIFY Movies Found</h2>'
     ],
     torrentdownloads: [
@@ -818,7 +818,7 @@ const sites = [
     addicted: [
       'Addic7ed',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACnElEQVQ4y52SX0iTURjGv+hCcLlFbjqdbCqYi3Bb++dIZM5yJAWOOQnSiZiyRcsgHVqO0quaNHWKtdRqF1pRmRchQbgN1yS7kKBGi2KgSTaJLmbMwfDj6TtG4V3agcOB9z38nvOc96EAUDvdNE1T8Xi8KBaLHfxTo3YD8Pv9Y263G83NzfTCwoLxnwCiODg4ONbV1TXjcrnmOjs7U1arFWazGQ6HI/gX4PP5ag0Gw2etVvvd6XTeTKVSe0k9mUymV1RU0BqNBg0NDbBYLKivr4fJZIJer0+Se1Q4HFYxFzYVCgUUmkocNXTgnO1SwOv1OkKh0KnS0lKoVCqY6urQ1tYGRggEmJ+fj+XlZSHV19c3LJfLIZFI0drrh90TRXXrEHQ6HaRSKWrrTuPJs2mMeEZhtV2EWq2GuLgYWVlZWFxclFPt7e1PS0pKIFWWw3EvCuf0KoxXfTRjhxaLxTheVQXr+QvQlJVvASUSCex2O9hsNmZnZyup7u7u8WKGWHRIhsbhL2jyxKC/FiS+6cLCQvD5fAiFQnC5XOTlCSAQCGA0GiESiRAIBE5Qk5OTloKCAuTk5EBr8+Kk5wfKmJMoyWSyGI/HQ3Z2NlgsFjIyMsDhcEAEyasZCxoSjH1KpXKFKLE5+6GuNuNK7/UHS0tLomg0elhXeYwmPQJgsdKRm5u79Q81NTVfE4lE2tYYI5GImJntDOP7U09PT//Gxkba7xxsUq6BgftKlXo9k8vDgcxMHFGo0NRiWVlbW+PvKIlv34Ubn7946RwZvTtlbrEkas800vH1n7z/ivKtO+NvOi47NplF7RrAxHrP+3B4LhiaT5GI7wrgnXg4daPfnRi6PYqJR4+T23s7Aqx+iwlfzb82+eeCZz9EPlZt7/0CE7Nv5pEjH/QAAAAASUVORK5CYII=',
-      'http://www.addic7ed.com/search.php?search={{IMDB_TITLE}}&Submit=Search',
+      'http://www.addic7ed.com/srch.php?search={{IMDB_TITLE}}&Submit=Search',
       'returned zero results'
     ]
   }
