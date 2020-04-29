@@ -25,6 +25,8 @@
 // http://www.imdb.com/title/tt1166810/
 // http://www.imdb.com/title/tt4380968/
 // http://www.imdb.com/title/tt3087990/
+// 8-digit IMDb number
+// https://www.imdb.com/title/tt10039344/
 
 /*******************************************************************************
  * Constants
@@ -1205,7 +1207,7 @@ function updateExternalLinks() {
 // parse movie info before calling init()
 function parse_info() {
   // parse imdb number/layout
-  let m = /^\/title\/tt([0-9]{7})\/([a-z]*)/.exec(window.location.pathname);
+  let m = /^\/title\/tt([0-9]{7,8})\/([a-z]*)/.exec(window.location.pathname);
   if (m) {
     // detect layout
     let title_selector;
