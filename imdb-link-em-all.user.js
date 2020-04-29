@@ -407,6 +407,11 @@ const sites = [
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABVElEQVQ4y2NgQAL/zzIwA7EQELMiifkB8VUg/g7ExQy4AFAyC6rwPRDHQcVYgXgdEP+H4iX4DOhEUvgViDcA8TEg/ockfhKIGXEZEIekEIHPofCfAzEPLgMs0Gz7//4g8/+5DRL/Ty7hh4n9BGIVXAZIAfEXmOafJxn/F8XL/VdTVfufHyv3/98ZuMGuuAxgB+K7MANOLOL/r6et+j8hUP7/vS0cyN7IxReQe2H+7i2W/t+WL/3/H2a4TMdnwDSYwpQQ+f+ru8XQAxGE9+MzIBvmgoxw+f/WJir/Ty7mQzfgPsi7uAxwhhmwuFUcHIAzaiTRXQFKI9K4DFCGRhU4CmfWSv4/u5wPmzescBnADcTPcCQiZJyAywBGID6BpPAvEO8D4mVA/BlJvAtfQC5GUrgSiFmg4uFA/BKIzwBxCj4D8oH4AxCfBmIPJHEWIOYFYiZk9QDcNJJsMRjsPQAAAABJRU5ErkJggg==',
       'http://www.allocine.fr/recherche/?q={{IMDB_TITLE}}',
       'Oups'
+    ],
+    gdriveplayer: [
+      'Gdrive Player',
+      null,
+      'https://database.gdriveplayer.me/player.php?imdb=tt{{IMDB_ID}}'
     ]
   },
 
