@@ -155,7 +155,8 @@ const sites = [
     criticker: [
       'Criticker',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAYFBMVEUCL10JNWIaRG8mU3tBZIlMaYlSbo9ZdZZYfZ1mgJxxiKV1jap3jqV6lauClayInbSPorqQp7iYp7qhssSot8quuce0wM25xdPBzNrK09vT2+Ta4uvk6evr8fPz+fv+//xEFJzNAAAApklEQVQYGQXB0U6EMBRF0X3LgWaUBE3m3f//M9/UOAJTbntcKz4AAOBX3u8aVyzg0a/rb22gzGNqOYwj5rojsvWiWfM07Xt0VLhtBQCi1h8rCgAA5fFMSmQHAJheNllEz2IMPo+rISY+AcC8vaYV9vuCMeRjNESwVADIvo4hQgYA4vTTCrIAAFFXLMJf35NmqcS1nzexaDjPw2Bt3WKmghmZ7bxa/QcJoVoLeA40rAAAAABJRU5ErkJggg==',
-      'http://www.criticker.com/?h={{IMDB_TITLE}}&st=all&g=Go'
+      'https://www.criticker.com/?search=tt{{IMDB_ID}}',
+      '<b>No Results</b>'
     ],
     letterboxd: [
       'Letterboxd',
