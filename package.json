@@ -1,6 +1,6 @@
 {
   "name": "imdb-link-em-all",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Adds all kinds of links to IMDb, customizable!",
   "main": "imdb-link-em-all.user.js",
   "scripts": {
