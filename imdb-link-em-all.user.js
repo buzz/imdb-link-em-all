@@ -763,7 +763,7 @@ const sites = [
     filelist: [
       'FileList',
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAElBMVEUsLS8pTFsmZHwje54shKUfotVCbnToAAAANElEQVQI12NwgQIGBwYwYMHLYAwNFYUwAhjgDFUwgyk0EMJgDmAwhegKYGANDWAhymSYMwBdTQvkUareoQAAAABJRU5ErkJggg==',
-      'http://filelist.ro/browse.php?search=tt{{IMDB_ID}}&cat=0&searchin=0&sort=0',
+      'http://filelist.io/browse.php?search=tt{{IMDB_ID}}&cat=0&searchin=0&sort=0',
       'Try again with a different search string',
       'FileList :: Login'
     ]
