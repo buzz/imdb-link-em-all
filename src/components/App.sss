@@ -1,0 +1,37 @@
+.configWrapper
+  position: relative
+
+  .configButton
+    background: transparent
+    border: none
+    padding: 0
+
+    > img
+      vertical-align: baseline
+
+  .configDialog
+    background-color: rgba(193, 193, 193, 0.97)
+    border-radius: 4px
+    color: #333
+    display: block
+    font-family: Verdana, Arial, sans-serif
+    font-size: 11px
+    left: 27px
+    line-height: 1.5rem
+    padding: 8px 10px
+    position: absolute
+    top: -2px
+    white-space: nowrap
+    z-index: 100
+
+    &:before
+      border-bottom: 8px solid transparent
+      border-right: 8px solid rgba(193, 193, 193, 0.97)
+      border-top: 8px solid transparent
+      content: ""
+      display: block
+      height: 0
+      left: -8px
+      position: absolute
+      top: 8px
+      width: 0
