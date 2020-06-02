@@ -766,6 +766,33 @@ const sites = [
       'http://filelist.io/browse.php?search=tt{{IMDB_ID}}&cat=0&searchin=0&sort=0',
       'Try again with a different search string',
       'FileList :: Login'
+    ],
+    alpharatio: [
+      'AlphaRatio',
+      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAYFBMVEUVKl4IOLICP6oAR+QeR5oASfgZTc0AXP0YYdMdarlCYqULcM0Ac947ZMg8ZboAd/8Df9oAhPRAeKk3frxkfLxkialYksSEiJxil7+WobqjqbKjrMKwu829wcTFyMvHycYBkkjPAAAAgklEQVQY02XP2Q4CIQwFUEadQaTIUhcQaP//LxUzDC73qTlpb1LBPxF9KPQFlJc0IDpQAKCR+sbNC3OZhXcdot+VOk/a0wYHZrNXvm5wZ86T+zipTEnbMkqJYgSZVqBja+NslxWSbG1MIMsbaLH+0QCtoRfUoBDDlSkgnk/jub9ve560zBnJ3AgNNAAAAABJRU5ErkJggg==',
+      'https://alpharatio.cc/torrents.php?searchstr={{IMDB_TITLE}}&filter_cat[1]=1&filter_cat[2]=1&filter_cat[3]=1&filter_cat[4]=1&filter_cat[5]=1&filter_cat[6]=1&filter_cat[7]=1&filter_cat[8]=1&filter_cat[9]=1&filter_cat[10]=1&filter_cat[11]=1&filter_cat[12]=1&filter_cat[13]=1&filter_cat[15]=1&filter_cat[16]=1&filter_cat[17]=1&',
+      'Your search did not match anything',
+      'Recover Password!'
+    ],
+    beyondhd: [
+      'BeyondHD',
+      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAM1BMVEUgAAALPOoMRtIAUt4eTb4eUNEZVc8bWcgcaMwlachwcP9gfvKMkv/h5f/s7f75+f/9//zal4f2AAAAAXRSTlMAQObYZgAAAGRJREFUGNNNT0cCwCAIo9aBHcL/X9uy1FwwEUgAEJz4o0CgoKMZxw3rv5uQZwM90eILmGONtLOCWOZ04jXlxhDwEn7gEqoIVZ0giyPxGEzuK2WokSfbg1r4jXc7JgWv816Vkj4/5zEHVLDKOPkAAAAASUVORK5CYII=',
+      'https://beyond-hd.me/torrents/all?search=&imdb=tt{{IMDB_ID}}',
+      'N/A'
+    ],
+    danishbits: [
+      'DanishBits',
+      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAA/UExURQoSEhISEp0KC8oBAaYAABISEhISEhISEhISEhISEhISEoszM7EqKlQFBakaGi4ODhISEuAAAIwBAbsCAkdwTOrekeoAAAAVdFJOU///////B4nA9Xq9//////+X////AOfooCAAAAB/SURBVBjTZY/ZDoMwDATHzg2Eo+X/v7U2FJWKlUbebPywZjelXGotObnHaPJVO4PBLGcyeLCaGUcMM+tO8p9pwnCXyLbPPCMGSKZ0dSHH6IWqcVliRKLNl1YP/OEIHhQNSDgQohayblzFeGsm9fDT1hN746Z2VZdb9edx/+d/AJJ9BpNvXJ6TAAAAAElFTkSuQmCC',
+      'https://danishbits.org/torrents.php?&pre_type=s_imdb&search=tt{{IMDB_ID}}',
+      'Your search did not match anything',
+      'Glemt din kode?'
+    ],
+    funfile: [
+      'FunFile',
+      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAEpUExURSgeEvHeodO+hhkGAigVD+/coSgIACgeHAgAAP///w0CAHkALT4AQTQAMrYAAG9SAKQIAg0eHBgeFBwRDyEeEV9+kWMAFBQJBR0MBdSlXcWWV49YkO/dqC0dFixjja4AAREeHDGR0ZwGBBYWGiETDBchJ///+kGc2g8SFC0qKJGEVncAJayYW9PDkbm7wfzq12ZJAO/KhuPT0DEANbWKGcRxA/EMAOi8b+EgAP/35jUDQZAABraxqe7X7zGR2nsBNmMALlYADjp3nv//6iua4lal2iVtmjGr90M4NmxOPfjbuh88T9rRsFIAFf/alOXQmE8fX//q13W06/L095RuEa+nnLG1t1VBN62Zj9GebKDW89+1d+He3YlyOltaW7XGztTIxefk45Z7Ofn+mBAAAADnSURBVBhXTc7VkoNQDAbgAIceQRYoXurUvevu7u76/g+xYfZm/6vMN/kzAQBwXcdxKhXbtut5CqAbxsqWaZat2qplziA0CgVfswBq5aWF+TkszC7yPslhSBAtryHo/vpmrlTdKBXT7SZWiNHukWJ152DvENgJgnK0q5F031NOO+n5WZcCk7keHrdaN14n6MYqwqCphd7wYfiiBeM4Qbi8qoPyOP0M3cbz3T0FIY9uSTv6mv70xOtgkt24fsp/cExfeR9lN2T+xgj+AyGL+R/wb18IwcYRzyCQVFWVJokkJThc0Gz3f+gvLXEa5jgc07MAAAAASUVORK5CYII=',
+      'https://www.funfile.org/browse.php?search={{IMDB_TITLE}}',
+      'Try again with a refined search string',
+      'Recover your password!'
     ]
   },
 
