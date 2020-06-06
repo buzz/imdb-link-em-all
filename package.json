@@ -29,6 +29,9 @@
     "url": "https://github.com/buzz/imdb-link-em-all/issues"
   },
   "homepage": "https://github.com/buzz/imdb-link-em-all#readme",
+  "config": {
+    "sitesUrl": "http://localhost:8001/sites.json"
+  },
   "devDependencies": {
     "@babel/cli": "^7.10.1",
     "@babel/core": "^7.10.2",
@@ -36,6 +39,7 @@
     "@babel/preset-env": "^7.10.2",
     "@rollup/plugin-alias": "^3.1.1",
     "@rollup/plugin-image": "^2.0.5",
+    "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^8.0.1",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.2.0",

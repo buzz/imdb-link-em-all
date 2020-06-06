@@ -21,19 +21,22 @@ module.exports = {
   rules: {
     'prettier/prettier': 'error',
     'no-console': 'off',
+    'react/jsx-props-no-spreading': 'off',
     'react/prop-types': 'off',
+    'jsx-a11y/label-has-associated-control': ['error', { assert: 'either' }],
+    'no-unused-vars': ['error', { varsIgnorePattern: '^Fragment$' }],
   },
   settings: {
     'import/core-modules': ['preact', 'preact/hooks'],
     'import/resolver': {
       alias: {
         map: [[pkg.name, path.resolve(__dirname, 'src')]],
-        extensions: ['.jsx'],
+        extensions: ['.js', '.jsx'],
       },
     },
     react: {
       pragma: 'h',
-      version: '16',
+      version: '16.2',
     },
   },
 }

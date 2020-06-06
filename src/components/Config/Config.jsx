@@ -1,0 +1,80 @@
+import { h } from 'preact'
+import { useState } from 'preact/hooks'
+
+import { HOMEPAGE, NAME_VERSION } from 'imdb-link-em-all/constants'
+import Options from 'imdb-link-em-all/components/Config/Options'
+import Sites from 'imdb-link-em-all/components/Config/Sites'
+import About from 'imdb-link-em-all/components/Config/About'
+import css from 'imdb-link-em-all/components/Config/Config.sss'
+
+const Config = ({ config, setConfig, setShow, show, sites }) => {
+  const [enabledSites, setEnabledSites] = useState(config.enabled_sites)
+  const [fetchResults, setFetchResults] = useState(config.fetch_results)
+  const [openBlank, setOpenBlank] = useState(config.open_blank)
+  const [showCategoryCaptions, setShowCategoryCaptions] = useState(config.show_category_captions)
+
+  const [tab, setTab] = useState(0)
+  const tabs = [
+    {
+      title: 'Sites',
+      comp: <Sites enabledSites={enabledSites} setEnabledSites={setEnabledSites} sites={sites} />,
+    },
+    { title: 'Options', comp: <Options /> },
+    { title: 'About', comp: <About /> },
+  ]
+
+  const onClickCancel = () => {
+    setEnabledSites(config.enabled_sites)
+    setShow(false)
+  }
+
+  const onClickSave = () => {
+    setConfig({
+      enabled_sites: enabledSites,
+      fetch_results: fetchResults,
+      open_blank: openBlank,
+      show_category_captions: showCategoryCaptions,
+    })
+    setShow(false)
+  }
+
+  return (
+    <div className={css.popover} style={{ display: show ? 'block' : 'none' }}>
+      <div className={css.inner}>
+        <div className={css.top}>
+          {tabs.map(({ title }, i) => (
+            <button
+              className={tab === i ? css.active : null}
+              type="button"
+              onClick={() => setTab(i)}
+            >
+              {title}
+            </button>
+          ))}
+          <div className={css.link}>
+            <a target="_blank" rel="noreferrer" href={HOMEPAGE}>
+              {NAME_VERSION}
+            </a>
+          </div>
+        </div>
+        <div className={css.body}>
+          {tabs.map(({ comp }, i) => (
+            <div style={{ display: tab === i ? 'block' : 'none' }}>{comp}</div>
+          ))}
+        </div>
+        <div className={css.controls}>
+          <div>
+            <button className="btn primary small" onClick={onClickSave} type="button">
+              OK
+            </button>
+            <button className="btn small" onClick={onClickCancel} type="button">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default Config

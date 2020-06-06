@@ -1,31 +1,48 @@
-import { h } from 'preact'
-import { useState } from 'preact/hooks'
+import { h, Fragment } from 'preact'
+import { useEffect, useState } from 'preact/hooks'
 
 import cogIcon from 'imdb-link-em-all/static/cog.png'
+import Config from 'imdb-link-em-all/components/Config'
+import LinkList from 'imdb-link-em-all/components/LinkList'
+import css from 'imdb-link-em-all/components/App.sss'
+import useConfig from 'imdb-link-em-all/hooks/useConfig'
+import useSites from 'imdb-link-em-all/hooks/useSites'
 
-import Config from './Config'
-import css from './App.sss'
+const App = ({ imdbInfo }) => {
+  const { config, setConfig } = useConfig()
+  const sites = useSites()
+  const [showConfig, setShowConfig] = useState(false)
 
-const App = () => {
-  const [showConfig, setShowConfig] = useState(true)
+  useEffect(() => {
+    if (config && config.first_run) {
+      setShowConfig(true)
+      setConfig((prev) => ({ ...prev, first_run: false }))
+    }
+  }, [config])
+
+  if (!config || !sites.length) {
+    return null
+  }
 
   return (
-    <div className="article">
+    <>
       <h2>
         Search{' '}
         <span className={css.configWrapper}>
-          <button
-            className={css.configButton}
-            onClick={() => setShowConfig((curShowConfig) => !curShowConfig)}
-            title="Configure"
-            type="button"
-          >
+          <button onClick={() => setShowConfig((cur) => !cur)} title="Configure" type="button">
             <img src={cogIcon} alt="Cog icon" />
           </button>
-          <Config show={showConfig} />
+          <Config
+            config={config}
+            setConfig={setConfig}
+            setShow={setShowConfig}
+            sites={sites}
+            show={showConfig}
+          />
         </span>
       </h2>
-    </div>
+      <LinkList config={config} imdbInfo={imdbInfo} sites={sites} />
+    </>
   )
 }
 

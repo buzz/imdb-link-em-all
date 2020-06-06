@@ -2,6 +2,7 @@ import path from 'path'
 import alias from '@rollup/plugin-alias'
 import babel from 'rollup-plugin-babel'
 import image from '@rollup/plugin-image'
+import json from '@rollup/plugin-json'
 import metablock from 'rollup-plugin-userscript-metablock'
 import { terser } from 'rollup-plugin-terser'
 import postcss from 'rollup-plugin-postcss'
@@ -40,19 +41,20 @@ export default {
       ],
     }),
     resolve({
-      extensions: ['.jsx'],
+      extensions: ['.js', '.jsx'],
     }),
     postcss({
       parser: 'sugarss',
       plugins: [precss()],
       modules: true,
       minimize: production,
-      sourceMap: production ? 'false' : 'inline',
+      sourceMap: production ? false : 'inline',
     }),
     babel({
       exclude: 'node_modules/**',
     }),
     image(),
+    json({ namedExports: true }),
     production && terser(),
   ],
 }

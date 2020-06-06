@@ -1,0 +1,50 @@
+.searchInput
+  background-color: rgba(255, 255, 255, 0.9)
+  border: 1px solid #a6a6a6
+  height: 24px
+  line-height: normal
+  padding: 3px 7px
+  width: 100%
+  border-radius: 3px
+  border-top-color: #949494
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .07) inset
+  outline: 0
+  transition: all 100ms linear
+
+  &:focus
+    background-color: #fff
+    border-color: #e77600
+    box-shadow: 0 0 2px 2px rgba(228, 121, 17, 0.25)
+
+.resultCount
+  font-weight: bold
+  margin-bottom: 8px
+
+  > span
+    color: black
+
+.siteList
+
+  .catList
+    display: flex
+    flex-wrap: wrap
+
+    h4
+      width: 100%
+
+    label
+      color: #444
+      overflow: hidden
+      text-overflow: ellipsis
+      transition: color 100ms
+      width: 25%
+
+      &:hover
+        color: #222
+
+      &.checked span
+        color: black
+
+      input
+        vertical-align: text-top
+        margin-right: 4px

@@ -1,0 +1,109 @@
+$text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2)
+$move-up: 40px
+
+.popover
+  background-color: #c2c2c2
+  border-radius: 4px
+  color: #333
+  display: block
+  font-family: Verdana, Arial, sans-serif
+  font-size: 11px
+  left: 27px
+  line-height: 1.5rem
+  margin-top: -$move-up
+  padding: 10px
+  position: absolute
+  top: -2px
+  white-space: nowrap
+  width: 800px
+  z-index: 100
+
+  &:before
+    border-bottom: 8px solid transparent
+    border-right: 8px solid rgba(193, 193, 193, 0.97)
+    border-top: 8px solid transparent
+    content: ""
+    display: block
+    height: 0
+    left: -8px
+    position: absolute
+    top: calc(8px + $move-up)
+    width: 0
+
+  .inner
+    $border: 1px solid rgba(0, 0, 0, 0.25)
+    $border-radius: 2px
+    $bg-color: #a5a5a5
+    display: flex
+    flex-direction: column
+    text-shadow: $text-shadow
+
+    .top
+      display: flex
+      flex-direction: row
+
+      .link
+        flex-grow: 1
+        text-align: right
+
+        > *
+          margin-left: 12px
+
+      > button
+        background-color: rgba(0, 0, 0, 0.05)
+        border-bottom-left-radius: 0
+        border-bottom-right-radius: 0
+        border-bottom: transparent
+        border-left: $border
+        border-right: $border
+        border-top-left-radius: $border-radius
+        border-top-right-radius: $border-radius
+        border-top: $border
+        color: #424242
+        font-size: 12px
+        margin: 0 6px 0 0
+        outline: none
+        padding: 0 6px
+        transform: translateY(1px)
+        text-shadow: $text-shadow
+
+        &:hover
+          background-color: rgba(0, 0, 0, 0.1)
+          color: #222
+
+        &.active
+          background-color: $bg-color
+          color: #222
+
+        &:last-child
+          margin-right: 0
+
+    .body
+      background-color: $bg-color
+      border-bottom-left-radius: $border-radius
+      border-bottom-right-radius: $border-radius
+      border-top-right-radius: $border-radius
+      border: $border
+      padding: 12px 10px 12px
+
+      > div
+        overflow: hidden
+
+        > *:first-child
+          margin-top: 0
+
+        > *:last-child
+          margin-bottom: 0
+
+    .controls
+      display: flex
+      flex-direction: row
+      margin-top: 10px
+
+      > div:first-child
+        flex-grow: 1
+
+      button
+        padding-bottom: 0
+        padding-top: 0
+        margin-right: 12px
