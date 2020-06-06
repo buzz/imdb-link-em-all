@@ -5,10 +5,11 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
+    greasemonkey: true,
   },
   extends: ['airbnb', 'prettier', 'prettier/react'],
   globals: {
-    browser: true,
+    preact: true,
     GM: true,
   },
   parser: 'babel-eslint',
@@ -23,6 +24,7 @@ module.exports = {
     'react/prop-types': 'off',
   },
   settings: {
+    'import/core-modules': ['preact', 'preact/hooks'],
     'import/resolver': {
       alias: {
         map: [[pkg.name, path.resolve(__dirname, 'src')]],

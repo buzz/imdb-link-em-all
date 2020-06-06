@@ -17,7 +17,12 @@ export default {
   output: {
     file: 'dist/imdb-link-em-all.user.js',
     format: 'iife',
+    globals: {
+      preact: 'preact',
+      'preact/hooks': 'preactHooks',
+    },
   },
+  external: ['preact', 'preact/hooks'],
   plugins: [
     metablock({
       override: {
@@ -35,8 +40,7 @@ export default {
       ],
     }),
     resolve({
-      browser: true,
-      extensions: ['.mjs', '.js', '.jsx', '.json', '.node'],
+      extensions: ['.jsx'],
     }),
     postcss({
       parser: 'sugarss',

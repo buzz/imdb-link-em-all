@@ -56,7 +56,5 @@
     "rollup-plugin-userscript-metablock": "^0.2.5",
     "sugarss": "^2.0.0"
   },
-  "dependencies": {
-    "preact": "^10.4.4"
-  }
+  "dependencies": {}
 }
