@@ -772,7 +772,7 @@
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABGklEQVQ4y52TwU7CQBRF70whpunKaOKia1ExJJQQKSHQDQnTwNqFJv6HqB+HGwIL/ogeFxQDgaLlJXc397y5b+ZJxRVIqucKVLICSaEnoY3CMpBAUihj6FmLkTAlIIGk0BhDYi04xyKK0D8hm87WMKxWwDky51inKat2exulELLpLEMl9ulK4EZkzpGlKfNmcxdwAPm9tk0uiJlwv3wiyiGzRmM3wlFIXUZURwEdxsTZmG424fa7Tcvzisxb1U8CvMtWftCcBOxF6DKhtuwgP6L/AXfPsyLIkTnIUI195Mf0v2DwnpFMMx5e5ifN+xArKjdDBp9bwJrG2+pP8+GLXCcMpvD4utiNUOY3CnvVy43m3H3wzlqmUuv8AxiQrl5+mZ84AAAAAElFTkSuQmCC",
     "url": "https://secret-cinema.pw/browse.php?search={{IMDB_TITLE}}",
     "noResultsMatcher": "Try again with a refined search string",
-    "noAccessMatcher": "Lost password",
+    "noAccessMatcher": "Remember me",
     "category": "tracker"
   },
   {
