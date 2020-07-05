@@ -26,13 +26,6 @@ export default {
   },
   external: ['preact', 'preact/hooks'],
   plugins: [
-    metablock({
-      override: {
-        author: pkg.author,
-        description: pkg.description,
-        version: pkg.version,
-      },
-    }),
     alias({
       entries: [
         {
@@ -61,5 +54,12 @@ export default {
       include: 'src/constants.js',
     }),
     production && terser(),
+    metablock({
+      override: {
+        author: pkg.author,
+        description: pkg.description,
+        version: pkg.version,
+      },
+    }),
   ],
 }
