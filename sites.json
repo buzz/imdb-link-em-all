@@ -436,7 +436,6 @@
     "title": "The Pirate Bay",
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAMFBMVEUBBAAbHBonKSc+QD1QUk9cXltvcW6ChIGPkY6ho6CusK2+wL3P0c7a3Nnr7er9//yio7pYAAAAeUlEQVQI12P4DwUM/68YA4ElkLGAAQhYwAxGBgZWEEMn6upyMMMuUOk4SGoCSA0zmCHAxMD0n+FYA7MjqwFQZEPFrJUzV61rZSgwjjj///V0YYZtlomMhsLBSgz/GE0iSpQToxn+ib3///91wHmG//tAdl+5zwBzBgA4/kVfY3CNqAAAAABJRU5ErkJggg==",
     "url": "https://thepiratebay.org/search/{{IMDB_TITLE}}%20{{IMDB_YEAR}}/0/99/200",
-    "noResultsMatcher": "No hits. Try adding an asterisk in you search phrase.",
     "category": "tracker"
   },
   {
