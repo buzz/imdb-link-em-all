@@ -390,7 +390,7 @@
     "id": "wipfilms",
     "title": "Women in Prison Films",
     "icon": null,
-    "url": "http://wipfilms.net/?s={{IMDB_ID}}",
+    "url": "http://wipfilms.net/?s={{IMDB_TITLE}}",
     "noResultsMatcher": "Not Found",
     "category": "general"
   },
