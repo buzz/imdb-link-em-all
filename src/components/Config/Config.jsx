@@ -7,11 +7,24 @@ import Sites from 'imdb-link-em-all/components/Config/Sites'
 import About from 'imdb-link-em-all/components/Config/About'
 import css from 'imdb-link-em-all/components/Config/Config.sss'
 
+const OPTIONS = [
+  ['show_category_captions', 'Show category captions'],
+  ['open_blank', 'Open links in new tab'],
+  ['fetch_results', 'Automatically fetch results'],
+]
+
 const Config = ({ config, setConfig, setShow, show, sites }) => {
   const [enabledSites, setEnabledSites] = useState(config.enabled_sites)
-  const [fetchResults, setFetchResults] = useState(config.fetch_results)
-  const [openBlank, setOpenBlank] = useState(config.open_blank)
-  const [showCategoryCaptions, setShowCategoryCaptions] = useState(config.show_category_captions)
+  const showCategoryCaptionsArr = useState(config.show_category_captions)
+  const openBlankArr = useState(config.open_blank)
+  const fetchResultsArr = useState(config.fetch_results)
+
+  const [showCategoryCaptions, setShowCategoryCaptions] = showCategoryCaptionsArr
+  const [openBlank, setOpenBlank] = openBlankArr
+  const [fetchResults, setFetchResults] = fetchResultsArr
+
+  const optStates = [showCategoryCaptionsArr, openBlankArr, fetchResultsArr]
+  const options = OPTIONS.map((opt, i) => [...opt, ...optStates[i]])
 
   const [tab, setTab] = useState(0)
   const tabs = [
@@ -19,13 +32,17 @@ const Config = ({ config, setConfig, setShow, show, sites }) => {
       title: 'Sites',
       comp: <Sites enabledSites={enabledSites} setEnabledSites={setEnabledSites} sites={sites} />,
     },
-    { title: 'Options', comp: <Options /> },
+    { title: 'Options', comp: <Options options={options} /> },
     { title: 'About', comp: <About /> },
   ]
 
   const onClickCancel = () => {
-    setEnabledSites(config.enabled_sites)
     setShow(false)
+    // Restore state
+    setEnabledSites(config.enabled_sites)
+    setFetchResults(config.fetch_results)
+    setOpenBlank(config.open_blank)
+    setShowCategoryCaptions(config.show_category_captions)
   }
 
   const onClickSave = () => {
