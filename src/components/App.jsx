@@ -1,8 +1,8 @@
 import { h, Fragment } from 'preact'
 import { useEffect, useState } from 'preact/hooks'
 
-import { CogIcon } from 'imdb-link-em-all/components/icons'
 import Config from 'imdb-link-em-all/components/Config'
+import Icon from 'imdb-link-em-all/components/Icon'
 import LinkList from 'imdb-link-em-all/components/LinkList'
 import css from 'imdb-link-em-all/components/App.sss'
 import useConfig from 'imdb-link-em-all/hooks/useConfig'
@@ -30,7 +30,7 @@ const App = ({ imdbInfo }) => {
         Search{' '}
         <span className={css.configWrapper}>
           <button onClick={() => setShowConfig((cur) => !cur)} title="Configure" type="button">
-            <CogIcon />
+            <Icon type="cog" />
           </button>
           <Config
             config={config}

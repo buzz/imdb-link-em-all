@@ -2,7 +2,7 @@ import { h, Fragment } from 'preact'
 import { useState } from 'preact/hooks'
 
 import { CATEGORIES } from 'imdb-link-em-all/constants'
-import { LockIcon, TickIcon } from 'imdb-link-em-all/components/icons'
+import Icon from 'imdb-link-em-all/components/Icon'
 import SiteIcon from 'imdb-link-em-all/components/SiteIcon'
 import css from 'imdb-link-em-all/components/Config/Sites.sss'
 
@@ -47,8 +47,12 @@ const SiteLabel = ({ checked, setEnabled, site }) => {
   )
 
   const extraIcons = [
-    site.noAccessMatcher ? <LockIcon className={css.extraIcon} /> : null,
-    site.noResultsMatcher ? <TickIcon className={css.extraIcon} /> : null,
+    site.noAccessMatcher ? (
+      <Icon className={css.extraIcon} title="Site is access-restricted." type="lock" />
+    ) : null,
+    site.noResultsMatcher ? (
+      <Icon className={css.extraIcon} title="Site allows fetching of results." type="tick" />
+    ) : null,
   ]
 
   return (

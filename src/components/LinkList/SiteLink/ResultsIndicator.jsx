@@ -2,56 +2,45 @@ import { h } from 'preact'
 import useResultFetcher from 'imdb-link-em-all/hooks/useResultFetcher'
 
 import { FETCH_STATE } from 'imdb-link-em-all/constants'
-import {
-  ErrorIcon,
-  LockIcon,
-  SpinnerIcon,
-  TickIcon,
-  TimeoutIcon,
-  XIcon,
-} from 'imdb-link-em-all/components/icons'
+import Icon from 'imdb-link-em-all/components/Icon'
 import css from 'imdb-link-em-all/components/LinkList/SiteLink/SiteLink.sss'
 
 const ResultsIndicator = ({ imdbInfo, site }) => {
   const fetchState = useResultFetcher(imdbInfo, site)
 
-  let IconComp
+  let iconType
   let title
 
   switch (fetchState) {
     case FETCH_STATE.LOADING:
-      IconComp = SpinnerIcon
+      iconType = 'spinner'
       title = 'Loading…'
       break
     case FETCH_STATE.NO_RESULTS:
-      IconComp = XIcon
+      iconType = 'x'
       title = 'No Results found!'
       break
     case FETCH_STATE.RESULTS_FOUND:
-      IconComp = TickIcon
+      iconType = 'tick'
       title = 'Results found!'
       break
     case FETCH_STATE.NO_ACCESS:
-      IconComp = LockIcon
+      iconType = 'lock'
       title = 'You have to login to this site!'
       break
     case FETCH_STATE.TIMEOUT:
-      IconComp = TimeoutIcon
+      iconType = 'timeout'
       title = 'You have to login to this site!'
       break
     case FETCH_STATE.ERROR:
-      IconComp = ErrorIcon
+      iconType = 'error'
       title = 'Error fetching results! (See dev console for details)'
       break
     default:
       return null
   }
 
-  return (
-    <span title={title}>
-      <IconComp className={css.resultsIcon} />
-    </span>
-  )
+  return <Icon className={css.resultsIcon} title={title} type={iconType} />
 }
 
 export default ResultsIndicator
