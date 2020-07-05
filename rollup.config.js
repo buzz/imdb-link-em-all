@@ -6,6 +6,7 @@ import json from '@rollup/plugin-json'
 import metablock from 'rollup-plugin-userscript-metablock'
 import { terser } from 'rollup-plugin-terser'
 import postcss from 'rollup-plugin-postcss'
+import replace from '@rollup/plugin-replace'
 import resolve from '@rollup/plugin-node-resolve'
 import precss from 'precss'
 
@@ -55,6 +56,10 @@ export default {
     }),
     image(),
     json({ namedExports: true }),
+    replace({
+      __SITES_URL__: production ? pkg.config.sitesUrl : 'http://localhost:8001/sites.json',
+      include: 'src/constants.js',
+    }),
     production && terser(),
   ],
 }

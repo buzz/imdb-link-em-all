@@ -1,9 +1,9 @@
-import { config, description, version, homepage } from '../package.json'
+import { description, version, homepage } from '../package.json'
 
 export const DESCRIPTION = description
 export const HOMEPAGE = homepage
 export const NAME_VERSION = `Link 'em all! v${version}`
-export const SITES_URL = config.sitesUrl
+export const SITES_URL = '__SITES_URL__' // gets replaced by rollup!
 export const GM_CONFIG_KEY = 'config'
 export const GREASYFORK_URL = 'https://greasyfork.org/scripts/17154-imdb-link-em-all'
 
