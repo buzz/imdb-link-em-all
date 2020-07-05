@@ -4,6 +4,11 @@ import { FETCH_STATE } from 'imdb-link-em-all/constants'
 import replaceFields from 'imdb-link-em-all/util'
 
 const checkResponse = (resp, site) => {
+  if (resp.responseText.includes('Checking your browser before accessing')) {
+    // CloudFlare anti DDOS page
+    return FETCH_STATE.ERROR
+  }
+
   // Check site access
   if (site.noAccessMatcher) {
     const matchStrings = Array.isArray(site.noAccessMatcher)
