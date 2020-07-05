@@ -210,7 +210,7 @@
     "title": "Cinema of the World",
     "icon": null,
     "url": "http://worldscinema.org/?s={{IMDB_ID}}",
-    "noResultsMatcher": "No search results for:",
+    "noResultsMatcher": "Nothing Found",
     "category": "general"
   },
   {
