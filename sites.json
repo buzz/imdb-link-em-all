@@ -553,7 +553,7 @@
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAM1BMVEVAAADycADyegDygyv1jAD2lgLxmjP2oQD3rQDyszT4vQHyvVr5yAb40EX71iP92gD58XfXuXcpAAAAAXRSTlMAQObYZgAAAGFJREFUGNNlT1sOwCAMUldtxUd3/9NuZrqtkS9KCFDnPtTuDCJL/d8UiKUZ4UaylhBNBudJBHqODllO4qq9q65SH0iAUqBTODwxBsG7Kz1pDehmKzjaZUy0LfPBvpeT23EBWkoCeXAFA5cAAAAASUVORK5CYII=",
     "url": "https://www.bit-hdtv.com/torrents.php?search={{IMDB_TITLE}}",
     "noResultsMatcher": "No match!",
-    "noAccessMatcher": "___DETECT_REFRESH_REDIRECT___",
+    "noAccessMatcher": "Forgot password",
     "category": "tracker"
   },
   {
@@ -625,7 +625,7 @@
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAY1BMVEVwAAA5OjhLTEpTVFJdX1xmZ2VqbGlub21zdXJ5e3h+f32Bg4CNj4yVl5SdnpuipKGoqqesrquws6+2uLW6vLnAwr/ExsPJy8fN0MzT1dLY2tfc3tvf4d7k5uPp6+j09vL+//yIRtfFAAAAAXRSTlMAQObYZgAAAJRJREFUGBkFwdFOAkEQBdHq2XZ1E8AY/v8P9c2AwMwtzykuKwAAsP3W55cAAEDd2zyqAADsvfe4lwBQr9Ad/VkFsM4f0tsKSGCAqR4zXsn3PF9Sf0Uvc6txQK1b5Y1+jh2mysy7lfFQVVA0jBeJKpjE9FQIqip2KThO83iish0lrLV1ng7LpqS2taAGYHEaMABQuP8DJBFvD9yJvdcAAAAASUVORK5CYII=",
     "url": "http://classix-unlimited.co.uk/torrents-search.php?search={{IMDB_TITLE}}",
     "noResultsMatcher": "Nothing Found",
-    "noAccessMatcher": "___DETECT_REFRESH_REDIRECT___",
+    "noAccessMatcher": "Recover Account",
     "category": "tracker"
   },
   {
