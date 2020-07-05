@@ -16,11 +16,14 @@ export const DEFAULT_CONFIG = {
 }
 
 export const CATEGORIES = {
-  general: 'General',
-  tracker: 'Torrent tracker',
+  search: 'Search',
+  movie_site: 'Movie sites',
+  pub_tracker: 'Public trackers',
+  priv_tracker: 'Private trackers',
   streaming: 'Streaming',
   filehoster: 'Filehosters',
   subtitles: 'Subtitles',
+  tv: 'TV',
 }
 
 export const FETCH_STATE = {
