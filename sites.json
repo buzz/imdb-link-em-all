@@ -709,15 +709,6 @@
     "category": "tracker"
   },
   {
-    "id": "iloveclassics",
-    "title": "I Love Classics",
-    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAwFBMVEUMANwACdQVCsoaFMM0Frc6Hao2HrNLG6FXJZNOKJ9rL4VSN5p8MHZvM4BVO5d1NnyFM2+LNmlhQIxyPn+TOGJ6P3duR4KYQF13SXquQUyjRlR7UnS0S0eiUFPURiqsT0yKWWXGUDfTUC/WVSmzYUbDYDm/YzmkalDbXyGra0vaZiW4bkKodk27dT3IczDfbiC2fD/mdB3VeCnKgDDkfRbDiTjigx7oiRLQlinslA3vnALfoB/xow7zqgTzsAz5ugAidlDAAAAAtklEQVQYGQXBsUrEUBCG0e8mE2J0BXcVtrNY8Dl8fRtLYRubrURU9BqNyWT+8ZxyDwAAANg8somJHcCz39HE8RjT00mZ+bg9PHxZv4++twPJqCuuMYEgBKe92EaTKBMysw6ZG5kiRZFIdcIuGhAwwyqS7CyCAAJAgAVrAIHKXwuYFgm5+C3TAJgTDjivVi/h3SQEaPThR9Su8dWXRdXf2p1e5o++becS33jl/Kz5rDdWbgEAAIB/EBlv2nzkGYAAAAAASUVORK5CYII=",
-    "url": "http://www.iloveclassics.com/browse.php?incldead=1&searchin=2&search={{IMDB_ID}}",
-    "noResultsMatcher": "Try again with a refined search string",
-    "noAccessMatcher": "Not logged in!",
-    "category": "tracker"
-  },
-  {
     "id": "iptorrents",
     "title": "IPTorrents",
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABTUlEQVQ4y6WTPUvDYBSF8zeKY3EqwZbYOrg0iWnSNfonimBBEJxKi6BgsikmcbO7ne1SB3VRoX5sdSzBrVTXWq7vuZBSNaCJgQP345yH902IJImnXFZXNU3fTiJkkJUsq1qqVKypaVYpiZBRVW1ZEs1e0nAkTVtzANhPC9B143gGcB2XHvp9XnTOO1xD3olHtr3xO6B91qbpZMKLKAxhBiDmr2HIvi8AwzBjAZHx5uqaXgYDhmAPSAQUX+NIkuWlhnijsSfA7H38xoFabZP33Ysu18jkcrIrZTILu9nsIvmez4ZicYXub+8oHA7pstejZrNFmqrzHPvAD6hQUAgZkT1ggBA5hw4bUOPY6FHPC/vTIJifJQM8Pz7ReDSi+lb9J8C212chGNB/B5TENeCJBaQUA3b+AWgAkBf6SBFGJs9/pCgUoZZQ8EfBqyD7CW99z7OYsUYmAAAAAElFTkSuQmCC",
