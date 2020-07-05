@@ -14,7 +14,9 @@ const LinkList = ({ config, imdbInfo, sites }) =>
       return null
     }
 
-    const caption = config.show_category_captions ? <h4>{categoryName}</h4> : null
+    const caption = config.show_category_captions ? (
+      <h4 className={css.h4}>{categoryName}</h4>
+    ) : null
 
     return (
       <>
