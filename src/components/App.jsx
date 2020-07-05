@@ -26,21 +26,18 @@ const App = ({ imdbInfo }) => {
 
   return (
     <>
-      <h2>
-        Search{' '}
-        <span className={css.configWrapper}>
-          <button onClick={() => setShowConfig((cur) => !cur)} title="Configure" type="button">
-            <Icon type="cog" />
-          </button>
-          <Config
-            config={config}
-            setConfig={setConfig}
-            setShow={setShowConfig}
-            sites={sites}
-            show={showConfig}
-          />
-        </span>
-      </h2>
+      <div className={css.configWrapper}>
+        <button onClick={() => setShowConfig((cur) => !cur)} title="Configure" type="button">
+          <Icon type="cog" />
+        </button>
+        <Config
+          config={config}
+          setConfig={setConfig}
+          setShow={setShowConfig}
+          sites={sites}
+          show={showConfig}
+        />
+      </div>
       <LinkList config={config} imdbInfo={imdbInfo} sites={sites} />
     </>
   )

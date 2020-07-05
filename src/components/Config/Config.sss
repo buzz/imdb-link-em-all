@@ -1,33 +1,36 @@
 $text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2)
-$move-up: 40px
+$width: 800px
+$arrow-width: 8px
+$bg-color: #a5a5a5
+$offset: 250px
 
 .popover
-  background-color: #a5a5a5
+  background-color: $bg-color
   border-radius: 4px
   color: #333
   display: block
   font-family: Verdana, Arial, sans-serif
   font-size: 11px
-  left: 27px
+  left: calc(-$width + $offset)
   line-height: 1.5rem
-  margin-top: -$move-up
   padding: 10px
   position: absolute
-  top: -2px
+  top: calc(20px + $arrow-width)
   white-space: nowrap
-  width: 800px
+  width: $width
   z-index: 100
 
   &:before
-    border-bottom: 8px solid transparent
-    border-right: 8px solid rgba(193, 193, 193, 0.97)
-    border-top: 8px solid transparent
+    border-bottom: $arrow-width solid $bg-color
+    border-left: $arrow-width solid transparent
+    border-right: $arrow-width solid transparent
+    border-top: $arrow-width solid transparent
     content: ""
     display: block
-    height: 0
-    left: -8px
+    height: $arrow-width
+    right: calc($offset - 2 * $arrow-width)
     position: absolute
-    top: calc(8px + $move-up)
+    top: calc(-2 * $arrow-width)
     width: 0
 
   .inner
@@ -46,8 +49,13 @@ $move-up: 40px
         flex-grow: 1
         text-align: right
 
-        > *
+        > a
+          color: #333
           margin-left: 12px
+          margin-right: 4px
+
+          &:visited
+            color: #333
 
       > button
         background-color: rgba(0, 0, 0, 0.05)

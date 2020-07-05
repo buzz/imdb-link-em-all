@@ -34,6 +34,7 @@ if (!injectionEl) {
   throw new Error('LTA: Could not find target container!')
 }
 const container = document.createElement('div')
+container.style.position = 'relative'
 container.classList.add('article')
 injectionEl.appendChild(container)
 render(<App imdbInfo={imdbInfo} />, container)
