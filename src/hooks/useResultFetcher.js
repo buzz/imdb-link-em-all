@@ -14,9 +14,18 @@ const checkResponse = (resp, site) => {
     return FETCH_STATE.ERROR
   }
 
-  // CloudFlare anti DDOS page
+  // Detect Blogger content warning
+  if (
+    resp.responseText.includes(
+      'The blog that you are about to view may contain content only suitable for adults.'
+    )
+  ) {
+    return FETCH_STATE.NO_ACCESS
+  }
+
+  // Detect CloudFlare anti DDOS page
   if (resp.responseText.includes('Checking your browser before accessing')) {
-    return FETCH_STATE.ERROR
+    return FETCH_STATE.NO_ACCESS
   }
 
   // Check site access
