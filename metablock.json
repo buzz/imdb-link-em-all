@@ -5,8 +5,8 @@
   "connect": "*",
   "require": [
     "https://greasemonkey.github.io/gm4-polyfill/gm4-polyfill.js",
-    "https://unpkg.com/preact@10.4.4/dist/preact.umd.js",
-    "https://unpkg.com/preact@10.4.4/hooks/dist/hooks.umd.js"
+    "https://unpkg.com/preact@10.4.5/dist/preact.umd.js",
+    "https://unpkg.com/preact@10.4.5/hooks/dist/hooks.umd.js"
   ],
   "grant": [
     "GM_getValue",
