@@ -4,8 +4,18 @@ import { FETCH_STATE } from 'imdb-link-em-all/constants'
 import replaceFields from 'imdb-link-em-all/util'
 
 const checkResponse = (resp, site) => {
+  // Likely a redirect to login page
+  if (resp.responseHeaders && resp.responseHeaders.includes('Refresh: 0; url=')) {
+    return FETCH_STATE.NO_ACCESS
+  }
+
+  // There should be a responseText
+  if (!resp.responseText) {
+    return FETCH_STATE.ERROR
+  }
+
+  // CloudFlare anti DDOS page
   if (resp.responseText.includes('Checking your browser before accessing')) {
-    // CloudFlare anti DDOS page
     return FETCH_STATE.ERROR
   }
 
