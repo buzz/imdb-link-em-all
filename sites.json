@@ -928,20 +928,6 @@
     "category": "subtitles"
   },
   {
-    "id": "divxsubtitles",
-    "title": "DivX SubTitles",
-    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAYFBMVEUAAgAyIgotJhwyMzFSLgVsPABGSEVlZF+TZCu6bRZ/gH6lhWG4hEihlIKYl5L+iwClpaG7pY/Lp3z/pDf+q0W3ubbXvqL/vGvFyMT/1aPb29n/4r7q5uH+79n/9ej+//xrI2yiAAAAiElEQVQY012P2xLCIAwFj0UEay/RiqTQwv//pQhlUM9kArPJwwbxLyiPt3YNDaxzjq3AzkeWAvLqmsfpi16cOnFhIVK9pOih8MkEsMI5dZCSsoAtDbp4bFACQQO3CENXPRKbiTenh3sE0zA655gMMz1cNY12CU3dVzFb1fdn9vRfxwXv959rW94atBVysskhkwAAAABJRU5ErkJggg==",
-    "url": [
-      "http://www.divxsubtitles.net/page_searchedsubtitles.php",
-      {
-        "_free": "{{IMDB_TITLE}}",
-        "_language": "2",
-        "firstSearch": "true"
-      }
-    ],
-    "category": "subtitles"
-  },
-  {
     "id": "planetdp",
     "title": "planetdp.org",
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACCklEQVQ4y52TuW8TURDG7TjG2Ht442M3XouKygVCqSIKCoSiiAqloKKMqBCFK0rEX5CaghpRIBEpIfEFPjY+Yie2YycmEakokIkogpWssffNx+4KW0IcwRQ/aY73Pr15M+MA4GTHzphx5LwzOJziLH8SHGPn2LFAH5zPBx3X/f8TMKH3bgVHUyl2ON0dHkzfnUiA2jxnNISg7XfcD03ADtyfhu1L1y4U6Nc9V6nFeWjP16QmtzI+0Pa0sO8BtTyF85on9kcBfdu7hIbgYg3+FZqXQQ3uxLTn7Zc1fHHs+YC2D8O6d0uveud+EfhW4Z5QdcbNqtIK7XKgHf4Hwr7dpR2e65e5HOo8LIwal+mX+Jt6UXDZAoOS+JJKAT8rBuNUFUAVEaj5gV2xc66Jdmu/ZIRHVDXjFjURlm1UxHu2gLElNZkWumLk5SWUJWB7hg016ZaV+5yQbuh5qWvGQGWTok2Jyv75cQlGPtijvDyHQmTR0AKro/p6qeA6SmZjTFjB5iNpgcWf/uDrRohj2TDYO3l5FDzdCD9lORnQwiArlw13WS702wFz9N7IUWRncbYpx09W5dvDtKIjp4DeKmAZhZk8/uscnL5WrlM6AiMZAWUiDJkIWMrmGUvPXrgbDn0tskBJFTYJFSyhvjAvK/+8C2dr6gMkomCb0RLbVGMTb2N/XV1GMhqf9OKI707vubLIERo7AAAAAElFTkSuQmCC",
