@@ -33,9 +33,11 @@
       width: 100%
 
     label
+      align-items: center
       color: #444
-      overflow: hidden
-      text-overflow: ellipsis
+      display: flex
+      flex-flow: row
+      padding: 0 6px
       transition: color 100ms
       width: 25%
 
@@ -45,6 +47,19 @@
       &.checked span
         color: black
 
+      .title
+        flex-grow: 1
+        overflow: hidden
+        text-overflow: ellipsis
+
       input
-        vertical-align: text-top
         margin-right: 4px
+
+      .extraIcon
+        height: 12px
+        margin-left: 4px
+        width: 12px
+
+      .siteIcon
+        flex-shrink: 0
+        margin-right: 6px

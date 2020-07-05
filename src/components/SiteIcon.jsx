@@ -1,11 +1,6 @@
 import { h } from 'preact'
 
-const SiteIcon = ({ site, fill = false }) => {
-  if (site.icon) {
-    return <img alt={site.title} src={site.icon} />
-  }
-
-  return fill ? <div style={{ display: 'inline-block', height: '16px', width: '16px' }} /> : null
-}
+const SiteIcon = ({ className, site, title }) =>
+  site.icon ? <img alt={site.title} className={className} src={site.icon} title={title} /> : null
 
 export default SiteIcon

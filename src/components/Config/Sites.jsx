@@ -2,6 +2,7 @@ import { h, Fragment } from 'preact'
 import { useState } from 'preact/hooks'
 
 import { CATEGORIES } from 'imdb-link-em-all/constants'
+import { LockIcon, TickIcon } from 'imdb-link-em-all/components/icons'
 import SiteIcon from 'imdb-link-em-all/components/SiteIcon'
 import css from 'imdb-link-em-all/components/Config/Sites.sss'
 
@@ -9,7 +10,6 @@ const SearchInput = ({ q, setQ }) => (
   <input
     className={css.searchInput}
     onInput={(e) => {
-      console.log(e.target.value.toLowerCase().trim())
       setQ(e.target.value.toLowerCase().trim())
     }}
     placeholder="Search"
@@ -17,31 +17,61 @@ const SearchInput = ({ q, setQ }) => (
   />
 )
 
-const CategoryList = ({ enabled, name, setEnabled, sites }) => (
-  <div className={css.catList}>
-    <h4>
-      {name} <span>({sites.length})</span>
-    </h4>
-    {sites.map((site) => {
-      const checked = enabled.includes(site.id)
-      return (
-        <label className={checked ? css.checked : null} title={site.title}>
-          <input
-            checked={checked}
-            onInput={(e) =>
-              setEnabled((prev) =>
-                e.target.checked ? [...prev, site.id] : prev.filter((id) => id !== site.id)
-              )
-            }
-            type="checkbox"
-          />
-          <SiteIcon fill site={site} /> <span>{site.title}</span>
-          <br />
-        </label>
-      )
-    })}
-  </div>
-)
+const DummyIcon = ({ size }) => {
+  const sizePx = `${size}px`
+  const style = { display: 'inline-block', height: sizePx, width: sizePx }
+  return <div className={css.siteIcon} style={style} />
+}
+
+const SiteLabel = ({ checked, setEnabled, site }) => {
+  const input = (
+    <input
+      checked={checked}
+      onInput={(e) =>
+        setEnabled((prev) =>
+          e.target.checked ? [...prev, site.id] : prev.filter((id) => id !== site.id)
+        )
+      }
+      type="checkbox"
+    />
+  )
+  const icon = site.icon ? (
+    <SiteIcon className={css.siteIcon} site={site} title={site.title} />
+  ) : (
+    <DummyIcon size={16} />
+  )
+  const title = (
+    <span className={css.title} title={site.title}>
+      {site.title}
+    </span>
+  )
+
+  const extraIcons = [
+    site.noAccessMatcher ? <LockIcon className={css.extraIcon} /> : null,
+    site.noResultsMatcher ? <TickIcon className={css.extraIcon} /> : null,
+  ]
+
+  return (
+    <label className={checked ? css.checked : null}>
+      {input}
+      {icon} {title} {extraIcons}
+    </label>
+  )
+}
+
+const CategoryList = ({ enabled, name, setEnabled, sites }) => {
+  const siteLabels = sites.map((site) => (
+    <SiteLabel checked={enabled.includes(site.id)} setEnabled={setEnabled} site={site} />
+  ))
+  return (
+    <div className={css.catList}>
+      <h4>
+        {name} <span>({sites.length})</span>
+      </h4>
+      {siteLabels}
+    </div>
+  )
+}
 
 const Sites = ({ enabledSites, setEnabledSites, sites }) => {
   const [q, setQ] = useState('')

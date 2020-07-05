@@ -22,3 +22,12 @@ export const CATEGORIES = {
   filehoster: 'Filehosters',
   subtitles: 'Subtitles',
 }
+
+export const FETCH_STATE = {
+  LOADING: 0,
+  NO_RESULTS: 1,
+  RESULTS_FOUND: 2,
+  NO_ACCESS: 3,
+  TIMEOUT: 4,
+  ERROR: 5,
+}
