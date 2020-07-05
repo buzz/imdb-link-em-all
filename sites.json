@@ -678,15 +678,6 @@
     "category": "tracker"
   },
   {
-    "id": "torviet",
-    "title": "TorViet",
-    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAC7ElEQVQ4EQXBO2idZRjA8f/zXr7vXHLOMbGapDUqCRYV2wguDgoiLqVbpR2Co5i16Cx26OAigpOCoLgWJy/g0MELikomA1qDWosNMWk8OffvfO/l8feTrXe/7qSy+MAW7orzxnpncU6w1jCvMwkQhaxKjMqwSsSkqjHetKnaclOxH1rnrjjvsaXFe4svDN5bmmIYTBMiQk6Z0SQxsxFIErO85FK+6bLwshPLOCRazqBWSQotbzBW6IhlHpQqG6Io3hqiZkQE8f6ci0nteke4fnGDWcioQMjK9R8PWe2WNLxwMFAmoUYkomQEwRhBVXHWwNEsc+2r27x96Tzf/XnI57+f8OrmMmsdTxbDt3dGnGm22TjVpdNwbN+4xd/3KqbjClfXicEo0SktgpKycjRWTrcbHI9m4Bs8ttTEac2DnQZvfbnLJAeWFgoKyTgUnBNSFkLM1CHTaYIxUIVISpE6KyYlqpA4CIJmR0wRzWBUM1aUHBMHw4phFRjNErt3+yy225xqGD7bOaA/jhwOZ6Sg5KhoyhhjkHNXv9CitUCv68nGEI1wX6dknsA55WQamatgMhQm0SpgXmcImXldY3ubl68FPNsvrPLeK0/xUAvevHiWFRlz6WyPvZOKrafv5/xKSQ6B9y8/QX8w5pf9CWEeMCkqTQ/f3OoDhuVeSX9cM8oFqWzxxvOPsrnc5rXn1nn24S5L3TZ3/ptDHSAnTKgT1Tzx6+0RGXh8bYm7R0MmlZIUmqVlWCV++m2f8XgKgBXDcJqYzCJuMqiZTKbsVZmfv9+jKBt8tLPPmcUmPZd5Z+eA119c43gU+fiHe6z3/uDJnuXGRGl5QboXPokpt6yxMBol6JScfmQB4xTrDAuloz8N1ElZbBiOpxnRTNsrhoAhzT8VUXJSOl3P6koTSUqJUKiiKdMrDQ80DCEq3UJoO0GyoR4Pdp0v/9mOud6IVfuZotOAoORaqWrBe1AniIAooJCSIqqa4vivPP33wv9pBJNj2ZVYuQAAAABJRU5ErkJggg==",
-    "url": "http://torviet.com/torrents.php?search={{IMDB_ID}}&search_area=4&search_mode=0",
-    "noResultsMatcher": "Nothing found!",
-    "noAccessMatcher": "You need cookies enabled to log in or switch language",
-    "category": "tracker"
-  },
-  {
     "id": "iptorrents",
     "title": "IPTorrents",
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABTUlEQVQ4y6WTPUvDYBSF8zeKY3EqwZbYOrg0iWnSNfonimBBEJxKi6BgsikmcbO7ne1SB3VRoX5sdSzBrVTXWq7vuZBSNaCJgQP345yH902IJImnXFZXNU3fTiJkkJUsq1qqVKypaVYpiZBRVW1ZEs1e0nAkTVtzANhPC9B143gGcB2XHvp9XnTOO1xD3olHtr3xO6B91qbpZMKLKAxhBiDmr2HIvi8AwzBjAZHx5uqaXgYDhmAPSAQUX+NIkuWlhnijsSfA7H38xoFabZP33Ysu18jkcrIrZTILu9nsIvmez4ZicYXub+8oHA7pstejZrNFmqrzHPvAD6hQUAgZkT1ggBA5hw4bUOPY6FHPC/vTIJifJQM8Pz7ReDSi+lb9J8C212chGNB/B5TENeCJBaQUA3b+AWgAkBf6SBFGJs9/pCgUoZZQ8EfBqyD7CW99z7OYsUYmAAAAAElFTkSuQmCC",
