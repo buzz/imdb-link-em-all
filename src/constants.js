@@ -8,7 +8,7 @@ export const GM_CONFIG_KEY = 'config'
 export const GREASYFORK_URL = 'https://greasyfork.org/scripts/17154-imdb-link-em-all'
 
 export const DEFAULT_CONFIG = {
-  enabled_sites: ['google', 'yt'],
+  enabled_sites: [],
   fetch_results: true,
   first_run: true,
   open_blank: true,
