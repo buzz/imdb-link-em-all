@@ -657,7 +657,7 @@
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAYFBMVEUAAEsAA4kJBmsAHW8AGpACG8MAIMEJJY0AKcMSNX4ANcMxM5MDPMQfN6gxNokAQMMAQ8ExVaJRWJc9XcNwls11l9+JncGNstS5tdPFzNKu0PPg3vPL7v/f7/b/+vj4/vzNbpFdAAAAoklEQVQY002PSXKDQBAEGwEzTWusLAm8CAH9/1/6QHi5ZmRUZBkAETgQAgNA7kPQ1H5A8f69l4tfo9tzqSoCI1SQMnPwIjD52Hy855EdpyHV+2IfebssUxFGa295fFnadmQdZeBz7tvlNeQzPWSojHHZbO2f3dXPDZXr9lgfa9dcmByY5v41zVVFGPJC1GW/FTi/SBQfP6vgL53w4B8gglPgG7AKDn2eFB1cAAAAAElFTkSuQmCC",
     "url": "https://ethor.net/browse.php?stype=b&c23=1&c20=1&c42=1&c5=1&c19=1&c25=1&c6=1&c37=1&c43=1&c7=1&c9=1&advcat=0&incldead=0&includedesc=1&search={{IMDB_ID}}",
     "noResultsMatcher": "Try again with a refined search string",
-    "noAccessMatcher": "Vous n'êtes pas enregistré",
+    "noAccessMatcher": "Vous avez perdu votre mot de passe",
     "category": "tracker"
   },
   {
