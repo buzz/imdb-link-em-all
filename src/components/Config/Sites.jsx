@@ -7,14 +7,24 @@ import SiteIcon from 'imdb-link-em-all/components/SiteIcon'
 import css from 'imdb-link-em-all/components/Config/Sites.sss'
 
 const SearchInput = ({ q, setQ }) => (
-  <input
-    className={css.searchInput}
-    onInput={(e) => {
-      setQ(e.target.value.toLowerCase().trim())
-    }}
-    placeholder="Search"
-    value={q}
-  />
+  <div className={css.searchInput}>
+    <span>🔍</span>
+    <input
+      onInput={(e) => {
+        setQ(e.target.value.toLowerCase().trim())
+      }}
+      placeholder="Search"
+      value={q}
+    />
+    <button
+      style={{ display: q.length ? 'unset' : 'none' }}
+      title="Clear"
+      type="button"
+      onClick={() => setQ('')}
+    >
+      <Icon type="x" />
+    </button>
+  </div>
 )
 
 const DummyIcon = ({ size }) => {
@@ -104,9 +114,11 @@ const Sites = ({ enabledSites, setEnabledSites, sites }) => {
 
   return (
     <>
-      <SearchInput q={q} setQ={setQ} />
-      <div className={css.resultCount}>
-        Showing <span>{total}</span> sites.
+      <div className={css.searchBar}>
+        <SearchInput q={q} setQ={setQ} />
+        <div className={css.resultCount}>
+          Showing <span>{total}</span> sites.
+        </div>
       </div>
       <div className={css.siteList}>{cats}</div>
     </>
