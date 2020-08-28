@@ -28,8 +28,11 @@ const parseImdbInfo = () => {
 }
 
 const imdbInfo = parseImdbInfo()
-// TODO legacy layout
-const injectionEl = document.querySelector('.title-overview')
+const containerSelector =
+  imdbInfo.layout === 'legacy'
+    ? '.titlereference-section-overview > *:last-child'
+    : '.title-overview'
+const injectionEl = document.querySelector(containerSelector)
 if (!injectionEl) {
   throw new Error('LTA: Could not find target container!')
 }

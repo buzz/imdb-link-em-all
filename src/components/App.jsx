@@ -26,6 +26,7 @@ const App = ({ imdbInfo }) => {
 
   return (
     <>
+      {imdbInfo.layout === 'legacy' ? <hr /> : null}
       <div className={css.configWrapper}>
         <button onClick={() => setShowConfig((cur) => !cur)} title="Configure" type="button">
           <Icon type="cog" />
