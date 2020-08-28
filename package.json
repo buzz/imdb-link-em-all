@@ -2,7 +2,7 @@
   "name": "imdb-link-em-all",
   "version": "2.0.1",
   "description": "Adds all kinds of links to IMDb, customizable!",
-  "main": "dist/imdb-link-em-all.user.js",
+  "main": "imdb-link-em-all.user.js",
   "scripts": {
     "build": "rollup -c",
     "format": "prettier --write \"*.{js,json}\" \"src/*.{js,json}\"",
