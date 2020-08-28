@@ -493,7 +493,7 @@
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAYFBMVEULCgQWFREgFAAjGwouHQEkJCI7Kg4rLSpDKwBEMzI2NzRYPA5hPgBYSSt0SQBvTxeJVgJwXDisawCmbxe9dgDWhwC2klbokADKmkP4nQD+nQD8qBPms1j8sTP9vVH7xWnOdrycAAAAn0lEQVQY0y3PURKDIAwE0IUSsWgtVakGhN7/liVgPhh4w8xm8Xupp4zSa5RBruKcszA3xC4Es9/QhTD4wB1EQMC47Nwh5guYJugqoUF665DLZczip/7jMYfI5YQGGhQ914h0QpGtwEcyRiI2WOfAYV1GifAeQ10Ivr6gIMdSPsrKhSwpvW2ZU/kCZFuT8UiSX8XJEOajNUkFrTvBc4PIf5tsD6xZsZ4aAAAAAElFTkSuQmCC",
     "url": "http://cinemageddon.net/browse.php?search=tt{{IMDB_ID}}&proj=0",
     "noResultsMatcher": "Nothing found!",
-    "noAccessMatcher": "You are logged out.",
+    "noAccessMatcher": "Forgotten your password?",
     "category": "priv_tracker"
   },
   {
@@ -866,6 +866,7 @@
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAM1BMVEUgAAALPOoMRtIAUt4eTb4eUNEZVc8bWcgcaMwlachwcP9gfvKMkv/h5f/s7f75+f/9//zal4f2AAAAAXRSTlMAQObYZgAAAGRJREFUGNNNT0cCwCAIo9aBHcL/X9uy1FwwEUgAEJz4o0CgoKMZxw3rv5uQZwM90eILmGONtLOCWOZ04jXlxhDwEn7gEqoIVZ0giyPxGEzuK2WokSfbg1r4jXc7JgWv816Vkj4/5zEHVLDKOPkAAAAASUVORK5CYII=",
     "url": "https://beyond-hd.me/torrents/all?search=&imdb=tt{{IMDB_ID}}",
     "noResultsMatcher": "N/A",
+    "noAccessMatcher": "Sign In",
     "category": "priv_tracker"
   },
   {
@@ -883,7 +884,7 @@
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAEpUExURSgeEvHeodO+hhkGAigVD+/coSgIACgeHAgAAP///w0CAHkALT4AQTQAMrYAAG9SAKQIAg0eHBgeFBwRDyEeEV9+kWMAFBQJBR0MBdSlXcWWV49YkO/dqC0dFixjja4AAREeHDGR0ZwGBBYWGiETDBchJ///+kGc2g8SFC0qKJGEVncAJayYW9PDkbm7wfzq12ZJAO/KhuPT0DEANbWKGcRxA/EMAOi8b+EgAP/35jUDQZAABraxqe7X7zGR2nsBNmMALlYADjp3nv//6iua4lal2iVtmjGr90M4NmxOPfjbuh88T9rRsFIAFf/alOXQmE8fX//q13W06/L095RuEa+nnLG1t1VBN62Zj9GebKDW89+1d+He3YlyOltaW7XGztTIxefk45Z7Ofn+mBAAAADnSURBVBhXTc7VkoNQDAbgAIceQRYoXurUvevu7u76/g+xYfZm/6vMN/kzAQBwXcdxKhXbtut5CqAbxsqWaZat2qplziA0CgVfswBq5aWF+TkszC7yPslhSBAtryHo/vpmrlTdKBXT7SZWiNHukWJ152DvENgJgnK0q5F031NOO+n5WZcCk7keHrdaN14n6MYqwqCphd7wYfiiBeM4Qbi8qoPyOP0M3cbz3T0FIY9uSTv6mv70xOtgkt24fsp/cExfeR9lN2T+xgj+AyGL+R/wb18IwcYRzyCQVFWVJokkJThc0Gz3f+gvLXEa5jgc07MAAAAASUVORK5CYII=",
     "url": "https://www.funfile.org/browse.php?search={{IMDB_TITLE}}",
     "noResultsMatcher": "Try again with a refined search string",
-    "noAccessMatcher": "Recover your password!",
+    "noAccessMatcher": "Recover Password",
     "category": "priv_tracker"
   },
   {
