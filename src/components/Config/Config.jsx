@@ -2,6 +2,7 @@ import { h } from 'preact'
 import { useState } from 'preact/hooks'
 
 import { HOMEPAGE, NAME_VERSION } from 'imdb-link-em-all/constants'
+import Icon from 'imdb-link-em-all/components/Icon'
 import Options from 'imdb-link-em-all/components/Config/Options'
 import Sites from 'imdb-link-em-all/components/Config/Sites'
 import About from 'imdb-link-em-all/components/Config/About'
@@ -30,10 +31,11 @@ const Config = ({ config, setConfig, setShow, show, sites }) => {
   const tabs = [
     {
       title: 'Sites',
+      icon: 'world',
       comp: <Sites enabledSites={enabledSites} setEnabledSites={setEnabledSites} sites={sites} />,
     },
-    { title: 'Options', comp: <Options options={options} /> },
-    { title: 'About', comp: <About /> },
+    { title: 'Options', icon: 'cog', comp: <Options options={options} /> },
+    { title: 'About', icon: 'info', comp: <About /> },
   ]
 
   const onClickCancel = () => {
@@ -59,13 +61,13 @@ const Config = ({ config, setConfig, setShow, show, sites }) => {
     <div className={css.popover} style={{ display: show ? 'block' : 'none' }}>
       <div className={css.inner}>
         <div className={css.top}>
-          {tabs.map(({ title }, i) => (
+          {tabs.map(({ title, icon }, i) => (
             <button
               className={tab === i ? css.active : null}
               type="button"
               onClick={() => setTab(i)}
             >
-              {title}
+              <Icon title={title} type={icon} /> {title}
             </button>
           ))}
           <div className={css.link}>
