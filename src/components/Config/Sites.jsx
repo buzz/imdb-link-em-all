@@ -48,10 +48,10 @@ const SiteLabel = ({ checked, setEnabled, site }) => {
 
   const extraIcons = [
     site.noAccessMatcher ? (
-      <Icon className={css.extraIcon} title="Site is access-restricted." type="lock" />
+      <Icon className={css.extraIcon} title="Access restricted" type="lock" />
     ) : null,
     site.noResultsMatcher ? (
-      <Icon className={css.extraIcon} title="Site allows fetching of results." type="tick" />
+      <Icon className={css.extraIcon} title="Site supports fetching of results" type="tick" />
     ) : null,
   ]
 
