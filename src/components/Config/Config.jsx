@@ -72,7 +72,7 @@ const Config = ({ config, setConfig, setShow, show, sites }) => {
           ))}
           <div className={css.link}>
             <a target="_blank" rel="noreferrer" href={HOMEPAGE}>
-              {NAME_VERSION}
+              🎥 {NAME_VERSION}
             </a>
           </div>
         </div>
