@@ -17,7 +17,7 @@ const production = !process.env.ROLLUP_WATCH
 export default {
   input: 'src/main.jsx',
   output: {
-    file: 'dist/imdb-link-em-all.user.js',
+    file: 'imdb-link-em-all.user.js',
     format: 'iife',
     globals: {
       preact: 'preact',
