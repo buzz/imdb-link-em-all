@@ -13,6 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/buzz/imdb-link-em-all.git"
   },
+  "private": true,
   "keywords": [
     "userscript",
     "imdb",
