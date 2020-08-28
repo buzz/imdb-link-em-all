@@ -23,6 +23,7 @@ module.exports = {
     'no-console': 'off',
     'react/jsx-props-no-spreading': 'off',
     'react/prop-types': 'off',
+    'jsx-a11y/accessible-emoji': 'off',
     'jsx-a11y/label-has-associated-control': ['error', { assert: 'either' }],
     'no-unused-vars': ['error', { varsIgnorePattern: '^Fragment$' }],
   },
