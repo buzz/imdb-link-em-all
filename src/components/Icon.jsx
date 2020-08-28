@@ -1,11 +1,11 @@
 import { h } from 'preact'
 
-import errorDataUrl from 'imdb-link-em-all/static/error.png'
-import cogDataUrl from 'imdb-link-em-all/static/cog.png'
-import lockDataUrl from 'imdb-link-em-all/static/lock.png'
-import tickDataUrl from 'imdb-link-em-all/static/tick.png'
-import timeoutDataUrl from 'imdb-link-em-all/static/timeout.png'
-import xDataUrl from 'imdb-link-em-all/static/x.png'
+import cogDataUrl from 'famfamfam-silk/dist/png/cog.png'
+import errorDataUrl from 'famfamfam-silk/dist/png/error.png'
+import lockDataUrl from 'famfamfam-silk/dist/png/lock.png'
+import tickDataUrl from 'famfamfam-silk/dist/png/tick.png'
+import timeoutDataUrl from 'famfamfam-silk/dist/png/time_delete.png'
+import xDataUrl from 'famfamfam-silk/dist/png/cross.png'
 import spinnerDataUrl from 'imdb-link-em-all/static/spinner.gif'
 
 const iconSrcs = {

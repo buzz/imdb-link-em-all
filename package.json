@@ -61,5 +61,7 @@
     "rollup-plugin-userscript-metablock": "^0.2.5",
     "sugarss": "^2.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "famfamfam-silk": "^1.0.0"
+  }
 }
