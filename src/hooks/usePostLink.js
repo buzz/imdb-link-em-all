@@ -6,10 +6,10 @@ import replaceFields from 'imdb-link-em-all/util'
 const usePostLink = (url, openBlank, imdbInfo) => {
   const formEl = useRef()
   const isPost = Array.isArray(url)
-  const href = isPost ? '' : replaceFields(url, imdbInfo, false)
-  const onClick = () => {
+  const href = isPost ? url[0] : replaceFields(url, imdbInfo, false)
+  const onClick = (event) => {
     if (isPost && formEl.current) {
-      console.log('POST')
+      event.preventDefault()
       formEl.current.submit()
     }
   }
