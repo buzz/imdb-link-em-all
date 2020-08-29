@@ -116,7 +116,7 @@ const useResultFetcher = (imdbInfo, site) => {
         opts.headers = { 'Content-Type': 'application/x-www-form-urlencoded' }
         opts.data = Object.keys(fields)
           .map((key) => {
-            const val = encodeURIComponent(replaceFields(fields[key], imdbInfo))
+            const val = replaceFields(fields[key], imdbInfo, false)
             return `${key}=${val}`
           })
           .join('&')
