@@ -947,5 +947,13 @@
     "url": "https://www.addic7ed.com/search.php?search={{IMDB_TITLE}}&Submit=Search",
     "noResultsMatcher": "returned zero results",
     "category": "subtitles"
+  },
+  {
+    "id": "urmoon",
+    "title": "Urmoon",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACuklEQVQ4jV2TTWiUVxSGn3Pn3m+mGnGQyTDEEKQZ0jS2qbVF7Y8FK92J0EVLKS5aRC0WNw0uughZuHFjhUIr/oEo6KJQSkuLFKtYIQqhomJGiUkrYcA4jGSYmdaP+e53TxcJJPouD+e8533Pj6gqy6EP9liMKQr0AQWgiVKja3NMtvypGvulgEH1KMgJC0DzaongdkGwYld3E1pbgF6gCDRB50jbMeiwQG6hlYwCc5YnF/MqmeOScTvBQNfmOq1rpyD+haAVML0IG9SVjiwVA0IXsM0qtiih04cJIAZczzT5D4+xZtvsYmoDuCv1X99Bky/ALTdctdK6WCP7ch0hYHId9eGy3Lm9gWj8Ai4ZwiVVzfif6R76QbLdg6DvIRlDSG+oic5Z0tag/ndzUHj9INHaKalUy6SZ06SugACieUGHqE8WKLw6gssOEz84qCEel3WHpgwwIPg8aeVbrtQuM88YSVSg5y3o2QpJBElk1LvPqE0OU/z4jHZmxyWtlZnZnzMK60Hv0/uNJ7VDpDaPd/BoFh49BO/AO8TbiNS+ASCit1FKaCiaZ46gYyHJQq4bBt6GxMDKPkhfWFTieB5GYBJkkOpXlpCp4G2DVgL374GugL5NQBeauA4++gtAVV5DmENMzQBTCg2N2zv0g99jUnuAp9R53IAnLbjxB7R9EB+dIYl+YnrvgMCbKNfp/z42iFYEvSTCiDyVdQT7I6nZjbfjeNvA27vq7WGCG+P9kQawB6EInAcQVYV/9ucxqydYtTVHrr+Dcp6VL40+Y3ZmXwnYBXyN6gHKJ5YRAMxfuoArfYKJQOnQuvoRzYk/MfRi5BWUz1mQPoZwlv7jTQC7NM5VD9EOqF2Ix39/R0YKoE0NWhPhDuh2yidvLRe2RIA5R/Dvov9uBPMb6fyRxXduC8whVHnxZPv5Nf4PUCYiJgPYHLAAAAAASUVORK5CYII=",
+    "url": "http://www.urmoon.com/qswx3wx1jkl547s/index.php?searchword={{IMDB_TITLE}}&ordering=&searchphrase=all&Itemid=27&option=com_search",
+    "noResultsMatcher": "0 résultats trouvés.",
+    "category": "streaming"
   }
 ]
