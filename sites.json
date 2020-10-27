@@ -955,5 +955,13 @@
     "url": "http://www.urmoon.com/qswx3wx1jkl547s/index.php?searchword={{IMDB_TITLE}}&ordering=&searchphrase=all&Itemid=27&option=com_search",
     "noResultsMatcher": "0 résultats trouvés.",
     "category": "streaming"
+  },
+  {
+    "id": "senscritique",
+    "title": "SensCritique",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAABrklEQVQoU03IP0iUcRzH8ffvd88dd3Z3Vn41EYT+IEQRhwhG0iQhBA0FTZGRQlOY4tRQSEbQP9ucqqEhiAyCqHSpyCAKxKnCoamGizg7zIyu53l+n4aKeo0vym5Xhj9aHNDf9+zs98mw9z3HAcd6D1Sax7dfbZnM9+XGJhSrkf6IlQ6JKYDclpvT+hCWtawDYTAoTCVt2qwzaY+Kj0YzZKfvKCSX45F4Jt6XLqZvgld5uumY+1iaACK6VhqaCU5FeWW1ktyWewWwx6wEwIbV55ISJVrTXVXTd1r3ljxsPDWk/qeFCxRvbdX59J7u66VSrUnhhrrmOq9d/CYdkV/gaLb0MCOXoJw+aV7npLCqmhRfigvqOAz0zi1pNrmuJUnDQr0aTUaS7pBX6xUgOrRDj9PPcTWeDfvVpHYVQ0b+S+FB50HIezq6y/ORmkNJPhTUJkvbfm5S+xNo8a0eHLxww5V6xdWjk+lASMgAjio7a3VzNWHePFgENm4y2YK9NpmsB8yDr4VaME8GWAS+MljbzRjQB3j+MgfWag07AZYF22YDv/c/1mSnLTJnzqJ/+wvOaNU0GIyKQAAAAABJRU5ErkJggg==",
+    "url": "https://www.senscritique.com/search?q={{IMDB_TITLE}}",
+    "noResultsMatcher": "SearchNotHits",
+    "category": "movie_site"
   }
 ]
