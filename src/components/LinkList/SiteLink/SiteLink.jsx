@@ -18,7 +18,7 @@ const SiteLink = ({ config, imdbInfo, last, site }) => {
 
   return (
     <span className={css.linkWrapper}>
-      <a href={href} onClick={onClick} {...extraAttrs}>
+      <a className="ipc-link ipc-link--base" href={href} onClick={onClick} {...extraAttrs}>
         <SiteIcon site={site} />
         <span>{site.title}</span>
       </a>

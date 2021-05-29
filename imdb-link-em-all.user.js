@@ -583,7 +583,7 @@
     return fetchState;
   };
 
-  var css_248z$4 = ".SiteLink_linkWrapper__2uDyT {\n  display: inline-block;\n  margin-right: 4px;\n}\n\n  .SiteLink_linkWrapper__2uDyT img {\n    vertical-align: text-bottom;\n}\n\n  .SiteLink_linkWrapper__2uDyT a {\n    white-space: pre-line;\n}\n\n  .SiteLink_linkWrapper__2uDyT a > img {\n      height: 16px;\n      width: 16px;\n      margin-right: 4px;\n}\n\n  .SiteLink_linkWrapper__2uDyT .SiteLink_resultsIcon__3_V-k {\n    margin-left: 4px;\n}\n";
+  var css_248z$4 = ".SiteLink_linkWrapper__2uDyT {\n  display: inline-block;\n  margin-right: 4px;\n}\n\n  .SiteLink_linkWrapper__2uDyT img {\n    vertical-align: baseline;\n}\n\n  .SiteLink_linkWrapper__2uDyT a {\n    white-space: pre-line;\n}\n\n  .SiteLink_linkWrapper__2uDyT a > img {\n      height: 16px;\n      width: 16px;\n      margin-right: 4px;\n}\n\n  .SiteLink_linkWrapper__2uDyT .SiteLink_resultsIcon__3_V-k {\n    margin-left: 4px;\n}\n";
   var css$4 = {"linkWrapper":"SiteLink_linkWrapper__2uDyT","resultsIcon":"SiteLink_resultsIcon__3_V-k"};
   styleInject(css_248z$4);
 
@@ -695,6 +695,7 @@
     return preact.h("span", {
       className: css$4.linkWrapper
     }, preact.h("a", _extends({
+      className: "ipc-link ipc-link--base",
       href: href,
       onClick: onClick
     }, extraAttrs), preact.h(SiteIcon, {
@@ -841,17 +842,16 @@
   const detectLayout = mUrl => {
     // Currently there seem to be 3 different IMDb layouts:
     // 1) "legacy": URL ends with '/reference'
-    // 2) "new": The default (has been around for many years)
-    // 3) "redesign2002": Redesign (currently beta opt-in) using
-    //    https://www.imdb.com/preferences/beta-control?e=tmd&t=in&u=/title/tt0163978/
-    //    (Enabled with cookie)
     if (['reference', 'combined'].includes(mUrl[2])) {
       return ['legacy', 'h3[itemprop=name]', '.titlereference-section-overview > *:last-child'];
-    }
+    } // 2) "redesign2020": Redesign 2020
+    //    https://www.imdb.com/preferences/beta-control?e=tmd&t=in&u=/title/tt0163978/
 
-    if (document.cookie.includes('beta-control=tmd=in;')) {
-      return ['redesign2020', '[data-testid=hero-title-block__title]', '[class*=TitleMainBelowTheFoldGroup__Container]'];
-    }
+
+    if (document.querySelector('[data-testid="hero-title-block__title"]')) {
+      return ['redesign2020', '[data-testid=hero-title-block__title]', '[class*=TitleMainBelowTheFold]'];
+    } // 3) "new": The old default (has been around for many years)
+
 
     return ['new', 'h1', '.title-overview'];
   };

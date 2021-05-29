@@ -5,20 +5,19 @@ import App from 'imdb-link-em-all/components/App'
 const detectLayout = (mUrl) => {
   // Currently there seem to be 3 different IMDb layouts:
   // 1) "legacy": URL ends with '/reference'
-  // 2) "new": The default (has been around for many years)
-  // 3) "redesign2002": Redesign (currently beta opt-in) using
-  //    https://www.imdb.com/preferences/beta-control?e=tmd&t=in&u=/title/tt0163978/
-  //    (Enabled with cookie)
   if (['reference', 'combined'].includes(mUrl[2])) {
     return ['legacy', 'h3[itemprop=name]', '.titlereference-section-overview > *:last-child']
   }
-  if (document.cookie.includes('beta-control=tmd=in;')) {
+  // 2) "redesign2020": Redesign 2020
+  //    https://www.imdb.com/preferences/beta-control?e=tmd&t=in&u=/title/tt0163978/
+  if (document.querySelector('[data-testid="hero-title-block__title"]')) {
     return [
       'redesign2020',
       '[data-testid=hero-title-block__title]',
-      '[class*=TitleMainBelowTheFoldGroup__Container]',
+      '[class*=TitleMainBelowTheFold]',
     ]
   }
+  // 3) "new": The old default (has been around for many years)
   return ['new', 'h1', '.title-overview']
 }
 
