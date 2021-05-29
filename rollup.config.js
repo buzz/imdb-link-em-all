@@ -4,7 +4,6 @@ import babel from 'rollup-plugin-babel'
 import image from '@rollup/plugin-image'
 import json from '@rollup/plugin-json'
 import metablock from 'rollup-plugin-userscript-metablock'
-import { terser } from 'rollup-plugin-terser'
 import postcss from 'rollup-plugin-postcss'
 import replace from '@rollup/plugin-replace'
 import resolve from '@rollup/plugin-node-resolve'
@@ -41,7 +40,7 @@ export default {
       parser: 'sugarss',
       plugins: [precss()],
       modules: true,
-      minimize: production,
+      minimize: false,
       sourceMap: production ? false : 'inline',
     }),
     babel({
@@ -53,7 +52,6 @@ export default {
       __SITES_URL__: production ? pkg.config.sitesUrl : 'http://localhost:8001/sites.json',
       include: 'src/constants.js',
     }),
-    production && terser(),
     metablock({
       override: {
         author: pkg.author,
