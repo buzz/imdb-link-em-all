@@ -962,5 +962,13 @@
     "icon": "data:image/png;base64,UklGRrgAAABXRUJQVlA4TKwAAAAvD8ADEG9BkG1Tf+d/GgzbRlK0/fd6zP8DCtu2bfT/w+mUhAQJ/xfbjNwMEcb3Q6IQPo/3Y2m8bSBKAQaq+0X5lPI8vi5MUOMIYvR/DNDngel9vw+j7wMFYb6u1wUThREEhpEkKTncnsfd3Y78I3yBCCL6PwEviv7iuERKtxeZK7JuScsRpmYxWVCztGjPnhVixrggAduAhoGInuIDRS71dvSTJw+egXY8vP8D",
     "url": "https://reelgood.com/search?q={{IMDB_TITLE}}",
     "category": "movie_site"
+  },
+  {
+    "id": "ddlwarez",
+    "title": "DDL-Warez",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAACxFBMVEX///+bpah8jpGDk5h1ipBrhoxog4tsho50i5OFmJuQnqKMmp56jZJuiY9yhotpg4mVoaSDlJd4io9lgYeUoaVkfoSxt7lziI6Nmp1ifYZ8jZNdeIBGbHU+aXM+aXNDa3VXeYJ4kJVzkZiBoKeNrLOTsbmSsbiBoal3lZ12lZuPrrSkwsivztO11Nm4192519221dquztSiwslmg4qIpKujwcez0ti83eS64em44+vA5u685e285OvD5Om+3uSNqLCmx86x19614Omv4+un4eur4u2l4O2q4eyr4Oqu4eu85OyEoqqew8qn1N2s3+ew5O2j4uy+6vLl9/mk4evO7/TM6/GQ0+Gf2ORwj5aPtr6czdWn2+Wt4uuw5u+i4u296vPi9viQ2efF7PPE6PCBzduR0t55oKmOv8mi1d6p3+it5Oyx5++V3uqr5O/Z9PiG1+fA6/PC6O9+zduQ0d5bgYp7qbSVx9Gb1N+W1eKW2eWM2OZz0OOg4O3Y9fmD2Oe+6/O95+5vxdZ4xNNbiJKAsLqRx9KNzNei2OKZ1+OP1uON2ei36fLY9Pl91ue66fLJ7POL0N6JydZfjZmBsb2Hws6NytbW7/PW8PTW8fXX8vfc9fjL8PZ10eOu5O7c8/fU7vTT7PFej5p8r7qJws10ucdttcVxvc9zw9V0ydt0zN5xzN9lx9tqxdhvwdNuuMtrscJbjZl2rLd8t8RnqbqWydSd0d2c1OGd2OWd2eiQ1ONhvtF+ydia09+YzdmWyNRWiJRxp7RoprRdm6y319+/3+a+3+a84enQ6/HL6vBcs8em1uHW7fG63OO62N9Nfoxqoa5hoK5PkaJMkaNOmKtQnbBGm7CFwc7F5etTpbii0dqmz9hEkKRHjZ9DdIFflqVZlqZXmKhSlqhSmqtUn7BAkKV6tMDB4OZMlqidyNGgx9A9h5hMk6PvIwVdAAAAInRSTlMBBz2Dt9nt6c+naz2v8XXxBYt1/TvvCa8784W32e3nz6drWERCxgAAAAFiS0dEAIgFHUgAAAAHdElNRQflBgoJJAHjnt/qAAAAXElEQVQYV2NkAANGBADzuRkZRUGcf8wQAT5GKWQVAoxKCC5IQIhRB0VAhNEMmc8oxuiIwmeUYPRFFZCKQuUzSmegCciUoQnItqAJyE1CE5BfgCagsA5NQHEPKh8ABksI4I813igAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjEtMDYtMTBUMDk6MzQ6MzkrMDA6MDANRUzBAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIxLTA2LTEwVDA5OjM0OjM5KzAwOjAwfBj0fQAAAABJRU5ErkJggg==",
+    "url": "https://ddl-warez.to/?search=tt{{IMDB_ID}}",
+    "noResultsMatcher": "Keine Ergebnisse",
+    "category": "filehoster"
   }
 ]
