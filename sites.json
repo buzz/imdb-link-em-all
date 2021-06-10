@@ -282,7 +282,7 @@
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAMFBMVEUAAAAUFBQrKys/Pz+Hh4ednZ3/lgD/ogCurq66urr/uQD/wADJycnV1dXo6Oj9/f0GGqvHAAAAdElEQVQI12P4DwUMIOLdu3dgxr+bHXPfAxnvXhowMJ9j+P9mZgvX6g3zGP4dZlIQYNjQx/BvwgZu7l0LQIwFXAwMIEYTVwF7WQJQTUMBGwNI178JCWwsEXPeM/y7zKRgeQ9k8tuTM++B7fr37t17mKX/kRkAn3VZRBtqnu4AAAAASUVORK5CYII=",
     "url": "https://www.xrel.to/search.html?xrel_search_query=tt{{IMDB_ID}}&lang=en_US",
     "noResultsMatcher": "Sorry, your query did not return any results.",
-    "category": "Search"
+    "category": "search"
   },
   {
     "id": "srrdb",
@@ -290,7 +290,7 @@
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAG1BMVEUAAAD/mWbMmf//mZm7u7uZzP+Z/5n//2b////v25rHAAAAK0lEQVQI12NggAFmYwNBQfbyAnwMOGBLSwgNZVJSwMeAAxYXh44OAgwYAABKGxMhLQ3j1QAAAABJRU5ErkJggg==",
     "url": "http://www.srrdb.com/browse/imdb:{{IMDB_ID}}/1",
     "noResultsMatcher": ["<span>0 results", "Invalid value for \"imdb\""],
-    "category": "Search"
+    "category": "search"
   },
   {
     "id": "trakttv",
