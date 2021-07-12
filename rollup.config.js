@@ -51,6 +51,7 @@ export default {
     replace({
       __SITES_URL__: production ? pkg.config.sitesUrl : 'http://localhost:8001/sites.json',
       include: 'src/constants.js',
+      preventAssignment: true,
     }),
     metablock({
       override: {
