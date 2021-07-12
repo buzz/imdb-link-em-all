@@ -315,7 +315,7 @@
     href: "https://github.com/buzz/imdb-link-em-all/blob/master/LICENSE"
   }, "GPL-2.0 License"), ".")));
 
-  var css_248z$3 = ".Config_popover__3RK3L {\n  background-color: #a5a5a5;\n  border-radius: 4px;\n  box-shadow: 0 0 2em rgba(0, 0, 0, 0.1);\n  color: #333;\n  display: block;\n  font-family: Verdana, Arial, sans-serif;\n  font-size: 11px;\n  left: calc(-800px + 250px);\n  line-height: 1.5rem;\n  padding: 10px;\n  position: absolute;\n  top: calc(20px + 8px);\n  white-space: nowrap;\n  width: 800px;\n  z-index: 100;\n}\n.Config_popover__3RK3L:before {\n    border-bottom: 8px solid #a5a5a5;\n    border-left: 8px solid transparent;\n    border-right: 8px solid transparent;\n    border-top: 8px solid transparent;\n    content: \"\";\n    display: block;\n    height: 8px;\n    right: calc(250px - 2 * 8px);\n    position: absolute;\n    top: calc(-2 * 8px);\n    width: 0;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz {\n    display: flex;\n    flex-direction: column;\n    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_top__2kgQ3 {\n      display: flex;\n      flex-direction: row;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_top__2kgQ3 .Config_link__3aqRB {\n        flex-grow: 1;\n        text-align: right;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_top__2kgQ3 .Config_link__3aqRB > a {\n          color: #333;\n          margin-left: 12px;\n          margin-right: 4px;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_top__2kgQ3 .Config_link__3aqRB > a:visited {\n            color: #333;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_top__2kgQ3 > button {\n        background-color: rgba(0, 0, 0, 0.05);\n        border-bottom-left-radius: 0;\n        border-bottom-right-radius: 0;\n        border-bottom: transparent;\n        border-left: 1px solid rgba(0, 0, 0, 0.25);\n        border-right: 1px solid rgba(0, 0, 0, 0.25);\n        border-top-left-radius: 2px;\n        border-top-right-radius: 2px;\n        border-top: 1px solid rgba(0, 0, 0, 0.25);\n        color: #424242;\n        font-size: 12px;\n        margin: 0 6px 0 0;\n        outline: none;\n        padding: 0 6px;\n        transform: translateY(1px);\n        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_top__2kgQ3 > button:hover {\n          background-color: rgba(0, 0, 0, 0.1);\n          color: #222;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_top__2kgQ3 > button.Config_active__iBK3y {\n          background-color: #c2c2c2;\n          color: #222;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_top__2kgQ3 > button:last-child {\n          margin-right: 0;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_top__2kgQ3 > button > img {\n          vertical-align: text-bottom;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_body__2JuhF {\n      background-color: #c2c2c2;\n      border-bottom-left-radius: 2px;\n      border-bottom-right-radius: 2px;\n      border-top-right-radius: 2px;\n      border: 1px solid rgba(0, 0, 0, 0.25);\n      padding: 12px 10px 12px;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_body__2JuhF > div {\n        overflow: hidden;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_body__2JuhF > div > *:first-child {\n          margin-top: 0;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_body__2JuhF > div > *:last-child {\n          margin-bottom: 0;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_controls__3hBBQ {\n      display: flex;\n      flex-direction: row;\n      margin-top: 10px;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_controls__3hBBQ > div:first-child {\n        flex-grow: 1;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_controls__3hBBQ button {\n        padding-bottom: 0;\n        padding-top: 0;\n        margin-right: 12px;\n}\n";
+  var css_248z$3 = ".Config_popover__3RK3L {\n  background-color: #a5a5a5;\n  border-radius: 4px;\n  box-shadow: 0 0 2em rgba(0, 0, 0, 0.1);\n  color: #333;\n  display: block;\n  font-family: Verdana, Arial, sans-serif;\n  font-size: 11px;\n  left: calc(-800px + 35px);\n  line-height: 1.5rem;\n  padding: 10px;\n  position: absolute;\n  top: calc(20px + 8px);\n  white-space: nowrap;\n  width: 800px;\n  z-index: 100;\n}\n.Config_popover__3RK3L:before {\n    border-bottom: 8px solid #a5a5a5;\n    border-left: 8px solid transparent;\n    border-right: 8px solid transparent;\n    border-top: 8px solid transparent;\n    content: \"\";\n    display: block;\n    height: 8px;\n    right: calc(35px - 2 * 8px);\n    position: absolute;\n    top: calc(-2 * 8px);\n    width: 0;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz {\n    display: flex;\n    flex-direction: column;\n    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_top__2kgQ3 {\n      display: flex;\n      flex-direction: row;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_top__2kgQ3 .Config_link__3aqRB {\n        flex-grow: 1;\n        text-align: right;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_top__2kgQ3 .Config_link__3aqRB > a {\n          color: #333;\n          margin-left: 12px;\n          margin-right: 4px;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_top__2kgQ3 .Config_link__3aqRB > a:visited {\n            color: #333;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_top__2kgQ3 > button {\n        background-color: rgba(0, 0, 0, 0.05);\n        border-bottom-left-radius: 0;\n        border-bottom-right-radius: 0;\n        border-bottom: transparent;\n        border-left: 1px solid rgba(0, 0, 0, 0.25);\n        border-right: 1px solid rgba(0, 0, 0, 0.25);\n        border-top-left-radius: 2px;\n        border-top-right-radius: 2px;\n        border-top: 1px solid rgba(0, 0, 0, 0.25);\n        color: #424242;\n        font-size: 12px;\n        margin: 0 6px 0 0;\n        outline: none;\n        padding: 0 6px;\n        transform: translateY(1px);\n        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_top__2kgQ3 > button:hover {\n          background-color: rgba(0, 0, 0, 0.1);\n          color: #222;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_top__2kgQ3 > button.Config_active__iBK3y {\n          background-color: #c2c2c2;\n          color: #222;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_top__2kgQ3 > button:last-child {\n          margin-right: 0;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_top__2kgQ3 > button > img {\n          vertical-align: text-bottom;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_body__2JuhF {\n      background-color: #c2c2c2;\n      border-bottom-left-radius: 2px;\n      border-bottom-right-radius: 2px;\n      border-top-right-radius: 2px;\n      border: 1px solid rgba(0, 0, 0, 0.25);\n      padding: 12px 10px 12px;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_body__2JuhF > div {\n        overflow: hidden;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_body__2JuhF > div > *:first-child {\n          margin-top: 0;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_body__2JuhF > div > *:last-child {\n          margin-bottom: 0;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_controls__3hBBQ {\n      display: flex;\n      flex-direction: row;\n      margin-top: 10px;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_controls__3hBBQ > div:first-child {\n        flex-grow: 1;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_controls__3hBBQ button {\n        padding-bottom: 0;\n        padding-top: 0;\n        margin-right: 12px;\n}\n";
   var css$3 = {"popover":"Config_popover__3RK3L","inner":"Config_inner__2Sbjz","top":"Config_top__2kgQ3","link":"Config_link__3aqRB","active":"Config_active__iBK3y","body":"Config_body__2JuhF","controls":"Config_controls__3hBBQ"};
   styleInject(css_248z$3);
 
@@ -839,6 +839,8 @@
     }));
   };
 
+  const divId = '__LTA__';
+
   const detectLayout = mUrl => {
     // Currently there seem to be 3 different IMDb layouts:
     // 1) "legacy": URL ends with '/reference'
@@ -849,7 +851,7 @@
 
 
     if (document.querySelector('[data-testid="hero-title-block__title"]')) {
-      return ['redesign2020', 'title', '[class*=TitleMainBelowTheFold]'];
+      return ['redesign2020', 'title', '[class*=TitleMainHeroGroup]'];
     } // 3) "new": The old default (has been around for many years)
 
 
@@ -882,30 +884,45 @@
   };
 
   const [imdbInfo, containerSelector] = parseImdbInfo();
-  let injectionEl = document.querySelector(containerSelector);
 
-  if (!injectionEl) {
-    throw new Error('LTA: Could not find target container!');
-  }
+  const injectAndStart = () => {
+    let injectionEl = document.querySelector(containerSelector);
 
-  if (imdbInfo.layout === 'redesign2020') {
-    injectionEl = injectionEl.parentElement;
-  }
+    if (!injectionEl) {
+      throw new Error('LTA: Could not find target container!');
+    }
 
-  const container = document.createElement('div');
-  container.style.position = 'relative';
+    const container = document.createElement('div');
+    container.id = divId;
+    container.style.position = 'relative';
 
-  if (imdbInfo.layout === 'redesign2020') {
-    container.style.padding = '0 var(--ipt-pageMargin)';
-    container.style.minHeight = '50px';
-    injectionEl.insertBefore(container, injectionEl.firstChild);
-  } else {
-    container.classList.add('article');
-    injectionEl.appendChild(container);
-  }
+    if (imdbInfo.layout === 'redesign2020') {
+      container.className = 'ipc-page-content-container ipc-page-content-container--center';
+      container.style.padding = '0 var(--ipt-pageMargin)';
+      container.style.minHeight = '50px';
+      const targetEl = injectionEl.nextSibling;
+      injectionEl = injectionEl.parentElement;
+      injectionEl.insertBefore(container, targetEl);
+    } else {
+      container.classList.add('article');
+      injectionEl.appendChild(container);
+    }
 
-  preact.render(preact.h(App, {
-    imdbInfo: imdbInfo
-  }), container);
+    preact.render(preact.h(App, {
+      imdbInfo: imdbInfo
+    }), container);
+  };
+
+  const containerWatchdog = () => {
+    const container = document.querySelector(`#${divId}`);
+
+    if (container === null) {
+      injectAndStart();
+    }
+
+    window.setTimeout(containerWatchdog, 1000);
+  };
+
+  window.setTimeout(containerWatchdog, 500);
 
 }(preact, preactHooks));
