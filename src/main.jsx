@@ -53,7 +53,7 @@ const container = document.createElement('div')
 container.style.position = 'relative'
 if (imdbInfo.layout === 'redesign2020') {
   container.style.padding = '0 var(--ipt-pageMargin)'
-  container.style.maxWidth = '800px'
+  container.style.minHeight = '50px'
   injectionEl.insertBefore(container, injectionEl.firstChild)
 } else {
   container.classList.add('article')
