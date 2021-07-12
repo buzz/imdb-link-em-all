@@ -975,5 +975,20 @@
     "url": "https://ddl-warez.to/?search=tt{{IMDB_ID}}",
     "noResultsMatcher": "Keine Ergebnisse",
     "category": "filehoster"
+  },
+  {
+    "id": "prijevodi",
+    "title": "Prijevodi-Online",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAYFBMVEU8WXhCX35FYoFKY31OZ4FRaoVWcIpbdI9geZRnfZNsgph1i6J3jaR8j6CBkKiBlKaSnrGMoLGhq7urtMKyvMq5ws7Ey9TL0tvR2OHd4uTl6uzt8vTz9vn3+vb3+/7///87YcDtAAAAp0lEQVQYV03P2xKDIAwE0AABBWwRq+AFm///yybamXYfD+ywgIt3jA4pxcHDg+5sTzfuRBXiF+gM4OoFbRqGwlK1stsq0AE4vn10Rg1FKlEZtXInKrRZIAHExp1iEL1AmUqjkzu9Qft7hah5jfgPm0XsBI5lv2BUiElgx76295Y1aj8LtADog+NztcgwGYJaG9Qq83T53IsHcPxCtIIvnOyd7dNcS5k+4y8R+zbzdgYAAAAASUVORK5CYII=",
+    "url": "https://www.prijevodi-online.org/trazi?q={{IMDB_TITLE}}",
+    "category": "subtitles"
+  },
+  {
+    "id": "titlovi",
+    "title": "titlovi",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAYFBMVEUAAAALBAMMBgQTDgwWEhEYFBMfGxohHRwjHx4nIyIpJSQwLCtAPDpDPz5GQkFKRkVRTUtaVlVhXFtmYmF/enmBfHuIg4KLhoWOiYiYlZminZyoo6Kzrqy5tLPz8PX///+RInXYAAAAeElEQVQY043PUQ+CMAwE4JvLGIPRotaK4uT//0s3owsSHvwer5dLinYDO4Ffa9FZVCYED3tKj4+kNjcwLVVCDpqeiWI/EBHHrjSu+TTj+a7c4eFGVWWIFmQDHIvINF+kOJsGuC0rR5tHh1jx6BGcOXwZkzf+ee7XC9WYDLcu6ruMAAAAAElFTkSuQmCC",
+    "url": "https://titlovi.com/titlovi/?prijevod=tt{{IMDB_ID}}&sort=4",
+    "noResultsMatcher": "Našli smo <b>0</b> rezultata.",
+    "category": "subtitles"
   }
 ]
