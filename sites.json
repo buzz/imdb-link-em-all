@@ -990,5 +990,13 @@
     "url": "https://titlovi.com/titlovi/?prijevod=tt{{IMDB_ID}}&sort=4",
     "noResultsMatcher": "Našli smo <b>0</b> rezultata.",
     "category": "subtitles"
+  },
+  {
+    "id": "torrentgalaxy",
+    "title": "TorrentGalaxy",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADXklEQVQ4y22Ty28bVRyFz+/eeflt51U7TqipHZqWhAopKkJBsKG8hFhABX9AF4gNUmEBG5BYVEJiU4kVG1ZIqN2URiwKQgIhtRFNQEDTNMJukhIHJ47tsWdsj8cz914WEFQQ3/470tHRIdzHVvUh5lg21yrTmiI9yJ5oCQ4NtW2LlGOY4dEdEdUMkUBcZnNrCgDoUF6vlLSuqxLJncIjSpD0Cn9smOmhTiDmB2pgbEznNaHne2N7P7NcuzluJYf5qTVFAHB7Y4a3nXBstFp6TYWs0BzduTKZZqWEMJ4iRZbHg9Xq0FuO7U4vWjCz7fHqJ2zC3V44ue3T1tYJ2m44qbHd0lnLS75Z1asXJ3J+egqxt7likwAgSfVs8j+91eh+Xewdf4tpsrx3pHwhkcEuu9dwdd7IFCOD5BtDFXZsrdUZUdazhzIAMEWxhNSfM0yZdGXvjh5ar8RaRxZrTjfC9tqeFetlHudSmx+q4CAQUkAiif9AiuIkSPfgH5CidMSPn/HaPM16NkW10JwlkM6ImNsXbmsQrCtA0H0BThBW9jt+XSPGCcS51Eqya2RY11WaFMoEAIP0rKH04c3fO0v3nP61figaAyE7+31/5cfdzmftbliPUWQKAJSCNvCUztqdMPRE0AIAA/qx6chIfrPW+/XSD/WPrq7V3/vydv39Syv7HyyvO9/mk4lIlKxTBCCQwrZ7/oDZLTlo+O5vQgmHKz4+gbEXFhaihuMGt774xr5y+avm5Y2yt3zqMdYv6LkndWmcUIDqhP07e7bn0LnXU9ZcKfXo09mTF5M8elqS7PRj7Y/9ifqSYtIFoIhg8mbmdLw9/i6XWnGowtqKXTn/fXnnGp15JsFKD1PuxeOz52YTk+9wYlFFqid5uEmkun/VhUmCP8AkHwegdgetz5furl3YrAQVAoCzryajM8XI3PPHZs9PRUde5sQM/A8SSrb87vJ31fKHq+XG9ZvX/TYBwPy8xR4saemZQmzuicLRl6biqUVT08YIxP521VAIp+65P61Uq1d/2Wyt1nbUwY0bvfCfqYtFk2fzPJHKYCI7auXSMSPFOWkAICVkdxC4taa3bzflXrOuOuvrg+BfbwQAIrB0mmvxODN1EzrjIAIgJFQ4RNjvyaFty6EQSh46fwJKXa69yBEZmwAAAABJRU5ErkJggg==",
+    "url": "https://torrentgalaxy.to/torrents.php?search=tt{{IMDB_ID}}",
+    "noResultsMatcher": "Sorry. No results found...",
+    "category": "pub_tracker"
   }
 ]
