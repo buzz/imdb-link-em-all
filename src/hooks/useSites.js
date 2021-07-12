@@ -16,11 +16,11 @@ export const loadSites = () =>
             reject(e)
           }
         } else {
-          reject(new Error(`Could not load sites: ${status} ${statusText}`))
+          reject(new Error(`LTA: Could not load sites (URL=${SITES_URL}): ${status} ${statusText}`))
         }
       },
       onerror({ status, statusText }) {
-        reject(new Error(`Could not load sites: ${status} ${statusText}`))
+        reject(new Error(`LTA: Could not load sites (URL=${SITES_URL}): ${status} ${statusText}`))
       },
     })
   )

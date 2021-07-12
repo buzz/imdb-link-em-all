@@ -27,7 +27,7 @@ const parseImdbInfo = () => {
   // Parse IMDb number and layout
   const mUrl = /^\/title\/tt([0-9]{7,8})\/([a-z]*)/.exec(window.location.pathname)
   if (!mUrl) {
-    throw new Error('Could not parse IMDb URL!')
+    throw new Error('LTA: Could not parse IMDb URL!')
   }
 
   const [layout, titleSelector, containerSelector] = detectLayout(mUrl)
