@@ -41,9 +41,12 @@ const parseImdbInfo = () => {
 }
 
 const [imdbInfo, containerSelector] = parseImdbInfo()
-const injectionEl = document.querySelector(containerSelector)
+let injectionEl = document.querySelector(containerSelector)
 if (!injectionEl) {
   throw new Error('LTA: Could not find target container!')
+}
+if (imdbInfo.layout === 'redesign2020') {
+  injectionEl = injectionEl.parentElement
 }
 
 const container = document.createElement('div')
