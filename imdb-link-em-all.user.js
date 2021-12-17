@@ -10,7 +10,7 @@
 // @license     GPLv2
 // @noframes
 // @author      buzz
-// @version     2.0.9
+// @version     2.0.10
 // @grant       GM_getValue
 // @grant       GM_setValue
 // @grant       GM_xmlhttpRequest
@@ -21,7 +21,7 @@
 (function (preact, hooks) {
   'use strict';
 
-  var version = "2.0.9";
+  var version = "2.0.10";
   var description = "Adds all kinds of links to IMDb, customizable!";
   var homepage = "https://github.com/buzz/imdb-link-em-all#readme";
 
