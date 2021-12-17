@@ -33,6 +33,7 @@ const App = ({ imdbInfo }) => {
         </button>
         <Config
           config={config}
+          layout={imdbInfo.layout}
           setConfig={setConfig}
           setShow={setShowConfig}
           sites={sites}

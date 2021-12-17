@@ -14,7 +14,7 @@ const OPTIONS = [
   ['fetch_results', 'Automatically fetch results'],
 ]
 
-const Config = ({ config, setConfig, setShow, show, sites }) => {
+const Config = ({ config, layout, setConfig, setShow, show, sites }) => {
   const [enabledSites, setEnabledSites] = useState(config.enabled_sites)
   const showCategoryCaptionsArr = useState(config.show_category_captions)
   const openBlankArr = useState(config.open_blank)
@@ -58,7 +58,10 @@ const Config = ({ config, setConfig, setShow, show, sites }) => {
   }
 
   return (
-    <div className={css.popover} style={{ display: show ? 'block' : 'none' }}>
+    <div
+      className={`${css.popover} ${css['layout-' + layout]}`}
+      style={{ display: show ? 'block' : 'none' }}
+    >
       <div className={css.inner}>
         <div className={css.top}>
           {tabs.map(({ title, icon }, i) => (
