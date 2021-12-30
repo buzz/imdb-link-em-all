@@ -853,7 +853,7 @@
 
 
     if (document.querySelector('[data-testid="hero-title-block__title"]')) {
-      return ['redesign2020', 'title', '[class*=TitleMainHeroGroup]'];
+      return ['redesign2020', 'title', '[class*=TitleMainBelowTheFoldGroup]'];
     } // 3) "new": The old default (has been around for many years)
 
 
@@ -902,9 +902,7 @@
       container.className = 'ipc-page-content-container ipc-page-content-container--center';
       container.style.padding = '0 var(--ipt-pageMargin)';
       container.style.minHeight = '50px';
-      const targetEl = injectionEl.nextSibling;
-      injectionEl = injectionEl.parentElement;
-      injectionEl.insertBefore(container, targetEl);
+      injectionEl.prepend(container);
     } else {
       container.classList.add('article');
       injectionEl.appendChild(container);

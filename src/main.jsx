@@ -13,7 +13,7 @@ const detectLayout = (mUrl) => {
   // 2) "redesign2020": Redesign 2020
   //    https://www.imdb.com/preferences/beta-control?e=tmd&t=in&u=/title/tt0163978/
   if (document.querySelector('[data-testid="hero-title-block__title"]')) {
-    return ['redesign2020', 'title', '[class*=TitleMainHeroGroup]']
+    return ['redesign2020', 'title', '[class*=TitleMainBelowTheFoldGroup]']
   }
   // 3) "new": The old default (has been around for many years)
   return ['new', 'h1', '.title-overview']
@@ -57,9 +57,7 @@ const injectAndStart = () => {
     container.className = 'ipc-page-content-container ipc-page-content-container--center'
     container.style.padding = '0 var(--ipt-pageMargin)'
     container.style.minHeight = '50px'
-    const targetEl = injectionEl.nextSibling
-    injectionEl = injectionEl.parentElement
-    injectionEl.insertBefore(container, targetEl)
+    injectionEl.prepend(container)
   } else {
     container.classList.add('article')
     injectionEl.appendChild(container)
