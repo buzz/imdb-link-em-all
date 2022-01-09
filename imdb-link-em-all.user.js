@@ -853,7 +853,7 @@
 
 
     if (document.querySelector('[data-testid="hero-title-block__title"]')) {
-      return ['redesign2020', 'title', '[class*=TitleMainBelowTheFoldGroup]'];
+      return ['redesign2020', 'title', 'main > * > section > div'];
     } // 3) "new": The old default (has been around for many years)
 
 

@@ -13,7 +13,7 @@ const detectLayout = (mUrl) => {
   // 2) "redesign2020": Redesign 2020
   //    https://www.imdb.com/preferences/beta-control?e=tmd&t=in&u=/title/tt0163978/
   if (document.querySelector('[data-testid="hero-title-block__title"]')) {
-    return ['redesign2020', 'title', '[class*=TitleMainBelowTheFoldGroup]']
+    return ['redesign2020', 'title', 'main > * > section > div']
   }
   // 3) "new": The old default (has been around for many years)
   return ['new', 'h1', '.title-overview']
@@ -55,6 +55,7 @@ const injectAndStart = () => {
   container.style.position = 'relative'
   if (imdbInfo.layout === 'redesign2020') {
     container.className = 'ipc-page-content-container ipc-page-content-container--center'
+    container.style.backgroundColor = 'white'
     container.style.padding = '0 var(--ipt-pageMargin)'
     container.style.minHeight = '50px'
     injectionEl.prepend(container)
