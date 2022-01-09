@@ -10,7 +10,7 @@
 // @license     GPLv2
 // @noframes
 // @author      buzz
-// @version     2.0.11
+// @version     2.0.12
 // @grant       GM_getValue
 // @grant       GM_setValue
 // @grant       GM_xmlhttpRequest
@@ -21,7 +21,7 @@
 (function (preact, hooks) {
   'use strict';
 
-  var version = "2.0.11";
+  var version = "2.0.12";
   var description = "Adds all kinds of links to IMDb, customizable!";
   var homepage = "https://github.com/buzz/imdb-link-em-all#readme";
 
@@ -900,6 +900,7 @@
 
     if (imdbInfo.layout === 'redesign2020') {
       container.className = 'ipc-page-content-container ipc-page-content-container--center';
+      container.style.backgroundColor = 'white';
       container.style.padding = '0 var(--ipt-pageMargin)';
       container.style.minHeight = '50px';
       injectionEl.prepend(container);
