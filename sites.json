@@ -4,7 +4,7 @@
     "title": "Cinemagia",
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADH0lEQVQ4T4VTXWgUVxT+7tydzKi72Z/UkNTEGDSlMbCaqCCmIKHaEgumUZC+FWvb0IcI1hehERSi4IuIDxoRBEUF0Sr0RasoWlHTEBEURdKUNmljMMlkk83s7szeO/d6ZgUpWPTMnLlw7/Cdc77vu+yrn059P/TPZE8+X1jAABgGQ7j+Nxht+DICkys6UwBtxKLR/PKlVb1s895zUxmPVRS9PIQMIEupoLQuAYWAOWHjk7ohRJjEbyONmG/60LwMSVtPsx0nb81oFolLKaCUQhAoSMppz0LeEyj6PjzBcal9F66NrMexx1uQsFxC5rAMZNn2s3ccbURSgRDQ9ASaI1mWR2vsV0yoZXjqppG276C7oQfHn+/E0eEdSPBJcM4wj+sM+/ZKv6MMnlIEIFUIweApC7uW/IJWcz9cfyFVKsA0XDzMbcSFmW689GLIBjaUKGbYN5cHnIAAwhGSlolsUaCM2utetxrjT/fgM/MQmAEQJaUVlK6swTX/O1yd/SLDtv884GhupvI0a3phObYuX0Q/MlTHY7j9/BnaptYgRiOFAELbGPTacLPQgT/1KhBVGbbt/O8OCEBRBwGR2LbkA3StXYY8FUsMfQ28OAPBQgkl/vKb0PXyIiRJGSMleEAjfHrklsMMM5XNFbCiNonOlTX4uKYSCecq+OMfcGK8A/f99ThY2YO6yCi+HLtCHNngERI5kBnW2ffAsW0r1bIoiubaBJqq4+j/ewbDw/fQ8tEK9N714QuJD/koeuM/4sDsfozIelgRDSH8DGvve81BY4WFbc3ViFkcZwfH8GRCYHHCgksGcz0JVy3AYuMP+IpjXFaVZJRCZNjnfYNOQ1U8taE+So5TeDTmYs6XtM7BIMtyIpTekkeKuoxECGDogJxovpax9XC/k65JpjqaEhgYyeL0wAuU2xGycngbSp+3IrQ4IytrRR00996dbU9Xl8+ji3Lj2RS1G6AY6FLVdwZ1gKA4x1r23R7duKqhdmJqGveHZ8CpbSM0zP8Xf4Np2FHI3PS/rG7n9U0VqfLDuVyhkmlVmvV9wcipjJuTWnq7XwEH2WyeRGb3oAAAAABJRU5ErkJggg==",
     "url": "https://www.cinemagia.ro/movie.php?imdb_id={{IMDB_ID}}",
-    "ResultsMatcher": "Sinopsis",
+    "noResultsMatcher": "Sinopsis",
     "category": "movie_site"
   },
   {
@@ -550,7 +550,7 @@
     "title": "WatchSoMuch",
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAC2klEQVQ4jY2TXUhTARTH7158EV+EEH0RJXtQhGbqcLebpqQY6mZTmwiaH/MjQ+8Slsyvq3C3Od2mNucUvyY25tUMCpKJaJhojYURpkKJPYjswVgIlg7y34NM/JjQD87T4fwP53/OITiO8SNJMoC4AACey9Xh73J1+F/MnSMnI70wTyw25GSkF3Ic43cS1sQfzm7T4UaN/XCjxu5ea2s92tJEA+CdbQCAR2SlJjNZKUmuxPgYrcvV4a9RqdhGpXJP1dYM51wnFl4b0N3Rgolx0/b72YFsjmP8RKLiSHFmpoSiKJIAwHtWllI92kI95zhrol6n+ymnachpGuZeE+Q0jfIyGQw6Pd5MWNYHjMyNxPgYrSA2bjchlj9IEARBHCxJQzyracNOe/ukdWwUGrUaGrUaBp0ecppGg6IO5l4TzL0mlBdJqvPSoowJsfxBIZ8fejqPZzVt2O3I9TjnOvH25QjG+1j0saXoM6hh7jXBOjYKW3cF7No4m10bZ2NZZfA5M3c+VlVuLcrgduR6Zs25eGdMhrP/Fj7bxJgfq8KKRYxNWxLmdaT7g/FOyaVt7G9ohLPTjGdrUYbGsnhIbkdAcjsCFdlRmFTHYucVH4MqCUbbC9YOlqQhPgW+Ldf/mnrRitlpxmPrrkBPwwOMtKdi2XoPw/p89LGl+DKVP3R2naccbWmif69X7XUZ1ahWjYDWWlDZZkKRsgv5texxk+IRNm1J2J55WO/zoL4v6K9vLNTtGIYGQGstoLUWVKtGIFX0QKroQSf7BCsWMeYtssvzEwRBsKwymDEMf/IWljSfdPcKFMpZyJ4ybkWr7u5VV000tveLK5S6r/m17LE3JFVtEJU2HueWN+0WPG6u4zjG70oBADyWVQbfl5TLbwrT96P41N/o+NQ/wuQ8jUhUHOnTPF8kUZQ0LCzcERh4bSYsLNxBURT5X4VeBAJBkEAgCCJJMkDI54f6encv/wAZNJAUcgy6PQAAAABJRU5ErkJggg==",
     "url": "https://watchsomuchproxy.com/Movie/{{IMDB_ID}}/{{IMDB_TITLE}}-{{IMDB_YEAR}}",
-    "ResultsMatcher": "Director:",
+    "noResultsMatcher": "Director:",
     "category": "pub_tracker"
   },
   {
@@ -934,7 +934,7 @@
     "title": "OpenSubtitles_all",
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAKlBMVEUAAAAREREiIiIzMzNERERVVVV3d3eIiIiZmZmqqqrMzMzd3d3u7u7///9SrzZ+AAAARElEQVQI12NggAHeC3fBCMHAAjjuTmA6ewfIyGCYxuUgDWRsYpDmdgBJHWSQYbm7GSzVzs7gDWRw3p3AdfYqNmNw2wUAUH0dtNO4HWIAAAAASUVORK5CYII=",
     "url": "https://www.opensubtitles.org/en/search/imdbid-{{IMDB_ID}}",
-    "ResultsMatcher": "Amazon",
+    "noResultsMatcher": "Amazon",
     "category": "subtitles"
   },
   {
@@ -942,7 +942,7 @@
     "title": "OpenSubtitles_RO",
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAA/ElEQVRoge2awQ7DIAxD+Qd+eH/ODqt6mDRwHEOaKUiWesCOH+XWtt77aK2l1NU9vohT18Nr2HV5x+B0+wkVQAHIAfIqvEABRBcoAGjjbKnKkPl8cQWEdZkAmLWzPAxgKcdCWHxuAKaQau+3bwnAhlu8bP4Pacqjfu+MrQBIxjEANtD6FmQAypM5fI3iAZwzzwPMIIgOMQAoBJATB8DAPBYABUoDMANJBQB02/vqFQCLXO3wvwJQlYcBvBC7Tt8FgBaxeMQHszbMBjLA4mzcjCzmRJ35umGea+HI9g+0FFdeRRPAgxVeoACiCxTA5yH9R74CKAAnQFZl/93mDebmbn4L3YYTAAAAAElFTkSuQmCC",
     "url": "https://www.opensubtitles.org/en/search/sublanguageid-rum/imdbid-{{IMDB_ID}}",
-    "ResultsMatcher": "Amazon",
+    "noResultsMatcher": "Amazon",
     "category": "subtitles"
   },
   {
