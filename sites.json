@@ -926,7 +926,7 @@
     "title": "OpenSubtitles",
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAKlBMVEUAAAAREREiIiIzMzNERERVVVV3d3eIiIiZmZmqqqrMzMzd3d3u7u7///9SrzZ+AAAARElEQVQI12NggAHeC3fBCMHAAjjuTmA6ewfIyGCYxuUgDWRsYpDmdgBJHWSQYbm7GSzVzs7gDWRw3p3AdfYqNmNw2wUAUH0dtNO4HWIAAAAASUVORK5CYII=",
     "url": "https://www.opensubtitles.org/en/search/sublanguageid-eng/imdbid-{{IMDB_ID}}",
-    "noResultsMatcher": "Amazon",
+    "noResultsMatcher": "Buy at Amazon",
     "category": "subtitles"
   },
   {
@@ -934,7 +934,7 @@
     "title": "OpenSubtitles_all",
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAKlBMVEUAAAAREREiIiIzMzNERERVVVV3d3eIiIiZmZmqqqrMzMzd3d3u7u7///9SrzZ+AAAARElEQVQI12NggAHeC3fBCMHAAjjuTmA6ewfIyGCYxuUgDWRsYpDmdgBJHWSQYbm7GSzVzs7gDWRw3p3AdfYqNmNw2wUAUH0dtNO4HWIAAAAASUVORK5CYII=",
     "url": "https://www.opensubtitles.org/en/search/imdbid-{{IMDB_ID}}",
-    "noResultsMatcher": "Amazon",
+    "noResultsMatcher": "Buy at Amazon",
     "category": "subtitles"
   },
   {
@@ -942,7 +942,7 @@
     "title": "OpenSubtitles_RO",
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAA/ElEQVRoge2awQ7DIAxD+Qd+eH/ODqt6mDRwHEOaKUiWesCOH+XWtt77aK2l1NU9vohT18Nr2HV5x+B0+wkVQAHIAfIqvEABRBcoAGjjbKnKkPl8cQWEdZkAmLWzPAxgKcdCWHxuAKaQau+3bwnAhlu8bP4Pacqjfu+MrQBIxjEANtD6FmQAypM5fI3iAZwzzwPMIIgOMQAoBJATB8DAPBYABUoDMANJBQB02/vqFQCLXO3wvwJQlYcBvBC7Tt8FgBaxeMQHszbMBjLA4mzcjCzmRJ35umGea+HI9g+0FFdeRRPAgxVeoACiCxTA5yH9R74CKAAnQFZl/93mDebmbn4L3YYTAAAAAElFTkSuQmCC",
     "url": "https://www.opensubtitles.org/en/search/sublanguageid-rum/imdbid-{{IMDB_ID}}",
-    "noResultsMatcher": "Amazon",
+    "noResultsMatcher": "Buy at Amazon",
     "category": "subtitles"
   },
   {
