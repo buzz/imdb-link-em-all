@@ -4,7 +4,7 @@
     "title": "Cinemagia",
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADH0lEQVQ4T4VTXWgUVxT+7tydzKi72Z/UkNTEGDSlMbCaqCCmIKHaEgumUZC+FWvb0IcI1hehERSi4IuIDxoRBEUF0Sr0RasoWlHTEBEURdKUNmljMMlkk83s7szeO/d6ZgUpWPTMnLlw7/Cdc77vu+yrn059P/TPZE8+X1jAABgGQ7j+Nxht+DICkys6UwBtxKLR/PKlVb1s895zUxmPVRS9PIQMIEupoLQuAYWAOWHjk7ohRJjEbyONmG/60LwMSVtPsx0nb81oFolLKaCUQhAoSMppz0LeEyj6PjzBcal9F66NrMexx1uQsFxC5rAMZNn2s3ccbURSgRDQ9ASaI1mWR2vsV0yoZXjqppG276C7oQfHn+/E0eEdSPBJcM4wj+sM+/ZKv6MMnlIEIFUIweApC7uW/IJWcz9cfyFVKsA0XDzMbcSFmW689GLIBjaUKGbYN5cHnIAAwhGSlolsUaCM2utetxrjT/fgM/MQmAEQJaUVlK6swTX/O1yd/SLDtv884GhupvI0a3phObYuX0Q/MlTHY7j9/BnaptYgRiOFAELbGPTacLPQgT/1KhBVGbbt/O8OCEBRBwGR2LbkA3StXYY8FUsMfQ28OAPBQgkl/vKb0PXyIiRJGSMleEAjfHrklsMMM5XNFbCiNonOlTX4uKYSCecq+OMfcGK8A/f99ThY2YO6yCi+HLtCHNngERI5kBnW2ffAsW0r1bIoiubaBJqq4+j/ewbDw/fQ8tEK9N714QuJD/koeuM/4sDsfozIelgRDSH8DGvve81BY4WFbc3ViFkcZwfH8GRCYHHCgksGcz0JVy3AYuMP+IpjXFaVZJRCZNjnfYNOQ1U8taE+So5TeDTmYs6XtM7BIMtyIpTekkeKuoxECGDogJxovpax9XC/k65JpjqaEhgYyeL0wAuU2xGycngbSp+3IrQ4IytrRR00996dbU9Xl8+ji3Lj2RS1G6AY6FLVdwZ1gKA4x1r23R7duKqhdmJqGveHZ8CpbSM0zP8Xf4Np2FHI3PS/rG7n9U0VqfLDuVyhkmlVmvV9wcipjJuTWnq7XwEH2WyeRGb3oAAAAABJRU5ErkJggg==",
     "url": "https://www.cinemagia.ro/movie.php?imdb_id={{IMDB_ID}}",
-    "noResultsMatcher": "Sinopsis",
+    "ResultsMatcher": "Sinopsis",
     "category": "movie_site"
   },
   {
