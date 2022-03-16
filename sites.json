@@ -542,7 +542,6 @@
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAQCAYAAADJViUEAAAC/klEQVQokXXS609bdRjA8V/QIGvPKVSg7TmH0ttRonFGQ6JBl/UyX4iXzWwtQkxM8EZGNt2GsHEpboO4ixURHYwQxsal63qRzXkbkZlolkm2OHVzifrClNJC1I3Fl775+qKJZEH/gE+e3/P8vuLuuhbU7hhKOIqtK4oSjqKGo6jdMcqbDmFYu441a9chhEAIQUGRkZJNzZQ2tCFsbaN4kjmqz2Txf7ZE9Zkc7ngGdzKHFplB9oWQ/XX/4jskM7ZdR1G7phDOPaM0XbjBwe+XOfTDMgM/3aJ17k/8ny9RMziL5A1iaxvFtKEB2RfCHNxBxYGzKO0nEK8MTPH+9b94IDWPM5bm4ekMkR+XufjH37x68hsM3hDuyV/RU4voyRx6ahHH4LconROI+zqP0XppmZ4rNwlfvkH/1Vv0XrlJ6PzvBIbPI/mfR+s9TdmL3ZS+0IFlWz/2vlnUzkmE9c0R7kku4Psky5Yvlwh8muXeeBpnPIN2+ByyN4gpUL+ys6kU664hlI4JhLL7GPpHi7gTCzhjaVyxNJ5TaTyJDPZ3ziH76yjZtJWCIiMFRUYKNR2lfRylcxJh3rwdZfcYSsc4rrGreOLzt+P1W3AcuUjFgbNovaex981S+d5XKHuOI+4sr6DQXkWhvQptfwo9sbAKu8au4TpxHdfYNdyTv1A58HUeW7b14xz5jpJnm1DfOoWevB2bAvWUvbSfu5z3U1hZhbH6CbSe6fw/m59rxrpzENkbRN2bWIVlfx2yL7RSmFSCrWUYNRxFSI9vxLx5O8ZHnkTbl1yNvUGsr3+AVPMM0qO1FD/1MlrPNEr7cYStdQRP7DfMwTf+89myN4h74mc8iQU88Qx6Movjwwso7eMIw0M+TIF6DA+u/9/JFW9/jKW5D8vWCLbWEeyRmXyeZY37sB/+guLaRrS9CfRUDk98Hj2ZxR6ZyUeyoWElkuJSbC3D+Twtze/iGJqjuLYR684hnMOXcQzN4Tx6CbVrCumxjUg1T68czCBT/tpBrDsG+QeiHQyMHvQ3wAAAAABJRU5ErkJggg==",
     "url": "https://www.yify-torrent.cc/search/{{IMDB_TITLE}}%20{{IMDB_YEAR}}/p-1/all/all/",
     "noResultsMatcher": "We can not find any movie for Search 0 Result(s) for",
-    "noResultsMatcher": "The page you requested was not found.",
     "category": "pub_tracker"
   },
   {
