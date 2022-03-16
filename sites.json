@@ -1,5 +1,13 @@
 [
   {
+    "id": "cinemagia",
+    "title": "Cinemagia",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADH0lEQVQ4T4VTXWgUVxT+7tydzKi72Z/UkNTEGDSlMbCaqCCmIKHaEgumUZC+FWvb0IcI1hehERSi4IuIDxoRBEUF0Sr0RasoWlHTEBEURdKUNmljMMlkk83s7szeO/d6ZgUpWPTMnLlw7/Cdc77vu+yrn059P/TPZE8+X1jAABgGQ7j+Nxht+DICkys6UwBtxKLR/PKlVb1s895zUxmPVRS9PIQMIEupoLQuAYWAOWHjk7ohRJjEbyONmG/60LwMSVtPsx0nb81oFolLKaCUQhAoSMppz0LeEyj6PjzBcal9F66NrMexx1uQsFxC5rAMZNn2s3ccbURSgRDQ9ASaI1mWR2vsV0yoZXjqppG276C7oQfHn+/E0eEdSPBJcM4wj+sM+/ZKv6MMnlIEIFUIweApC7uW/IJWcz9cfyFVKsA0XDzMbcSFmW689GLIBjaUKGbYN5cHnIAAwhGSlolsUaCM2utetxrjT/fgM/MQmAEQJaUVlK6swTX/O1yd/SLDtv884GhupvI0a3phObYuX0Q/MlTHY7j9/BnaptYgRiOFAELbGPTacLPQgT/1KhBVGbbt/O8OCEBRBwGR2LbkA3StXYY8FUsMfQ28OAPBQgkl/vKb0PXyIiRJGSMleEAjfHrklsMMM5XNFbCiNonOlTX4uKYSCecq+OMfcGK8A/f99ThY2YO6yCi+HLtCHNngERI5kBnW2ffAsW0r1bIoiubaBJqq4+j/ewbDw/fQ8tEK9N714QuJD/koeuM/4sDsfozIelgRDSH8DGvve81BY4WFbc3ViFkcZwfH8GRCYHHCgksGcz0JVy3AYuMP+IpjXFaVZJRCZNjnfYNOQ1U8taE+So5TeDTmYs6XtM7BIMtyIpTekkeKuoxECGDogJxovpax9XC/k65JpjqaEhgYyeL0wAuU2xGycngbSp+3IrQ4IytrRR00996dbU9Xl8+ji3Lj2RS1G6AY6FLVdwZ1gKA4x1r23R7duKqhdmJqGveHZ8CpbSM0zP8Xf4Np2FHI3PS/rG7n9U0VqfLDuVyhkmlVmvV9wcipjJuTWnq7XwEH2WyeRGb3oAAAAABJRU5ErkJggg==",
+    "url": "https://www.cinemagia.ro/movie.php?imdb_id={{IMDB_ID}}",
+    "noResultsMatcher": "Sinopsis",
+    "category": "movie_site"
+  },
+  {
     "id": "google",
     "title": "Google",
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB00lEQVQ4y42T3ysEURTH90XZ9eT/kDYRLS8oP98ohuKBIvFC8eJNIQ8U2c3GvvhtbEh+JT8SL8rvFosnKTH7o1Vrmdmd+bp3dmbtj9E69W3mds/5nHPuPVenizNJkrJEUbQSPREJih6JJgAYdX8Z2TQQJxuSGIWTJHqt4GPqIPE8AvY5eNsa4KooAFdqgrelHp9L0/KeAjmKgaiZRe4N3mYGXHGOpnw9HdGVTER6VjN7mmpkR1d5PvxTZgg3lxAc1/DbLPA0ViH08hzfkZFmt9K/4OUY3FW54ErySNCVVvNa52GhgCe6CJ3mgF83IDDbjv8aiXVSgCBXcJCG4F4KJPdWjFNRvz9BveyXCuB/AfuGMMC1mRTQPR8LeKSLj5MMePbSsXY9/GfJfSvfMmB481sF3OuUCcP53RDK2ErksTW44G4Tgp2vIkoGwxUcO0MqYJwOkZEu+JCA2u1OZC9Ww8QyGL2axtm7g8DuMOlgUTFjReGAD622ACQpDCUjkKkOknyV759uMApES8zqCN58kprdHP2A9HQ85UrImS48bKBhtwemZUaupm6nC7ZbOwLBSO+H5JMa/wr1aiVJ7t6cEBz3sIx0wuiQ0GtSdE8PLNJzlP0AcUb9Jl4kdUgAAAAASUVORK5CYII=",
@@ -529,6 +537,23 @@
     "category": "pub_tracker"
   },
   {
+    "id": "yifytorrent",
+    "title": "YIFY Torrent",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAQCAYAAADJViUEAAAC/klEQVQokXXS609bdRjA8V/QIGvPKVSg7TmH0ttRonFGQ6JBl/UyX4iXzWwtQkxM8EZGNt2GsHEpboO4ixURHYwQxsal63qRzXkbkZlolkm2OHVzifrClNJC1I3Fl775+qKJZEH/gE+e3/P8vuLuuhbU7hhKOIqtK4oSjqKGo6jdMcqbDmFYu441a9chhEAIQUGRkZJNzZQ2tCFsbaN4kjmqz2Txf7ZE9Zkc7ngGdzKHFplB9oWQ/XX/4jskM7ZdR1G7phDOPaM0XbjBwe+XOfTDMgM/3aJ17k/8ny9RMziL5A1iaxvFtKEB2RfCHNxBxYGzKO0nEK8MTPH+9b94IDWPM5bm4ekMkR+XufjH37x68hsM3hDuyV/RU4voyRx6ahHH4LconROI+zqP0XppmZ4rNwlfvkH/1Vv0XrlJ6PzvBIbPI/mfR+s9TdmL3ZS+0IFlWz/2vlnUzkmE9c0R7kku4Psky5Yvlwh8muXeeBpnPIN2+ByyN4gpUL+ys6kU664hlI4JhLL7GPpHi7gTCzhjaVyxNJ5TaTyJDPZ3ziH76yjZtJWCIiMFRUYKNR2lfRylcxJh3rwdZfcYSsc4rrGreOLzt+P1W3AcuUjFgbNovaex981S+d5XKHuOI+4sr6DQXkWhvQptfwo9sbAKu8au4TpxHdfYNdyTv1A58HUeW7b14xz5jpJnm1DfOoWevB2bAvWUvbSfu5z3U1hZhbH6CbSe6fw/m59rxrpzENkbRN2bWIVlfx2yL7RSmFSCrWUYNRxFSI9vxLx5O8ZHnkTbl1yNvUGsr3+AVPMM0qO1FD/1MlrPNEr7cYStdQRP7DfMwTf+89myN4h74mc8iQU88Qx6Movjwwso7eMIw0M+TIF6DA+u/9/JFW9/jKW5D8vWCLbWEeyRmXyeZY37sB/+guLaRrS9CfRUDk98Hj2ZxR6ZyUeyoWElkuJSbC3D+Twtze/iGJqjuLYR684hnMOXcQzN4Tx6CbVrCumxjUg1T68czCBT/tpBrDsG+QeiHQyMHvQ3wAAAAABJRU5ErkJggg==",
+    "url": "https://www.yify-torrent.cc/search/{{IMDB_TITLE}}%20{{IMDB_YEAR}}/p-1/all/all/",
+    "noResultsMatcher": "Search 0 Result(s) for",
+    "noResultsMatcher": "The page you requested was not found.",
+    "category": "pub_tracker"
+  },
+  {
+    "id": "watchsomuch",
+    "title": "WatchSoMuch",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAC2klEQVQ4jY2TXUhTARTH7158EV+EEH0RJXtQhGbqcLebpqQY6mZTmwiaH/MjQ+8Slsyvq3C3Od2mNucUvyY25tUMCpKJaJhojYURpkKJPYjswVgIlg7y34NM/JjQD87T4fwP53/OITiO8SNJMoC4AACey9Xh73J1+F/MnSMnI70wTyw25GSkF3Ic43cS1sQfzm7T4UaN/XCjxu5ea2s92tJEA+CdbQCAR2SlJjNZKUmuxPgYrcvV4a9RqdhGpXJP1dYM51wnFl4b0N3Rgolx0/b72YFsjmP8RKLiSHFmpoSiKJIAwHtWllI92kI95zhrol6n+ymnachpGuZeE+Q0jfIyGQw6Pd5MWNYHjMyNxPgYrSA2bjchlj9IEARBHCxJQzyracNOe/ukdWwUGrUaGrUaBp0ecppGg6IO5l4TzL0mlBdJqvPSoowJsfxBIZ8fejqPZzVt2O3I9TjnOvH25QjG+1j0saXoM6hh7jXBOjYKW3cF7No4m10bZ2NZZfA5M3c+VlVuLcrgduR6Zs25eGdMhrP/Fj7bxJgfq8KKRYxNWxLmdaT7g/FOyaVt7G9ohLPTjGdrUYbGsnhIbkdAcjsCFdlRmFTHYucVH4MqCUbbC9YOlqQhPgW+Ldf/mnrRitlpxmPrrkBPwwOMtKdi2XoPw/p89LGl+DKVP3R2naccbWmif69X7XUZ1ahWjYDWWlDZZkKRsgv5texxk+IRNm1J2J55WO/zoL4v6K9vLNTtGIYGQGstoLUWVKtGIFX0QKroQSf7BCsWMeYtssvzEwRBsKwymDEMf/IWljSfdPcKFMpZyJ4ybkWr7u5VV000tveLK5S6r/m17LE3JFVtEJU2HueWN+0WPG6u4zjG70oBADyWVQbfl5TLbwrT96P41N/o+NQ/wuQ8jUhUHOnTPF8kUZQ0LCzcERh4bSYsLNxBURT5X4VeBAJBkEAgCCJJMkDI54f6encv/wAZNJAUcgy6PQAAAABJRU5ErkJggg==",
+    "url": "https://watchsomuchproxy.com/Movie/{{IMDB_ID}}/{{IMDB_TITLE}}-{{IMDB_YEAR}}",
+    "noResultsMatcher": "Director:",
+    "category": "pub_tracker"
+  },
+  {
     "id": "torrentdownloads",
     "title": "Torrent Downloads",
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAYFBMVEUAMF0LNmMIP2wbSXcpU4IqXow8ZpAAf8MRhckAis4okM4lmd40l9YtoN48nNxDoeE2peRKpudMq+RaquZVsuxjsu5muO1tu/d2v+9ywPx8xvaKzPeW0vil1/+u2/2x3/88iP8IAAAAZUlEQVQY02WPOwqFAAwER8kDSxE/eP/TqWAtKLsW+pTgkmaHISTFSE6oSn0r+RhOXYGZABheo2diwLchA8YL0IFK+Z/Ws62wAKNrcCgDfQECmgdw7QDMSi1cVL906f4Ydxwc+bkTQKZNE4WywAAAAAAASUVORK5CYII=",
@@ -843,6 +868,15 @@
     "category": "priv_tracker"
   },
   {
+    "id": "goldies",
+    "title": "Goldies",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAOklEQVQ4jWNgGCzgPxImRhynImTFuMQHoQHoiokRJ+gCfBhdL9kG/Ec3gBDAaeDgMYDiMCA7FgYWAAC9BXeJOf+x+wAAAABJRU5ErkJggg==",
+    "url": "https://goldies.in/index.php?action=search2&advanced=1&brd%5B7%5D=7&brd%5B8%5D=8&brd%5B9%5D=9&brd%5B10%5D=10&brd%5B11%5D=11&brd%5B23%5D=23&brd%5B26%5D=26&brd%5B27%5D=27&brd%5B28%5D=28&brd%5B45%5D=45&brd%5B51%5D=51&brd%5B54%5D=54&brd%5B56%5D=56&brd%5B57%5D=57&brd%5B58%5D=58&brd%5B65%5D=65&brd%5B66%5D=66&brd%5B68%5D=68&brd%5B71%5D=71&brd%5B74%5D=74&brd%5B75%5D=75&brd%5B76%5D=76&brd%5B81%5D=81&brd%5B82%5D=82&brd%5B85%5D=85&brd%5B88%5D=88&brd%5B89%5D=89&brd%5B91%5D=91&brd%5B92%5D=92&brd%5B93%5D=93&brd%5B94%5D=94&brd%5B95%5D=95&brd%5B96%5D=96&brd%5B97%5D=97&brd%5B98%5D=98&brd%5B99%5D=99&maxage=9999&minage=0&search=tt{{IMDB_ID}}&searchtype=1&sort=relevance|desc&submit=C%C4%83utare&userspec=",
+    "noResultsMatcher": "Ajustaţi parametrii de căutare",
+    "noAccessMatcher": "<a href=\"https://goldies.in/index.php?action=login\">te autentifici</a>",
+    "category": "priv_tracker"
+  },
+  {
     "id": "filelist",
     "title": "FileList",
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAElBMVEUsLS8pTFsmZHwje54shKUfotVCbnToAAAANElEQVQI12NwgQIGBwYwYMHLYAwNFYUwAhjgDFUwgyk0EMJgDmAwhegKYGANDWAhymSYMwBdTQvkUareoQAAAABJRU5ErkJggg==",
@@ -892,7 +926,64 @@
     "title": "OpenSubtitles",
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAKlBMVEUAAAAREREiIiIzMzNERERVVVV3d3eIiIiZmZmqqqrMzMzd3d3u7u7///9SrzZ+AAAARElEQVQI12NggAHeC3fBCMHAAjjuTmA6ewfIyGCYxuUgDWRsYpDmdgBJHWSQYbm7GSzVzs7gDWRw3p3AdfYqNmNw2wUAUH0dtNO4HWIAAAAASUVORK5CYII=",
     "url": "https://www.opensubtitles.org/en/search/sublanguageid-eng/imdbid-{{IMDB_ID}}",
-    "noResultsMatcher": "<b>No results</b> found",
+    "noResultsMatcher": "<legend>Movie details</legend>",
+    "category": "subtitles"
+  },
+  {
+    "id": "os_all",
+    "title": "OpenSubtitles_all",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAKlBMVEUAAAAREREiIiIzMzNERERVVVV3d3eIiIiZmZmqqqrMzMzd3d3u7u7///9SrzZ+AAAARElEQVQI12NggAHeC3fBCMHAAjjuTmA6ewfIyGCYxuUgDWRsYpDmdgBJHWSQYbm7GSzVzs7gDWRw3p3AdfYqNmNw2wUAUH0dtNO4HWIAAAAASUVORK5CYII=",
+    "url": "https://www.opensubtitles.org/en/search/imdbid-{{IMDB_ID}}",
+    "noResultsMatcher": "<legend>Movie details</legend>",
+    "category": "subtitles"
+  },
+  {
+    "id": "os_ro",
+    "title": "OpenSubtitles_RO",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAA/ElEQVRoge2awQ7DIAxD+Qd+eH/ODqt6mDRwHEOaKUiWesCOH+XWtt77aK2l1NU9vohT18Nr2HV5x+B0+wkVQAHIAfIqvEABRBcoAGjjbKnKkPl8cQWEdZkAmLWzPAxgKcdCWHxuAKaQau+3bwnAhlu8bP4Pacqjfu+MrQBIxjEANtD6FmQAypM5fI3iAZwzzwPMIIgOMQAoBJATB8DAPBYABUoDMANJBQB02/vqFQCLXO3wvwJQlYcBvBC7Tt8FgBaxeMQHszbMBjLA4mzcjCzmRJ35umGea+HI9g+0FFdeRRPAgxVeoACiCxTA5yH9R74CKAAnQFZl/93mDebmbn4L3YYTAAAAAElFTkSuQmCC",
+    "url": "https://www.opensubtitles.org/en/search/sublanguageid-rum/imdbid-{{IMDB_ID}}",
+    "noResultsMatcher": "<legend>Movie details</legend>",
+    "category": "subtitles"
+  },
+  {
+    "id": "oscom",
+    "title": "OpenSubtitles.com",
+    "icon": "data:image/png;base64,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",
+    "url": "https://www.opensubtitles.com/en/en/search-all/q-tt{{IMDB_ID}}/hearing_impaired-hearing_impaired-1/machine_translated-machine_translated-0/trusted_sources-trusted_sources-0",
+    "noResultsMatcher": "No results found",
+    "category": "subtitles"
+  },
+  {
+    "id": "oscom_ro",
+    "title": "OpenSubtitles.com_RO",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAFL0lEQVR4nO2bf2QcaRjH3whxIRwlhHIcoXSVUo73fb7PGCfHEcKRdYRSSv4KIYQQclmOcBxHOcJRwlGOEsJRyhJCWUooOSWEEEI2PafVZsbu/dF30snu+87Ozv6YmU0fnn/WzLvv9zPP8877vs87QvTYXNcdY+ZpAItKqU1m3gNQYebX5XK5Xi6X68z8Wv+2p5TaBLDIzNOu6471un89MSnlJBGVlFLlQGRSB7BLRCUiupW2rkgrFAojAOaZec8gIpEb2nkBYL5QKIykrffSpJSjRLQA4LgbouPAUEqdAlhKPUWIaEZKedhL4VEgABwB+KHvwl3XnWDm7X4KbwFix3Xdib6IdxznWyI6SUu4DYRS6pSIvuupeABLaT71mNGw0ivxv2ZNuA0EMz/qqngiepx18Y0QAPxZLBaHOxYPYCMv4g0Qfu9IPDMv5028AUKyMQEA8iq+EULbbwdmHg9edWmL6AYEpdRpW/OEYJIT1bCU8hBAJSN+0AoCgJ244qdt4vVSdk5KebOtkOqT6WX3rg0CM89GNlAoFEaCdbqhkRWxXq8n8XpdJHORzAEsWaLgOHIBBT3TMzz5ZSGEyAsAHQ3LFghL1qdvGviI6O/LixKIH1q/8C68Ic/3hef74jy2vxXn/pDwfCE8X4jzmO75QvwrhBDFYnFYp+wVAER0IqUcbQJARA8bxSulfCnlZBOAn2qfvCWEWr1WE8lcJPOQplsAPhggLJjCvxL59HOSAr4QtQZdTw1psH9Fl+M4dywD3/wAALhvGQvuhcO/ZAKglJJXAMQK+WwBUErdtQDYCFN6aQJwJf9zCkBKedMCYD+44EbExGc87wBc1x2zTYxc150QAL63AWjafs4hAJ0GvnVmGCx5Dfn/X2NDeRwEdYqfWdJgVSilNi0RcJxTAO8NAI5MAJRSWyIoXxkAHA0QgKbVok6BPSGlfHUNAOybAEgpDwV0ScsAYH/QAQA4EwDeXAMALywAPnwG8DkFgIPrOggCOBLBgYZBARDeDwgBML4GAVQuy16DMhGyADBOhJj5SbKpcHhHqJWHdoQ8T/hxvJMdobanwohYDDUVFy+fqu/F9aH1C+/d+y+qvi+qtZp4Hsd9X1T9t6Ia2hOsxnVPiH8aAUQuhtpaDufQopbDUsobQoiP78lYGyKfGnyG9KtBjf7M9MBabohoABuWesA3hgZHmXk7A4IbfcdU9LBtiRHRL5cXMfNtC4AHSUMvK8bMDywRcO/KhTBsizPzdkr97poB+MuQ+6+aLiSiBVNhhJlvx/0zXY7qdaj/HLc/UspJGAojABZNF49azgRU4p61Yea1rACwlcYAnFkLpLAUR4moFOdPs2QAVky5z8xr1pv0K864OiSiUldOXfXBAKxaRv6TqampL1vdPBdxOqRCRA+zekCCiGZgWPuHwn8uVkMAdmKcDzqw5OgfSqlNkzPzIwDzLfw32/36YwrTf76M6qvWshubJDOP21Ihbx46E9Be1OoZ1Ls8Qwi2vUwz2riRMDsAAO4nEh+YrXSedW8qgXdizPwkTxB0X5927bVdLBaHI2qImXI96D3uyZyFmdeyen441K/uhH0EhGkAZ1mCoPvyhohmeio+MABfEdHztKMh9L1Q2XGcr/siPmxE9GMaH1CFjsGfoNPXXKemF1CrQVr0EkSo/TMAqy0XNv200Bek+w1fcXVFdLCRiSx8MdrKHMe5A2CjEUYS16I3lFJ309aVyJh5nJlnmXlNKbWFj6u3JjBaaEUptUVEJX1Pz+sS/wPE9ArvgLgLFgAAAABJRU5ErkJggg==",
+    "url": "https://www.opensubtitles.com/ro/ro/search-all/q-tt{{IMDB_ID}}/hearing_impaired-hearing_impaired-1/machine_translated-machine_translated-0/trusted_sources-trusted_sources-0",
+    "noResultsMatcher": "Nici un rezultat gasit",
+    "category": "subtitles"
+  },
+  {
+    "id": "titrari",
+    "title": "Titrari.ro",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAUklEQVQ4jWP4TyFggDMYGOAYxscljsJHMY2BgWg2RQag8KnqAnIAhgEEA42BgbABxNAkuwDdAopdQLtAxOYiolMiLgPw0sS6AKeB5LiAJC8QAgCeHTD6g6g9uQAAAABJRU5ErkJggg==",
+    "url": "https://www.titrari.ro/index.php?page=cautarecutare&z7=&z2=&z5={{IMDB_ID}}&z3=-1&z4=-1&z8=1&z9=All&z11=0&z6=0",
+    "noResultsMatcher": "1-0/0",
+    "category": "subtitles"
+  },
+  {
+    "id": "subs_ro",
+    "title": "Subs.ro",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB70lEQVQ4T52Sz0siYRjHv69jvqOORa42IsUSSVCHyPYW5F8QQYeiQ3TrFlgJQYfYICEio0BIy4XYCoSOQf9BdQvskEGwG2Sjjf1YCq01k2ma3WaaKFr3vb3v8/1+3uf78JDJNjrkPpPC/AXKOqcuggsn00m+8VT69KssryoWXADZoFT6P/sfF4m/AzBQCtfgoKwgEFdWUMrl3vyHfH8D8GVvD5nlZaSXlsD396N2ZEQxJ3w+lPJ5HYjEWFYXwbu9rQh+jI3hZncXnNeLhrk5JHt74ejuRiYW0wMWXwAMZjNatrZUQS6RANfairRsysbjyru1uRn5ZFLVkHnWrHbgGhjA2eqqUmyMRpR2xbU11E9NIR2JoKrDh+LVJVKzIQ0wa9YAvAwQ/wLqZ2Zwn8kgu74Oj2x+Pjc7OxAWFjRA8AWAsdnQEA4rxduDA1Q4naioqcFPvx8P19dw9PTg7ugI+f19DfDVYtEN0SNPvpBKIRUMKiJPNIrjQECJY+/qwtXmpn6I468ABpbF5+lpnExMwFhdDffoqGoQQiHcC4IeEHgFeK7SujrY2tth4nmY3G48ZS/JMYrn57g9PNQiDFutH64yYRgwHAejw4GiKOq2kvjtFumhQHRt/euFVkogQ02muCFr7Cv+Lg9COQkFeyn6CGYzrvfqxi2AAAAAAElFTkSuQmCC",
+    "url": "https://subs.ro/subtitrari/imdbid/{{IMDB_ID}}",
+    "noResultsMatcher": "<div class=\"box-content error404\">",
+    "noResultsMatcher": "Nu exista subtitrari",
+    "category": "subtitles"
+  },
+  {
+    "id": "regielive",
+    "title": "RegieLive",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABRUlEQVQ4T2NkIADempvz/fv2vgGkjJ2NoY3v7K03yFoYCRnwylRbgvH7r0MMjIzcLMxM1oIXbjzAa4D34Q+C/z/9kv//758sAzPD64X1zg+INsBzy7O0//8YUhkY/yv//88gCLR1w+Im10yiDABp/vefoY/h/39uoMavjAz/f/1nYJq/uMmlm6ABIGf/ff9t13+G/yYgW5mYmToZ//97zsjH9Wl+kTU7QQO8tr4y+Pfv977/DIxsTAxMkdt9JTbDAoqoQEQxgJnJZbuXxIlRAxBhAE3KW4BhYglMH3Gil24vx0iJ+AIRpPi1rlodkKoF4s9AfAWIz/znYO0SO331BTgvEDIA6ooCYCKLAaYTRaCWV7B8ATYAlJD+ffhhA2IzCXAc2Wor8B5bJntvoKHwh4FB4f/ff1zMXIJHhE+e/EQwNxLKrQABCvARxzdFEQAAAABJRU5ErkJggg==",
+    "url": "https://subtitrari.regielive.ro/cauta.html?s={{IMDB_TITLE}}",
+    "noResultsMatcher": "Nu au fost găsite subtitrări care să corespundă criteriului de căutare.",
     "category": "subtitles"
   },
   {
