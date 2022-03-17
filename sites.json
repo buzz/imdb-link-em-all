@@ -589,6 +589,7 @@
     "title": "HDSpain",
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAYFBMVEUQEyQWHi0mKzgRQnU6P0wsTHxLTFUxWYhTXWk9Z5Fga3dRcphvd4Fhe5t/hIdwiamCi5d/lrKHmbGWnqmUpburrLGbr8ertsS2vse/x9DL09rT2+Le5Ojl5+Tr8fP4/PwJwkjrAAAArUlEQVQY012KWXLEIAxEW8Q7ZmQWDxbywP1vGTL+y+uqrlctoclZWj0fpDbUAbEWwsOkKAaXnjDx9Yo7YcNFdJUDkxBJ2TEhAsb0S4QRObCgjzFOOPpTzgZ/0/Z+d9lgFoMlYcCeAlFYiMywpYQQvPe9wle8B3Mo9b4/PRqYGc7ph90X1V6wNjdxNojzKtZarOvKpdpcJXP3FfPsHDfWND9gHK/7zrO68QE///gFOwENOGpGQOcAAAAASUVORK5CYII=",
     "url": "https://www.hd-spain.com/browse.php?{{IMDB_TITLE}}",
+    "noAccessMatcher": "Olvidaste tu contrase&ntilde;a?",
     "category": "priv_tracker"
   },
   {
@@ -854,6 +855,7 @@
     "title": "Partis.si",
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAf5JREFUOI2NU0toE1EUPTdJhxEDkcFiHNy4EKHSVVeRiNDGH4gfCAZKK5hC7U5xm5ULCdToSqa4cuFCi4GagYLWJlgJRVyFSLpyZYV0hkk0MJDJZ+a6qI6TdKqe5XnvnHfO417ABzbzuB/vh8A+5KTNPP2/Ji4c5lFmTr5YXn45MzvbXykU7v1LQx7xfDabXazX6xHDMGBZFhzHgSzLpSeKcilE1N23gsMcy2Qyyrft7Yiu6xAE4SsAJKamHi4pytUQUZfXY1d4PTbmG6NSrT66vbDA6bk53WYeq1Sr82vF4h3vHd44J/D7xCYXT094+RAAaJqGdruNG6nUUpBoy2aOBolKA13Pvuvyh8sPwL01fjt+ii583nErnE8kPgUDARyT5RYADIv/FA69ATsm+tbiwB8AWJEk6Uu5XJ7wFf5OEX9to2dWGs3v05wXJdeAiLq5XO5urVa7zsyjw0L+OCNw+drucHW0A/2OGQQQ9yYAEa2m0+nHqqre3/N0p6GgXRe4cDRuGM3JX2wY8MyB+9ruBG4RUYVLZyJw+k8No5E6PKJtGK1O3HYQDIswD4o4QUlrZ4+Ba7R68jjQ39SNVpR7pstLYTRHQrhFSUv1TTBgkhejAJ5pP3DxyCE8B1ACoFLSav5NN2wicF58xXnRd0N9t9ELSlpdADcBCH7nPwH5s9ovTMQ+qQAAAABJRU5ErkJggg==",
     "url": "https://www.partis.si/torrent/show?keyword={{IMDB_TITLE}}%20{{IMDB_YEAR}}",
+    "noAccessMatcher": "Pozabljeno geslo?",
     "category": "priv_tracker"
   },
   {
