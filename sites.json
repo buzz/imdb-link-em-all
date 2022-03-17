@@ -1014,5 +1014,13 @@
     "url": "http://www.argenteam.net/search/{{IMDB_TITLE}}%20{{IMDB_YEAR}}",
     "noResultsMatcher": "No se encontraron coincidencias",
     "category": "subtitles"
+  },
+  {
+    "id": "yggtorrent",
+    "title": "Yggtorrent",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB+UlEQVQ4y+2RT0sUYQCHn/edcWfbP+666WoDtqTuqrhkqIERXQoiJIo6lR2yYwV9hI59g+gSRBFEh+jsoTQtzX9UkOUhtTzs5trq7OyuujO783YIhKIvEPQcfzw8lx/884g/h6cVT+56oFAoBUL8kjwFhoRhv+b9NXBz5Vt3VchLruumEEJKTduTlFIIBAg8TYhlXXlP7rYlFvcC11e/9JUs+2HmzVS6IZ2mYllYn5eobm+jB4PUBQI4tg2APxbDPH5sKRgKXr3XnpzV85v58J3s2rWidDszUxNkJ8cpr+dYezVJ+9BpUIqV0RccONpP9NBBNj4uEevr6tL86sbtyZcLsmgVTp4Jh5Oazy2krpwnMzODY1uYA0cItDQRaG7Cq9XwxyKEWk2EBKl2nEFNN2+l0r369If349Nd0ZGqrDYaDT6MSJjU8FmC8f2sPBulmFkn3p3E2KeTm50DodDYsaVwfuRLtiYvX7hY2CrmxzRRcb+/fksgHsU81Us5l8Upl0FCpM2kUipRdRzi/Z3Iehmd2Fpd6GzvmNMBrPlPD+oPJxqbehIjzQMdMc2PME/0EGqJoBk+QokWil+zeI5LpKN107Psx8XFtfu/3dg3fK6udWiwTQ8aZs2tSiElut+HUopaxUEzfAghvN2NQjY79m55/tFzl/8A8BNRncPzQBICSgAAAABJRU5ErkJggg==",
+    "url": "https://www3.yggtorrent.re/engine/search?name={{IMDB_TITLE}}%20{{IMDB_YEAR}}&description=&file=&uploader=&category=2145&sub_category=all&do=search",
+    "noResultsMatcher": "Aucun résultat",
+    "category": "pub_tracker"
   }
 ]
