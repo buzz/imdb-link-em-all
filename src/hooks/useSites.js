@@ -29,7 +29,9 @@ const useSites = () => {
   const [sites, setSites] = useState([])
 
   useEffect(() => {
-    loadSites().then((s) => setSites(s))
+    loadSites()
+      .then((s) => setSites(s))
+      .catch((err) => setSites(err.message))
   }, [])
 
   return sites

@@ -20,6 +20,10 @@ const App = ({ imdbInfo }) => {
     }
   }, [config])
 
+  if (typeof sites === 'string') {
+    return sites // Display error message
+  }
+
   if (!config || !sites.length) {
     return null
   }
