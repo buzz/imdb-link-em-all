@@ -974,7 +974,8 @@
     "title": "Subs.ro",
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB70lEQVQ4T52Sz0siYRjHv69jvqOORa42IsUSSVCHyPYW5F8QQYeiQ3TrFlgJQYfYICEio0BIy4XYCoSOQf9BdQvskEGwG2Sjjf1YCq01k2ma3WaaKFr3vb3v8/1+3uf78JDJNjrkPpPC/AXKOqcuggsn00m+8VT69KssryoWXADZoFT6P/sfF4m/AzBQCtfgoKwgEFdWUMrl3vyHfH8D8GVvD5nlZaSXlsD396N2ZEQxJ3w+lPJ5HYjEWFYXwbu9rQh+jI3hZncXnNeLhrk5JHt74ejuRiYW0wMWXwAMZjNatrZUQS6RANfairRsysbjyru1uRn5ZFLVkHnWrHbgGhjA2eqqUmyMRpR2xbU11E9NIR2JoKrDh+LVJVKzIQ0wa9YAvAwQ/wLqZ2Zwn8kgu74Oj2x+Pjc7OxAWFjRA8AWAsdnQEA4rxduDA1Q4naioqcFPvx8P19dw9PTg7ugI+f19DfDVYtEN0SNPvpBKIRUMKiJPNIrjQECJY+/qwtXmpn6I468ABpbF5+lpnExMwFhdDffoqGoQQiHcC4IeEHgFeK7SujrY2tth4nmY3G48ZS/JMYrn57g9PNQiDFutH64yYRgwHAejw4GiKOq2kvjtFumhQHRt/euFVkogQ02muCFr7Cv+Lg9COQkFeyn6CGYzrvfqxi2AAAAAAElFTkSuQmCC",
     "url": "https://subs.ro/subtitrari/imdbid/{{IMDB_ID}}",
-    "noResultsMatcher": "<a href=\"https://subs.ro/contact/\" title=\"Contact\">contacta departamentul tehnic</a>",
+    "noResultsMatcher": "<p class=\"title-404\">404</p>",
+    "noResultsMatcher": "Nu exista subtitrari",
     "category": "subtitles"
   },
   {
