@@ -264,8 +264,8 @@
     "id": "myduckisdead",
     "title": "My Duck Is Dead",
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAMFBMVEUAAQAJDAgQDCAiHi4hIyE2ODU+PEpQUk9oaGaMj5Clp6S7vLvU1tPi5OHu8O38//uJC6zlAAAAX0lEQVQI12NggANGECEAxOwBQFwAYixgYOByAEldjWipBkkz7Xv/96UCiNH/7t03EIN93bt3N8GK/7x7dz8ApHhV34uVYBMl5+yaADF77isBCEOiBWobswGUwWTAgAQA1UYaf7VZ5TwAAAAASUVORK5CYII=",
-    "url": "http://www.myduckisdead.org/search?q=tt{{IMDB_ID}}",
-    "noResultsMatcher": "No posts matching the query",
+    "url": "http://myduckisdead.org/?s={{IMDB_ID}}",
+    "noResultsMatcher": "Couldn&#039;t find what you&#039;re looking for!",
     "category": "filehoster"
   },
   {
