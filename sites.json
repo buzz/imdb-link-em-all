@@ -922,6 +922,15 @@
     "category": "priv_tracker"
   },
   {
+    "id": "zamunda",
+    "title": "Zamunda",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAYFBMVEVMoPldofBQpP5dqP12pNxrqOeCptR4tP6asMh/u/2Wt9+bt9ipwNiVxPquwtS6ytuqz/620fGz1P7J3O/D3v3W3ePS3uzM5Pzf5u7n6ebf6/zu7+zq8fj1+v37/Pn++/999v/9AAAAqklEQVQYGQXBwXHDMAxFwQeQIuVMnIkbcP+lJTdfREui8OFde5I2I6D44iT2JGeUClzQwDMP3ZpL1pre4OysMP7/XslqJ36oJ3kkI4xV8mGZygEZmMXlhqQ9gQhNe/uugA2gEFEuv97nOAF6zGCmLdGhbgC/y7jcWx4VAJivsVf/qmzaANhm1pu3LiYAgHrxcl8lAEDrvXguj5+aQkr/fizYE+I8D+G9dYcPc99n6tTCltoAAAAASUVORK5CYII=",
+    "url": "https://zamunda.net/bananas?search={{IMDB_TITLE}}",
+    "noResultsMatcher": "Sorry, nothing found",
+    "noAccessMatcher": "Not logged in!",
+    "category": "priv_tracker"
+  },
+  {
     "id": "os",
     "title": "OpenSubtitles.org (en)",
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAKlBMVEUAAAAREREiIiIzMzNERERVVVV3d3eIiIiZmZmqqqrMzMzd3d3u7u7///9SrzZ+AAAARElEQVQI12NggAHeC3fBCMHAAjjuTmA6ewfIyGCYxuUgDWRsYpDmdgBJHWSQYbm7GSzVzs7gDWRw3p3AdfYqNmNw2wUAUH0dtNO4HWIAAAAASUVORK5CYII=",
