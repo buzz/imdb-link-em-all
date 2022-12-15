@@ -1121,5 +1121,34 @@
     "url": "https://www3.yggtorrent.re/engine/search?name={{IMDB_TITLE}}%20{{IMDB_YEAR}}&description=&file=&uploader=&category=2145&sub_category=all&do=search",
     "noResultsMatcher": "Aucun résultat",
     "category": "pub_tracker"
+  },
+  {
+    "id": "Flixtor",
+    "title": "flixtor",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAp0lEQVQ4y52S3Q3EIAyD2YUBOkYHKLdMpmCbU7bow43QHfrYBsmRrOsfKZIlQHyGOKT0MD7f32RaTGrKKTIMGAFvUH0DN80wkDdwMQ0oQaJwq18At/2KtWCee+AVz3cTpUy0F97IZKBMlgi8Yr/wWe6zB9YLj36793mmtM/g6QDDQP9q5KDuYRjkk/a4yT188Q+E0i4hmAw8kxgMg0qZxGDKRL2tT+d3UYeBxHyLOHEAAAAASUVORK5CYII=",
+    "url": "https://flixtor.cam/browse?keyword={{IMDB_TITLE}}",
+    "category": "streaming"
+  },
+  {
+    "id": "Flixtor",
+    "title": "flixtor",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAp0lEQVQ4y52S3Q3EIAyD2YUBOkYHKLdMpmCbU7bow43QHfrYBsmRrOsfKZIlQHyGOKT0MD7f32RaTGrKKTIMGAFvUH0DN80wkDdwMQ0oQaJwq18At/2KtWCee+AVz3cTpUy0F97IZKBMlgi8Yr/wWe6zB9YLj36793mmtM/g6QDDQP9q5KDuYRjkk/a4yT188Q+E0i4hmAw8kxgMg0qZxGDKRL2tT+d3UYeBxHyLOHEAAAAASUVORK5CYII=",
+    "url": "https://flixtor.life/browse?c=movie&m=filter&keyword={{IMDB_TITLE}}",
+    "category": "streaming"
+  },
+  {
+    "id": "fmovies",
+    "title": "FMovies",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABiElEQVQ4y4WTO0vDUBTHO4i6i9KHUAcf4Obq4qC4dCg4ip/A3a8ggoOgoJOLr8FCEdtSEQoO2icqaBXFKlRrH7a19JFgC/X4PyGRkCbphR9J7r3nd869nFgsquHwR3vBHDgAadAELZABx8AF+i16AwuDYB2UABlQAdvArg22yhl+eaPdWKDgBw4luE+2SovDYDwYk95t5pIdjmWBWy5NyjwajNNe6p3WkimaOk+Q1Rcxqohj3CzwKpO8ceIsTtF8iX5EgWK5L1pOPNIYKmKRjsTLgpxWEM4XIRAlKvU6naY/aeHyjpyBDkGOBW0jgSAIJIIm3gvVKq3cPGmP0+4q4GexVqOj1w+avbjVFWT1BC0E1hsNCmXytBRJ0kggRjZfxxGyLPBoBVe4vIdiGSU/0yS+DS6Q8Vjk9vxWJp3ItBi+p+nQNTJGzJqKY1xKI22qFzmjrXs3bvG/o3TjEDhUX6gJ3O4n3P7a/2EArIKCSXAZbHQEqyQ9YAbsghfQACJ4A/tg/r9sefwB9ZddWxDeLAcAAAAASUVORK5CYII=",
+    "url": "https://fmoviesto.site/search/?q={{IMDB_TITLE}}",
+    "category": "streaming"
+  },
+  {
+    "id": "ev01",
+    "title": "ev01.to",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAM1BMVEXWh1gAAAAUBAQ1AwNWAgYWJxCSAgYRKzTIAAb7AAk4OjkKTkZERAhnb2Z4cgakmwWYmpdxYaI+AAAAAXRSTlMAQObYZgAAAIZJREFUGFdtz0FSAkEMAMBOBhDQ/3+VdckkHjxZ5Q+6A9zBAYHH3jMi1noR3GuLJdtcDuHx3p9aVO9Z11e4bSQlF2fciVEXNdfKJb1LVXZnmD1SM7nbTpZJBh83T2KfUqCrfLdpUsTE7szuDiHc6kvJZBxxppWQuvea9UvvCRPP1se/ub/9H2wwUAHX3VB7AAAAAElFTkSuQmCC",
+    "url": "https://pahe.sbs/?s={{IMDB_TITLE}}",
+    "noResultsMatcher": "Nothing Found",
+    "category": "streaming"
   }
 ]
