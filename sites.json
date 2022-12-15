@@ -1150,5 +1150,13 @@
     "url": "https://pahe.sbs/?s={{IMDB_TITLE}}",
     "noResultsMatcher": "Nothing Found",
     "category": "streaming"
+  },
+  {
+    "id": "privatehd",
+    "title": "PrivateHD",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAM1BMVEVAAAAAAAA3JwAvKxY7MhJpVRCJbQKAdUGkjCqxjg+tl0q6mBvEnQi2nULesgvVsjHfwl+tmDNGAAAAAXRSTlMAQObYZgAAAGZJREFUGFdlz4sKwCAIBVCrVXOW9v9fu5uMvbog5aFAiYjCHZp52ov+8O0hIVUcNVXPBjgGYPTh6YBuABPbc84mADFmBhR4axNUBKUvwE2bMr44sAOrhwFxvi2xeGJYB1tGX+G3/gk23wQeQ8o1ZAAAAABJRU5ErkJggg==",
+    "url": "https://privatehd.to/movies?imdb={{IMDB_ID}}",
+    "noAccessMatcher": "Login to PrivateHD",
+    "category": "priv_tracker"
   }
 ]
