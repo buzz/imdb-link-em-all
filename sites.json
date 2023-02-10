@@ -1158,5 +1158,12 @@
     "url": "https://privatehd.to/movies?imdb={{IMDB_ID}}",
     "noAccessMatcher": "Login to PrivateHD",
     "category": "priv_tracker"
+  },
+  {
+    "id": "30nama",
+    "title": "30nama",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALLSURBVDhPXVNdSJNRGH53vm/fNvmmmzRpStGilT84WuW8MxApyCKquyTC1g8Fid1EF9pFdhGBEUYEJUWMIiGLCO/CUulmGsZA+3E4xbbPi+bGNje/n332ntM3UB84nHOe8z7vOe9zzjHBFgz6/dXbBaEzqmmtkqJ4KOcWhNgenh9dVpQXF6enEyzQwMYE5H0gcGusUOj9lMtZs7pu0P9hJwTaRHHtsM3WdyocvocUCyglIK8CgdDTVOrsgqIYFADP86zXNI31FLsEAS47na87wuFzONU5Sg43N/c8TqW6Fg0xwd3a249Bd3c3tLS0sPn8fAzW19chXSxCVFUbH3q9xaF4fNz0vKFhx3dC5j5kMhYqrq+rgwvBIPh8jSxZOp0GSZKgUChAKBSCmZlZxp8sL5f367qXuEQxiDUzMcF2vLoadE2FaDQKsiyDw+GAOkxqxaPTtVLNVEO13IGqqrtf8/mdBg+HclnwzP6AFNa/YjKBjmb++fwF7G+GoP5vEt5lMqBhKSq23YJg5vwuV9+MLNsNPUzm8zC7ugpNCQmSkQhI4xMgYj+wvAx+mw1GslmWgMJjNvMEh5vewn08Jg3sRUEtmtqAZfTg+Bf2W0G1xMXzi8ac4TYGi+j6o5oaoJdIs5d23IptqCW1gjBqRUEJpysqYATrvIOJNsqq0BMaVzSS0fE+1HJtbvcCTq7NKQp7E04MvOFyAY8GetB5Gu7kOOisrITBZBJixls5Koqqg+OCJDg1Nd9aVvbAbTazhbFcDq7H40xInV7DRseUm0BzKWgs1VAtM/AggLmrqWn4SSp1QlJVFkRBT0Gx0QMqvup0fhyYnDzzDfdgx5bwTS8lEm9ver1WzmRqXlJVUkSe/pbSl7JgsiN2u9ZRUdHfHw5foWLKb7pCipc+3167zXbppyy3rug6+86VhMRqLZbRbKHw7Hwk8psFMgD8A0gOJK1Z8ITcAAAAAElFTkSuQmCC",
+    "url": "https://30nama.com/search?q=tt{{IMDB_ID}}",
+    "category": "movie_site"
   }
 ]
