@@ -12,7 +12,7 @@ const detectLayout = (mUrl) => {
   }
   // 2) "redesign2020": Redesign 2020
   //    https://www.imdb.com/preferences/beta-control?e=tmd&t=in&u=/title/tt0163978/
-  if (document.querySelector('[data-testid="hero-title-block__title"]')) {
+  if (document.querySelector('main section > .ipc-page-content-container')) {
     return ['redesign2020', 'title', 'main > * > section > div']
   }
   // 3) "new": The old default (has been around for many years)

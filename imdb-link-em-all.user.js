@@ -156,7 +156,7 @@
     title: title
   }) : null;
 
-  var css_248z$5 = ".Sites_searchBar__1cpJl {\n  display: flex;\n  flex-direction: row;\n  margin-bottom: 1em;\n}\n\n  .Sites_searchBar__1cpJl .Sites_searchInput__1iJDL {\n    background-color: rgba(255, 255, 255, 0.9);\n    border-radius: 3px;\n    border-top-color: #949494;\n    border: 1px solid #a6a6a6;\n    box-shadow: 0 1px 0 rgba(0, 0, 0, .07) inset;\n    display: flex;\n    flex-direction: row;\n    height: 24px;\n    line-height: normal;\n    outline: 0;\n    padding: 3px 7px;\n    transition: all 100ms linear;\n    width: 100%;\n}\n\n  .Sites_searchBar__1cpJl .Sites_searchInput__1iJDL:focus-within {\n      background-color: #fff;\n      border-color: #e77600;\n      box-shadow: 0 0 2px 2px rgba(228, 121, 17, 0.25);\n}\n\n  .Sites_searchBar__1cpJl .Sites_searchInput__1iJDL > * {\n      background-color: transparent;\n      border: none;\n      height: 16px;\n}\n\n  .Sites_searchBar__1cpJl .Sites_searchInput__1iJDL > button {\n      margin: 0 0 0 0.7em;\n      padding: 0;\n}\n\n  .Sites_searchBar__1cpJl .Sites_searchInput__1iJDL > input {\n      flex-grow: 1;\n      outline: none;\n      padding: 0 0 0 0.5em;\n}\n\n  .Sites_searchBar__1cpJl .Sites_resultCount__2p4vG {\n    font-weight: bold;\n    margin-left: 2em;\n    min-width: 140px;\n    text-align: right;\n}\n\n  .Sites_searchBar__1cpJl .Sites_resultCount__2p4vG > span {\n      color: black;\n}\n\n.Sites_siteList__1Y3wR .Sites_catList__6txMX {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.Sites_siteList__1Y3wR .Sites_catList__6txMX h4 {\n      width: 100%;\n}\n\n.Sites_siteList__1Y3wR .Sites_catList__6txMX label {\n      align-items: center;\n      color: #444;\n      display: flex;\n      flex-flow: row;\n      padding: 0 6px;\n      transition: color 100ms;\n      width: 25%;\n}\n\n.Sites_siteList__1Y3wR .Sites_catList__6txMX label:hover {\n        color: #222;\n}\n\n.Sites_siteList__1Y3wR .Sites_catList__6txMX label.Sites_checked__3D9QY span {\n        color: black;\n}\n\n.Sites_siteList__1Y3wR .Sites_catList__6txMX label .Sites_title__1Gu_F {\n        flex-grow: 1;\n        overflow: hidden;\n        text-overflow: ellipsis;\n}\n\n.Sites_siteList__1Y3wR .Sites_catList__6txMX label input {\n        margin-right: 4px;\n}\n\n.Sites_siteList__1Y3wR .Sites_catList__6txMX label .Sites_extraIcon__jwLPa {\n        height: 12px;\n        margin-left: 4px;\n        width: 12px;\n}\n\n.Sites_siteList__1Y3wR .Sites_catList__6txMX label .Sites_siteIcon__3uzGl {\n        flex-shrink: 0;\n        margin-right: 6px;\n}\n";
+  var css_248z$5 = ".Sites_searchBar__1cpJl {\n  display: flex;\n  flex-direction: row;\n  margin-bottom: 1em;\n}\n\n  .Sites_searchBar__1cpJl .Sites_searchInput__1iJDL {\n    background-color: rgba(255, 255, 255, 0.9);\n    border-radius: 3px;\n    border-top-color: #949494;\n    border: 1px solid #a6a6a6;\n    box-shadow: 0 1px 0 rgba(0, 0, 0, .07) inset;\n    display: flex;\n    flex-direction: row;\n    height: 24px;\n    line-height: normal;\n    outline: 0;\n    padding: 3px 7px;\n    transition: all 100ms linear;\n    width: 100%;\n}\n\n  .Sites_searchBar__1cpJl .Sites_searchInput__1iJDL:focus-within {\n      background-color: #fff;\n      border-color: #e77600;\n      box-shadow: 0 0 2px 2px rgba(228, 121, 17, 0.25);\n}\n\n  .Sites_searchBar__1cpJl .Sites_searchInput__1iJDL > * {\n      background-color: transparent;\n      border: none;\n      height: 16px;\n}\n\n  .Sites_searchBar__1cpJl .Sites_searchInput__1iJDL > button {\n      margin: 0 0 0 0.7em;\n      padding: 0;\n}\n\n  .Sites_searchBar__1cpJl .Sites_searchInput__1iJDL > input {\n      flex-grow: 1;\n      outline: none;\n      padding: 0 0 0 0.5em;\n}\n\n  .Sites_searchBar__1cpJl .Sites_resultCount__2p4vG {\n    font-weight: bold;\n    margin-left: 2em;\n    min-width: 140px;\n    text-align: right;\n}\n\n  .Sites_searchBar__1cpJl .Sites_resultCount__2p4vG > span {\n      color: black;\n}\n\n.Sites_siteList__1Y3wR .Sites_catList__6txMX {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.Sites_siteList__1Y3wR .Sites_catList__6txMX h4 {\n      width: 100%;\n}\n\n.Sites_siteList__1Y3wR .Sites_catList__6txMX label {\n      align-items: center;\n      color: #444;\n      display: flex;\n      flex-flow: row;\n      padding: 0 6px;\n      transition: color 100ms;\n      width: 25%;\n}\n\n.Sites_siteList__1Y3wR .Sites_catList__6txMX label:hover {\n        color: #222;\n}\n\n.Sites_siteList__1Y3wR .Sites_catList__6txMX label.Sites_checked__3D9QY span {\n        color: black;\n}\n\n.Sites_siteList__1Y3wR .Sites_catList__6txMX label .Sites_title__1Gu_F {\n        flex-grow: 1;\n        overflow: hidden;\n        text-overflow: ellipsis;\n}\n\n.Sites_siteList__1Y3wR .Sites_catList__6txMX label input {\n        margin-right: 4px;\n}\n\n.Sites_siteList__1Y3wR .Sites_catList__6txMX label .Sites_extraIcon__jwLPa {\n        height: 12px;\n        margin-left: 4px;\n        width: 12px;\n}\n\n.Sites_siteList__1Y3wR .Sites_catList__6txMX label .Sites_siteIcon__3uzGl {\n        flex-shrink: 0;\n        height: 16px;\n        margin-right: 6px;\n        width: 16px;\n}\n";
   var css$5 = {"searchBar":"Sites_searchBar__1cpJl","searchInput":"Sites_searchInput__1iJDL","resultCount":"Sites_resultCount__2p4vG","siteList":"Sites_siteList__1Y3wR","catList":"Sites_catList__6txMX","checked":"Sites_checked__3D9QY","title":"Sites_title__1Gu_F","extraIcon":"Sites_extraIcon__jwLPa","siteIcon":"Sites_siteIcon__3uzGl"};
   styleInject(css_248z$5);
 
@@ -792,7 +792,7 @@
   const useSites = () => {
     const [sites, setSites] = hooks.useState([]);
     hooks.useEffect(() => {
-      loadSites().then(s => setSites(s));
+      loadSites().then(s => setSites(s)).catch(err => setSites(err.message));
     }, []);
     return sites;
   };
@@ -814,6 +814,10 @@
         }));
       }
     }, [config]);
+
+    if (typeof sites === 'string') {
+      return sites; // Display error message
+    }
 
     if (!config || !sites.length) {
       return null;
@@ -852,7 +856,7 @@
     //    https://www.imdb.com/preferences/beta-control?e=tmd&t=in&u=/title/tt0163978/
 
 
-    if (document.querySelector('[data-testid="hero-title-block__title"]')) {
+    if (document.querySelector('main section > .ipc-page-content-container')) {
       return ['redesign2020', 'title', 'main > * > section > div'];
     } // 3) "new": The old default (has been around for many years)
 
