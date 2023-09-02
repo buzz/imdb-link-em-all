@@ -14,6 +14,7 @@
     "url": "git+https://github.com/buzz/imdb-link-em-all.git"
   },
   "private": true,
+  "type": "module",
   "browserslist": [
     "last 2 chrome version",
     "last 2 firefox version"

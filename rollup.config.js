@@ -8,9 +8,11 @@ import postcss from 'rollup-plugin-postcss'
 import replace from '@rollup/plugin-replace'
 import resolve from '@rollup/plugin-node-resolve'
 import precss from 'precss'
+import { fileURLToPath } from 'url'
 
-const pkg = require('./package.json')
+import pkg from './package.json' assert { type: 'json' }
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const production = !process.env.ROLLUP_WATCH
 
 export default {
