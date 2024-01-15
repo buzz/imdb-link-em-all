@@ -10,7 +10,7 @@
 // @license     GPLv2
 // @noframes
 // @author      buzz
-// @version     2.0.13
+// @version     2.0.14
 // @grant       GM_getValue
 // @grant       GM_setValue
 // @grant       GM_xmlhttpRequest
@@ -21,7 +21,7 @@
 (function (preact, hooks) {
   'use strict';
 
-  var version = "2.0.13";
+  var version = "2.0.14";
   var description = "Adds all kinds of links to IMDb, customizable!";
   var homepage = "https://github.com/buzz/imdb-link-em-all#readme";
 
@@ -29,7 +29,6 @@
   const HOMEPAGE = homepage;
   const NAME_VERSION = `Link 'em all! v${version}`;
   const SITES_URL = 'https://raw.githubusercontent.com/buzz/imdb-link-em-all/master/sites.json'; // gets replaced by rollup!
-
   const GM_CONFIG_KEY = 'config';
   const GREASYFORK_URL = 'https://greasyfork.org/scripts/17154-imdb-link-em-all';
   const DEFAULT_CONFIG = {
@@ -87,7 +86,6 @@
     x: img$2,
     spinner: img
   };
-
   const Icon = ({
     className,
     title,
@@ -126,8 +124,8 @@
     }
   }
 
-  var css_248z$6 = ".Options_options__8dIDU {\n  margin-top: 10px;\n}\n\n  .Options_options__8dIDU > label > span {\n    margin-left: 10px;\n}\n";
-  var css$6 = {"options":"Options_options__8dIDU"};
+  var css_248z$6 = ".Options_options__5TB2e {\n  margin-top: 10px;\n}\n\n  .Options_options__5TB2e > label > span {\n    margin-left: 10px;\n}\n";
+  var css$6 = {"options":"Options_options__5TB2e"};
   styleInject(css_248z$6);
 
   const Options = ({
@@ -156,8 +154,8 @@
     title: title
   }) : null;
 
-  var css_248z$5 = ".Sites_searchBar__1cpJl {\n  display: flex;\n  flex-direction: row;\n  margin-bottom: 1em;\n}\n\n  .Sites_searchBar__1cpJl .Sites_searchInput__1iJDL {\n    background-color: rgba(255, 255, 255, 0.9);\n    border-radius: 3px;\n    border-top-color: #949494;\n    border: 1px solid #a6a6a6;\n    box-shadow: 0 1px 0 rgba(0, 0, 0, .07) inset;\n    display: flex;\n    flex-direction: row;\n    height: 24px;\n    line-height: normal;\n    outline: 0;\n    padding: 3px 7px;\n    transition: all 100ms linear;\n    width: 100%;\n}\n\n  .Sites_searchBar__1cpJl .Sites_searchInput__1iJDL:focus-within {\n      background-color: #fff;\n      border-color: #e77600;\n      box-shadow: 0 0 2px 2px rgba(228, 121, 17, 0.25);\n}\n\n  .Sites_searchBar__1cpJl .Sites_searchInput__1iJDL > * {\n      background-color: transparent;\n      border: none;\n      height: 16px;\n}\n\n  .Sites_searchBar__1cpJl .Sites_searchInput__1iJDL > button {\n      margin: 0 0 0 0.7em;\n      padding: 0;\n}\n\n  .Sites_searchBar__1cpJl .Sites_searchInput__1iJDL > input {\n      flex-grow: 1;\n      outline: none;\n      padding: 0 0 0 0.5em;\n}\n\n  .Sites_searchBar__1cpJl .Sites_resultCount__2p4vG {\n    font-weight: bold;\n    margin-left: 2em;\n    min-width: 140px;\n    text-align: right;\n}\n\n  .Sites_searchBar__1cpJl .Sites_resultCount__2p4vG > span {\n      color: black;\n}\n\n.Sites_siteList__1Y3wR .Sites_catList__6txMX {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.Sites_siteList__1Y3wR .Sites_catList__6txMX h4 {\n      width: 100%;\n}\n\n.Sites_siteList__1Y3wR .Sites_catList__6txMX label {\n      align-items: center;\n      color: #444;\n      display: flex;\n      flex-flow: row;\n      padding: 0 6px;\n      transition: color 100ms;\n      width: 25%;\n}\n\n.Sites_siteList__1Y3wR .Sites_catList__6txMX label:hover {\n        color: #222;\n}\n\n.Sites_siteList__1Y3wR .Sites_catList__6txMX label.Sites_checked__3D9QY span {\n        color: black;\n}\n\n.Sites_siteList__1Y3wR .Sites_catList__6txMX label .Sites_title__1Gu_F {\n        flex-grow: 1;\n        overflow: hidden;\n        text-overflow: ellipsis;\n}\n\n.Sites_siteList__1Y3wR .Sites_catList__6txMX label input {\n        margin-right: 4px;\n}\n\n.Sites_siteList__1Y3wR .Sites_catList__6txMX label .Sites_extraIcon__jwLPa {\n        height: 12px;\n        margin-left: 4px;\n        width: 12px;\n}\n\n.Sites_siteList__1Y3wR .Sites_catList__6txMX label .Sites_siteIcon__3uzGl {\n        flex-shrink: 0;\n        height: 16px;\n        margin-right: 6px;\n        width: 16px;\n}\n";
-  var css$5 = {"searchBar":"Sites_searchBar__1cpJl","searchInput":"Sites_searchInput__1iJDL","resultCount":"Sites_resultCount__2p4vG","siteList":"Sites_siteList__1Y3wR","catList":"Sites_catList__6txMX","checked":"Sites_checked__3D9QY","title":"Sites_title__1Gu_F","extraIcon":"Sites_extraIcon__jwLPa","siteIcon":"Sites_siteIcon__3uzGl"};
+  var css_248z$5 = ".Sites_searchBar__omy0k {\n  display: flex;\n  flex-direction: row;\n  margin-bottom: 1em;\n}\n\n  .Sites_searchBar__omy0k .Sites_searchInput__0o5oY {\n    background-color: rgba(255, 255, 255, 0.9);\n    border-radius: 3px;\n    border-top-color: #949494;\n    border: 1px solid #a6a6a6;\n    box-shadow: 0 1px 0 rgba(0, 0, 0, .07) inset;\n    display: flex;\n    flex-direction: row;\n    height: 24px;\n    line-height: normal;\n    outline: 0;\n    padding: 3px 7px;\n    transition: all 100ms linear;\n    width: 100%;\n}\n\n  .Sites_searchBar__omy0k .Sites_searchInput__0o5oY:focus-within {\n      background-color: #fff;\n      border-color: #e77600;\n      box-shadow: 0 0 2px 2px rgba(228, 121, 17, 0.25);\n}\n\n  .Sites_searchBar__omy0k .Sites_searchInput__0o5oY > * {\n      background-color: transparent;\n      border: none;\n      height: 16px;\n}\n\n  .Sites_searchBar__omy0k .Sites_searchInput__0o5oY > button {\n      margin: 0 0 0 0.7em;\n      padding: 0;\n}\n\n  .Sites_searchBar__omy0k .Sites_searchInput__0o5oY > input {\n      flex-grow: 1;\n      outline: none;\n      padding: 0 0 0 0.5em;\n}\n\n  .Sites_searchBar__omy0k .Sites_resultCount__xMc-y {\n    font-weight: bold;\n    margin-left: 2em;\n    min-width: 140px;\n    text-align: right;\n}\n\n  .Sites_searchBar__omy0k .Sites_resultCount__xMc-y > span {\n      color: black;\n}\n\n.Sites_siteList__4rCbT .Sites_catList__Fv8G0 {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.Sites_siteList__4rCbT .Sites_catList__Fv8G0 h4 {\n      width: 100%;\n}\n\n.Sites_siteList__4rCbT .Sites_catList__Fv8G0 label {\n      align-items: center;\n      color: #444;\n      display: flex;\n      flex-flow: row;\n      padding: 0 6px;\n      transition: color 100ms;\n      width: 25%;\n}\n\n.Sites_siteList__4rCbT .Sites_catList__Fv8G0 label:hover {\n        color: #222;\n}\n\n.Sites_siteList__4rCbT .Sites_catList__Fv8G0 label.Sites_checked__nqnSg span {\n        color: black;\n}\n\n.Sites_siteList__4rCbT .Sites_catList__Fv8G0 label .Sites_title__4rEy0 {\n        flex-grow: 1;\n        overflow: hidden;\n        text-overflow: ellipsis;\n}\n\n.Sites_siteList__4rCbT .Sites_catList__Fv8G0 label input {\n        margin-right: 4px;\n}\n\n.Sites_siteList__4rCbT .Sites_catList__Fv8G0 label .Sites_extraIcon__YYfVy {\n        height: 12px;\n        margin-left: 4px;\n        width: 12px;\n}\n\n.Sites_siteList__4rCbT .Sites_catList__Fv8G0 label .Sites_siteIcon__GRVSj {\n        flex-shrink: 0;\n        height: 16px;\n        margin-right: 6px;\n        width: 16px;\n}\n";
+  var css$5 = {"searchBar":"Sites_searchBar__omy0k","searchInput":"Sites_searchInput__0o5oY","resultCount":"Sites_resultCount__xMc-y","siteList":"Sites_siteList__4rCbT","catList":"Sites_catList__Fv8G0","checked":"Sites_checked__nqnSg","title":"Sites_title__4rEy0","extraIcon":"Sites_extraIcon__YYfVy","siteIcon":"Sites_siteIcon__GRVSj"};
   styleInject(css_248z$5);
 
   const SearchInput = ({
@@ -181,7 +179,6 @@
   }, preact.h(Icon, {
     type: "x"
   })));
-
   const DummyIcon = ({
     size
   }) => {
@@ -196,7 +193,6 @@
       style: style
     });
   };
-
   const SiteLabel = ({
     checked,
     setEnabled,
@@ -231,7 +227,6 @@
       className: checked ? css$5.checked : null
     }, input, icon, " ", title, " ", extraIcons);
   };
-
   const CategoryList = ({
     enabled,
     name,
@@ -247,7 +242,6 @@
       className: css$5.catList
     }, preact.h("h4", null, name, " ", preact.h("span", null, "(", sites.length, ")")), siteLabels);
   };
-
   const Sites = ({
     enabledSites,
     setEnabledSites,
@@ -256,11 +250,9 @@
     const [q, setQ] = hooks.useState('');
     const catSites = Object.keys(CATEGORIES).map(cat => {
       const s = sites.filter(site => site.category === cat);
-
       if (q.length) {
         return s.filter(site => site.title.toLowerCase().includes(q));
       }
-
       return s;
     });
     const cats = Object.entries(CATEGORIES).map(([cat, catName], i) => catSites[i].length ? preact.h(CategoryList, {
@@ -283,8 +275,8 @@
     }, cats));
   };
 
-  var css_248z$4 = ".About_about__3lHx7 {\n  padding: 1em 0;\n  position: relative;\n}\n\n  .About_about__3lHx7 ul > li {\n    margin-bottom: 0;\n}\n\n  .About_about__3lHx7 h2 {\n    font-size: 20px;\n    margin: 0.5em 0;\n}\n\n  .About_about__3lHx7 > *:last-child {\n    margin-bottom: 0;\n}\n\n  .About_about__3lHx7 .About_top__3XyCB {\n    text-align: center;\n}\n\n  .About_about__3lHx7 .About_content__1xMTu {\n    width: 61.8%;\n    margin: 0 auto;\n}\n";
-  var css$4 = {"about":"About_about__3lHx7","top":"About_top__3XyCB","content":"About_content__1xMTu"};
+  var css_248z$4 = ".About_about__wuWQp {\n  padding: 1em 0;\n  position: relative;\n}\n\n  .About_about__wuWQp ul > li {\n    margin-bottom: 0;\n}\n\n  .About_about__wuWQp h2 {\n    font-size: 20px;\n    margin: 0.5em 0;\n}\n\n  .About_about__wuWQp > *:last-child {\n    margin-bottom: 0;\n}\n\n  .About_about__wuWQp .About_top__jQHYs {\n    text-align: center;\n}\n\n  .About_about__wuWQp .About_content__hReHO {\n    width: 61.8%;\n    margin: 0 auto;\n}\n";
+  var css$4 = {"about":"About_about__wuWQp","top":"About_top__jQHYs","content":"About_content__hReHO"};
   styleInject(css_248z$4);
 
   const About = () => preact.h("div", {
@@ -315,12 +307,11 @@
     href: "https://github.com/buzz/imdb-link-em-all/blob/master/LICENSE"
   }, "GPL-2.0 License"), ".")));
 
-  var css_248z$3 = ".Config_popover__3RK3L {\n  background-color: #a5a5a5;\n  border-radius: 4px;\n  box-shadow: 0 0 2em rgba(0, 0, 0, 0.1);\n  color: #333;\n  display: block;\n  font-family: Verdana, Arial, sans-serif;\n  font-size: 11px;\n  left: calc(-800px + 35px);\n  line-height: 1.5rem;\n  padding: 10px;\n  position: absolute;\n  top: calc(20px + 8px);\n  white-space: nowrap;\n  width: 800px;\n  z-index: 100;\n}\n.Config_popover__3RK3L.Config_layout-legacy__6Cdsp {\n    left: calc(-800px + 235px);\n}\n.Config_popover__3RK3L.Config_layout-legacy__6Cdsp:before {\n      right: calc(235px - 2 * 8px);\n}\n.Config_popover__3RK3L:before {\n    border-bottom: 8px solid #a5a5a5;\n    border-left: 8px solid transparent;\n    border-right: 8px solid transparent;\n    border-top: 8px solid transparent;\n    content: \"\";\n    display: block;\n    height: 8px;\n    right: calc(35px - 2 * 8px);\n    position: absolute;\n    top: calc(-2 * 8px);\n    width: 0;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz {\n    display: flex;\n    flex-direction: column;\n    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_top__2kgQ3 {\n      display: flex;\n      flex-direction: row;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_top__2kgQ3 .Config_link__3aqRB {\n        flex-grow: 1;\n        text-align: right;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_top__2kgQ3 .Config_link__3aqRB > a {\n          color: #333;\n          margin-left: 12px;\n          margin-right: 4px;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_top__2kgQ3 .Config_link__3aqRB > a:visited {\n            color: #333;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_top__2kgQ3 > button {\n        background-color: rgba(0, 0, 0, 0.05);\n        border-bottom-left-radius: 0;\n        border-bottom-right-radius: 0;\n        border-bottom: transparent;\n        border-left: 1px solid rgba(0, 0, 0, 0.25);\n        border-right: 1px solid rgba(0, 0, 0, 0.25);\n        border-top-left-radius: 2px;\n        border-top-right-radius: 2px;\n        border-top: 1px solid rgba(0, 0, 0, 0.25);\n        color: #424242;\n        font-size: 12px;\n        margin: 0 6px 0 0;\n        outline: none;\n        padding: 0 6px;\n        transform: translateY(1px);\n        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_top__2kgQ3 > button:hover {\n          background-color: rgba(0, 0, 0, 0.1);\n          color: #222;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_top__2kgQ3 > button.Config_active__iBK3y {\n          background-color: #c2c2c2;\n          color: #222;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_top__2kgQ3 > button:last-child {\n          margin-right: 0;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_top__2kgQ3 > button > img {\n          vertical-align: text-bottom;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_body__2JuhF {\n      background-color: #c2c2c2;\n      border-bottom-left-radius: 2px;\n      border-bottom-right-radius: 2px;\n      border-top-right-radius: 2px;\n      border: 1px solid rgba(0, 0, 0, 0.25);\n      padding: 12px 10px 12px;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_body__2JuhF > div {\n        overflow: hidden;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_body__2JuhF > div > *:first-child {\n          margin-top: 0;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_body__2JuhF > div > *:last-child {\n          margin-bottom: 0;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_controls__3hBBQ {\n      display: flex;\n      flex-direction: row;\n      margin-top: 10px;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_controls__3hBBQ > div:first-child {\n        flex-grow: 1;\n}\n.Config_popover__3RK3L .Config_inner__2Sbjz .Config_controls__3hBBQ button {\n        padding-bottom: 0;\n        padding-top: 0;\n        margin-right: 12px;\n}\n";
-  var css$3 = {"popover":"Config_popover__3RK3L","layout-legacy":"Config_layout-legacy__6Cdsp","inner":"Config_inner__2Sbjz","top":"Config_top__2kgQ3","link":"Config_link__3aqRB","active":"Config_active__iBK3y","body":"Config_body__2JuhF","controls":"Config_controls__3hBBQ"};
+  var css_248z$3 = ".Config_popover__qMfu9 {\n  background-color: #a5a5a5;\n  border-radius: 4px;\n  box-shadow: 0 0 2em rgba(0, 0, 0, 0.1);\n  color: #333;\n  display: block;\n  font-family: Verdana, Arial, sans-serif;\n  font-size: 11px;\n  left: calc(-800px + 35px);\n  line-height: 1.5rem;\n  padding: 10px;\n  position: absolute;\n  top: calc(20px + 8px);\n  white-space: nowrap;\n  width: 800px;\n  z-index: 100;\n}\n.Config_popover__qMfu9.Config_layout-legacy__M6fyd {\n    left: calc(-800px + 235px);\n}\n.Config_popover__qMfu9.Config_layout-legacy__M6fyd:before {\n      right: calc(235px - 2 * 8px);\n}\n.Config_popover__qMfu9:before {\n    border-bottom: 8px solid #a5a5a5;\n    border-left: 8px solid transparent;\n    border-right: 8px solid transparent;\n    border-top: 8px solid transparent;\n    content: \"\";\n    display: block;\n    height: 8px;\n    right: calc(35px - 2 * 8px);\n    position: absolute;\n    top: calc(-2 * 8px);\n    width: 0;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK {\n    display: flex;\n    flex-direction: column;\n    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_top__6DKJ8 {\n      display: flex;\n      flex-direction: row;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_top__6DKJ8 .Config_link__GTbGq {\n        flex-grow: 1;\n        text-align: right;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_top__6DKJ8 .Config_link__GTbGq > a {\n          color: #333;\n          margin-left: 12px;\n          margin-right: 4px;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_top__6DKJ8 .Config_link__GTbGq > a:visited {\n            color: #333;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_top__6DKJ8 > button {\n        background-color: rgba(0, 0, 0, 0.05);\n        border-bottom-left-radius: 0;\n        border-bottom-right-radius: 0;\n        border-bottom: transparent;\n        border-left: 1px solid rgba(0, 0, 0, 0.25);\n        border-right: 1px solid rgba(0, 0, 0, 0.25);\n        border-top-left-radius: 2px;\n        border-top-right-radius: 2px;\n        border-top: 1px solid rgba(0, 0, 0, 0.25);\n        color: #424242;\n        font-size: 12px;\n        margin: 0 6px 0 0;\n        outline: none;\n        padding: 0 6px;\n        transform: translateY(1px);\n        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_top__6DKJ8 > button:hover {\n          background-color: rgba(0, 0, 0, 0.1);\n          color: #222;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_top__6DKJ8 > button.Config_active__vD-Fl {\n          background-color: #c2c2c2;\n          color: #222;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_top__6DKJ8 > button:last-child {\n          margin-right: 0;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_top__6DKJ8 > button > img {\n          vertical-align: text-bottom;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_body__wtDKH {\n      background-color: #c2c2c2;\n      border-bottom-left-radius: 2px;\n      border-bottom-right-radius: 2px;\n      border-top-right-radius: 2px;\n      border: 1px solid rgba(0, 0, 0, 0.25);\n      padding: 12px 10px 12px;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_body__wtDKH > div {\n        overflow: hidden;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_body__wtDKH > div > *:first-child {\n          margin-top: 0;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_body__wtDKH > div > *:last-child {\n          margin-bottom: 0;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_controls__-N2ev {\n      display: flex;\n      flex-direction: row;\n      margin-top: 10px;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_controls__-N2ev > div:first-child {\n        flex-grow: 1;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_controls__-N2ev button {\n        padding-bottom: 0;\n        padding-top: 0;\n        margin-right: 12px;\n}\n";
+  var css$3 = {"popover":"Config_popover__qMfu9","layout-legacy":"Config_layout-legacy__M6fyd","inner":"Config_inner__oVRAK","top":"Config_top__6DKJ8","link":"Config_link__GTbGq","active":"Config_active__vD-Fl","body":"Config_body__wtDKH","controls":"Config_controls__-N2ev"};
   styleInject(css_248z$3);
 
   const OPTIONS = [['show_category_captions', 'Show category captions'], ['open_blank', 'Open links in new tab'], ['fetch_results', 'Automatically fetch results']];
-
   const Config = ({
     config,
     layout,
@@ -358,16 +349,14 @@
       icon: 'info',
       comp: preact.h(About, null)
     }];
-
     const onClickCancel = () => {
-      setShow(false); // Restore state
-
+      setShow(false);
+      // Restore state
       setEnabledSites(config.enabled_sites);
       setFetchResults(config.fetch_results);
       setOpenBlank(config.open_blank);
       setShowCategoryCaptions(config.show_category_captions);
     };
-
     const onClickSave = () => {
       setConfig({
         enabled_sites: enabledSites,
@@ -377,7 +366,6 @@
       });
       setShow(false);
     };
-
     return preact.h("div", {
       className: `${css$3.popover} ${css$3['layout-' + layout]}`,
       style: {
@@ -425,20 +413,17 @@
   };
 
   function _extends() {
-    _extends = Object.assign || function (target) {
+    _extends = Object.assign ? Object.assign.bind() : function (target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
-
         for (var key in source) {
           if (Object.prototype.hasOwnProperty.call(source, key)) {
             target[key] = source[key];
           }
         }
       }
-
       return target;
     };
-
     return _extends.apply(this, arguments);
   }
 
@@ -452,40 +437,37 @@
     // Likely a redirect to login page
     if (resp.responseHeaders && resp.responseHeaders.includes('Refresh: 0; url=')) {
       return FETCH_STATE.NO_ACCESS;
-    } // There should be a responseText
+    }
 
-
+    // There should be a responseText
     if (!resp.responseText) {
       return FETCH_STATE.ERROR;
-    } // Detect Blogger content warning
+    }
 
-
+    // Detect Blogger content warning
     if (resp.responseText.includes('The blog that you are about to view may contain content only suitable for adults.')) {
       return FETCH_STATE.NO_ACCESS;
-    } // Detect CloudFlare anti DDOS page
+    }
 
-
+    // Detect CloudFlare anti DDOS page
     if (resp.responseText.includes('Checking your browser before accessing')) {
       return FETCH_STATE.NO_ACCESS;
-    } // Check site access
+    }
 
-
+    // Check site access
     if (site.noAccessMatcher) {
       const matchStrings = Array.isArray(site.noAccessMatcher) ? site.noAccessMatcher : [site.noAccessMatcher];
-
       if (matchStrings.some(matchString => resp.responseText.includes(matchString))) {
         return FETCH_STATE.NO_ACCESS;
       }
-    } // Check results
-
-
+    }
+    // Check results
     if (Array.isArray(site.noResultsMatcher)) {
       // Advanced ways of checking, currently only EL_COUNT is supported
       const [checkType, selector, compType, number] = site.noResultsMatcher;
       const m = resp.responseHeaders.match(/content-type:\s([^\s;]+)/);
       const contentType = m ? m[1] : 'text/html';
       let doc;
-
       try {
         const parser = new DOMParser();
         doc = parser.parseFromString(resp.responseText, contentType);
@@ -493,52 +475,41 @@
         console.error('Could not parse document!');
         return FETCH_STATE.ERROR;
       }
-
       switch (checkType) {
         case 'EL_COUNT':
           {
             let result;
-
             try {
               result = doc.querySelectorAll(selector);
             } catch (err) {
               console.error(err);
               return FETCH_STATE.ERROR;
             }
-
             if (compType === 'GT') {
               if (result.length > number) {
                 return FETCH_STATE.RESULTS_FOUND;
               }
             }
-
             if (compType === 'LT') {
               if (result.length < number) {
                 return FETCH_STATE.RESULTS_FOUND;
               }
             }
-
             break;
           }
       }
-
       return FETCH_STATE.NO_RESULTS;
     }
-
     const matchStrings = Array.isArray(site.noResultsMatcher) ? site.noResultsMatcher : [site.noResultsMatcher];
-
     if (matchStrings.some(matchString => resp.responseText.includes(matchString))) {
       return FETCH_STATE.NO_RESULTS;
     }
-
     return FETCH_STATE.RESULTS_FOUND;
   };
-
   const useResultFetcher = (imdbInfo, site) => {
     const [fetchState, setFetchState] = hooks.useState(null);
     hooks.useEffect(() => {
       let xhr;
-
       if (site.noResultsMatcher) {
         // Site supports result fetching
         const {
@@ -554,7 +525,6 @@
           },
           ontimeout: () => setFetchState(FETCH_STATE.TIMEOUT)
         };
-
         if (isPost) {
           const [postUrl, fields] = url;
           opts.method = 'POST';
@@ -570,11 +540,9 @@
           opts.method = 'GET';
           opts.url = replaceFields(url, imdbInfo);
         }
-
         xhr = GM.xmlHttpRequest(opts);
         setFetchState(FETCH_STATE.LOADING);
       }
-
       return () => {
         if (xhr && xhr.abort) {
           xhr.abort();
@@ -584,8 +552,8 @@
     return fetchState;
   };
 
-  var css_248z$2 = ".SiteLink_linkWrapper__2uDyT {\n  display: inline-block;\n  margin-right: 4px;\n}\n\n  .SiteLink_linkWrapper__2uDyT img {\n    vertical-align: baseline;\n}\n\n  .SiteLink_linkWrapper__2uDyT a {\n    white-space: pre-line;\n}\n\n  .SiteLink_linkWrapper__2uDyT a > img {\n      height: 16px;\n      width: 16px;\n      margin-right: 4px;\n}\n\n  .SiteLink_linkWrapper__2uDyT .SiteLink_resultsIcon__3_V-k {\n    margin-left: 4px;\n}\n";
-  var css$2 = {"linkWrapper":"SiteLink_linkWrapper__2uDyT","resultsIcon":"SiteLink_resultsIcon__3_V-k"};
+  var css_248z$2 = ".SiteLink_linkWrapper__wGnJ- {\n  display: inline-block;\n  margin-right: 4px;\n}\n\n  .SiteLink_linkWrapper__wGnJ- img {\n    vertical-align: baseline;\n}\n\n  .SiteLink_linkWrapper__wGnJ- a {\n    white-space: pre-line;\n}\n\n  .SiteLink_linkWrapper__wGnJ- a > img {\n      height: 16px;\n      width: 16px;\n      margin-right: 4px;\n}\n\n  .SiteLink_linkWrapper__wGnJ- .SiteLink_resultsIcon__mjHYM {\n    margin-left: 4px;\n}\n";
+  var css$2 = {"linkWrapper":"SiteLink_linkWrapper__wGnJ-","resultsIcon":"SiteLink_resultsIcon__mjHYM"};
   styleInject(css_248z$2);
 
   const ResultsIndicator = ({
@@ -595,42 +563,34 @@
     const fetchState = useResultFetcher(imdbInfo, site);
     let iconType;
     let title;
-
     switch (fetchState) {
       case FETCH_STATE.LOADING:
         iconType = 'spinner';
         title = 'Loading…';
         break;
-
       case FETCH_STATE.NO_RESULTS:
         iconType = 'x';
         title = 'No Results found!';
         break;
-
       case FETCH_STATE.RESULTS_FOUND:
         iconType = 'tick';
         title = 'Results found!';
         break;
-
       case FETCH_STATE.NO_ACCESS:
         iconType = 'lock';
         title = 'You have to login to this site!';
         break;
-
       case FETCH_STATE.TIMEOUT:
         iconType = 'timeout';
         title = 'You have to login to this site!';
         break;
-
       case FETCH_STATE.ERROR:
         iconType = 'error';
         title = 'Error fetching results! (See dev console for details)';
         break;
-
       default:
         return null;
     }
-
     return preact.h(Icon, {
       className: css$2.resultsIcon,
       title: title,
@@ -638,18 +598,17 @@
     });
   };
 
+  // As it is not possible to open links with POST request we need a trick
   const usePostLink = (url, openBlank, imdbInfo) => {
     const formEl = hooks.useRef();
     const isPost = Array.isArray(url);
     const href = isPost ? url[0] : replaceFields(url, imdbInfo, false);
-
     const onClick = event => {
       if (isPost && formEl.current) {
         event.preventDefault();
         formEl.current.submit();
       }
     };
-
     hooks.useEffect(() => {
       if (isPost) {
         const [postUrl, fields] = url;
@@ -668,7 +627,6 @@
         document.body.appendChild(form);
         formEl.current = form;
       }
-
       return () => {
         if (formEl.current) {
           formEl.current.remove();
@@ -681,7 +639,6 @@
   const Sep = () => preact.h(preact.Fragment, null, "\xA0", preact.h("span", {
     className: "ghost"
   }, "|"));
-
   const SiteLink = ({
     config,
     imdbInfo,
@@ -701,14 +658,14 @@
       onClick: onClick
     }, extraAttrs), preact.h(SiteIcon, {
       site: site
-    }), preact.h("span", null, site.title)), preact.h(ResultsIndicator, {
+    }), preact.h("span", null, site.title)), config.fetch_results ? preact.h(ResultsIndicator, {
       imdbInfo: imdbInfo,
       site: site
-    }), last ? null : preact.h(Sep, null));
+    }) : null, last ? null : preact.h(Sep, null));
   };
 
-  var css_248z$1 = ".LinkList_linkList__rlGOn {\n  line-height: 1.6rem\n}\n\n.LinkList_h4__2axTi {\n  margin-top: 0.5rem\n}\n";
-  var css$1 = {"linkList":"LinkList_linkList__rlGOn","h4":"LinkList_h4__2axTi"};
+  var css_248z$1 = ".LinkList_linkList__beWAL {\n  line-height: 1.6rem\n}\n\n.LinkList_h4__OVHW- {\n  margin-top: 0.5rem\n}\n";
+  var css$1 = {"linkList":"LinkList_linkList__beWAL","h4":"LinkList_h4__OVHW-"};
   styleInject(css_248z$1);
 
   const LinkList = ({
@@ -717,11 +674,9 @@
     sites
   }) => Object.entries(CATEGORIES).map(([category, categoryName]) => {
     const catSites = sites.filter(site => site.category === category && config.enabled_sites.includes(site.id));
-
     if (!catSites.length) {
       return null;
     }
-
     const caption = config.show_category_captions ? preact.h("h4", {
       className: css$1.h4
     }, categoryName) : null;
@@ -735,14 +690,13 @@
     }))));
   });
 
-  var css_248z = ".App_configWrapper__2KuAE {\n  position: absolute;\n  right: 20px;\n  top: 20px;\n}\n\n  .App_configWrapper__2KuAE > button {\n    background: transparent;\n    border: none;\n    cursor: pointer;\n    outline: none;\n    padding: 0;\n}\n\n  .App_configWrapper__2KuAE > button > img {\n      vertical-align: baseline;\n}\n";
-  var css = {"configWrapper":"App_configWrapper__2KuAE"};
+  var css_248z = ".App_configWrapper__bVP2M {\n  position: absolute;\n  right: 20px;\n  top: 20px;\n}\n\n  .App_configWrapper__bVP2M > button {\n    background: transparent;\n    border: none;\n    cursor: pointer;\n    outline: none;\n    padding: 0;\n}\n\n  .App_configWrapper__bVP2M > button > img {\n      vertical-align: baseline;\n}\n";
+  var css = {"configWrapper":"App_configWrapper__bVP2M"};
   styleInject(css_248z);
 
+  // Note: GM.* only work in async functions
   const restoreConfig = async () => JSON.parse(await GM.getValue(GM_CONFIG_KEY));
-
   const saveConfig = async config => GM.setValue(GM_CONFIG_KEY, JSON.stringify(config));
-
   const useConfig = () => {
     const [config, setConfig] = hooks.useState();
     hooks.useEffect(() => {
@@ -763,7 +717,6 @@
     method: 'GET',
     url: SITES_URL,
     nocache: true,
-
     onload({
       response,
       status,
@@ -779,16 +732,13 @@
         reject(new Error(`LTA: Could not load sites (URL=${SITES_URL}): ${status} ${statusText}`));
       }
     },
-
     onerror({
       status,
       statusText
     }) {
       reject(new Error(`LTA: Could not load sites (URL=${SITES_URL}): ${status} ${statusText}`));
     }
-
   }));
-
   const useSites = () => {
     const [sites, setSites] = hooks.useState([]);
     hooks.useEffect(() => {
@@ -809,12 +759,12 @@
     hooks.useEffect(() => {
       if (config && config.first_run) {
         setShowConfig(true);
-        setConfig(prev => ({ ...prev,
+        setConfig(prev => ({
+          ...prev,
           first_run: false
         }));
       }
     }, [config]);
-
     if (typeof sites === 'string') {
       return sites; // Display error message
     }
@@ -822,7 +772,6 @@
     if (!config || !sites.length) {
       return null;
     }
-
     return preact.h(preact.Fragment, null, imdbInfo.layout === 'legacy' ? preact.h("hr", null) : null, preact.h("div", {
       className: css.configWrapper
     }, preact.h("button", {
@@ -846,33 +795,28 @@
   };
 
   const divId = '__LTA__';
-
   const detectLayout = mUrl => {
     // Currently there seem to be 3 different IMDb layouts:
     // 1) "legacy": URL ends with '/reference'
     if (['reference', 'combined'].includes(mUrl[2])) {
       return ['legacy', 'h3[itemprop=name]', '.titlereference-section-overview > *:last-child'];
-    } // 2) "redesign2020": Redesign 2020
+    }
+    // 2) "redesign2020": Redesign 2020
     //    https://www.imdb.com/preferences/beta-control?e=tmd&t=in&u=/title/tt0163978/
-
-
     if (document.querySelector('main section > .ipc-page-content-container')) {
       return ['redesign2020', 'title', 'main > * > section > div'];
-    } // 3) "new": The old default (has been around for many years)
-
-
+    }
+    // 3) "new": The old default (has been around for many years)
     return ['new', 'h1', '.title-overview'];
   };
-
   const parseImdbInfo = () => {
     // TODO: extract type (TV show, movie, ...)
+
     // Parse IMDb number and layout
     const mUrl = /^\/title\/tt([0-9]{7,8})\/([a-z]*)/.exec(window.location.pathname);
-
     if (!mUrl) {
       throw new Error('LTA: Could not parse IMDb URL!');
     }
-
     const [layout, titleSelector, containerSelector] = detectLayout(mUrl);
     const info = {
       id: mUrl[1],
@@ -880,28 +824,21 @@
     };
     info.title = document.querySelector(titleSelector).innerText.trim();
     const mTitle = /^(.+)\s+\((\d+)\)/.exec(info.title);
-
     if (mTitle) {
       info.title = mTitle[1].trim();
       info.year = parseInt(mTitle[2].trim(), 10);
     }
-
     return [info, containerSelector];
   };
-
   const [imdbInfo, containerSelector] = parseImdbInfo();
-
   const injectAndStart = () => {
     let injectionEl = document.querySelector(containerSelector);
-
     if (!injectionEl) {
       throw new Error('LTA: Could not find target container!');
     }
-
     const container = document.createElement('div');
     container.id = divId;
     container.style.position = 'relative';
-
     if (imdbInfo.layout === 'redesign2020') {
       container.className = 'ipc-page-content-container ipc-page-content-container--center';
       container.style.backgroundColor = 'white';
@@ -912,22 +849,17 @@
       container.classList.add('article');
       injectionEl.appendChild(container);
     }
-
     preact.render(preact.h(App, {
       imdbInfo: imdbInfo
     }), container);
   };
-
   const containerWatchdog = () => {
     const container = document.querySelector(`#${divId}`);
-
     if (container === null) {
       injectAndStart();
     }
-
     window.setTimeout(containerWatchdog, 1000);
   };
-
   window.setTimeout(containerWatchdog, 500);
 
-}(preact, preactHooks));
+})(preact, preactHooks);
