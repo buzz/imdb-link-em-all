@@ -1174,5 +1174,21 @@
     "url": "https://idope.se/torrent-list/{{IMDB_TITLE}}/",
     "noResultsMatcher": "We cannot find",
     "category": "pub_tracker"
+  },
+  {
+    "id": "solidtorrents",
+    "title": "SolidTorrents",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABS0lEQVQ4y43TPShFYRzH8evIS3kdbnEzIAkpg7fBIJNsClnEZjHcwqDMBgaDGNzFwGQwYFE3b5PZYkLeSillwEDX8f3XTx7XufeeU5/uuc//pf/znHMikYDrJtachzK0Yho1kbAXyfkYwg66cIIz9IVt0Ihr+JjDBD7xgMFcxZ1ox7YaXKBDU/hq3J2puBJHWEM/XlQ0j3F86P8uSoMa1OIST+jFCo6xigacqsH7v62wUIBqLOALUyhCsf0qx51iA57bIIZl9CCBqgxbTKrBOaJusAW3GEN5lkOeVINHNLmBNh3aISqyNBjQNp6txg3UaQILjoaYwHLr3YAd1p6CyT/7+82JakLL2bea9IRhvCKFTZ1Lodj9lmJvGAkazx7bovOo7nAg91qz2NLPow1qUoIZvVApFfm6v8Ks5eT6HjyNHMe63ou41rz0/G9JyvyKqEKulQAAAABJRU5ErkJggg==",
+    "url": "https://solidtorrent.to/search?q={{IMDB_TITLE}}",
+    "noResultsMatcher": "Found <b>0</b>",
+    "category": "pub_tracker"
+  },
+  {
+    "id": "bitsearch",
+    "title": "BitSearch",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACGUlEQVQ4y33Tz2vTcBgG8Kz+CSLCmP9CfjgPKsh06JSBYyjqCkKZ2ClqnbNDNmZ14MEhDNTLpJu4g8yDKExE5kUdqKcxFKUqCPbSNN/Qua7purRIH59ktqQh9YX3lLyfJN/3iST5KqJmt/Wr2fhZVX91XtO/XdD07zFNX7iiZa5d1TLbpWZ1UjFawqoxeFrNWkRwhh1VdRDBRfZlNpH1OKFhLdPSMNzL4eOK8YAIwhwkgmbIkJYBkVkioTrQo4gYERCBF3l6v4CfnyuYHFgJQkbc4SOK2NqtiMJRRcCLRDsEUIVbP5bKQZ9T4pm0SodkMXiYw0TgRU5pBlIcdCqn/0G0PfBMxqRO2XxxUBZwkJ52gYl4HrFjuU1ENXCu08T0eB6Lz0uI8a28CLfzRuqQza8HZBMOMjdddJ9ob1QxdWsNd0fz+Ph6A/17BJ5NWe61lzOWF/kl7ZPNFBE4yNzMuntTpVzFw0kLydsFLL+3EdlL/N4mMJ+0vNtJO8ACGw7StcvExNgaLvWt1M+kb7fAnaFVzD8qYmC/aFgxw/bOAUYcoIbUPqd7p8CXpYr7VJOHeEJrXLGDMLEJB2hll/xIuCuHWi1/KCMgJzaRNjcLHBytAV7kcbKI1KcKhiO/4c8JY5+oJ5FDIfZsEFJbsS8nT4iEGv6Hf8h1tv0fxCZyg8iWpn8lB3ewb7IX2WkiaYbtLRObYOzb/Pf/BcAPLnFvp7oYAAAAAElFTkSuQmCC",
+    "url": "https://bitsearch.to/search?q={{IMDB_TITLE}}",
+    "noResultsMatcher": "Found <b>0</b>",
+    "category": "pub_tracker"
   }
 ]
