@@ -22,7 +22,7 @@ const SiteLink = ({ config, imdbInfo, last, site }) => {
         <SiteIcon site={site} />
         <span>{site.title}</span>
       </a>
-      <ResultsIndicator imdbInfo={imdbInfo} site={site} />
+      {config.fetch_results ? <ResultsIndicator imdbInfo={imdbInfo} site={site} /> : null}
       {last ? null : <Sep />}
     </span>
   )
