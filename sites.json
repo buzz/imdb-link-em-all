@@ -125,7 +125,7 @@
     "id": "letterboxd",
     "title": "Letterboxd",
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAZ0lEQVQ4y2NgoAZQMnYJB+I3QPyfSAxSG45swAcSNMPwB2QD/pODB5kBE7Pd//9f7AnGILZXk/v/ooueYAxiJzUt+r/w4n8wBrExDIBphmGYZhiGaYZh6htAsReGfjRSnJQpy0yUAAALBG7oezCB8QAAAABJRU5ErkJggg==",
-    "url": "https://letterboxd.com/search/films/{{IMDB_TITLE}}/",
+    "url": "https://letterboxd.com/imdb/{{IMDB_ID}}/",
     "category": "movie_site"
   },
   {
