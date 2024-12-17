@@ -2,15 +2,15 @@
 // @name        IMDb: Link 'em all!
 // @description Adds all kinds of links to IMDb, customizable!
 // @namespace   https://greasyfork.org/en/users/8981-buzz
-// @match       *://*.imdb.com/title/tt*/*
+// @match       *://*.imdb.com/*title/tt*/*
 // @connect     *
 // @require     https://greasemonkey.github.io/gm4-polyfill/gm4-polyfill.js
-// @require     https://unpkg.com/preact@10.5.7/dist/preact.umd.js
-// @require     https://unpkg.com/preact@10.5.7/hooks/dist/hooks.umd.js
+// @require     https://unpkg.com/preact@10.25.2/dist/preact.umd.js
+// @require     https://unpkg.com/preact@10.25.2/hooks/dist/hooks.umd.js
 // @license     GPLv2
 // @noframes
 // @author      buzz
-// @version     2.0.14
+// @version     2.0.15
 // @grant       GM_getValue
 // @grant       GM_setValue
 // @grant       GM_xmlhttpRequest
@@ -18,10 +18,11 @@
 // @grant       GM.setValue
 // @grant       GM.xmlHttpRequest
 // ==/UserScript==
+
 (function (preact, hooks) {
   'use strict';
 
-  var version = "2.0.14";
+  var version = "2.0.15";
   var description = "Adds all kinds of links to IMDb, customizable!";
   var homepage = "https://github.com/buzz/imdb-link-em-all#readme";
 
@@ -413,18 +414,13 @@
   };
 
   function _extends() {
-    _extends = Object.assign ? Object.assign.bind() : function (target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
+    return _extends = Object.assign ? Object.assign.bind() : function (n) {
+      for (var e = 1; e < arguments.length; e++) {
+        var t = arguments[e];
+        for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]);
       }
-      return target;
-    };
-    return _extends.apply(this, arguments);
+      return n;
+    }, _extends.apply(null, arguments);
   }
 
   const replaceFields = (str, {
@@ -768,7 +764,6 @@
     if (typeof sites === 'string') {
       return sites; // Display error message
     }
-
     if (!config || !sites.length) {
       return null;
     }
@@ -813,7 +808,7 @@
     // TODO: extract type (TV show, movie, ...)
 
     // Parse IMDb number and layout
-    const mUrl = /^\/title\/tt([0-9]{7,8})\/([a-z]*)/.exec(window.location.pathname);
+    const mUrl = /^\/(?:[a-z]{2}\/)?title\/tt([0-9]{7,8})\/([a-z]*)/.exec(window.location.pathname);
     if (!mUrl) {
       throw new Error('LTA: Could not parse IMDb URL!');
     }
