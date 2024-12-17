@@ -1102,7 +1102,7 @@
     "id": "fmovies",
     "title": "FMovies",
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABiElEQVQ4y4WTO0vDUBTHO4i6i9KHUAcf4Obq4qC4dCg4ip/A3a8ggoOgoJOLr8FCEdtSEQoO2icqaBXFKlRrH7a19JFgC/X4PyGRkCbphR9J7r3nd869nFgsquHwR3vBHDgAadAELZABx8AF+i16AwuDYB2UABlQAdvArg22yhl+eaPdWKDgBw4luE+2SovDYDwYk95t5pIdjmWBWy5NyjwajNNe6p3WkimaOk+Q1Rcxqohj3CzwKpO8ceIsTtF8iX5EgWK5L1pOPNIYKmKRjsTLgpxWEM4XIRAlKvU6naY/aeHyjpyBDkGOBW0jgSAIJIIm3gvVKq3cPGmP0+4q4GexVqOj1w+avbjVFWT1BC0E1hsNCmXytBRJ0kggRjZfxxGyLPBoBVe4vIdiGSU/0yS+DS6Q8Vjk9vxWJp3ItBi+p+nQNTJGzJqKY1xKI22qFzmjrXs3bvG/o3TjEDhUX6gJ3O4n3P7a/2EArIKCSXAZbHQEqyQ9YAbsghfQACJ4A/tg/r9sefwB9ZddWxDeLAcAAAAASUVORK5CYII=",
-    "url": "https://fmoviesto.site/search/?q={{IMDB_TITLE}}",
+    "url": "https://fmovieshq.to/search/{{IMDB_TITLE}}",
     "category": "streaming"
   },
   {
