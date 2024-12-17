@@ -5,7 +5,7 @@
   "main": "imdb-link-em-all.user.js",
   "scripts": {
     "build": "rollup -c",
-    "format": "prettier --write \"*.{js,json}\" \"src/*.{js,json}\"",
+    "format": "prettier --write \"*.{js,json}\" \"src/*.{js,jsx,json}\"",
     "watch": "rollup -c -w",
     "lint": "eslint ."
   },
