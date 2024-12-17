@@ -408,14 +408,6 @@
     "category": "search"
   },
   {
-    "id": "irumax",
-    "title": "Irumax",
-    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAABbklEQVQoz5WSWU/CQBDH+XpSubbclCPEJ4yKHHIECAKRxCclCAjlrgExkCjlagsVUfRjOVhSlRSik3nYmfx/szO7I9v/p8kks0qlUqVWKRSKPwEIx7OlXKNDBaMhCO1Oh8Fo2Aro9Lpauzl+YTv97njBpi4vHtn+VT4jDUCl+v1KHYyG9UZDqVlmXjnunc+WbiQAqC2oI/HoicddqBZtDnuxTgKQr9xuAghHtXZjrfa6h/PJ9OMZeIuVIKkq5BPp5DcA6noHajOhWFhUC051W2bCQlIVmCeWimMYtgJMZtMD3QtGQqd+Dz0biWpw6Oeu17I6bLlyAUaS78nXLWm1WtfxIT0d/lSLDjfgOK7WqH8NfZ5OQj1BMeDHA340WXBC+MTR4ldIAOxyBu8DrWfJ3G4gIQIapIHMdSGzC/Cc+UZzBhjmbSoA8MEQckse3gohtAnAwrmOXN6A3xvwCWvnPHDCGZywEVt3CfuybSHYJ1syXFwGCIpFAAAAAElFTkSuQmCC",
-    "url": "https://irumax.com/irumax/index.php?searchword={{IMDB_TITLE}}&ordering=&searchphrase=all&Itemid=9&option=com_search",
-    "noResultsMatcher": "aucuns resultats disponible",
-    "category": "streaming"
-  },
-  {
     "id": "allocine",
     "title": "AlloCiné",
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABVElEQVQ4y2NgQAL/zzIwA7EQELMiifkB8VUg/g7ExQy4AFAyC6rwPRDHQcVYgXgdEP+H4iX4DOhEUvgViDcA8TEg/ockfhKIGXEZEIekEIHPofCfAzEPLgMs0Gz7//4g8/+5DRL/Ty7hh4n9BGIVXAZIAfEXmOafJxn/F8XL/VdTVfufHyv3/98ZuMGuuAxgB+K7MANOLOL/r6et+j8hUP7/vS0cyN7IxReQe2H+7i2W/t+WL/3/H2a4TMdnwDSYwpQQ+f+ru8XQAxGE9+MzIBvmgoxw+f/WJir/Ty7mQzfgPsi7uAxwhhmwuFUcHIAzaiTRXQFKI9K4DFCGRhU4CmfWSv4/u5wPmzescBnADcTPcCQiZJyAywBGID6BpPAvEO8D4mVA/BlJvAtfQC5GUrgSiFmg4uFA/BKIzwBxCj4D8oH4AxCfBmIPJHEWIOYFYiZk9QDcNJJsMRjsPQAAAABJRU5ErkJggg==",
