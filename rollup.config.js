@@ -10,7 +10,7 @@ import resolve from '@rollup/plugin-node-resolve'
 import precss from 'precss'
 import { fileURLToPath } from 'url'
 
-import pkg from './package.json' assert { type: 'json' }
+import pkg from './package.json' with { type: 'json' }
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const production = !process.env.ROLLUP_WATCH
