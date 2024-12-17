@@ -1113,14 +1113,6 @@
     "category": "streaming"
   },
   {
-    "id": "ev01",
-    "title": "ev01.to",
-    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAM1BMVEXWh1gAAAAUBAQ1AwNWAgYWJxCSAgYRKzTIAAb7AAk4OjkKTkZERAhnb2Z4cgakmwWYmpdxYaI+AAAAAXRSTlMAQObYZgAAAIZJREFUGFdtz0FSAkEMAMBOBhDQ/3+VdckkHjxZ5Q+6A9zBAYHH3jMi1noR3GuLJdtcDuHx3p9aVO9Z11e4bSQlF2fciVEXNdfKJb1LVXZnmD1SM7nbTpZJBh83T2KfUqCrfLdpUsTE7szuDiHc6kvJZBxxppWQuvea9UvvCRPP1se/ub/9H2wwUAHX3VB7AAAAAElFTkSuQmCC",
-    "url": "https://pahe.sbs/?s={{IMDB_TITLE}}",
-    "noResultsMatcher": "Nothing Found",
-    "category": "streaming"
-  },
-  {
     "id": "privatehd",
     "title": "PrivateHD",
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAM1BMVEVAAAAAAAA3JwAvKxY7MhJpVRCJbQKAdUGkjCqxjg+tl0q6mBvEnQi2nULesgvVsjHfwl+tmDNGAAAAAXRSTlMAQObYZgAAAGZJREFUGFdlz4sKwCAIBVCrVXOW9v9fu5uMvbog5aFAiYjCHZp52ov+8O0hIVUcNVXPBjgGYPTh6YBuABPbc84mADFmBhR4axNUBKUvwE2bMr44sAOrhwFxvi2xeGJYB1tGX+G3/gk23wQeQ8o1ZAAAAABJRU5ErkJggg==",
