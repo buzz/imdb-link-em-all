@@ -309,13 +309,6 @@
     "category": "movie_site"
   },
   {
-    "id": "graphtvmatsf",
-    "title": "GraphTv",
-    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAmElEQVQY02P4jwYYQMS/X/+gBFTgad2Tf/+ABFzgZU764ycZWS8hAp/u3r61UT0oSGPjrdt3P/1n+LfczMvbyx0IvPR0zZb/Y/g3qef7DzD43tffNxkoMHHiP4iF/ybFxExCEZiMoSI4CFXFJAYGsMAkmKsnQwQmV9yGgkoGBqAZ/w8FenuBgbeHe+BhoEv//EACfyB+QQYAn0zLYUjFABsAAAAASUVORK5CYII=",
-    "url": "https://graph.matsf.cloud/tt{{IMDB_ID}}",
-    "category": "tv"
-  },
-  {
     "id": "kereses",
     "title": "Keresés",
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAh1BMVEU2N2g3OGg3OWs4PW85P3E6QnQ8Rnk9Sn0/TIA/TYFAT4NAT4RAUIRAUIVAUYVCVIhCVotDWI1EWpBFXZNGXpRIYplIY5pJZZ1LaqJMbaVMbqZNcKlPc6xQd7BSerRSe7VYicVYisZajspcks9dltNgntxhn91hoN9jpeVlqehlqellqupmq+tAfB2qAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB+ELGAwHKxlWugUAAACQSURBVBjTXY/ZDsIwDAS3JQTKFcJZ7hsK+P+/D28cgYSfPCPZXqMA5FtAATd3bE/TEBZPBUSJygewrgooe6WKAXxd794K8Huvoo8VBxUQJPyEAkfl9ehieWt4Bagu1b2VVmIrChTNLDp0JuNjEkjBhlhbMOSlWXCpnc2CZy1YFgxm0UcmGN2e27TPFHzu//0Plk8YeRdoW3MAAAAASUVORK5CYII=",
