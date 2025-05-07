@@ -3,6 +3,7 @@
 // @description Adds all kinds of links to IMDb, customizable!
 // @namespace   https://greasyfork.org/en/users/8981-buzz
 // @match       *://*.imdb.com/*title/tt*/*
+// @match       *://*.imdb.com/*title/tt*
 // @connect     *
 // @require     https://greasemonkey.github.io/gm4-polyfill/gm4-polyfill.js
 // @require     https://unpkg.com/preact@10.25.2/dist/preact.umd.js
@@ -808,7 +809,7 @@
     // TODO: extract type (TV show, movie, ...)
 
     // Parse IMDb number and layout
-    const mUrl = /^\/(?:[a-z]{2}\/)?title\/tt([0-9]{7,8})\/([a-z]*)/.exec(window.location.pathname);
+    const mUrl = /^\/(?:[a-z]{2}\/)?title\/tt([0-9]{7,8})(?:\/([a-z]*))?/.exec(window.location.pathname);
     if (!mUrl) {
       throw new Error('LTA: Could not parse IMDb URL!');
     }
