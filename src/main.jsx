@@ -23,7 +23,7 @@ const parseImdbInfo = () => {
   // TODO: extract type (TV show, movie, ...)
 
   // Parse IMDb number and layout
-  const mUrl = /^\/(?:[a-z]{2}\/)?title\/tt([0-9]{7,8})\/([a-z]*)/.exec(window.location.pathname)
+  const mUrl = /^\/(?:[a-z]{2}\/)?title\/tt([0-9]{7,8})(?:\/([a-z]*))?/.exec(window.location.pathname)
 
   if (!mUrl) {
     throw new Error('LTA: Could not parse IMDb URL!')

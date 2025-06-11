@@ -2,7 +2,6 @@
 // @name        IMDb: Link 'em all!
 // @description Adds all kinds of links to IMDb, customizable!
 // @namespace   https://greasyfork.org/en/users/8981-buzz
-// @match       *://*.imdb.com/*title/tt*/*
 // @match       *://*.imdb.com/*title/tt*
 // @connect     *
 // @require     https://greasemonkey.github.io/gm4-polyfill/gm4-polyfill.js
