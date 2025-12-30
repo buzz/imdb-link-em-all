@@ -960,7 +960,7 @@
     "id": "subsource",
     "title": "Subsource",
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAQCAYAAAAmlE46AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAALiIAAC4iAari3ZIAAAFySURBVDhPjZK9SlxRFIW/deYSiyFFIJgmhQSCBtLIKJI8QJpgkcI6vURLQ/zJ5Aq+Qhp9AouQLg8wgVQ+gYXFjEoQAilGEObslWLuTMbLCH6wD/ss1mKd4ogK2y3g0egOMBgMVBTFH0knk/otIqLjKeScO3UvgEZLRHSAReAjoIgQQErpPKX07VZqSvAlMF/pCYh+v0+z2TTgidz1eMs5/6w/8y5yzoeTjRvAM9uSZEC2BSRpaJP0EHgfEUfjxvtge862I+JQ7JdfgdWaR5jTvLv7pGpRNYWk2Yg4SpjHwFNwF+gBPeEe4jdwafvC9nk1XeDE9pkoy2PEGjkalGXUmu9E7JfHwBr4B0hggSxkE8DwqPjF5y8HAAnzF/sKtITdArWAZeMV0AroFeY16C3S0v/G+9BuP6CRbhDf2Wu/AyjqHgDKchOYRRK2kBt1S6oLQ7yO2AFvIz6Btoayx99uejD8hhzPq5kHLZDjBTP+MLL8A/yj4Hf/p5fsAAAAAElFTkSuQmCC",
-    "url": "https://subsource.net/search/tt{{IMDB_ID}}",
+    "url": "https://subsource.net/search?q=tt{{IMDB_ID}}",
     "category": "subtitles"
   },
   {
