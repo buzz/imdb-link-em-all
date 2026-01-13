@@ -46,6 +46,7 @@
     "@babel/preset-react": "^7.28.5",
     "@eslint/js": "^9.39.2",
     "@rollup/plugin-alias": "^6.0.0",
+    "@rollup/plugin-babel": "^6.1.0",
     "@rollup/plugin-image": "^3.0.3",
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^16.0.3",
@@ -58,7 +59,6 @@
     "precss": "^4.0.0",
     "prettier": "^3.7.4",
     "rollup": "^4.55.1",
-    "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-userscript-metablock": "^0.4.3",
     "sugarss": "^5.0.1"

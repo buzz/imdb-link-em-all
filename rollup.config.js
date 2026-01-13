@@ -1,6 +1,6 @@
 import path from 'path'
 import alias from '@rollup/plugin-alias'
-import babel from 'rollup-plugin-babel'
+import babel from '@rollup/plugin-babel'
 import image from '@rollup/plugin-image'
 import json from '@rollup/plugin-json'
 import metablock from 'rollup-plugin-userscript-metablock'
@@ -42,6 +42,7 @@ export default {
       sourceMap: production ? false : 'inline',
     }),
     babel({
+      babelHelpers: 'bundled',
       exclude: 'node_modules/**',
     }),
     image(),
