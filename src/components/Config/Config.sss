@@ -3,7 +3,7 @@ $width: 800px
 $arrow-width: 8px
 $bg-color: #a5a5a5
 $offset: 35px
-$offset-legacy: 235px
+$offset-reference: 35px
 
 .popover
   background-color: $bg-color
@@ -22,11 +22,11 @@ $offset-legacy: 235px
   width: $width
   z-index: 100
 
-  &.layout-legacy
-    left: calc(-$width + $offset-legacy)
+  &.layout-reference
+    left: calc(-$width + $offset-reference)
 
     &:before
-      right: calc($offset-legacy - 2 * $arrow-width)
+      right: calc($offset-reference - 2 * $arrow-width)
 
   &:before
     border-bottom: $arrow-width solid $bg-color

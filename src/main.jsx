@@ -12,8 +12,13 @@ if (!mUrl) {
 }
 
 // Only enable on title page and reference layout
-if ([undefined, 'reference'].includes(mUrl[2])) {
-  const [imdbInfo, containerSelector] = parseImdbInfo(detectLayout(mUrl))
+const shouldEnable = [undefined, 'reference'].includes(mUrl[2])
+
+// Only enable on title page and reference layout
+if (shouldEnable) {
+  const imdbId = mUrl[1]
+  const layoutInfo = detectLayout(mUrl)
+  const [imdbInfo, containerSelector] = parseImdbInfo(imdbId, layoutInfo)
 
   function injectAndStart() {
     let injectionEl = document.querySelector(containerSelector)
@@ -27,7 +32,6 @@ if ([undefined, 'reference'].includes(mUrl[2])) {
 
     if (imdbInfo.layout === 'default') {
       container.className = 'ipc-page-content-container ipc-page-content-container--center'
-      container.style.backgroundColor = 'white'
       container.style.padding = '0 var(--ipt-pageMargin)'
       container.style.minHeight = '50px'
       injectionEl.prepend(container)
@@ -35,8 +39,9 @@ if ([undefined, 'reference'].includes(mUrl[2])) {
 
     // reference layout
     else {
-      container.classList.add('article')
-      injectionEl.appendChild(container)
+      container.className = 'ipc-page-content-container ipc-page-content-container--center'
+      container.style.padding = '0 var(--ipt-pageMargin)'
+      injectionEl.prepend(container)
     }
 
     render(<App imdbInfo={imdbInfo} />, container)

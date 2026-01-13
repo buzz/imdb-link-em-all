@@ -1,26 +1,24 @@
 function detectLayout(mUrl) {
   // Currently there are two IMDb layouts:
-  // 1) "legacy": URL ends with '/reference'
+  // 1) "reference": URL ends with '/reference'
   if (mUrl[2] === 'reference') {
-    return ['legacy', 'h3[itemprop=name]', '.titlereference-section-overview > *:last-child']
+    return {
+      name: 'reference',
+      titleSelector: 'title',
+      containerSelector: 'main > * > section > div',
+    }
   }
   // 2) "default": Default (responsive/dynamic)
-  return ['default', 'title', 'main > * > section > div']
+  return {
+    name: 'default',
+    titleSelector: 'title',
+    containerSelector: 'main > * > section > div',
+  }
 }
 
-function parseImdbInfo([layout, titleSelector, containerSelector]) {
+function parseImdbInfo(id, { name, titleSelector, containerSelector }) {
   // TODO: extract type (TV show, movie, ...)
-
-  // Parse IMDb number and layout
-  const mUrl = /^\/(?:[a-z]{2}\/)?title\/tt([0-9]{7,8})(?:\/([a-z]*))?/.exec(
-    window.location.pathname
-  )
-
-  if (!mUrl) {
-    throw new Error('LTA: Could not parse IMDb URL!')
-  }
-
-  const info = { id: mUrl[1], layout }
+  const info = { id, layout: name }
 
   info.title = document.querySelector(titleSelector).innerText.trim()
   const mTitle = /^(.+)\s+\((\d+)\)/.exec(info.title)
@@ -28,6 +26,7 @@ function parseImdbInfo([layout, titleSelector, containerSelector]) {
     info.title = mTitle[1].trim()
     info.year = parseInt(mTitle[2].trim(), 10)
   }
+  console.log(info)
 
   return [info, containerSelector]
 }
