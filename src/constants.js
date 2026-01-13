@@ -10,7 +10,7 @@ export const GREASYFORK_URL = 'https://greasyfork.org/scripts/17154-imdb-link-em
 export const DEFAULT_CONFIG = {
   enabled_sites: [],
   fetch_results: true,
-  first_run: true,
+  first_run: false,
   open_blank: true,
   show_category_captions: true,
 }

@@ -7,12 +7,19 @@ const restoreConfig = async () => JSON.parse(await GM.getValue(GM_CONFIG_KEY))
 const saveConfig = async (config) => GM.setValue(GM_CONFIG_KEY, JSON.stringify(config))
 
 const useConfig = () => {
-  const [config, setConfig] = useState()
+  const [config, setConfig] = useState(DEFAULT_CONFIG)
 
   useEffect(() => {
     restoreConfig()
-      .then((c) => setConfig(c))
-      .catch(() => setConfig(DEFAULT_CONFIG))
+      .then((c) => {
+        setConfig(c)
+      })
+      .catch(() => {
+        setConfig((oldConfig) => ({
+          ...oldConfig,
+          first_run: true,
+        }))
+      })
   }, [])
 
   useEffect(() => {
