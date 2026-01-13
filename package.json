@@ -35,9 +35,6 @@
     "url": "https://github.com/buzz/imdb-link-em-all/issues"
   },
   "homepage": "https://github.com/buzz/imdb-link-em-all#readme",
-  "config": {
-    "sitesUrl": "https://raw.githubusercontent.com/buzz/imdb-link-em-all/master/sites.json"
-  },
   "engines": {
     "node": ">=22"
   },
@@ -52,7 +49,6 @@
     "@rollup/plugin-image": "^3.0.3",
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^16.0.3",
-    "@rollup/plugin-replace": "^6.0.3",
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",

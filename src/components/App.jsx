@@ -6,11 +6,10 @@ import Icon from 'imdb-link-em-all/components/Icon'
 import LinkList from 'imdb-link-em-all/components/LinkList'
 import css from 'imdb-link-em-all/components/App.sss'
 import useConfig from 'imdb-link-em-all/hooks/useConfig'
-import useSites from 'imdb-link-em-all/hooks/useSites'
+import { SITES } from 'imdb-link-em-all/constants'
 
 const App = ({ imdbInfo }) => {
   const { config, setConfig } = useConfig()
-  const sites = useSites()
   const [showConfig, setShowConfig] = useState(false)
 
   useEffect(() => {
@@ -19,14 +18,6 @@ const App = ({ imdbInfo }) => {
       setConfig((prev) => ({ ...prev, first_run: false }))
     }
   }, [config])
-
-  if (typeof sites === 'string') {
-    return sites // Display error message
-  }
-
-  if (!config || !sites.length) {
-    return null
-  }
 
   return (
     <>
@@ -40,11 +31,11 @@ const App = ({ imdbInfo }) => {
           layout={imdbInfo.layout}
           setConfig={setConfig}
           setShow={setShowConfig}
-          sites={sites}
+          sites={SITES}
           show={showConfig}
         />
       </div>
-      <LinkList config={config} imdbInfo={imdbInfo} sites={sites} />
+      <LinkList config={config} imdbInfo={imdbInfo} sites={SITES} />
     </>
   )
 }
