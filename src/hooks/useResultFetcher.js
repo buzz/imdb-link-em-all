@@ -48,7 +48,7 @@ const checkResponse = (resp, site) => {
     try {
       const parser = new DOMParser()
       doc = parser.parseFromString(resp.responseText, contentType)
-    } catch (e) {
+    } catch {
       console.error('Could not parse document!')
       return FETCH_STATE.ERROR
     }

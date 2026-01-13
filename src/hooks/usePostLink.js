@@ -4,13 +4,13 @@ import replaceFields from 'imdb-link-em-all/util'
 
 // As it is not possible to open links with POST request we need a trick
 const usePostLink = (url, openBlank, imdbInfo) => {
-  const formEl = useRef()
+  const formElRef = useRef()
   const isPost = Array.isArray(url)
   const href = isPost ? url[0] : replaceFields(url, imdbInfo, false)
   const onClick = (event) => {
-    if (isPost && formEl.current) {
+    if (isPost && formElRef.current) {
       event.preventDefault()
-      formEl.current.submit()
+      formElRef.current.submit()
     }
   }
 
@@ -30,12 +30,12 @@ const usePostLink = (url, openBlank, imdbInfo) => {
         form.appendChild(input)
       })
       document.body.appendChild(form)
-      formEl.current = form
+      formElRef.current = form
     }
 
     return () => {
-      if (formEl.current) {
-        formEl.current.remove()
+      if (formElRef.current) {
+        formElRef.current.remove()
       }
     }
   })
