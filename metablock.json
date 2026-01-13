@@ -4,18 +4,10 @@
   "match": "*://*.imdb.com/*title/tt*",
   "connect": "*",
   "require": [
-    "https://greasemonkey.github.io/gm4-polyfill/gm4-polyfill.js",
-    "https://unpkg.com/preact@10.25.2/dist/preact.umd.js",
-    "https://unpkg.com/preact@10.25.2/hooks/dist/hooks.umd.js"
+    "https://unpkg.com/preact@10.28.2/dist/preact.umd.js",
+    "https://unpkg.com/preact@10.28.2/hooks/dist/hooks.umd.js"
   ],
-  "grant": [
-    "GM_getValue",
-    "GM_setValue",
-    "GM_xmlhttpRequest",
-    "GM.getValue",
-    "GM.setValue",
-    "GM.xmlHttpRequest"
-  ],
+  "grant": ["GM.getValue", "GM.setValue", "GM.xmlHttpRequest"],
   "license": "GPLv2",
   "noframes": true
 }
