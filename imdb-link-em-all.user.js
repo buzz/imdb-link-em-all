@@ -9,7 +9,7 @@
 // @license     GPLv2
 // @noframes
 // @author      buzz
-// @version     2.1.0
+// @version     2.1.1
 // @grant       GM.getValue
 // @grant       GM.setValue
 // @grant       GM.xmlHttpRequest
@@ -18,7 +18,7 @@
 (function (preact, hooks) {
   'use strict';
 
-  var version = "2.1.0";
+  var version = "2.1.1";
   var description = "Adds all kinds of links to IMDb, customizable!";
   var homepage = "https://github.com/buzz/imdb-link-em-all#readme";
 
@@ -1180,6 +1180,7 @@
   const NAME_VERSION = `Link 'em all! v${version}`;
   const GM_CONFIG_KEY = 'config';
   const GREASYFORK_URL = 'https://greasyfork.org/scripts/17154-imdb-link-em-all';
+  const CONTAINER_ID = '__LTA__';
   const DEFAULT_CONFIG = {
     enabled_sites: [],
     fetch_results: true,
@@ -1456,8 +1457,8 @@
     href: "https://github.com/buzz/imdb-link-em-all/blob/master/LICENSE"
   }, "GPL-2.0 License"), ".")));
 
-  var css_248z$3 = ".Config_popover__qMfu9 {\n  background-color: #a5a5a5;\n  border-radius: 4px;\n  box-shadow: 0 0 2em rgba(0, 0, 0, 0.1);\n  color: #333;\n  display: block;\n  font-family: Verdana, Arial, sans-serif;\n  font-size: 11px;\n  left: calc(-800px + 35px);\n  line-height: 1.5rem;\n  padding: 10px;\n  position: absolute;\n  top: calc(20px + 8px);\n  white-space: nowrap;\n  width: 800px;\n  z-index: 100;\n}\n.Config_popover__qMfu9.Config_layout-legacy__M6fyd {\n    left: calc(-800px + 235px);\n}\n.Config_popover__qMfu9.Config_layout-legacy__M6fyd:before {\n      right: calc(235px - 2 * 8px);\n}\n.Config_popover__qMfu9:before {\n    border-bottom: 8px solid #a5a5a5;\n    border-left: 8px solid transparent;\n    border-right: 8px solid transparent;\n    border-top: 8px solid transparent;\n    content: \"\";\n    display: block;\n    height: 8px;\n    right: calc(35px - 2 * 8px);\n    position: absolute;\n    top: calc(-2 * 8px);\n    width: 0;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK {\n    display: flex;\n    flex-direction: column;\n    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_top__6DKJ8 {\n      display: flex;\n      flex-direction: row;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_top__6DKJ8 .Config_link__GTbGq {\n        flex-grow: 1;\n        text-align: right;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_top__6DKJ8 .Config_link__GTbGq > a {\n          color: #333;\n          margin-left: 12px;\n          margin-right: 4px;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_top__6DKJ8 .Config_link__GTbGq > a:visited {\n            color: #333;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_top__6DKJ8 > button {\n        background-color: rgba(0, 0, 0, 0.05);\n        border-bottom-left-radius: 0;\n        border-bottom-right-radius: 0;\n        border-bottom: transparent;\n        border-left: 1px solid rgba(0, 0, 0, 0.25);\n        border-right: 1px solid rgba(0, 0, 0, 0.25);\n        border-top-left-radius: 2px;\n        border-top-right-radius: 2px;\n        border-top: 1px solid rgba(0, 0, 0, 0.25);\n        color: #424242;\n        font-size: 12px;\n        margin: 0 6px 0 0;\n        outline: none;\n        padding: 0 6px;\n        transform: translateY(1px);\n        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_top__6DKJ8 > button:hover {\n          background-color: rgba(0, 0, 0, 0.1);\n          color: #222;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_top__6DKJ8 > button.Config_active__vD-Fl {\n          background-color: #c2c2c2;\n          color: #222;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_top__6DKJ8 > button:last-child {\n          margin-right: 0;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_top__6DKJ8 > button > img {\n          vertical-align: text-bottom;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_body__wtDKH {\n      background-color: #c2c2c2;\n      border-bottom-left-radius: 2px;\n      border-bottom-right-radius: 2px;\n      border-top-right-radius: 2px;\n      border: 1px solid rgba(0, 0, 0, 0.25);\n      padding: 12px 10px 12px;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_body__wtDKH > div {\n        overflow: hidden;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_body__wtDKH > div > *:first-child {\n          margin-top: 0;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_body__wtDKH > div > *:last-child {\n          margin-bottom: 0;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_controls__-N2ev {\n      display: flex;\n      flex-direction: row;\n      margin-top: 10px;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_controls__-N2ev > div:first-child {\n        flex-grow: 1;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_controls__-N2ev button {\n        padding-bottom: 0;\n        padding-top: 0;\n        margin-right: 12px;\n}\n";
-  var css$3 = {"popover":"Config_popover__qMfu9","layout-legacy":"Config_layout-legacy__M6fyd","inner":"Config_inner__oVRAK","top":"Config_top__6DKJ8","link":"Config_link__GTbGq","active":"Config_active__vD-Fl","body":"Config_body__wtDKH","controls":"Config_controls__-N2ev"};
+  var css_248z$3 = ".Config_popover__qMfu9 {\n  background-color: #a5a5a5;\n  border-radius: 4px;\n  box-shadow: 0 0 2em rgba(0, 0, 0, 0.1);\n  color: #333;\n  display: block;\n  font-family: Verdana, Arial, sans-serif;\n  font-size: 11px;\n  left: calc(-800px + 35px);\n  line-height: 1.5rem;\n  padding: 10px;\n  position: absolute;\n  top: calc(20px + 8px);\n  white-space: nowrap;\n  width: 800px;\n  z-index: 100;\n}\n.Config_popover__qMfu9.Config_layout-reference__X38TI {\n    left: calc(-800px + 35px);\n}\n.Config_popover__qMfu9.Config_layout-reference__X38TI:before {\n      right: calc(35px - 2 * 8px);\n}\n.Config_popover__qMfu9:before {\n    border-bottom: 8px solid #a5a5a5;\n    border-left: 8px solid transparent;\n    border-right: 8px solid transparent;\n    border-top: 8px solid transparent;\n    content: \"\";\n    display: block;\n    height: 8px;\n    right: calc(35px - 2 * 8px);\n    position: absolute;\n    top: calc(-2 * 8px);\n    width: 0;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK {\n    display: flex;\n    flex-direction: column;\n    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_top__6DKJ8 {\n      display: flex;\n      flex-direction: row;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_top__6DKJ8 .Config_link__GTbGq {\n        flex-grow: 1;\n        text-align: right;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_top__6DKJ8 .Config_link__GTbGq > a {\n          color: #333;\n          margin-left: 12px;\n          margin-right: 4px;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_top__6DKJ8 .Config_link__GTbGq > a:visited {\n            color: #333;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_top__6DKJ8 > button {\n        background-color: rgba(0, 0, 0, 0.05);\n        border-bottom-left-radius: 0;\n        border-bottom-right-radius: 0;\n        border-bottom: transparent;\n        border-left: 1px solid rgba(0, 0, 0, 0.25);\n        border-right: 1px solid rgba(0, 0, 0, 0.25);\n        border-top-left-radius: 2px;\n        border-top-right-radius: 2px;\n        border-top: 1px solid rgba(0, 0, 0, 0.25);\n        color: #424242;\n        font-size: 12px;\n        margin: 0 6px 0 0;\n        outline: none;\n        padding: 0 6px;\n        transform: translateY(1px);\n        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_top__6DKJ8 > button:hover {\n          background-color: rgba(0, 0, 0, 0.1);\n          color: #222;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_top__6DKJ8 > button.Config_active__vD-Fl {\n          background-color: #c2c2c2;\n          color: #222;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_top__6DKJ8 > button:last-child {\n          margin-right: 0;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_top__6DKJ8 > button > img {\n          vertical-align: text-bottom;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_body__wtDKH {\n      background-color: #c2c2c2;\n      border-bottom-left-radius: 2px;\n      border-bottom-right-radius: 2px;\n      border-top-right-radius: 2px;\n      border: 1px solid rgba(0, 0, 0, 0.25);\n      padding: 12px 10px 12px;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_body__wtDKH > div {\n        overflow: hidden;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_body__wtDKH > div > *:first-child {\n          margin-top: 0;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_body__wtDKH > div > *:last-child {\n          margin-bottom: 0;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_controls__-N2ev {\n      display: flex;\n      flex-direction: row;\n      margin-top: 10px;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_controls__-N2ev > div:first-child {\n        flex-grow: 1;\n}\n.Config_popover__qMfu9 .Config_inner__oVRAK .Config_controls__-N2ev button {\n        padding-bottom: 0;\n        padding-top: 0;\n        margin-right: 12px;\n}\n";
+  var css$3 = {"popover":"Config_popover__qMfu9","layout-reference":"Config_layout-reference__X38TI","inner":"Config_inner__oVRAK","top":"Config_top__6DKJ8","link":"Config_link__GTbGq","active":"Config_active__vD-Fl","body":"Config_body__wtDKH","controls":"Config_controls__-N2ev"};
   styleInject(css_248z$3);
 
   const OPTIONS = [['show_category_captions', 'Show category captions'], ['open_blank', 'Open links in new tab'], ['fetch_results', 'Automatically fetch results']];
@@ -1571,11 +1572,49 @@
     }, _extends.apply(null, arguments);
   }
 
-  const replaceFields = (str, {
+  function detectLayout(mUrl) {
+    // Currently there are two IMDb layouts:
+    // 1) "reference": URL ends with '/reference'
+    if (mUrl[2] === 'reference') {
+      return {
+        name: 'reference',
+        titleSelector: 'title',
+        containerSelector: 'main > * > section > div'
+      };
+    }
+    // 2) "default": Default (responsive/dynamic)
+    return {
+      name: 'default',
+      titleSelector: 'title',
+      containerSelector: 'main > * > section > div'
+    };
+  }
+  function parseImdbInfo(id, {
+    name,
+    titleSelector,
+    containerSelector
+  }) {
+    // TODO: extract type (TV show, movie, ...)
+    const info = {
+      id,
+      layout: name
+    };
+    info.title = document.querySelector(titleSelector).innerText.trim();
+    const mTitle = /^(.+)\s+\((\d+)\)/.exec(info.title);
+    if (mTitle) {
+      info.title = mTitle[1].trim();
+      info.year = parseInt(mTitle[2].trim(), 10);
+    }
+    console.log(info);
+    return [info, containerSelector];
+  }
+  function replaceFields(str, {
     id,
     title,
     year
-  }, encode = true) => str.replace(new RegExp('{{IMDB_TITLE}}', 'g'), encode ? encodeURIComponent(title) : title).replace(new RegExp('{{IMDB_ID}}', 'g'), id).replace(new RegExp('{{IMDB_YEAR}}', 'g'), year);
+  }, encode = true) {
+    return str.replace(new RegExp('{{IMDB_TITLE}}', 'g'), encode ? encodeURIComponent(title) : title).replace(new RegExp('{{IMDB_ID}}', 'g'), id).replace(new RegExp('{{IMDB_YEAR}}', 'g'), year);
+  }
 
   const checkResponse = (resp, site) => {
     // Likely a redirect to login page
@@ -1881,7 +1920,7 @@
         }));
       }
     }, [config]);
-    return preact.h(preact.Fragment, null, imdbInfo.layout === 'legacy' ? preact.h("hr", null) : null, preact.h("div", {
+    return preact.h(preact.Fragment, null, preact.h("div", {
       className: css.configWrapper
     }, preact.h("button", {
       onClick: () => setShowConfig(cur => !cur),
@@ -1903,72 +1942,53 @@
     }));
   };
 
-  const divId = '__LTA__';
-  const detectLayout = mUrl => {
-    // Currently there seem to be 3 different IMDb layouts:
-    // 1) "legacy": URL ends with '/reference'
-    if (['reference', 'combined'].includes(mUrl[2])) {
-      return ['legacy', 'h3[itemprop=name]', '.titlereference-section-overview > *:last-child'];
-    }
-    // 2) "redesign2020": Redesign 2020
-    //    https://www.imdb.com/preferences/beta-control?e=tmd&t=in&u=/title/tt0163978/
-    if (document.querySelector('main section > .ipc-page-content-container')) {
-      return ['redesign2020', 'title', 'main > * > section > div'];
-    }
-    // 3) "new": The old default (has been around for many years)
-    return ['new', 'h1', '.title-overview'];
-  };
-  const parseImdbInfo = () => {
-    // TODO: extract type (TV show, movie, ...)
+  // Parse IMDb number and layout
+  const mUrl = /^\/(?:[a-z]{2}\/)?title\/tt([0-9]{7,8})(?:\/([a-z]*))?/.exec(window.location.pathname);
+  if (!mUrl) {
+    throw new Error('LTA: Could not parse IMDb URL!');
+  }
 
-    // Parse IMDb number and layout
-    const mUrl = /^\/(?:[a-z]{2}\/)?title\/tt([0-9]{7,8})(?:\/([a-z]*))?/.exec(window.location.pathname);
-    if (!mUrl) {
-      throw new Error('LTA: Could not parse IMDb URL!');
+  // Only enable on title page and reference layout
+  const shouldEnable = [undefined, 'reference'].includes(mUrl[2]);
+
+  // Only enable on title page and reference layout
+  if (shouldEnable) {
+    const imdbId = mUrl[1];
+    const layoutInfo = detectLayout(mUrl);
+    const [imdbInfo, containerSelector] = parseImdbInfo(imdbId, layoutInfo);
+    function injectAndStart() {
+      let injectionEl = document.querySelector(containerSelector);
+      if (!injectionEl) {
+        throw new Error('LTA: Could not find target container!');
+      }
+      const container = document.createElement('div');
+      container.id = CONTAINER_ID;
+      container.style.position = 'relative';
+      if (imdbInfo.layout === 'default') {
+        container.className = 'ipc-page-content-container ipc-page-content-container--center';
+        container.style.padding = '0 var(--ipt-pageMargin)';
+        container.style.minHeight = '50px';
+        injectionEl.prepend(container);
+      }
+
+      // reference layout
+      else {
+        container.className = 'ipc-page-content-container ipc-page-content-container--center';
+        container.style.padding = '0 var(--ipt-pageMargin)';
+        injectionEl.prepend(container);
+      }
+      preact.render(preact.h(App, {
+        imdbInfo: imdbInfo
+      }), container);
     }
-    const [layout, titleSelector, containerSelector] = detectLayout(mUrl);
-    const info = {
-      id: mUrl[1],
-      layout
-    };
-    info.title = document.querySelector(titleSelector).innerText.trim();
-    const mTitle = /^(.+)\s+\((\d+)\)/.exec(info.title);
-    if (mTitle) {
-      info.title = mTitle[1].trim();
-      info.year = parseInt(mTitle[2].trim(), 10);
+    function containerWatchdog() {
+      const container = document.querySelector(`#${CONTAINER_ID}`);
+      if (container === null) {
+        injectAndStart();
+      }
+      window.setTimeout(containerWatchdog, 1000);
     }
-    return [info, containerSelector];
-  };
-  const [imdbInfo, containerSelector] = parseImdbInfo();
-  const injectAndStart = () => {
-    let injectionEl = document.querySelector(containerSelector);
-    if (!injectionEl) {
-      throw new Error('LTA: Could not find target container!');
-    }
-    const container = document.createElement('div');
-    container.id = divId;
-    container.style.position = 'relative';
-    if (imdbInfo.layout === 'redesign2020') {
-      container.className = 'ipc-page-content-container ipc-page-content-container--center';
-      container.style.backgroundColor = 'white';
-      container.style.padding = '0 var(--ipt-pageMargin)';
-      container.style.minHeight = '50px';
-      injectionEl.prepend(container);
-    } else {
-      container.classList.add('article');
-      injectionEl.appendChild(container);
-    }
-    preact.render(preact.h(App, {
-      imdbInfo: imdbInfo
-    }), container);
-  };
-  const containerWatchdog = () => {
-    const container = document.querySelector(`#${divId}`);
-    if (container === null) {
-      injectAndStart();
-    }
-    window.setTimeout(containerWatchdog, 1000);
-  };
-  window.setTimeout(containerWatchdog, 500);
+    window.setTimeout(containerWatchdog, 500);
+  }
 
 })(preact, preactHooks);
