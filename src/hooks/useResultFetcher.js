@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'preact/hooks'
 
 import { FETCH_STATE } from 'imdb-link-em-all/constants'
-import replaceFields from 'imdb-link-em-all/util'
+import { replaceFields } from 'imdb-link-em-all/util'
 
 const checkResponse = (resp, site) => {
   // Likely a redirect to login page

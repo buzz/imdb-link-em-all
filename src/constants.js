@@ -6,6 +6,7 @@ export const HOMEPAGE = homepage
 export const NAME_VERSION = `Link 'em all! v${version}`
 export const GM_CONFIG_KEY = 'config'
 export const GREASYFORK_URL = 'https://greasyfork.org/scripts/17154-imdb-link-em-all'
+export const CONTAINER_ID = '__LTA__'
 
 export const DEFAULT_CONFIG = {
   enabled_sites: [],

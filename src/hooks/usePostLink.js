@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'preact/hooks'
 
-import replaceFields from 'imdb-link-em-all/util'
+import { replaceFields } from 'imdb-link-em-all/util'
 
 // As it is not possible to open links with POST request we need a trick
 const usePostLink = (url, openBlank, imdbInfo) => {
