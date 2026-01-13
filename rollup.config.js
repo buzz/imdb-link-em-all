@@ -8,11 +8,10 @@ import postcss from 'rollup-plugin-postcss'
 import replace from '@rollup/plugin-replace'
 import resolve from '@rollup/plugin-node-resolve'
 import precss from 'precss'
-import { fileURLToPath } from 'url'
 
 import pkg from './package.json' with { type: 'json' }
+import jsconfig from './jsconfig.json' with { type: 'json' }
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const production = !process.env.ROLLUP_WATCH
 
 export default {
@@ -28,12 +27,10 @@ export default {
   external: ['preact', 'preact/hooks'],
   plugins: [
     alias({
-      entries: [
-        {
-          find: pkg.name,
-          replacement: path.resolve(__dirname, 'src'),
-        },
-      ],
+      entries: Object.entries(jsconfig.compilerOptions.paths).map(([key, [value]]) => ({
+        find: key.replace('/*', ''),
+        replacement: path.resolve(jsconfig.compilerOptions.baseUrl ?? '.', value.replace('/*', '')),
+      })),
     }),
     resolve({
       extensions: ['.js', '.jsx'],

@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "imdb-link-em-all/*": ["src/*"]
+    }
+  },
+  "include": ["src"]
+}
