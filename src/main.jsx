@@ -12,7 +12,7 @@ if (!mUrl) {
 }
 
 // Only enable on title page and reference layout
-const shouldEnable = [undefined, 'reference'].includes(mUrl[2])
+const shouldEnable = [undefined, '', 'reference'].includes(mUrl[2])
 
 // Only enable on title page and reference layout
 if (shouldEnable) {
