@@ -9,7 +9,7 @@
 // @license     GPLv2
 // @noframes
 // @author      buzz
-// @version     2.1.1
+// @version     2.1.2
 // @grant       GM.getValue
 // @grant       GM.setValue
 // @grant       GM.xmlHttpRequest
@@ -18,7 +18,7 @@
 (function (preact, hooks) {
   'use strict';
 
-  var version = "2.1.1";
+  var version = "2.1.2";
   var description = "Adds all kinds of links to IMDb, customizable!";
   var homepage = "https://github.com/buzz/imdb-link-em-all#readme";
 
@@ -1949,7 +1949,7 @@
   }
 
   // Only enable on title page and reference layout
-  const shouldEnable = [undefined, 'reference'].includes(mUrl[2]);
+  const shouldEnable = [undefined, '', 'reference'].includes(mUrl[2]);
 
   // Only enable on title page and reference layout
   if (shouldEnable) {
