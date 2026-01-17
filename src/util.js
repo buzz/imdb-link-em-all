@@ -26,7 +26,6 @@ function parseImdbInfo(id, { name, titleSelector, containerSelector }) {
     info.title = mTitle[1].trim()
     info.year = parseInt(mTitle[2].trim(), 10)
   }
-  console.log(info)
 
   return [info, containerSelector]
 }
