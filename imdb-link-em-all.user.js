@@ -9,7 +9,7 @@
 // @license     GPLv2
 // @noframes
 // @author      buzz
-// @version     2.1.2
+// @version     2.1.3
 // @grant       GM.getValue
 // @grant       GM.setValue
 // @grant       GM.xmlHttpRequest
@@ -18,7 +18,7 @@
 (function (preact, hooks) {
   'use strict';
 
-  var version = "2.1.2";
+  var version = "2.1.3";
   var description = "Adds all kinds of links to IMDb, customizable!";
   var homepage = "https://github.com/buzz/imdb-link-em-all#readme";
 
@@ -1605,7 +1605,6 @@
       info.title = mTitle[1].trim();
       info.year = parseInt(mTitle[2].trim(), 10);
     }
-    console.log(info);
     return [info, containerSelector];
   }
   function replaceFields(str, {
@@ -1614,6 +1613,55 @@
     year
   }, encode = true) {
     return str.replace(new RegExp('{{IMDB_TITLE}}', 'g'), encode ? encodeURIComponent(title) : title).replace(new RegExp('{{IMDB_ID}}', 'g'), id).replace(new RegExp('{{IMDB_YEAR}}', 'g'), year);
+  }
+  function logHeader(success) {
+    let msg = `
+╔═══════════════════════════════════════════════════════════════════════╗
+║                    🎥 IMDb: ${NAME_VERSION.padEnd(26)}                ║
+║                    ──────────────────────────────                     ║
+`;
+    msg += success ? `║                        Successfully loaded! ✅                        ║
+` : `║                         ❌ FATAL ERROR DETECTED                       ║
+║           Something went wrong! The script cannot continue.           ║
+`;
+    msg += `╚═══════════════════════════════════════════════════════════════════════╝
+`;
+    return msg;
+  }
+  function successLog(layout) {
+    console.info(`${logHeader(true)}
+📋 Active categories: ${Object.values(CATEGORIES).join(', ')}
+⚙️ To customize: Find the userscript settings icon (cog)
+🖥️ Layout detected: ${layout}
+═════════════════════════════════════════════════════════════════════════
+`);
+  }
+  function failureLog(error) {
+    console.error(`${logHeader(false)}
+💥 Error Details:
+   ${error.message || error}
+
+📄 Stack Trace:
+${error.stack || 'N/A'}
+
+🔍 Debug Info:
+   • Browser: ${navigator.userAgent}
+   • Userscript Manager: ${typeof GM.info !== 'undefined' ? `${GM.info.scriptHandler} ${GM.info.version}` : 'Unknown'}
+   • IMDb Page: ${window.location.href}
+   • Timestamp: ${new Date().toISOString()}
+
+═════════════════════════════════════════════════════════════════════════
+💡 Need Help? Please report this issue with the details above:
+
+   🐛 GitHub Issues:
+      https://github.com/buzz/imdb-link-em-all/issues/new
+
+   💬 Greasy Fork Discussions:
+      https://greasyfork.org/scripts/17154-imdb-link-em-all/feedback
+
+   Include the FULL error message and stack trace!
+═════════════════════════════════════════════════════════════════════════
+`);
   }
 
   const checkResponse = (resp, site) => {
@@ -1942,53 +1990,51 @@
     }));
   };
 
-  // Parse IMDb number and layout
-  const mUrl = /^\/(?:[a-z]{2}\/)?title\/tt([0-9]{7,8})(?:\/([a-z]*))?/.exec(window.location.pathname);
-  if (!mUrl) {
-    throw new Error('LTA: Could not parse IMDb URL!');
-  }
-
-  // Only enable on title page and reference layout
-  const shouldEnable = [undefined, '', 'reference'].includes(mUrl[2]);
-
-  // Only enable on title page and reference layout
-  if (shouldEnable) {
-    const imdbId = mUrl[1];
-    const layoutInfo = detectLayout(mUrl);
-    const [imdbInfo, containerSelector] = parseImdbInfo(imdbId, layoutInfo);
-    function injectAndStart() {
+  function injectAndStart(imdbInfo, containerSelector) {
+    try {
       let injectionEl = document.querySelector(containerSelector);
       if (!injectionEl) {
-        throw new Error('LTA: Could not find target container!');
+        throw new Error('Could not find target container');
       }
       const container = document.createElement('div');
       container.id = CONTAINER_ID;
+      container.className = 'ipc-page-content-container ipc-page-content-container--center';
       container.style.position = 'relative';
-      if (imdbInfo.layout === 'default') {
-        container.className = 'ipc-page-content-container ipc-page-content-container--center';
-        container.style.padding = '0 var(--ipt-pageMargin)';
-        container.style.minHeight = '50px';
-        injectionEl.prepend(container);
-      }
-
-      // reference layout
-      else {
-        container.className = 'ipc-page-content-container ipc-page-content-container--center';
-        container.style.padding = '0 var(--ipt-pageMargin)';
-        injectionEl.prepend(container);
-      }
+      container.style.padding = '0 var(--ipt-pageMargin)';
+      container.style.minHeight = '50px';
+      injectionEl.prepend(container);
       preact.render(preact.h(App, {
         imdbInfo: imdbInfo
       }), container);
+      successLog(imdbInfo.layout);
+    } catch (error) {
+      failureLog(error);
     }
-    function containerWatchdog() {
-      const container = document.querySelector(`#${CONTAINER_ID}`);
-      if (container === null) {
-        injectAndStart();
+  }
+  try {
+    // Parse IMDb number and layout
+    const mUrl = /^\/(?:[a-z]{2}\/)?title\/tt([0-9]{7,8})(?:\/([a-z]*))?/.exec(window.location.pathname);
+    if (!mUrl) {
+      throw new Error('Could not parse IMDb URL');
+    }
+
+    // Only enable on title page and reference layout
+    const shouldEnable = [undefined, '', 'reference'].includes(mUrl[2]);
+    if (shouldEnable) {
+      const imdbId = mUrl[1];
+      const layoutInfo = detectLayout(mUrl);
+      const [imdbInfo, containerSelector] = parseImdbInfo(imdbId, layoutInfo);
+      function presenceInjector() {
+        const container = document.querySelector(`#${CONTAINER_ID}`);
+        if (container === null) {
+          injectAndStart(imdbInfo, containerSelector);
+        }
+        window.setTimeout(presenceInjector, 1000);
       }
-      window.setTimeout(containerWatchdog, 1000);
+      window.setTimeout(presenceInjector, 500);
     }
-    window.setTimeout(containerWatchdog, 500);
+  } catch (error) {
+    failureLog(error);
   }
 
 })(preact, preactHooks);
