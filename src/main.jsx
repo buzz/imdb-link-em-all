@@ -30,22 +30,12 @@ try {
 
       const container = document.createElement('div')
       container.id = CONTAINER_ID
+      container.className = 'ipc-page-content-container ipc-page-content-container--center'
       container.style.position = 'relative'
-
-      if (imdbInfo.layout === 'default') {
-        container.className = 'ipc-page-content-container ipc-page-content-container--center'
         container.style.padding = '0 var(--ipt-pageMargin)'
         container.style.minHeight = '50px'
-        injectionEl.prepend(container)
-      }
 
-      // reference layout
-      else {
-        container.className = 'ipc-page-content-container ipc-page-content-container--center'
-        container.style.padding = '0 var(--ipt-pageMargin)'
-        injectionEl.prepend(container)
-      }
-
+      injectionEl.prepend(container)
       render(<App imdbInfo={imdbInfo} />, container)
       successLog(imdbInfo.layout)
     }
