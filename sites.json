@@ -304,8 +304,7 @@
     "id": "trakttv",
     "title": "Trakt.tv",
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABZ0lEQVQ4y32TPUvDUBSGM3TKbwiIJUhxLJ3EQTqIhFA6ODgUkSJSipQiIqWIdO7UUULp4A9wEOfi5CChgziE4uBYhPgLCvE9+l453kYDD9zknue9n3Ec60mLfhlcgxg8kZjfys5fDzpdMAb3YBfsgVMi7R32SY2bJ09BE7TBAmQ/rPv91EOf5x+i3WStqwMmlMe/xG+5B/EYhOADRAyZGLkC7jjyf3IAEpCBNp2KBERc87slX1jyM2VhgX5xIgmYcZP06Ofpmr+Fwj7lFyUbJGDm8Ij09M/ACdhHiMgPObJZRmwCWpS7lGugA+oIkSW85gS0dEAV3Cg5AEd8NyFzK6BqAkYgBLdKTsCSszAhgQp5wyaKM5KAEi9GSHmu9kOH1BgiR3lAp2TuwhD0WJzl0FUhG6wd6ptY4BKuvqZbxLGthsiom6yR2oL9P0jIADyCBthmWJ3tBvsGK7IV5IFLrjEhU37z7PpPB+SQTEVjedUAAAAASUVORK5CYII=",
-    "url": "https://trakt.tv/search/imdb?query=tt{{IMDB_ID}}",
-    "noResultsMatcher": "We found <strong>0</strong> results for ID",
+    "url": "https://app.trakt.tv/search?m=media&q=tt{{IMDB_ID}}",
     "category": "movie_site"
   },
   {
